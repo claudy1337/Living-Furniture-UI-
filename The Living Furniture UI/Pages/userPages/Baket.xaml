@@ -10,13 +10,7 @@
       Title="Baket">
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0">
-                <uc:FurnitureItem Source="/Assets/Images/Furniture/Cabinet/Cabinet (1).png" Title="Beni T-Shirt" Ref="Ref. 007197660" Height="420" Width="313"/>
-            </StackPanel>
+            
         </Grid>
     </Border>
 </Page>

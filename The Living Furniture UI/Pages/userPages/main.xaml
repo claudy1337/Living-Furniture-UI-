@@ -26,7 +26,7 @@ Pilihan untuk menciptakan rumah yang nyaman" FontFamily="Ubuntu Light" FontSize=
                     <TextBox Text="Material"
                      VerticalAlignment="Center"
                      Padding="10"
-                     Background="#E4E3E3"
+                     Background="White"
                      Margin="0,20,0,0"
                      FontSize="15" HorizontalAlignment="Left"
                      FontFamily="Ubuntu Medium">
@@ -40,7 +40,7 @@ Pilihan untuk menciptakan rumah yang nyaman" FontFamily="Ubuntu Light" FontSize=
                     </TextBox>
 
                     <TextBox Text="Material"
-                     Background="#E4E3E3"
+                     Background="White"
                      FontFamily="Ubuntu Medium"
                      Margin="0,20,0,0"
                      FontSize="15" HorizontalAlignment="Left"

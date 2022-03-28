@@ -10,56 +10,106 @@
 
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
         <Grid>
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition Height="200"/>
+                <RowDefinition Height="53*"/>
+                <RowDefinition Height="37*"/>
             </Grid.RowDefinitions>
+            <StackPanel Grid.Row="1" Margin="10,10,10,10">
+                <Image Source="/Assets/Images/account.png" />
 
-            <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Image Source="C:\Users\claud\OneDrive\Рабочий стол\The_Living_Furniture_UI-master\The Living Furniture UI\Assets\Images\account.png" Height="174" Width="695"/>
             </StackPanel>
-
-            <StackPanel Grid.Row="0">
+            <StackPanel>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-
-                    <StackPanel Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Center">
-                        <TextBlock Text="Name" FontFamily="Ubuntu Medium"/>
-                        <TextBox Text="email@email.ru" HorizontalAlignment="Left">
+                    <StackPanel Grid.Column="0" Margin="0,10,0,0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Label Content="Name"/>
+                        <TextBox
+                     Padding="7"
+                     FontSize="25" HorizontalAlignment="Left"
+                     FontFamily="Ubuntu Light">
                             <TextBox.Resources>
                                 <Style TargetType="{x:Type Border}">
-                                    <Setter Property="CornerRadius" Value="9"/>
-                                    <Setter Property="Height" Value="30"/>
-                                    <Setter Property="Width" Value="150"/>
+                                    <Setter Property="CornerRadius" Value="7"/>
+                                    <Setter Property="Height" Value="45"/>
+                                    <Setter Property="Width" Value="200"/>
                                 </Style>
                             </TextBox.Resources>
                         </TextBox>
 
-                        <TextBlock Text="Name" FontFamily="Ubuntu Medium"/>
-                        <TextBox Text="email@email.ru" HorizontalAlignment="Left">
+                        <Label Content="Contacts"/>
+                        <TextBox
+                     Padding="7"
+                     FontSize="25" HorizontalAlignment="Left"
+                     FontFamily="Ubuntu Light">
                             <TextBox.Resources>
                                 <Style TargetType="{x:Type Border}">
-                                    <Setter Property="CornerRadius" Value="9"/>
-                                    <Setter Property="Height" Value="30"/>
-                                    <Setter Property="Width" Value="150"/>
+                                    <Setter Property="CornerRadius" Value="7"/>
+                                    <Setter Property="Height" Value="45"/>
+                                    <Setter Property="Width" Value="200"/>
                                 </Style>
                             </TextBox.Resources>
                         </TextBox>
 
-
-                    </StackPanel>
-                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <Label Content="Address"/>
+                        <TextBox
+                     Padding="7"
+                     FontSize="25" HorizontalAlignment="Left"
+                     FontFamily="Ubuntu Light">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="7"/>
+                                    <Setter Property="Height" Value="45"/>
+                                    <Setter Property="Width" Value="200"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        
+                        
                         
                     </StackPanel>
 
+                    <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,20,0,0">
+                        <Rectangle Width="150" Height="150">
+                            <Rectangle.Fill>
+                                <ImageBrush ImageSource="/Assets/Images/user.png"/>
+
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <Button Content="Create in an account"
+                        Margin="0,30,0,0"
+                        Foreground="White"
+                        FontSize="19"
+                        FontWeight="Medium">
+
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#388F72"/>
+                                    <Setter Property="Cursor" Value="Hand"/>
+                                    <Setter Property="FontFamily" Value="Ubuntu Medium"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#3D7462"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="300" Height="45"
+                                    CornerRadius="13"
+                                    Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button>
+                    </StackPanel>
                 </Grid>
             </StackPanel>
         </Grid>
