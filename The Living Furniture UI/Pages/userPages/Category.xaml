@@ -1,0 +1,91 @@
+﻿<Page x:Class="The_Living_Furniture_UI.Pages.userPages.Category"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:The_Living_Furniture_UI.Pages.userPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="850"
+      Title="Category">
+     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" Margin="15">
+                        <Image Source="/Assets/Images/Furniture/Collection/Cabinet.png" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Margin="15">
+                        <Image Source="/Assets/Images/Furniture/Collection/Chair.png" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" Margin="15">
+                        <Image Source="/Assets/Images/Furniture/Collection/Lamp.png" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="3" Margin="15">
+                        <Image Source="/Assets/Images/Furniture/Collection/Table.png" />
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+
+
+            <StackPanel Grid.Column="0" Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Image Margin="10" Source="/Assets/Images/category.png" Width="380"/>
+                <StackPanel Orientation="Vertical" Margin="10,10,0,0">
+                    <TextBlock TextWrapping="Wrap" Text="Simple Bed for You Weekend" FontFamily="Ubuntu Medium" FontSize="25" Width="330"/>
+                    <TextBlock TextWrapping="WrapWithOverflow" Text="Below we are consuming IMongoBookDBContext using Constructor injection directly in the MainBookWindow. But one can additional layer if needed" Margin="0,15,0,0" FontFamily="Ubuntu Light" FontSize="15" Width="332"/>
+                    <Button Content="dsdsds"  FontFamily="Ubuntu Medium" HorizontalAlignment="Left" Margin="0,10,0,0">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#F6B50E"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                                <Setter Property="FontFamily" Value="Poppins Medium"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#F9D475"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="220" Height="45"
+                                    CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0" Margin="30">
+                <Image MouseLeftButtonDown="imgChair_MouseLeftButtonDown" x:Name="imgChair" Source="/Assets/Images/Furniture/Chair.png" />
+                <Image MouseLeftButtonDown="imgCabinet_MouseLeftButtonDown" x:Name="imgCabinet" Source="/Assets/Images/Furniture/Cabinet.png"  />
+                <Image MouseLeftButtonDown="imgLamp_MouseLeftButtonDown"  x:Name="imgLamp" Source="/Assets/Images/Furniture/Lamp.png" />
+                <Image MouseLeftButtonDown="imgTable_MouseLeftButtonDown" x:Name="imgTable" Source="/Assets/Images/Furniture/Table.png" />
+            </StackPanel>
+
+        </Grid>
+    </Border>
+</Page>
