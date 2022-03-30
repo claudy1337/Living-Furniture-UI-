@@ -9,7 +9,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Baket">
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
-        <Grid>
+        <Grid >
             
         </Grid>
     </Border>

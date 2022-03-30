@@ -45,7 +45,7 @@
                 <TextBox
                      FontSize="25" HorizontalAlignment="Left"
                      Padding="7"
-                     
+                     x:Name="TBname"
                      FontFamily="Ubuntu Light">
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
@@ -63,6 +63,7 @@
                        FontWeight="Medium"
                        FontFamily="Ubuntu Medium"/>
                 <TextBox
+                    x:Name="TBlogin"
                      Padding="7"
                      FontSize="25" HorizontalAlignment="Left"
                      FontFamily="Ubuntu Light">
@@ -85,7 +86,7 @@
                      Padding="7"
                      FontFamily="Ubuntu light"
                      FontSize="25"
-                     
+                     x:Name="TBpassword"
                      HorizontalAlignment="Left">
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
@@ -112,7 +113,9 @@
                         Margin="0,0,10,0"
                         Foreground="White"
                         FontSize="19"
-                        FontWeight="Medium">
+                        FontWeight="Medium"
+                        x:Name="BRegistration"
+                        Click="BRegistration_Click">
 
                         <Button.Style>
                             <Style TargetType="Button">

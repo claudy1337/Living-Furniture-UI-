@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="auth"
-      >
+      xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes">
     <Border CornerRadius="10" Background="{DynamicResource SecundaryBackgroundColor}">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -19,11 +19,15 @@
                 <Image Source="/Assets/Images/signin.png"/>
             </StackPanel>
 
-            <StackPanel Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="25,0,17,0">
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
-                    <Image Width="70" Height="70" Source="C:\Users\claud\OneDrive\Рабочий стол\The_Living_Furniture_UI-master\The Living Furniture UI\Assets\Images\sign.png" HorizontalAlignment="Left"/>
-                </StackPanel>
-                <Label Content="Sign In"
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="25,0,0,0" Width="340">
+                <material:Card Width="360" Height="426" Padding="10" Grid.Column="2">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+
+                            <Image Source="/Assets/Images/sign.png" Height="70" Width="70" HorizontalAlignment="Left"/>
+
+
+                            <Label Content="Sign In"
                        FontSize="30"
                        FontWeight="Medium"
                        VerticalAlignment="Center"
@@ -32,7 +36,7 @@
                        HorizontalAlignment="Left"
                        FontFamily="Ubuntu Medium"/>
 
-                <TextBlock Text="It's not long before you embark on this journey!"
+                            <TextBlock Text="It's not long before you embark on this journey!"
                        Foreground="Black"
                        HorizontalAlignment="Left"
                        TextWrapping="Wrap"
@@ -40,64 +44,44 @@
                        FontWeight="Thin"
                        FontFamily="Ubuntu Light" Width="220"/>
 
-                <TextBlock Text="Email or Phone"
+                           
+                            <TextBox
+                                material:HintAssist.Hint="fdsfsd"
+                     
+                     FontSize="25" HorizontalAlignment="Left"
+                     BorderBrush="Gray"
+                     Padding="7"
+                     Background="#FAF8F6"
+                     FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
+                            <TextBlock Text="Password"
                        Margin="0,10,0,0"
                        Foreground="Black"
                        HorizontalAlignment="Left"
                        FontSize="19"
                        FontWeight="Medium"
                        FontFamily="Ubuntu Medium"/>
-                <TextBox
+                            <PasswordBox
                      FontSize="25" HorizontalAlignment="Left"
                      BorderBrush="Gray"
                      Padding="7"
                      Background="#FAF8F6"
-                     FontFamily="Ubuntu Light">
-                    <TextBox.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="9"/>
-                            <Setter Property="Height" Value="45"/>
-                            <Setter Property="Width" Value="220"/>
-                        </Style>
-                    </TextBox.Resources>
-                </TextBox>
+                     FontFamily="Ubuntu Light" Style="{DynamicResource MaterialDesignOutlinedPasswordBox}" 
+                     Height="45" Width="220"/>
 
-                <TextBlock Text="Password"
-                       Margin="0,10,0,0"
-                       Foreground="Black"
-                       HorizontalAlignment="Left"
-                       FontSize="19"
-                       FontWeight="Medium"
-                       FontFamily="Ubuntu Medium"/>
-                <TextBox
-                     FontSize="25" HorizontalAlignment="Left"
-                     BorderBrush="Gray"
-                     Padding="7"
-                     Background="#FAF8F6"
-                     FontFamily="Ubuntu Light">
-                    <TextBox.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="9"/>
-                            <Setter Property="Height" Value="45"/>
-                            <Setter Property="Width" Value="220"/>
-                        </Style>
-                    </TextBox.Resources>
-                </TextBox>
-
-                <StackPanel Orientation="Horizontal" Margin="0,5,0,5" >
-                    <Image Source="/Assets/Images/Lock.png" Margin="0,0,0,0"/>
-                    <TextBlock Text="Forgot your password?"
+                            <StackPanel Orientation="Horizontal" Margin="0,5,0,5" >
+                                <Image Source="/Assets/Images/Lock.png" Margin="0,0,0,0"/>
+                                <TextBlock Text="Forgot your password?"
                        FontFamily="Ubuntu Light"
                        x:Name="TBforgotPassword"
                        Margin="5,0,0,0"
                        VerticalAlignment="Center"
                        FontSize="15"
                        MouseLeftButtonDown="TBforgotPassword_MouseLeftButtonDown"/>
-                </StackPanel>
+                            </StackPanel>
 
-
-                <StackPanel HorizontalAlignment="Left">
-                    <Button Content="Sing in an account"
+                            
+                            <StackPanel HorizontalAlignment="Left">
+                                <Button Content="Sing in an account"
                         Margin="0,0,10,0"
                         Foreground="White"
                         FontSize="19"
@@ -105,40 +89,43 @@
                         x:Name="Bauth"
                         Click="Bauth_Click" Cursor="Hand">
 
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="#388F72"/>
-                                <Setter Property="Cursor" Value="Hand"/>
-                                <Setter Property="FontFamily" Value="Ubuntu Medium"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#3D7462"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="#388F72"/>
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Setter Property="FontFamily" Value="Ubuntu Medium"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#3D7462"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
 
 
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="220" Height="45"
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Width="220" Height="45"
                                     CornerRadius="13"
                                     Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
+                                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
 
-                    </Button>
-                </StackPanel>
-                <StackPanel Margin="0,5,0,0" Grid.Column="0">
-                    <TextBlock Text="Don't have an account ? Signup now"
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Margin="0,5,0,0" Grid.Column="0">
+                                <TextBlock Text="Don't have an account ? Signup now"
                            FontFamily="Ubuntu Light"
                            TextWrapping="Wrap"
                            FontSize="15"
                            x:Name="RegistrationPage"
                            MouseLeftButtonDown="RegistrationPage_MouseLeftButtonDown"/>
-                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </material:Card>
 
             </StackPanel>
         </Grid>

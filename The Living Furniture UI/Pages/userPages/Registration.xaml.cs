@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using The_Living_Furniture_UI.Pages;
 using The_Living_Furniture_UI.Pages.others;
+using The_Living_Furniture_UI.Db;
 
 namespace The_Living_Furniture_UI.Pages.userPages
 {
@@ -30,6 +31,14 @@ namespace The_Living_Furniture_UI.Pages.userPages
         private void SignInPage_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             NavigationService.Navigate(new auth());
+        }
+
+        private void BRegistration_Click(object sender, RoutedEventArgs e)
+        {
+            Db.User user = new Db.User(TBlogin.Text, TBpassword.Text, TBname.Text, "", 0, "");
+            Db.User.usrAddToDB(user);
+            
+
         }
     }
 }

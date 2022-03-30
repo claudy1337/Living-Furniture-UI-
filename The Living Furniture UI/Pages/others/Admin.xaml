@@ -58,9 +58,6 @@
                         <RadioButton x:Name="rdHome" IsChecked="True" Content="Home" Style="{DynamicResource MenuRadioButtonStyle}"  Tag="{DynamicResource home}" />
                         <RadioButton x:Name="rdCategory" Content="Category" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource notes}"/>
                         <RadioButton x:Name="rdOrider" Content="Order" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource customers}" />
-
-                        <RadioButton x:Name="rdBasket" Content="Basket" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource notes}"/>
-
                         <RadioButton x:Name="rdRequest" Content="Request" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource request}"/>
                         <RadioButton x:Name="rdAccount" Content="Account" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource yey}"/>
 
