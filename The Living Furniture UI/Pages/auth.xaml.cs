@@ -40,6 +40,9 @@ namespace The_Living_Furniture_UI.Pages
 
         }
 
-      
+        private void BtnSignIn_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

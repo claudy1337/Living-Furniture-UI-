@@ -18,11 +18,13 @@ namespace The_Living_Furniture_UI.Pages.userPages
     /// <summary>
     /// Логика взаимодействия для Baket.xaml
     /// </summary>
+    
     public partial class Baket : Page
     {
         public Baket()
         {
             InitializeComponent();
         }
+       
     }
 }

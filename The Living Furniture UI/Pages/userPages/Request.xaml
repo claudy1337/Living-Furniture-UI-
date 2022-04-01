@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:The_Living_Furniture_UI.Pages.userPages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Request">
+      Title="Request"
+      xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes">
 
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
         <Grid>
@@ -19,102 +20,72 @@
             </Grid.RowDefinitions>
 
 
-            <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0">
-                <TextBlock Text="Request" FontSize="30" FontFamily="Ubuntu Medium"/>
-                <TextBlock TextWrapping="WrapWithOverflow" FontSize="15" Margin="0,5,0,0" Text="It's not long before you embark on this journey!" FontFamily="Poppins Light" Width="325"/>
-                
-                <TextBlock Text="Name" FontSize="20" Margin="0,5,0,0" FontFamily="Ubuntu Medium"/>
-                <TextBox Text="Name"
-                     
-                     FontSize="25" Padding="5" VerticalAlignment="Center" HorizontalAlignment="Left"
-                     FontFamily="Ubuntu Light">
-                    <TextBox.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="9"/>
-                            <Setter Property="Height" Value="40"/>
-                            <Setter Property="Width" Value="270"/>
-                        </Style>
-                    </TextBox.Resources>
-                </TextBox>
+            <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,10,0,0">
+                <TextBlock Text="Request" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Left"/>
+                <TextBlock TextWrapping="WrapWithOverflow" FontSize="15" Margin="0,5,0,0" Text="It's not long before you embark on this journey!" FontFamily="Poppins Light" HorizontalAlignment="Center" Width="325"/>
 
-                <TextBlock Margin="0,5,0,0" FontSize="20" Text="Material" FontFamily="Ubuntu Medium"/>
-                <TextBox Text="Material"
-                     
-                     FontSize="25" Padding="5" HorizontalAlignment="Left"
-                     FontFamily="Ubuntu Light">
-                    <TextBox.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="9"/>
-                            <Setter Property="Height" Value="40"/>
-                            <Setter Property="Width" Value="270"/>
-                        </Style>
-                    </TextBox.Resources>
-                </TextBox>
 
-                <TextBlock Margin="0,5,0,0" FontSize="20" Text="Size" FontFamily="Ubuntu Medium"/>
-                <TextBox Text="Size"
-                     
-                     FontSize="25" Padding="5" HorizontalAlignment="Left"
-                     FontFamily="Ubuntu Light">
-                    <TextBox.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="9"/>
-                            <Setter Property="Height" Value="40"/>
-                            <Setter Property="Width" Value="270"/>
-                        </Style>
-                    </TextBox.Resources>
-                </TextBox>
+                <TextBox
+                     material:HintAssist.Hint="Password"
+                     Margin="0,10,0,0"
+                     FontSize="25" HorizontalAlignment="Left"
+                     BorderBrush="Gray"
+                     Padding="7"
+                     Background="#FAF8F6"
+                     FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
 
-                <TextBlock Margin="0,5,0,0" FontSize="20" Text="Number" FontFamily="Ubuntu Medium"/>
-                <TextBox Text="Phone"
-                     
-                     FontSize="25" Padding="5" HorizontalAlignment="Left"
-                     FontFamily="Ubuntu Light">
-                    <TextBox.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="9"/>
-                            <Setter Property="Height" Value="40"/>
-                            <Setter Property="Width" Value="270"/>
-                        </Style>
-                    </TextBox.Resources>
-                </TextBox>
-                <!--number-->
+
+                <TextBox
+                     material:HintAssist.Hint="Password"
+                     Margin="0,10,0,0"
+                     FontSize="25" HorizontalAlignment="Left"
+                     BorderBrush="Gray"
+                     Padding="7"
+                     Background="#FAF8F6"
+                     FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
+
+
+                <TextBox
+                     material:HintAssist.Hint="Password"
+                     Margin="0,10,0,0"
+                     FontSize="25" HorizontalAlignment="Left"
+                     BorderBrush="Gray"
+                     Padding="7"
+                     Background="#FAF8F6"
+                     FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
+
+
+                <TextBox
+                     material:HintAssist.Hint="Password"
+                     Margin="0,10,0,0"
+                     FontSize="25" HorizontalAlignment="Left"
+                     BorderBrush="Gray"
+                     Padding="7"
+                     Background="#FAF8F6"
+                     FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
+                    <!--number-->
                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                    <CheckBox VerticalAlignment="Center"/>
+                    <CheckBox VerticalAlignment="Center" Style="{DynamicResource MaterialDesignCheckBox}"/>
                     <TextBlock Margin="5,0,0,0" TextWrapping="WrapWithOverflow" Text="I've read and agree with Terms of Service and our Privacy Police" FontFamily="Ubuntu Light" Width="249"/>
                 </StackPanel>
 
-                <Button Content="Sing in an account"
-                        Margin="-45,5,10,0"
-                        Foreground="White"
-                        FontSize="19"
-                        FontWeight="Medium">
+                
+                    <Button
+                                         Margin="0,10,0,0"
+                                         Width="220"
+                                         Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                                         Height="55"
+                                         material:ButtonAssist.CornerRadius="25"
+                                         ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
+                                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
+                                         Background="#EB8F4C">
+                        
+                        <TextBlock
+                            Text="Send"
+                            FontSize="29" Height="45"/>
+                        
+                    </Button>
 
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="Background" Value="#EB8F4C"/>
-                            <Setter Property="Cursor" Value="Hand"/>
-                            <Setter Property="FontFamily" Value="Poppins Medium"/>
-                            <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="#E2A06F"/>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-
-
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border Width="270" Height="45"
-                                    CornerRadius="13"
-                                    Background="{TemplateBinding Background}">
-                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-
-                </Button>
             </StackPanel>
 
             <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">

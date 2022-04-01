@@ -62,7 +62,7 @@ namespace The_Living_Furniture_UI.Pages.others
 
         private void rdBasket_Click(object sender, RoutedEventArgs e)
         {
-            PagesNavigation.Navigate(new System.Uri("Pages/userPages/Profile.xaml", UriKind.RelativeOrAbsolute));
+            PagesNavigation.Navigate(new System.Uri("Pages/userPages/Baket.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void rdCategory_Checked(object sender, RoutedEventArgs e)

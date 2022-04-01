@@ -9,7 +9,7 @@
       Title="Registration"
       xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes">
 
-    <Border CornerRadius="10" Background="{DynamicResource SecundaryBackgroundColor}">
+    <Border CornerRadius="10" Background="#FFF7EE">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -21,7 +21,7 @@
             </StackPanel>
 
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <material:Card Width="350" Height="450">
+                <material:Card Width="350" Height="422" material:ShadowAssist.ShadowDepth="Depth5">
                     <StackPanel Grid.ColumnSpan="1" VerticalAlignment="Center" Orientation="Vertical" Margin="0,0,0,-33" >
 
                         <Label Content="Sign Up"
@@ -29,7 +29,7 @@
                        FontWeight="Medium"
                        HorizontalAlignment="Right"
                        Foreground="Black"
-                       FontFamily="Ubuntu Medium" Width="255"/>
+                       FontFamily="Ubuntu Medium" Width="240"/>
 
 
 
@@ -37,7 +37,7 @@
                         <TextBox
                      HorizontalAlignment="Center"
                      material:HintAssist.Hint="Name"
-                     Margin="0,10,0,0"
+                     Margin="0,20,0,0"
                      FontSize="25"
                      BorderBrush="Gray"
                      Padding="7"
@@ -69,8 +69,10 @@
                             <CheckBox
                         Margin="45,10,0,0"
                         FontSize="15"
+                        FontFamily="Ubuntu Light"
+                        Style="{DynamicResource MaterialDesignDataGridCheckBoxColumnEditingStyle}"
                         x:Name="MaterialDesignOutlinedPasswordBoxEnabledComboBox"
-                        Content="I've read and agree with our Privacy Policed" RenderTransformOrigin="0.5,0.5" Width="307">
+                        Content="I've read and agree with our Privacy Policed"  Width="262">
                                 <CheckBox.RenderTransform>
                                     <TransformGroup>
                                         <ScaleTransform/>
@@ -85,6 +87,8 @@
 
                         <StackPanel HorizontalAlignment="Left">
                             <Button
+                                         x:Name="BtnSignUp"
+                                         Click="BtnSignUp_Click"
                                          Margin="50,10,0,0"
                                          Width="240"
                                          Style="{StaticResource MaterialDesignRaisedDarkButton}"

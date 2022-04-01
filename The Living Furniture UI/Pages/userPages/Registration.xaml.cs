@@ -33,6 +33,10 @@ namespace The_Living_Furniture_UI.Pages.userPages
             NavigationService.Navigate(new auth());
         }
 
-        
+        private void BtnSignUp_Click(object sender, RoutedEventArgs e)
+        {
+            others.User user = new others.User();
+            user.Show();
+        }
     }
 }

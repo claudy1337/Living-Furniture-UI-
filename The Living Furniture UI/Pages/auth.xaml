@@ -19,12 +19,12 @@
                 <Image Source="/Assets/Images/signin.png"/>
             </StackPanel>
 
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"  Width="340">
-                <material:Card Width="350" Height="380" HorizontalAlignment="Center" Margin="-20,30,0,0">
-                    <Grid Background="White">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <material:Card Width="350" material:ShadowAssist.ShadowDepth="Depth5" Margin="25,100,25,25">
+                <Grid Background="White" Margin="0,-26,0,0">
 
-                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Label Content="Sign In"
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Label Content="Sign In"
                        FontSize="30"
                        FontWeight="Medium"
                        VerticalAlignment="Top"
@@ -32,10 +32,10 @@
                        Margin="-6,10,0,0"
                        HorizontalAlignment="Center"
                        FontFamily="Ubuntu Medium"/>
-                            <StackPanel>
+                        <StackPanel>
 
 
-                                <TextBox
+                            <TextBox
                      material:HintAssist.Hint="Login"
                      Margin="0,20,0,0"
                      FontSize="25" HorizontalAlignment="Center"
@@ -43,9 +43,9 @@
                      Padding="7"
                      Background="#FAF8F6"
                      FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
-                            </StackPanel>
+                        </StackPanel>
 
-                            <TextBox
+                        <TextBox
                      material:HintAssist.Hint="Password"
                      Margin="0,20,0,0"
                      FontSize="25" HorizontalAlignment="Center"
@@ -55,23 +55,26 @@
                      FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
 
 
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,5" >
-                                <Image Source="/Assets/Images/Lock.png" />
-                                <TextBlock Text="Forgot your password?"
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,5" >
+
+                            <material:PackIcon Kind="Lock" Height="20" Width="20"/>
+                            <TextBlock Text="Forgot your password?"
                                            Style="{DynamicResource MaterialDesignOverlineTextBlock}"
                        FontFamily="Ubuntu Light"
                        x:Name="TBforgotPassword"
                        VerticalAlignment="Center"
                        FontSize="15"
                        MouseLeftButtonDown="TBforgotPassword_MouseLeftButtonDown"/>
-                            </StackPanel>
+                        </StackPanel>
 
 
-                            <StackPanel HorizontalAlignment="Center">
-                                <Grid>
-                                    <Button
+                        <StackPanel HorizontalAlignment="Center">
+                            <Grid>
+                                <Button
+                                         x:Name="BtnSignIn"
                                          Margin="0,10,0,0"
                                          Width="220"
+                                         Click="BtnSignIn_Click"
                                          Style="{StaticResource MaterialDesignRaisedDarkButton}"
                                          Height="55"
                                          material:ButtonAssist.CornerRadius="25"
@@ -79,25 +82,25 @@
                                          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
                                          Background="#388F72"
 >
-                                        <TextBlock
+                                    <TextBlock
                                         Text="Sign In"
                                         FontSize="29" Height="45"/>
-                                    </Button>
-                                </Grid>
-                            </StackPanel>
-                            <StackPanel Margin="0,5,0,0" Grid.Column="0" HorizontalAlignment="Center">
-                                <TextBlock Text="Don't have an account ? Signup now"
+                                </Button>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Margin="0,5,0,0" Grid.Column="0" HorizontalAlignment="Center">
+                            <TextBlock Text="Don't have an account ? Signup now"
                            FontFamily="Ubuntu Light"
                            TextWrapping="Wrap"
                            FontSize="15"
                            x:Name="RegistrationPage"
                            MouseLeftButtonDown="RegistrationPage_MouseLeftButtonDown"/>
-                            </StackPanel>
                         </StackPanel>
-                    </Grid>
-                </material:Card>
+                    </StackPanel>
+                </Grid>
+            </material:Card>
 
-            </StackPanel>
+
         </Grid>
     </Border>
 </Page>
