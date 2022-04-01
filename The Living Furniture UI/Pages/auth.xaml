@@ -20,7 +20,7 @@
             </StackPanel>
 
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="25,0,0,0" Width="340">
-                <material:Card Width="360" Height="426" Padding="10" Grid.Column="2">
+                <material:Card Width="360" Height="426" Padding="10" Grid.Column="2" >
                     <Grid>
                         <StackPanel Orientation="Vertical">
 
@@ -44,29 +44,29 @@
                        FontWeight="Thin"
                        FontFamily="Ubuntu Light" Width="220"/>
 
-                           
-                            <TextBox
-                                material:HintAssist.Hint="fdsfsd"
-                     
+
+                            <StackPanel>
+
+
+                                <TextBox
+                     material:HintAssist.Hint="Login"
+                     Margin="0,10,0,0"
                      FontSize="25" HorizontalAlignment="Left"
                      BorderBrush="Gray"
                      Padding="7"
                      Background="#FAF8F6"
                      FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
-                            <TextBlock Text="Password"
-                       Margin="0,10,0,0"
-                       Foreground="Black"
-                       HorizontalAlignment="Left"
-                       FontSize="19"
-                       FontWeight="Medium"
-                       FontFamily="Ubuntu Medium"/>
-                            <PasswordBox
+                            </StackPanel>
+
+                            <TextBox
+                     material:HintAssist.Hint="Login"
+                     Margin="0,10,0,0"
                      FontSize="25" HorizontalAlignment="Left"
                      BorderBrush="Gray"
                      Padding="7"
                      Background="#FAF8F6"
-                     FontFamily="Ubuntu Light" Style="{DynamicResource MaterialDesignOutlinedPasswordBox}" 
-                     Height="45" Width="220"/>
+                     FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
+
 
                             <StackPanel Orientation="Horizontal" Margin="0,5,0,5" >
                                 <Image Source="/Assets/Images/Lock.png" Margin="0,0,0,0"/>
@@ -81,39 +81,19 @@
 
                             
                             <StackPanel HorizontalAlignment="Left">
-                                <Button Content="Sing in an account"
-                        Margin="0,0,10,0"
-                        Foreground="White"
-                        FontSize="19"
-                        FontWeight="Medium"
-                        x:Name="Bauth"
-                        Click="Bauth_Click" Cursor="Hand">
-
-                                    <Button.Style>
-                                        <Style TargetType="Button">
-                                            <Setter Property="Background" Value="#388F72"/>
-                                            <Setter Property="Cursor" Value="Hand"/>
-                                            <Setter Property="FontFamily" Value="Ubuntu Medium"/>
-                                            <Style.Triggers>
-                                                <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter Property="Background" Value="#3D7462"/>
-                                                </Trigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </Button.Style>
-
-
-                                    <Button.Template>
-                                        <ControlTemplate TargetType="Button">
-                                            <Border Width="220" Height="45"
-                                    CornerRadius="13"
-                                    Background="{TemplateBinding Background}">
-                                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Button.Template>
-
-                                </Button>
+                                <Grid>
+                                    <Button
+                                         Width="220"
+                                         Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                                         Height="55"
+                                         material:ButtonAssist.CornerRadius="25"
+                                         ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
+                                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                         Background="#388F72">
+                                        <TextBlock
+                                        Text="auth" />
+                                    </Button>
+                                </Grid>
                             </StackPanel>
                             <StackPanel Margin="0,5,0,0" Grid.Column="0">
                                 <TextBlock Text="Don't have an account ? Signup now"

@@ -33,12 +33,6 @@ namespace The_Living_Furniture_UI.Pages.userPages
             NavigationService.Navigate(new auth());
         }
 
-        private void BRegistration_Click(object sender, RoutedEventArgs e)
-        {
-            Db.User user = new Db.User(TBlogin.Text, TBpassword.Text, TBname.Text, "", 0, "");
-            Db.User.usrAddToDB(user);
-            
-
-        }
+        
     }
 }

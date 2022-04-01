@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:The_Living_Furniture_UI.Pages.userPages"
       mc:Ignorable="d" 
       d:DesignHeight="480" d:DesignWidth="800"
-      Title="Registration">
+      Title="Registration"
+      xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes">
 
     <Border CornerRadius="10" Background="{DynamicResource SecundaryBackgroundColor}">
         <Grid>
@@ -36,75 +37,41 @@
                        FontWeight="Thin"
                        FontFamily="Ubuntu Light" Width="360"/>
 
-                <TextBlock Text="Name"
-                       Margin="0,10,0,0"
-                       Foreground="Black"
-                       FontSize="19"
-                       FontWeight="Medium"
-                       FontFamily="Ubuntu "/>
+
                 <TextBox
+                     material:HintAssist.Hint="Login"
+                     Margin="0,10,0,0"
                      FontSize="25" HorizontalAlignment="Left"
+                     BorderBrush="Gray"
                      Padding="7"
-                     x:Name="TBname"
-                     FontFamily="Ubuntu Light">
-                    <TextBox.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="9"/>
-                            <Setter Property="Height" Value="45"/>
-                            <Setter Property="Width" Value="300"/>
-                        </Style>
-                    </TextBox.Resources>
-                </TextBox>
+                     Background="#FAF8F6"
+                     FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
 
-                <TextBlock Text="Email or Phone"
-                       Margin="0,10,0,0"
-                       Foreground="Black"
-                       FontSize="19"
-                       FontWeight="Medium"
-                       FontFamily="Ubuntu Medium"/>
+                
                 <TextBox
-                    x:Name="TBlogin"
-                     Padding="7"
+                     material:HintAssist.Hint="Login"
+                     Margin="0,10,0,0"
                      FontSize="25" HorizontalAlignment="Left"
-                     FontFamily="Ubuntu Light">
-                    <TextBox.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="9"/>
-                            <Setter Property="Height" Value="45"/>
-                            <Setter Property="Width" Value="300"/>
-                        </Style>
-                    </TextBox.Resources>
-                </TextBox>
-
-                <TextBlock Text="Password"
-                       Margin="0,10,0,0"
-                       Foreground="Black"
-                       FontSize="19"
-                       FontFamily="Ubuntu Medium"
-                       FontWeight="Medium"/>
-                <TextBox
+                     BorderBrush="Gray"
                      Padding="7"
-                     FontFamily="Ubuntu light"
-                     FontSize="25"
-                     x:Name="TBpassword"
-                     HorizontalAlignment="Left">
-                    <TextBox.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="9"/>
-                            <Setter Property="Height" Value="45"/>
-                            <Setter Property="Width" Value="300"/>
-                        </Style>
+                     Background="#FAF8F6"
+                     FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
 
-                    </TextBox.Resources>
-                </TextBox>
+
+                <TextBox
+                     material:HintAssist.Hint="Login"
+                     Margin="0,10,0,0"
+                     FontSize="25" HorizontalAlignment="Left"
+                     BorderBrush="Gray"
+                     Padding="7"
+                     Background="#FAF8F6"
+                     FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
 
                 <StackPanel Orientation="Horizontal" Margin="0,5,0,5" >
-                    <CheckBox VerticalAlignment="Center">
-
-                    </CheckBox>
-                    <TextBlock Margin="5,0,0,0" TextWrapping="WrapWithOverflow" Text="I've read and agree with Terms of Service and our Privacy Police"
-                       FontFamily="Ubuntu Light"
-                       FontSize="15" Width="273"/>
+                   
+                    <CheckBox
+    x:Name="MaterialDesignOutlinedPasswordBoxEnabledComboBox"
+    Content="I've read and agree with Terms of Service and our Privacy Policed"/>
                 </StackPanel>
 
 
@@ -114,9 +81,8 @@
                         Foreground="White"
                         FontSize="19"
                         FontWeight="Medium"
-                        x:Name="BRegistration"
-                        Click="BRegistration_Click">
-
+                        x:Name="BRegistration">
+                        
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="#388F72"/>

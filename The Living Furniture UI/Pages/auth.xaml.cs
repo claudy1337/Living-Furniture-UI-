@@ -33,16 +33,13 @@ namespace The_Living_Furniture_UI.Pages
             NavigationService.Navigate(new Registration());
         }
 
-        private void Bauth_Click(object sender, RoutedEventArgs e)
-        {
-            User user = new User();
-            user.Show();
-            
-        }
+      
 
         private void TBforgotPassword_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
         }
+
+      
     }
 }
