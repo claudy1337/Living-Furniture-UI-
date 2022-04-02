@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:The_Living_Furniture_UI.Pages.userPages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="480" d:DesignWidth="800"
       Title="Request"
       xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes">
 
@@ -20,76 +20,110 @@
             </Grid.RowDefinitions>
 
 
-            <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,10,0,0">
-                <TextBlock Text="Request" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Left"/>
-                <TextBlock TextWrapping="WrapWithOverflow" FontSize="15" Margin="0,5,0,0" Text="It's not long before you embark on this journey!" FontFamily="Poppins Light" HorizontalAlignment="Center" Width="325"/>
-
-
-                <TextBox
-                     material:HintAssist.Hint="Password"
-                     Margin="0,10,0,0"
-                     FontSize="25" HorizontalAlignment="Left"
-                     BorderBrush="Gray"
-                     Padding="7"
-                     Background="#FAF8F6"
-                     FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
-
-
-                <TextBox
-                     material:HintAssist.Hint="Password"
-                     Margin="0,10,0,0"
-                     FontSize="25" HorizontalAlignment="Left"
-                     BorderBrush="Gray"
-                     Padding="7"
-                     Background="#FAF8F6"
-                     FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
-
-
-                <TextBox
-                     material:HintAssist.Hint="Password"
-                     Margin="0,10,0,0"
-                     FontSize="25" HorizontalAlignment="Left"
-                     BorderBrush="Gray"
-                     Padding="7"
-                     Background="#FAF8F6"
-                     FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
-
-
-                <TextBox
-                     material:HintAssist.Hint="Password"
-                     Margin="0,10,0,0"
-                     FontSize="25" HorizontalAlignment="Left"
-                     BorderBrush="Gray"
-                     Padding="7"
-                     Background="#FAF8F6"
-                     FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
-                    <!--number-->
-                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                    <CheckBox VerticalAlignment="Center" Style="{DynamicResource MaterialDesignCheckBox}"/>
-                    <TextBlock Margin="5,0,0,0" TextWrapping="WrapWithOverflow" Text="I've read and agree with Terms of Service and our Privacy Police" FontFamily="Ubuntu Light" Width="249"/>
-                </StackPanel>
-
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 
-                    <Button
-                                         Margin="0,10,0,0"
-                                         Width="220"
-                                         Style="{StaticResource MaterialDesignRaisedDarkButton}"
-                                         Height="55"
-                                         material:ButtonAssist.CornerRadius="25"
-                                         ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
-                                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
-                                         Background="#EB8F4C">
+                <material:Card Width="350" Height="475" material:ShadowAssist.ShadowDepth="Depth5" >
+
+                    <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,10,0,0">
+                        <TextBlock Text="Request" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
+                        <TextBlock TextWrapping="WrapWithOverflow" FontSize="15" Margin="0,5,0,0" Text="It's not long before you embark on this journey!" FontFamily="Poppins Light" HorizontalAlignment="Center" Width="183"/>
+
+                        <TextBox
+                     material:HintAssist.Hint="Name"
+                     Margin="0,10,0,0"
+                     FontSize="25" HorizontalAlignment="Center"
+                     BorderBrush="Gray"
+                     Padding="7"
+                     Background="#FAF8F6"
+                     FontFamily="Ubuntu Light" Width="256" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
+
+                        <TextBox
+                     material:HintAssist.Hint="Number"
+                     FontSize="25" HorizontalAlignment="Center"
+                     BorderBrush="Gray"
+                     Padding="7"
+                     Margin="0,20,0,0"
+                     Background="#FAF8F6"
+                     FontFamily="Ubuntu Light" Width="256" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
+
+                        <ComboBox
+                             Margin="0,20,0,0"
+                             Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                             material:HintAssist.Hint="Size"
+                             ItemsSource="{Binding ShortStringList}"
+                             material:TextFieldAssist.HasClearButton="True"
+                             Width="256">
+                            <TextBlock Text="25x25"/>
+                            <TextBlock Text="100x100"/>
+                            <TextBlock Text="300x300"/>
+                            <ComboBox.SelectedItem>
+                               
+                                <Binding
+                                    Path="SelectedValidationOutlined"
+                                    Mode="TwoWay"
+                                    UpdateSourceTrigger="PropertyChanged">
+                                    <Binding.ValidationRules>
+                                        
+                                    </Binding.ValidationRules>
+                                    
+                                    
+                                </Binding>
+                            </ComboBox.SelectedItem>
+                        </ComboBox>
+
+
                         
-                        <TextBlock
+
+                        <ComboBox
+                            Margin="0,20,0,0"
+                             Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                             material:HintAssist.Hint="Furniture type"
+                             ItemsSource="{Binding ShortStringList}"
+                             material:TextFieldAssist.HasClearButton="True"
+                             Width="256">
+                            <TextBlock Text="Lamp"/>
+                            <TextBlock Text="Cabinet"/>
+                            <TextBlock Text="Chess"/>
+                            <TextBlock Text="Table"/>
+                            <ComboBox.SelectedItem>
+                                <Binding
+                                    Path="SelectedValidationOutlined"
+                                    Mode="TwoWay"
+                                    UpdateSourceTrigger="PropertyChanged">
+                                    <Binding.ValidationRules>
+
+                                    </Binding.ValidationRules>
+                                    
+                                </Binding>
+                            </ComboBox.SelectedItem>
+                        </ComboBox>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                            <CheckBox VerticalAlignment="Center" Style="{DynamicResource MaterialDesignCheckBox}"/>
+                            <TextBlock Margin="5,0,0,0" TextWrapping="WrapWithOverflow" Text="I've read and agree with Terms of Service and our Privacy Police" FontFamily="Ubuntu Light" Width="249"/>
+                        </StackPanel>
+
+
+                        <Button
+                            Margin="0,10,0,0"
+                            Width="220"
+                            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                            Height="55"
+                            material:ButtonAssist.CornerRadius="25"
+                            ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
+                            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
+                            Background="#EB8F4C">
+                            <TextBlock
                             Text="Send"
                             FontSize="29" Height="45"/>
-                        
-                    </Button>
 
+                        </Button>
+                    </StackPanel>
+                </material:Card>
             </StackPanel>
-
+               
             <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Image Source="C:\Users\claud\OneDrive\Рабочий стол\The_Living_Furniture_UI-master\The Living Furniture UI\Assets\Images\req.png"/>
+                <Image Source="C:\Users\claud\OneDrive\Рабочий стол\The_Living_Furniture_UI-master\The Living Furniture UI\Assets\Images\req.png" Height="481" Width="430"/>
             </StackPanel>
         </Grid>
         

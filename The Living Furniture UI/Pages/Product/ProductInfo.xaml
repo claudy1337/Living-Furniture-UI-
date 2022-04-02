@@ -22,7 +22,8 @@
                     <Border/>
                     <Border/>
                     <Expander
-                    ExpandDirection="Right">
+                    ExpandDirection="Right"
+                     HorizontalAlignment="Left">
                         <Expander.Header>
                             <TextBlock
                             Text="Information Product"
