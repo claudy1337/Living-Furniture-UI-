@@ -24,5 +24,10 @@ namespace The_Living_Furniture_UI.Pages.Product
         {
             InitializeComponent();
         }
+
+        private void ProductRatingBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<int> e)
+        {
+
+        }
     }
 }
