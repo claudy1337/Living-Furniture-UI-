@@ -71,9 +71,6 @@
                             </ComboBox.SelectedItem>
                         </ComboBox>
 
-
-                        
-
                         <ComboBox
                             Margin="0,20,0,0"
                              Style="{StaticResource MaterialDesignOutlinedComboBox}"
