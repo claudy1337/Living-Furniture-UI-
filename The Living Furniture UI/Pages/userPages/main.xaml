@@ -15,23 +15,26 @@
                 <ColumnDefinition Width="270"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="440">
+                <material:Card Width="272" material:ShadowAssist.ShadowDepth="Depth5" Margin="25,100,25,25">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Column="0" VerticalAlignment="Bottom" Margin="20,0,0,60">
 
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Column="0" VerticalAlignment="Bottom" Margin="20,0,0,60">
-
-                <Label Content="Furniture" FontFamily="Ubuntu Medium" FontSize="30"/>
-                <TextBlock TextWrapping="Wrap" Margin="5" Text="Furniture Kualitas tinggi
+                        <Label Content="Furniture" FontFamily="Ubuntu Medium" FontSize="30"/>
+                        <TextBlock TextWrapping="Wrap" Margin="5" Text="Furniture Kualitas tinggi
 Pilihan untuk menciptakan rumah yang nyaman" FontFamily="Ubuntu Light" FontSize="15" Width="217"/>
 
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="Consultation" FontFamily="Ubuntu Medium" HorizontalAlignment="Center" FontSize="20" Margin="0,10,0,0"/>
-                    <StackPanel>
-                        
-                       
-                    </StackPanel>
+
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="Consultation" FontFamily="Ubuntu Medium" HorizontalAlignment="Center" FontSize="20" Margin="0,10,0,0"/>
+                            <StackPanel>
 
 
-                    <TextBox
-                     material:HintAssist.Hint="Password"
+                            </StackPanel>
+
+
+                            <TextBox
+                     material:HintAssist.Hint="Name"
                      Margin="0,20,0,0"
                      FontSize="20" HorizontalAlignment="Center"
                      BorderBrush="Gray"
@@ -39,8 +42,8 @@ Pilihan untuk menciptakan rumah yang nyaman" FontFamily="Ubuntu Light" FontSize=
                      Background="#FAF8F6"
                      FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
 
-                    <TextBox
-                     material:HintAssist.Hint="Password"
+                            <TextBox
+                     material:HintAssist.Hint="Number"
                      Margin="0,20,0,0"
                      FontSize="20" HorizontalAlignment="Center"
                      BorderBrush="Gray"
@@ -48,41 +51,44 @@ Pilihan untuk menciptakan rumah yang nyaman" FontFamily="Ubuntu Light" FontSize=
                      Background="#FAF8F6"
                      FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
 
-                    <StackPanel HorizontalAlignment="Right">
-                        <Button Content="Except ->"
+                            <StackPanel HorizontalAlignment="Right">
+                                <Button Content="Except ->"
                         Margin="0,10,10,0"
                         Foreground="White"
                         FontSize="19"
                         FontWeight="Medium">
 
-                            <Button.Style>
-                                <Style TargetType="Button">
-                                    <Setter Property="Background" Value="#EB8F4C"/>
-                                    <Setter Property="Cursor" Value="Hand"/>
-                                    <Setter Property="FontFamily" Value="Poppins Medium"/>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#E2A06F"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="#EB8F4C"/>
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Setter Property="FontFamily" Value="Poppins Medium"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#E2A06F"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
 
 
-                            <Button.Template>
-                                <ControlTemplate TargetType="Button">
-                                    <Border Width="150" Height="45"
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Width="150" Height="45"
                                     CornerRadius="15"
                                     Background="{TemplateBinding Background}">
-                                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Button.Template>
-                        </Button>
-                    </StackPanel>
-                </StackPanel>
-            </StackPanel>
+                                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </StackPanel>
 
+                        </StackPanel>
+
+                    </StackPanel>
+                </material:Card>
+            </StackPanel>
 
             <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <StackPanel>
@@ -97,7 +103,7 @@ Pilihan untuk menciptakan rumah yang nyaman" FontFamily="Ubuntu Light" FontSize=
 
 
                 <StackPanel>
-                   
+
                     <Image Margin="40,50,0,-20" Source="/Assets/Images/MainL.png" Height="314" Width="237"/>
                     <StackPanel Orientation="Horizontal" Margin="55,25,0,0" HorizontalAlignment="Center">
                         <Ellipse Fill="#4B7A90" Height="30" Width="30"/>

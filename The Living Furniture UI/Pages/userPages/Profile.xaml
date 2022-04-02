@@ -6,6 +6,7 @@
       xmlns:local="clr-namespace:The_Living_Furniture_UI.Pages.userPages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+      xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
       Title="Profile">
 
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
@@ -14,59 +15,85 @@
                 <RowDefinition Height="28*"/>
                 <RowDefinition Height="17*"/>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="1" Margin="10,10,10,10">
-                <Image Source="/Assets/Images/account.png" />
-
+            <StackPanel Grid.Row="1" Margin="10">
+                <Image Source="/Assets/Images/account.png"/>
             </StackPanel>
-            <StackPanel>
-                <Grid>
+            <StackPanel Grid.Row="0">
+                <Grid Height="280">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="31*"/>
-                        <ColumnDefinition Width="49*"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="268">
-                        <Label Content="Name"/>
-                        <TextBox
-                     Padding="7"
-                     FontSize="25" HorizontalAlignment="Left"
-                     FontFamily="Ubuntu Light" Style="{DynamicResource MaterialDesignOutlinedTextBox}" Height="45" Width="250"/>
-                        <Label Content="Contacts"/>
-                        <TextBox
-                     Padding="7"
-                     FontSize="25" HorizontalAlignment="Left"
-                     FontFamily="Ubuntu Light" Height="45" Width="250" Style="{DynamicResource MaterialDesignOutlinedTextBox}"/>
+                    <StackPanel Grid.Column="0" >
+                        <material:Card Width="331" material:ShadowAssist.ShadowDepth="Depth5" Height="275">
+                            <StackPanel HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center">
+                                <StackPanel Orientation="Horizontal">
 
-                        <TextBox
-                                Margin="0,20,0,0"
-                     Padding="7"
-                     FontSize="25" HorizontalAlignment="Left"
-                     FontFamily="Ubuntu Light" Height="45" Width="250" Style="{DynamicResource MaterialDesignOutlinedTextBox}"/>
+                                    <StackPanel Orientation="Vertical">
+                                        <Image Source="/Assets/Images/user.png" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="150"/>
+                                        <Button Content="Except ->"
+                                     Margin="0,10,10,0"
+                                     Foreground="White"
+                                     FontSize="19"
+                                     FontWeight="Medium">
+
+                                            <Button.Style>
+                                                <Style TargetType="Button">
+                                                    <Setter Property="Background" Value="#EB8F4C"/>
+                                                    <Setter Property="Cursor" Value="Hand"/>
+                                                    <Setter Property="FontFamily" Value="Poppins Medium"/>
+                                                    <Style.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter Property="Background" Value="#E2A06F"/>
+                                                        </Trigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Button.Style>
 
 
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="-10,20,0,0">
-                            <TextBox Margin="20,0,0,0" Padding="7"
-                     FontSize="25" HorizontalAlignment="Left"
-                     FontFamily="Ubuntu Light" Height="45" Width="100" Style="{DynamicResource MaterialDesignOutlinedTextBox}"/>
-                            <TextBox Margin="20,0,0,0" Padding="7"
-                     FontSize="25" HorizontalAlignment="Left"
-                     FontFamily="Ubuntu Light" Height="45" Width="100" Style="{DynamicResource MaterialDesignOutlinedTextBox}"/>
-                        </StackPanel>
+                                            <Button.Template>
+                                                <ControlTemplate TargetType="Button">
+                                                    <Border Width="150" Height="45"
+                                    CornerRadius="15"
+                                    Background="{TemplateBinding Background}">
+                                                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Button.Template>
+                                        </Button>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBlock Text="Login" FontSize="32" FontFamily="Ubuntu Medium"/>
+                                        <TextBlock Text="Login" FontSize="32" FontFamily="Ubuntu Medium" Margin="0,10,0,0"/>
+                                        <TextBlock Text="Login" FontSize="32" FontFamily="Ubuntu Medium" Margin="0,10,0,0"/>
+
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </material:Card>
                     </StackPanel>
 
-                    <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left" Height="246" Width="300">
-                        <Rectangle Width="145" Height="150">
-                            <Rectangle.Fill>
-                                <ImageBrush ImageSource="/Assets/Images/user.png"/>
-
-                            </Rectangle.Fill>
-                        </Rectangle>
-
-                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,30,0,0">
-                            <TextBox Margin="20,0,0,0" Padding="7"
-                     FontSize="25" HorizontalAlignment="Left"
-                     FontFamily="Ubuntu Light" Height="45" Width="150" Style="{DynamicResource MaterialDesignOutlinedTextBox}"/>
-                        </StackPanel>
-
+                    <StackPanel Grid.Column="1">
+                        <material:Card Width="331" material:ShadowAssist.ShadowDepth="Depth5" Height="275">
+                            <StackPanel Orientation="Horizontal">
+                                <Expander ExpandDirection="Left">
+                                    <Expander.Header>
+                                        <TextBlock Text="User Card"
+                                         FontSize="22"
+                                         FontFamily="Ubuntu Medium"
+                                        RenderTransformOrigin=".5,.5">
+                                            <TextBlock.LayoutTransform>
+                                                <RotateTransform Angle="90" />
+                                            </TextBlock.LayoutTransform>
+                                        </TextBlock>
+                                    </Expander.Header>
+                                    <StackPanel Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" Margin="8,24,16,24">
+                                        <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua " TextWrapping="Wrap" FontSize="15" />
+                                        <TextBlock/>
+                                    </StackPanel>
+                                </Expander>
+                            </StackPanel>
+                        </material:Card>
                     </StackPanel>
                 </Grid>
             </StackPanel>

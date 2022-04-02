@@ -44,7 +44,7 @@ namespace The_Living_Furniture_UI.Pages.others
 
         private void rdOrider_Click(object sender, RoutedEventArgs e)
         {
-            //PagesNavigation.Navigate(new System.Uri("Pages/userPages/Profile.xaml", UriKind.RelativeOrAbsolute));
+            PagesNavigation.Navigate(new System.Uri("Pages/userPages/Profile.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void rdAccount_Click(object sender, RoutedEventArgs e)
