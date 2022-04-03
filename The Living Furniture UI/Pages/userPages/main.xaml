@@ -21,10 +21,14 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                 </Grid>
-                <StackPanel Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,0,0">
-                    
-                    <Image Source="/Assets/Images/Card/Auth/AuthCard1.png" Height="495" Width="425" />
-                </StackPanel>
+                <ScrollViewer>
+                    <StackPanel Grid.Row="0" HorizontalAlignment="Left" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,10,0,0">
+
+                        <Image Source="/Assets/Images/Card/Auth/AuthCard1.png" Height="495" Width="425" />
+                        <Image Source="/Assets/Images/Card/Auth/AuthCard1.png" Height="495" Width="425" />
+                    </StackPanel>
+                </ScrollViewer>
+               
 
                 
 

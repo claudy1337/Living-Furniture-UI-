@@ -12,91 +12,62 @@
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="28*"/>
-                <RowDefinition Height="17*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="1" Margin="10">
-                <Image Source="/Assets/Images/account.png"/>
-            </StackPanel>
             <StackPanel Grid.Row="0">
-                <Grid Height="280">
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0" >
-                        <material:Card Width="331" material:ShadowAssist.ShadowDepth="Depth5" Height="275">
-                            <StackPanel HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center">
-                                <StackPanel Orientation="Horizontal">
-
-                                    <StackPanel Orientation="Vertical">
-                                        <Image Source="/Assets/Images/user.png" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="150"/>
-                                        <Button Content="Except ->"
-                                     Margin="0,10,10,0"
-                                     Foreground="White"
-                                     FontSize="19"
-                                     FontWeight="Medium">
-
-                                            <Button.Style>
-                                                <Style TargetType="Button">
-                                                    <Setter Property="Background" Value="#EB8F4C"/>
-                                                    <Setter Property="Cursor" Value="Hand"/>
-                                                    <Setter Property="FontFamily" Value="Poppins Medium"/>
-                                                    <Style.Triggers>
-                                                        <Trigger Property="IsMouseOver" Value="True">
-                                                            <Setter Property="Background" Value="#E2A06F"/>
-                                                        </Trigger>
-                                                    </Style.Triggers>
-                                                </Style>
-                                            </Button.Style>
-
-
-                                            <Button.Template>
-                                                <ControlTemplate TargetType="Button">
-                                                    <Border Width="150" Height="45"
-                                    CornerRadius="15"
-                                    Background="{TemplateBinding Background}">
-                                                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                                    </Border>
-                                                </ControlTemplate>
-                                            </Button.Template>
-                                        </Button>
-                                    </StackPanel>
-                                    <StackPanel Orientation="Vertical">
-                                        <TextBlock Text="Login" FontSize="32" FontFamily="Ubuntu Light"/>
-                                        <TextBlock Text="Login" FontSize="32" FontFamily="Ubuntu Light" Margin="0,10,0,0"/>
-                                        <TextBlock Text="Login" FontSize="32" FontFamily="Ubuntu Light" Margin="0,10,0,0"/>
-
-                                    </StackPanel>
-                                </StackPanel>
+                    <StackPanel Grid.Column="0" Margin="20">
+                        <material:Card material:ShadowAssist.ShadowDepth="Depth5" Height="290">
+                            <StackPanel HorizontalAlignment="Center" Orientation="Vertical" VerticalAlignment="Center" >
+                                <Image Source="/Assets/Images/user.png" Height="200"/>
+                                <TextBlock Text="Name Name" HorizontalAlignment="Center" FontSize="25" FontFamily="Ubuntu Medium" Margin="0,10,0,0"/>
                             </StackPanel>
                         </material:Card>
                     </StackPanel>
 
-                    <StackPanel Grid.Column="1">
-                        <material:Card Width="331" material:ShadowAssist.ShadowDepth="Depth5" Height="275">
-                            <StackPanel Orientation="Horizontal">
-                                <Expander ExpandDirection="Left">
-                                    <Expander.Header>
-                                        <TextBlock Text="User Card"
-                                         FontSize="22"
-                                         FontFamily="Ubuntu Medium"
-                                        RenderTransformOrigin=".5,.5">
-                                            <TextBlock.LayoutTransform>
-                                                <RotateTransform Angle="90" />
-                                            </TextBlock.LayoutTransform>
-                                        </TextBlock>
-                                    </Expander.Header>
-                                    <StackPanel Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" Margin="8,24,16,24">
-                                        <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua " TextWrapping="Wrap" FontSize="15" />
-                                        <TextBlock/>
-                                    </StackPanel>
-                                </Expander>
-                            </StackPanel>
-                        </material:Card>
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="290" >
+                        <TextBox
+                            Margin="0,20,0,0"
+                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                            VerticalAlignment="Top"
+                            TextWrapping="Wrap"
+                            MaxLength="25"
+                            material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                            material:HintAssist.Hint="Name"
+                            FontFamily="Ubuntu Light"
+                            FontSize="15"/>
+
+                        <TextBox
+                            Margin="0,20,0,0"
+                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                            VerticalAlignment="Top"
+                            TextWrapping="Wrap"
+                            MaxLength="25"
+                            material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                            material:HintAssist.Hint="Name"
+                            FontFamily="Ubuntu Light"
+                            FontSize="15"/>
+
+                        <TextBox
+                            Margin="0,20,0,0"
+                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                            VerticalAlignment="Top"
+                            TextWrapping="Wrap"
+                            MaxLength="25"
+                            material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                            material:HintAssist.Hint="Name"
+                            FontFamily="Ubuntu Light"
+                            FontSize="15"/>
                     </StackPanel>
                 </Grid>
+
             </StackPanel>
+
         </Grid>
     </Border>
 </Page>
