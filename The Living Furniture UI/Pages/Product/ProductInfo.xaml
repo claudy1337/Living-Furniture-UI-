@@ -25,6 +25,7 @@
                             <Border/>
                             <Border/>
                             <Expander
+                                IsExpanded="True"
                                 ExpandDirection="Right"
                                 HorizontalAlignment="Left">
                                 <Expander.Header>
