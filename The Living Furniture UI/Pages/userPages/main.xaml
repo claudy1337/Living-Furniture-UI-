@@ -12,109 +12,80 @@
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="270"/>
+                <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="440">
-                <material:Card Width="272" material:ShadowAssist.ShadowDepth="Depth5" Margin="25,100,25,25">
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Column="0" VerticalAlignment="Bottom" Margin="20,0,0,60">
+            <StackPanel Grid.Column="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                </Grid>
+                <StackPanel Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,0,0">
+                    
+                    <Image Source="/Assets/Images/Card/Auth/AuthCard1.png" Height="495" Width="425" />
+                </StackPanel>
 
-                        <Label Content="Furniture" FontFamily="Ubuntu Medium" FontSize="30"/>
-                        <TextBlock TextWrapping="Wrap" Margin="5" Text="Furniture Kualitas tinggi
-Pilihan untuk menciptakan rumah yang nyaman" FontFamily="Ubuntu Light" FontSize="15" Width="217"/>
+                
+
+               
+            </StackPanel>
+
+            <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+                <material:Card Width="350" material:ShadowAssist.ShadowDepth="Depth5" Margin="20">
+                    <Grid Background="White" Height="300">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Vertical" >
+                                <TextBlock Text="Consultation" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,30,0,0" FontSize="20" FontFamily="Ubuntu Medium"/>
+                                <StackPanel HorizontalAlignment="Center">
+                                    <StackPanel>
+
+                                        <TextBox
+                                            Margin="0,20,0,0"
+                                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                                            VerticalAlignment="Top"
+                                            TextWrapping="Wrap"
+                                            MaxLength="25"
+                                            material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                            material:HintAssist.Hint="Name"
+                                            FontFamily="Ubuntu Light"
+                                            FontSize="15"/>
+
+                                        <TextBox
+                                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                                            VerticalAlignment="Top"
+                                            TextWrapping="Wrap"
+                                            MaxLength="12"
+                                            FontSize="15"
+                                            FontFamily="Ubuntu Light"
+                                            Margin="0,20,0,0"
+                                            material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                            material:HintAssist.Hint="Number"/>
 
 
-                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="Consultation" FontFamily="Ubuntu Medium" HorizontalAlignment="Center" FontSize="20" Margin="0,10,0,0"/>
-                            <StackPanel>
-
-
+                                    </StackPanel>
+                                    <Button
+                                         x:Name="Btn"
+                                         Margin="0,20,20,0"
+                                         Width="220"
+                                         Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                                         Height="55"
+                                         material:ButtonAssist.CornerRadius="25"
+                                         ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
+                                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
+                                         Background="#388F72"
+>
+                                        <TextBlock
+                                        HorizontalAlignment="Right"
+                                        Text="Send"
+                                        FontSize="29" Height="45"/>
+                                    </Button>
+                                </StackPanel>
                             </StackPanel>
-
-
-                            <TextBox
-                     material:HintAssist.Hint="Name"
-                     Margin="0,20,0,0"
-                     FontSize="20" HorizontalAlignment="Center"
-                     BorderBrush="Gray"
-                     Padding="7"
-                     Background="#FAF8F6"
-                     FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
-
-                            <TextBox
-                     material:HintAssist.Hint="Number"
-                     Margin="0,20,0,0"
-                     FontSize="20" HorizontalAlignment="Center"
-                     BorderBrush="Gray"
-                     Padding="7"
-                     Background="#FAF8F6"
-                     FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
-
-                            <StackPanel HorizontalAlignment="Right">
-                                <Button Content="Except ->"
-                        Margin="0,10,10,0"
-                        Foreground="White"
-                        FontSize="19"
-                        FontWeight="Medium">
-
-                                    <Button.Style>
-                                        <Style TargetType="Button">
-                                            <Setter Property="Background" Value="#EB8F4C"/>
-                                            <Setter Property="Cursor" Value="Hand"/>
-                                            <Setter Property="FontFamily" Value="Poppins Medium"/>
-                                            <Style.Triggers>
-                                                <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter Property="Background" Value="#E2A06F"/>
-                                                </Trigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </Button.Style>
-
-
-                                    <Button.Template>
-                                        <ControlTemplate TargetType="Button">
-                                            <Border Width="150" Height="45"
-                                    CornerRadius="15"
-                                    Background="{TemplateBinding Background}">
-                                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                </Button>
-                            </StackPanel>
-
                         </StackPanel>
-
-                    </StackPanel>
+                    </Grid>
                 </material:Card>
             </StackPanel>
-
-            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <StackPanel>
-                    <Image Source="/Assets/Images/mainC.png" Height="321" Width="242"/>
-                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Center">
-                        <Ellipse Fill="#EB8F4C" Height="30" Width="30"/>
-                        <Ellipse Fill="#B49298" Height="30" Width="30" Margin="10,0,0,0"/>
-                        <Ellipse Fill="#4B7A90" Height="30" Width="30" Margin="10,0,0,0"/>
-                        <Ellipse Fill="#CC533E" Height="30" Width="30" Margin="10,0,0,0"/>
-                    </StackPanel>
-                </StackPanel>
-
-
-                <StackPanel>
-
-                    <Image Margin="40,50,0,-20" Source="/Assets/Images/MainL.png" Height="314" Width="237"/>
-                    <StackPanel Orientation="Horizontal" Margin="55,25,0,0" HorizontalAlignment="Center">
-                        <Ellipse Fill="#4B7A90" Height="30" Width="30"/>
-                        <Ellipse Fill="#CC533E" Height="30" Width="30" Margin="10,0,0,0"/>
-                    </StackPanel>
-                </StackPanel>
-
-            </StackPanel>
-
-
-
         </Grid>
     </Border>
 </Page>
