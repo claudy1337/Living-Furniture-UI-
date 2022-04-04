@@ -11,63 +11,105 @@
 
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="2*"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0" Margin="20">
-                        <material:Card material:ShadowAssist.ShadowDepth="Depth5" Height="290">
-                            <StackPanel HorizontalAlignment="Center" Orientation="Vertical" VerticalAlignment="Center" >
-                                <Image Source="/Assets/Images/user.png" Height="200"/>
-                                <TextBlock Text="Name Name" HorizontalAlignment="Center" FontSize="25" FontFamily="Ubuntu Medium" Margin="0,10,0,0"/>
-                            </StackPanel>
-                        </material:Card>
-                    </StackPanel>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="97*"/>
+                <ColumnDefinition Width="63*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <material:Card Width="483" Height="450" material:ShadowAssist.ShadowDepth="Depth5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
+                                    <Image Source="/Assets/Images/user.png" Height="175" material:ShadowAssist.ShadowDepth="Depth1" Width="219"/>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200">
+                                    <TextBox
+                                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                                            VerticalAlignment="Top"
+                                            TextWrapping="Wrap"
+                                            MaxLength="12"
+                                            FontSize="15"
+                                            FontFamily="Ubuntu Light"
+                                            Margin="0,20,0,0"
+                                            material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                            material:HintAssist.Hint="Name"/>
 
-                    <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="290" >
-                        <TextBox
-                            Margin="0,20,0,0"
-                            Style="{StaticResource MaterialDesignFilledTextBox}"
-                            VerticalAlignment="Top"
-                            TextWrapping="Wrap"
-                            MaxLength="25"
-                            material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
-                            material:HintAssist.Hint="Name"
-                            FontFamily="Ubuntu Light"
-                            FontSize="15"/>
+                                    <TextBox
+                                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                                            VerticalAlignment="Top"
+                                            TextWrapping="Wrap"
+                                            MaxLength="12"
+                                            FontSize="15"
+                                            FontFamily="Ubuntu Light"
+                                            Margin="0,20,0,0"
+                                            material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                            material:HintAssist.Hint="Login"/>
 
-                        <TextBox
-                            Margin="0,20,0,0"
-                            Style="{StaticResource MaterialDesignFilledTextBox}"
-                            VerticalAlignment="Top"
-                            TextWrapping="Wrap"
-                            MaxLength="25"
-                            material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
-                            material:HintAssist.Hint="Name"
-                            FontFamily="Ubuntu Light"
-                            FontSize="15"/>
+                                    <TextBox
+                                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                                            VerticalAlignment="Top"
+                                            TextWrapping="Wrap"
+                                            MaxLength="12"
+                                            FontSize="15"
+                                            FontFamily="Ubuntu Light"
+                                            Margin="0,20,0,0"
+                                            material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                            material:HintAssist.Hint="Address"/>
 
-                        <TextBox
-                            Margin="0,20,0,0"
-                            Style="{StaticResource MaterialDesignFilledTextBox}"
-                            VerticalAlignment="Top"
-                            TextWrapping="Wrap"
-                            MaxLength="25"
-                            material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
-                            material:HintAssist.Hint="Name"
-                            FontFamily="Ubuntu Light"
-                            FontSize="15"/>
-                    </StackPanel>
-                </Grid>
-
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                </material:Card>
             </StackPanel>
 
+            <StackPanel Grid.Column="1">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0">
+                        <StackPanel Grid.RowSpan="2">
+                            <material:Card Width="331" material:ShadowAssist.ShadowDepth="Depth5" >
+                                <StackPanel Orientation="Horizontal" Height="200">
+                                    <Expander ExpandDirection="Left">
+                                        <Expander.Header>
+                                            <TextBlock Text="User Card"
+                                         FontSize="22"
+                                         FontFamily="Ubuntu Medium"
+                                        RenderTransformOrigin=".5,.5">
+                                                <TextBlock.LayoutTransform>
+                                                    <RotateTransform Angle="90" />
+                                                </TextBlock.LayoutTransform>
+                                            </TextBlock>
+                                        </Expander.Header>
+                                        <StackPanel Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" Margin="8,24,16,24">
+                                            <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua " TextWrapping="Wrap" FontSize="15" />
+                                            <TextBlock/>
+                                        </StackPanel>
+                                    </Expander>
+                                </StackPanel>
+                            </material:Card>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1">
+
+
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
         </Grid>
     </Border>
 </Page>
