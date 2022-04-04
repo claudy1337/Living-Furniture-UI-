@@ -68,6 +68,10 @@
                                 </StackPanel>
                             </Grid>
                         </StackPanel>
+
+                        <StackPanel Grid.Row="1">
+                            
+                        </StackPanel>
                     </Grid>
                 </material:Card>
             </StackPanel>
@@ -88,7 +92,7 @@
                                             <TextBlock Text="User Card"
                                          FontSize="22"
                                          FontFamily="Ubuntu Medium"
-                                        RenderTransformOrigin=".5,.5">
+                                         RenderTransformOrigin=".5,.5">
                                                 <TextBlock.LayoutTransform>
                                                     <RotateTransform Angle="90" />
                                                 </TextBlock.LayoutTransform>

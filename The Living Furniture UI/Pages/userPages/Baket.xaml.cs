@@ -25,6 +25,7 @@ namespace The_Living_Furniture_UI.Pages.userPages
         {
             InitializeComponent();
         }
-       
+
+        
     }
 }

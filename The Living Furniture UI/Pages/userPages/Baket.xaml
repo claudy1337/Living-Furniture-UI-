@@ -10,65 +10,177 @@
       xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
       Title="Baket">
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="47*"/>
+                <ColumnDefinition Width="33*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <StackPanel Orientation="Horizontal">
+                    <ListView>
+                        <ListViewItem>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Assets/Images/mainC.png" Height="250"/>
+                                <StackPanel Orientation="Vertical" Margin="20,0,0,0">
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                        
+                                        <Border/>
+                                        <Expander
+                                            Width="auto"
+                                            Height="250"
+                                            ExpandDirection="Right">
+                                            <Expander.Header>
+                                                <TextBlock
+                                                    Text="Information"
+                                                    FontSize="22"
+                                                    RenderTransformOrigin=".5,.5">
+                                                    <TextBlock.LayoutTransform>
+                                                        <RotateTransform
+                                                            Angle="90" />
+                                                    </TextBlock.LayoutTransform>
+                                                </TextBlock>
+                                                
+                                            </Expander.Header>
+                                            
+                                            <StackPanel
+                                                Orientation="Vertical"
+                                                TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
+                                                Margin="8,24,16,24">
 
-        <!-- simplest form 
-        
-        
-        <material:PopupBox
-  
-  PlacementMode="BottomAndAlignCentres"
-  ToolTipService.Placement="Right"
-  ToolTip="PopupBox, Style MaterialDesignMultiFloatingActionPopupBox"
-  
-  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
-            <StackPanel>
-                <ToggleButton
-                                Background="Black"
-                                Style="{StaticResource MaterialDesignFlatToggleButton}"
-                                Content="{material:PackIcon Kind=FormatColorFill, Size=25}"
-                                ToolTip="MaterialDesignFlatToggleButton">
+                                                <TextBox
+                                            Margin="0,20,0,0"
+                                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                                            VerticalAlignment="Top"
+                                            TextWrapping="Wrap"
+                                            Width="150"
+                                            material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                            material:HintAssist.Hint="Name"
+                                            FontFamily="Ubuntu Light"
+                                            FontSize="15"/>
 
-                </ToggleButton>
-                <ToggleButton
-                                Background="Black"
-                                Style="{StaticResource MaterialDesignFlatToggleButton}"
-                                Content="{material:PackIcon Kind=FormatColorFill, Size=25}"
-                                ToolTip="MaterialDesignFlatToggleButton">
+                                                <TextBox
+                                            Margin="0,20,0,0"
+                                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                                            VerticalAlignment="Top"
+                                            TextWrapping="Wrap"
+                                            Width="150"
+                                            material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                            material:HintAssist.Hint="Size"
+                                            FontFamily="Ubuntu Light"
+                                            FontSize="15"/>
 
-                </ToggleButton>
-                <ToggleButton
-                                Background="Black"
-                                Style="{StaticResource MaterialDesignFlatToggleButton}"
-                                Content="{material:PackIcon Kind=FormatColorFill, Size=25}"
-                                ToolTip="MaterialDesignFlatToggleButton">
+                                                <TextBox
+                                            Margin="0,20,0,0"
+                                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                                            VerticalAlignment="Top"
+                                            TextWrapping="Wrap"
+                                            Width="150"
+                                            material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                            material:HintAssist.Hint="Material"
+                                            FontFamily="Ubuntu Light"
+                                            FontSize="15"/>
+                                            </StackPanel>
+                                        </Expander>
+                                        
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                            <material:PopupBox
+                                                StaysOpen="True"
+                                                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                                                <Grid Width="200" Margin="8,8,8,8">
+                                                    <Grid.Resources>
+                                                        <Style TargetType="TextBox"
+                                                                BasedOn="{StaticResource MaterialDesignTextBox}">
+                                                            <Setter
+                                                                Property="material:HintAssist.IsFloating"
+                                                                Value="True" />
+                                                            <Setter
+                                                                Property="Margin"
+                                                                Value="8,8,8,8" />
+                                                        </Style>
+                                                    </Grid.Resources>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="Auto" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+                                                    <TextBlock Grid.Column="0"
+                                                        Grid.Row="0"
+                                                        Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                                                        Margin="8,8,8,16"
+                                                        Text="Full Information"/>
 
-                </ToggleButton>
+                                                    <StackPanel Orientation="Vertical" Margin="0,20,0,0">
+                                                        <TextBox
+                                            Grid.Row="1"
+                                            Margin="0,20,0,0"
+                                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                                            VerticalAlignment="Top"
+                                            TextWrapping="Wrap"
+                                            Width="150"
+                                            material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                            material:HintAssist.Hint="Material"
+                                            FontFamily="Ubuntu Light"
+                                            FontSize="15"/>
+
+                                                        <TextBox
+                                            Grid.Row="2"                
+                                            Margin="0,20,0,0"
+                                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                                            VerticalAlignment="Top"
+                                            TextWrapping="Wrap"
+                                            Width="150"
+                                            material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                            material:HintAssist.Hint="Material"
+                                            FontFamily="Ubuntu Light"
+                                            FontSize="15"/>
+
+                                                        <TextBox
+                                            Grid.Row="3"                
+                                            Margin="0,20,0,0"
+                                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                                            VerticalAlignment="Top"
+                                            TextWrapping="Wrap"
+                                            Width="150"
+                                            material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                            material:HintAssist.Hint="Material"
+                                            FontFamily="Ubuntu Light"
+                                            FontSize="15"/>
+
+                                                        <TextBox
+                                            Grid.Row="4"                
+                                            Margin="0,20,0,0"
+                                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                                            VerticalAlignment="Top"
+                                            TextWrapping="Wrap"
+                                            Width="150"
+                                            material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                            material:HintAssist.Hint="Material"
+                                            FontFamily="Ubuntu Light"
+                                            FontSize="15"/>
+
+                                                        <StackPanel Orientation="Horizontal" Grid.Row="5">
+                                                            <Button Background="Black"/>
+                                                            <Button Background="Black"/>
+                                                        </StackPanel>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </material:PopupBox>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </ListViewItem>
+                    </ListView>
+                </StackPanel>
             </StackPanel>
-        </material:PopupBox>
-        -->
-
-        <!-- floating action button with progress -->
-
-        <material:Card Width="331" material:ShadowAssist.ShadowDepth="Depth5" Height="275">
-            <StackPanel Orientation="Horizontal">
-                <Expander ExpandDirection="Left">
-                    <Expander.Header>
-                        <TextBlock Text="User Card"
-                                         FontSize="22"
-                                         FontFamily="Ubuntu Medium"
-                                        RenderTransformOrigin=".5,.5">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="90" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Expander.Header>
-                    <StackPanel Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" Margin="8,24,16,24">
-                        <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua " TextWrapping="Wrap" FontSize="15" />
-                        <TextBlock/>
-                    </StackPanel>
-                </Expander>
-            </StackPanel>
-        </material:Card>
+        </Grid>
     </Border>
 </Page>
 
