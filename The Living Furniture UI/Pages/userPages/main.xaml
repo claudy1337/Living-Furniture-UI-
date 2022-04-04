@@ -24,8 +24,8 @@
                 <ScrollViewer>
                     <StackPanel Grid.Row="0" HorizontalAlignment="Left" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,10,0,0">
 
-                        <Image Source="/Assets/Images/Card/Auth/AuthCard1.png" Height="495" Width="425" />
-                        <Image Source="/Assets/Images/Card/Auth/AuthCard1.png" Height="495" Width="425" />
+                        <Image  x:Name="authCard" Source="/Assets/Images/Card/Auth/1.png" Height="495" Width="425" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+
                     </StackPanel>
                 </ScrollViewer>
                

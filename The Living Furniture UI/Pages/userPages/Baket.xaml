@@ -165,7 +165,7 @@
                                             FontFamily="Ubuntu Light"
                                             FontSize="15"/>
 
-                                                        <StackPanel Orientation="Horizontal" Grid.Row="5">
+                                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5">
                                                             <Button Background="Black"/>
                                                             <Button Background="Black"/>
                                                         </StackPanel>
@@ -177,6 +177,8 @@
                                 </StackPanel>
                             </StackPanel>
                         </ListViewItem>
+                        
+                        
                     </ListView>
                 </StackPanel>
             </StackPanel>

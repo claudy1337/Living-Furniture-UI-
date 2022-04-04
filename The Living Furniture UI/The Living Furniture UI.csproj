@@ -378,10 +378,10 @@
     <Resource Include="Assets\Images\Furniture\Cabinet\Cabinet %283%29.png" />
     <Resource Include="Assets\Images\Furniture\Cabinet\Cabinet %284%29.png" />
     <Resource Include="Assets\Images\Furniture\Cabinet\Cabinet %285%29.png" />
-    <Resource Include="Assets\Images\Card\Auth\AuthCard1.png" />
-    <Resource Include="Assets\Images\Card\Auth\AuthCard2.png" />
-    <Resource Include="Assets\Images\Card\Auth\AuthCard3.png" />
     <Resource Include="Assets\Images\raiting.png" />
+    <Resource Include="Assets\Images\Card\Auth\1.png" />
+    <Resource Include="Assets\Images\Card\Auth\2.png" />
+    <Resource Include="Assets\Images\Card\Auth\3.png" />
     <Content Include="Core\Compression\Snappy\lib\win\snappy32.dll" />
     <Content Include="Core\Compression\Snappy\lib\win\snappy64.dll" />
     <Content Include="Core\Compression\Zstandard\lib\win\libzstd.dll" />

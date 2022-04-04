@@ -20,9 +20,15 @@ namespace The_Living_Furniture_UI.Pages.userPages
     /// </summary>
     public partial class main : Page
     {
+        int i = 1;
         public main()
         {
             InitializeComponent();
+        }
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+           
         }
     }
 }
