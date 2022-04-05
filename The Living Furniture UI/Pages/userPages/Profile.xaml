@@ -70,8 +70,16 @@
                         </StackPanel>
 
                         <StackPanel Grid.Row="1">
-                            
+                            <StackPanel>
+                                <StackPanel>
+                                    <CheckBox
+                                        x:Name="MaterialDesignOutlinedTextBoxTextCountComboBox" Content="Save"/>
+                                    <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Top" Height="100" TextWrapping="Wrap" MaxLength="40" material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}" VerticalScrollBarVisibility="Auto" material:HintAssist.Hint="About Me" />
+                                </StackPanel>
+
+                            </StackPanel>
                         </StackPanel>
+                        
                     </Grid>
                 </material:Card>
             </StackPanel>
@@ -102,18 +110,19 @@
                                             <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua " TextWrapping="Wrap" FontSize="15" />
                                             <TextBlock/>
                                         </StackPanel>
-                                    </Expander>
+                                    </Expander> 
                                 </StackPanel>
                             </material:Card>
                         </StackPanel>
+                        
                     </StackPanel>
 
-                    <StackPanel Grid.Row="1">
-
-
+                    <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        
                     </StackPanel>
                 </Grid>
             </StackPanel>
+            
         </Grid>
     </Border>
 </Page>

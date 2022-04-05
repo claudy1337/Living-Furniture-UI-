@@ -80,8 +80,7 @@
                                          material:ButtonAssist.CornerRadius="25"
                                          ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
                                          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
-                                         Background="#388F72"
->
+                                         Background="#388F72">
                                     <TextBlock
                                         Text="Sign In"
                                         FontSize="29" Height="45"/>
