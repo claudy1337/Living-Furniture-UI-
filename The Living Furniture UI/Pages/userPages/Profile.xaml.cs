@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 
 namespace The_Living_Furniture_UI.Pages.userPages
 {
@@ -20,9 +21,16 @@ namespace The_Living_Furniture_UI.Pages.userPages
     /// </summary>
     public partial class Profile : Page
     {
+        ObservableCollection<string> imgCollection;
         public Profile()
         {
             InitializeComponent();
+            imgCollection = new ObservableCollection<string> { "/Assets/Images/Card/Furniture/f1.png", "/Assets/Images/Card/Furniture/f2.png" };
+            
+        }
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            
         }
     }
 }

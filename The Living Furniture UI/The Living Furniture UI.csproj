@@ -359,7 +359,6 @@
     <Resource Include="Assets\Images\FurnitureList.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Images\search.png" />
     <Resource Include="Assets\Images\user.png" />
     <Resource Include="Assets\Images\req.png" />
     <Resource Include="Assets\Images\Furniture\Collection\Chair.png" />
@@ -371,7 +370,6 @@
     <Resource Include="Assets\Images\account.png" />
     <Resource Include="Assets\Images\Furniture\Collection\Cabinet.png" />
     <Resource Include="Assets\Images\signUp.png" />
-    <Resource Include="Assets\Images\Lock.png" />
     <Resource Include="Assets\Images\Furniture\Cabinet\Cabinet %286%29.png" />
     <Resource Include="Assets\Images\Furniture\Cabinet\Cabinet %281%29.png" />
     <Resource Include="Assets\Images\Furniture\Cabinet\Cabinet %282%29.png" />
@@ -382,6 +380,9 @@
     <Resource Include="Assets\Images\Card\Auth\1.png" />
     <Resource Include="Assets\Images\Card\Auth\2.png" />
     <Resource Include="Assets\Images\Card\Auth\3.png" />
+    <Resource Include="Assets\Images\Card\Furniture\f1.png" />
+    <Resource Include="Assets\Images\Card\Furniture\f2.png" />
+    <Resource Include="Assets\Images\Card\Furniture\f3.png" />
     <Content Include="Core\Compression\Snappy\lib\win\snappy32.dll" />
     <Content Include="Core\Compression\Snappy\lib\win\snappy64.dll" />
     <Content Include="Core\Compression\Zstandard\lib\win\libzstd.dll" />

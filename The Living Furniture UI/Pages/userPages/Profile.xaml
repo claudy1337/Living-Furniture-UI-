@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:The_Living_Furniture_UI.Pages.userPages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="470" d:DesignWidth="800"
       xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
       Title="Profile">
 
@@ -16,7 +16,7 @@
                 <ColumnDefinition Width="63*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
-                <material:Card Width="483" Height="450" material:ShadowAssist.ShadowDepth="Depth5">
+                <material:Card Width="483" Height="470" material:ShadowAssist.ShadowDepth="Depth5">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -69,15 +69,9 @@
                             </Grid>
                         </StackPanel>
 
-                        <StackPanel Grid.Row="1">
-                            <StackPanel>
-                                <StackPanel>
-                                    <CheckBox
-                                        x:Name="MaterialDesignOutlinedTextBoxTextCountComboBox" Content="Save"/>
-                                    <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Top" Height="100" TextWrapping="Wrap" MaxLength="40" material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}" VerticalScrollBarVisibility="Auto" material:HintAssist.Hint="About Me" />
-                                </StackPanel>
-
-                            </StackPanel>
+                        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+                            <Image Source="{Binding imgCollection}" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+                            <Image Source="/Assets/Images/Card/Furniture/f1.png" />
                         </StackPanel>
                         
                     </Grid>
@@ -110,19 +104,35 @@
                                             <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua " TextWrapping="Wrap" FontSize="15" />
                                             <TextBlock/>
                                         </StackPanel>
-                                    </Expander> 
+                                    </Expander>
                                 </StackPanel>
                             </material:Card>
                         </StackPanel>
-                        
+
                     </StackPanel>
 
-                    <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        
+                    <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0">
+                        <material:Card material:ShadowAssist.ShadowDepth="Depth5">
+                            <TabControl
+                                    Width="300"
+                                    material:ColorZoneAssist.Mode="SecondaryMid" Height="250">
+                                <TabItem
+                                    Header="Order">
+                                    <TextBlock
+                                        Margin="8"
+                                        Text="SecondaryMid Tab 1" />
+                                </TabItem>
+                                <TabItem
+                                    Header="TAB 2">
+                                    <TextBlock
+                                    Margin="8"
+                                     Text="SecondaryMid Tab 2" />
+                                </TabItem>
+                            </TabControl>
+                        </material:Card>
                     </StackPanel>
                 </Grid>
             </StackPanel>
-            
         </Grid>
     </Border>
 </Page>
