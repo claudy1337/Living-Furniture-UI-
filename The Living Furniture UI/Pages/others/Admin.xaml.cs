@@ -23,5 +23,10 @@ namespace The_Living_Furniture_UI.Pages.others
         {
             InitializeComponent();
         }
+
+        private void rdAccounts_Click(object sender, RoutedEventArgs e)
+        {
+            PagesNavigation.Navigate(new System.Uri("Pages/adminPages/FullOrders.xaml", UriKind.RelativeOrAbsolute));
+        }
     }
 }

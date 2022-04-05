@@ -9,9 +9,6 @@
       Title="UserControl">
     <Border CornerRadius="10" Background="{DynamicResource SecundaryBackgroundColor}">
         
-         
-            
-      
     </Border>
             
 </Page>
