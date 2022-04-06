@@ -17,11 +17,10 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="11*"/>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" Grid.Column="0">
+            <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,266,0">
                 <material:Card
                     Height="150"
                     Width="266"
@@ -30,15 +29,15 @@
                     Padding="32">
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <StackPanel Orientation="Horizontal">
-                            <material:PackIcon Kind="Account" HorizontalAlignment="Left" Height="50" Width="50" />
-                            <TextBlock Text="User" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
+                            <material:PackIcon Kind="Account" Foreground="{DynamicResource PrimaryBlueColor}" HorizontalAlignment="Left" Height="50" Width="50" />
+                            <TextBlock Text="User" Foreground="{DynamicResource PrimaryBlueColor}" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
                         </StackPanel>
-                        <TextBlock Text="200" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
+                        <TextBlock Text="200" Foreground="{DynamicResource PrimaryBlueColor}" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </material:Card>
-                    
+
             </StackPanel>
-            
+
             <StackPanel Grid.Row="0" Grid.Column="1">
                 <material:Card
                     Height="150"
@@ -48,15 +47,16 @@
                     Padding="32">
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <StackPanel Orientation="Horizontal">
-                            <material:PackIcon Kind="Account" HorizontalAlignment="Left" Height="50" Width="50" />
-                            <TextBlock Text="User" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
+
+                            <material:PackIcon Kind="ChartLine" HorizontalAlignment="Left" Height="50" Width="50" />
+                            <TextBlock Text="Orders" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
                         </StackPanel>
                         <TextBlock Text="200" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </material:Card>
             </StackPanel>
 
-            <StackPanel Grid.Row="0" Grid.Column="2">
+            <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="266,0,0,0">
                 <material:Card
                     Height="150"
                     Width="266"
@@ -65,113 +65,234 @@
                     Padding="32">
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <StackPanel Orientation="Horizontal">
-                            <material:PackIcon Kind="Account" HorizontalAlignment="Left" Height="50" Width="50" />
-                            <TextBlock Text="User" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
+
+                            <material:PackIcon Kind="Warehouse" HorizontalAlignment="Left" Height="50" Width="50" />
+                            <TextBlock Text="Products" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
                         </StackPanel>
                         <TextBlock Text="200" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </material:Card>
             </StackPanel>
 
-            <StackPanel Grid.Row="1" Grid.Column="0">
+            <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,266,0">
                 <material:Card
-                    Height="150"
-                    Width="266"
-                    material:ShadowAssist.ShadowDepth="Depth4"
-                    material:ShadowAssist.ShadowEdges="Bottom,Left"
-                    Padding="32">
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <StackPanel Orientation="Horizontal">
-                            <material:PackIcon Kind="Account" HorizontalAlignment="Left" Height="50" Width="50" />
-                            <TextBlock Text="User" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
+                        Width="200">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+                             Height="140" />
+                            <RowDefinition
+                             Height="*" />
+                            <RowDefinition
+                             Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Image
+                             Source="/Assets/Images/user.png" 
+                             Height="140"
+                             Width="196"
+      Stretch="UniformToFill" />
+                        <Button
+      Grid.Row="0"
+      Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+      HorizontalAlignment="Right"
+      VerticalAlignment="Bottom"
+      Margin="0 0 16 -20">
+                            <material:PackIcon
+        Kind="Bike" />
+                        </Button>
+                        <StackPanel
+      Grid.Row="1"
+      Margin="8 24 8 0">
+                            <TextBlock
+        FontWeight="Bold">
+      Cycling
+                            </TextBlock>
+                            <TextBlock
+        TextWrapping="Wrap"
+        VerticalAlignment="Center"
+        Text="A great way to keep fit and forget about the constant grind of IT." />
                         </StackPanel>
-                        <TextBlock Text="200" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
-                    </StackPanel>
+                        <StackPanel
+      HorizontalAlignment="Right"
+      Grid.Row="2"
+      Orientation="Horizontal"
+      Margin="8">
+                            <Button
+        Style="{StaticResource MaterialDesignToolButton}"
+        Width="30"
+        Padding="2 0 2 0"
+        material:RippleAssist.IsCentered="True">
+                                <material:PackIcon
+          Kind="ShareVariant" />
+                            </Button>
+                            <Button
+        Style="{StaticResource MaterialDesignToolButton}"
+        Width="30"
+        Padding="2 0 2 0"
+        material:RippleAssist.IsCentered="True">
+                                <material:PackIcon
+          Kind="Heart" />
+                            </Button>
+                            <material:PopupBox
+       
+        Padding="2 0 2 0">
+                                <StackPanel>
+                                    <Button
+            Content="More" />
+                                    <Button
+            Content="Options" />
+                                </StackPanel>
+                            </material:PopupBox>
+                        </StackPanel>
+                    </Grid>
                 </material:Card>
             </StackPanel>
 
             <StackPanel Grid.Row="1" Grid.Column="1">
                 <material:Card
-                    Height="150"
-                    Width="266"
-                    material:ShadowAssist.ShadowDepth="Depth4"
-                    material:ShadowAssist.ShadowEdges="Bottom,Left"
-                    Padding="32">
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <StackPanel Orientation="Horizontal">
-                            <material:PackIcon Kind="Account" HorizontalAlignment="Left" Height="50" Width="50" />
-                            <TextBlock Text="User" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
+  Width="200">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+        Height="140" />
+                            <RowDefinition
+        Height="*" />
+                            <RowDefinition
+        Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Image
+      Source="/Assets/Images/user.png" 
+      Height="140"
+      Width="196"
+      Stretch="UniformToFill" />
+                        <Button
+      Grid.Row="0"
+      Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+      HorizontalAlignment="Right"
+      VerticalAlignment="Bottom"
+      Margin="0 0 16 -20">
+                            <material:PackIcon
+        Kind="Bike" />
+                        </Button>
+                        <StackPanel
+      Grid.Row="1"
+      Margin="8 24 8 0">
+                            <TextBlock
+        FontWeight="Bold">
+      Cycling
+                            </TextBlock>
+                            <TextBlock
+        TextWrapping="Wrap"
+        VerticalAlignment="Center"
+        Text="A great way to keep fit and forget about the constant grind of IT." />
                         </StackPanel>
-                        <TextBlock Text="200" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
-                    </StackPanel>
+                        <StackPanel
+      HorizontalAlignment="Right"
+      Grid.Row="2"
+      Orientation="Horizontal"
+      Margin="8">
+                            <Button
+        Style="{StaticResource MaterialDesignToolButton}"
+        Width="30"
+        Padding="2 0 2 0"
+        material:RippleAssist.IsCentered="True">
+                                <material:PackIcon
+          Kind="ShareVariant" />
+                            </Button>
+                            <Button
+        Style="{StaticResource MaterialDesignToolButton}"
+        Width="30"
+        Padding="2 0 2 0"
+        material:RippleAssist.IsCentered="True">
+                                <material:PackIcon
+          Kind="Heart" />
+                            </Button>
+                            <material:PopupBox
+       
+        Padding="2 0 2 0">
+                                <StackPanel>
+                                    <Button
+            Content="More" />
+                                    <Button
+            Content="Options" />
+                                </StackPanel>
+                            </material:PopupBox>
+                        </StackPanel>
+                    </Grid>
                 </material:Card>
             </StackPanel>
 
             <StackPanel Grid.Row="1" Grid.Column="2">
                 <material:Card
-                    Height="150"
-                    Width="266"
-                    material:ShadowAssist.ShadowDepth="Depth4"
-                    material:ShadowAssist.ShadowEdges="Bottom,Left"
-                    Padding="32">
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <StackPanel Orientation="Horizontal">
-                            <material:PackIcon Kind="Account" HorizontalAlignment="Left" Height="50" Width="50" />
-                            <TextBlock Text="User" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
+                    Width="200">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+                                Height="140" />
+                            <RowDefinition
+                                Height="*" />
+                            <RowDefinition
+                                Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Image
+                                Source="/Assets/Images/user.png" 
+                                Height="140"
+                                Width="196"
+                                Stretch="UniformToFill" />
+                        <Button
+                                Grid.Row="0"
+                                Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                Margin="0 0 16 -20">
+                            <material:PackIcon
+                                    Kind="Bike" />
+                        </Button>
+                        <StackPanel
+                                     Grid.Row="1"
+                                     Margin="8 24 8 0">
+                            <TextBlock
+                                     FontWeight="Bold">
+      Cycling
+                            </TextBlock>
+                            <TextBlock
+                                TextWrapping="Wrap"
+                                VerticalAlignment="Center"
+                                Text="A great way to keep fit and forget about the constant grind of IT." />
                         </StackPanel>
-                        <TextBlock Text="200" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
-                    </StackPanel>
-                </material:Card>
-            </StackPanel>
-
-            <StackPanel Grid.Row="2" Grid.Column="0">
-                <material:Card
-                    Height="150"
-                    Width="266"
-                    material:ShadowAssist.ShadowDepth="Depth4"
-                    material:ShadowAssist.ShadowEdges="Bottom,Left"
-                    Padding="32">
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <StackPanel Orientation="Horizontal">
-                            <material:PackIcon Kind="Account" HorizontalAlignment="Left" Height="50" Width="50" />
-                            <TextBlock Text="User" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
+                        <StackPanel
+                                HorizontalAlignment="Right"
+                                Grid.Row="2"
+                                Orientation="Horizontal"
+                                Margin="8">
+                            <Button
+                                        Style="{StaticResource MaterialDesignToolButton}"
+                                        Width="30"
+                                        Padding="2 0 2 0"
+                                        material:RippleAssist.IsCentered="True">
+                                <material:PackIcon
+                                        Kind="ShareVariant" />
+                            </Button>
+                            <Button
+                                        Style="{StaticResource MaterialDesignToolButton}"
+                                        Width="30"
+                                        Padding="2 0 2 0"
+                                        material:RippleAssist.IsCentered="True">
+                                <material:PackIcon
+                                        Kind="Heart" />
+                            </Button>
+                            <material:PopupBox
+       
+                                        Padding="2 0 2 0">
+                                <StackPanel>
+                                    <Button
+                                        Content="More" />
+                                    <Button
+                                        Content="Options" />
+                                </StackPanel>
+                            </material:PopupBox>
                         </StackPanel>
-                        <TextBlock Text="200" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
-                    </StackPanel>
-                </material:Card>
-            </StackPanel>
-
-            <StackPanel Grid.Row="2" Grid.Column="1">
-                <material:Card
-                    Height="150"
-                    Width="266"
-                    material:ShadowAssist.ShadowDepth="Depth4"
-                    material:ShadowAssist.ShadowEdges="Bottom,Left"
-                    Padding="32">
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <StackPanel Orientation="Horizontal">
-                            <material:PackIcon Kind="Account" HorizontalAlignment="Left" Height="50" Width="50" />
-                            <TextBlock Text="User" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
-                        </StackPanel>
-                        <TextBlock Text="200" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
-                    </StackPanel>
-                </material:Card>
-            </StackPanel>
-
-            <StackPanel Grid.Row="2" Grid.Column="2">
-                <material:Card
-                    Height="150"
-                    Width="266"
-                    material:ShadowAssist.ShadowDepth="Depth4"
-                    material:ShadowAssist.ShadowEdges="Bottom,Left"
-                    Padding="32">
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <StackPanel Orientation="Horizontal">
-                            <material:PackIcon Kind="Account" HorizontalAlignment="Left" Height="50" Width="50" />
-                            <TextBlock Text="User" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
-                        </StackPanel>
-                        <TextBlock Text="200" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
-                    </StackPanel>
+                    </Grid>
                 </material:Card>
             </StackPanel>
         </Grid>
