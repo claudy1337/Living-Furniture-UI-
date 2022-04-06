@@ -24,9 +24,19 @@ namespace The_Living_Furniture_UI.Pages.others
             InitializeComponent();
         }
 
-        private void rdAccounts_Click(object sender, RoutedEventArgs e)
+        private void rdHome_Click(object sender, RoutedEventArgs e)
         {
-            PagesNavigation.Navigate(new System.Uri("Pages/adminPages/FullOrders.xaml", UriKind.RelativeOrAbsolute));
+
+        }
+
+        private void rdStatistic_Click(object sender, RoutedEventArgs e)
+        {
+            PagesNavigation.Navigate(new System.Uri("Pages/adminPages/Applications.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void rdUsrAccounts_Click(object sender, RoutedEventArgs e)
+        {
+            PagesNavigation.Navigate(new System.Uri("Pages/adminPages/UserControl.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

@@ -6,9 +6,174 @@
       xmlns:local="clr-namespace:The_Living_Furniture_UI.Pages.adminPages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Applications">
+      Title="Applications"
+      xmlns:material ="http://materialdesigninxaml.net/winfx/xaml/themes">
 
-    <Grid>
-        
-    </Grid>
+    <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="0">
+                <material:Card
+                    Height="150"
+                    Width="266"
+                    material:ShadowAssist.ShadowDepth="Depth4"
+                    material:ShadowAssist.ShadowEdges="Bottom,Left"
+                    Padding="32">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <material:PackIcon Kind="Account" HorizontalAlignment="Left" Height="50" Width="50" />
+                            <TextBlock Text="User" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
+                        </StackPanel>
+                        <TextBlock Text="200" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </material:Card>
+                    
+            </StackPanel>
+            
+            <StackPanel Grid.Row="0" Grid.Column="1">
+                <material:Card
+                    Height="150"
+                    Width="266"
+                    material:ShadowAssist.ShadowDepth="Depth4"
+                    material:ShadowAssist.ShadowEdges="Bottom,Left"
+                    Padding="32">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <material:PackIcon Kind="Account" HorizontalAlignment="Left" Height="50" Width="50" />
+                            <TextBlock Text="User" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
+                        </StackPanel>
+                        <TextBlock Text="200" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </material:Card>
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="2">
+                <material:Card
+                    Height="150"
+                    Width="266"
+                    material:ShadowAssist.ShadowDepth="Depth4"
+                    material:ShadowAssist.ShadowEdges="Bottom,Left"
+                    Padding="32">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <material:PackIcon Kind="Account" HorizontalAlignment="Left" Height="50" Width="50" />
+                            <TextBlock Text="User" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
+                        </StackPanel>
+                        <TextBlock Text="200" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </material:Card>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="0">
+                <material:Card
+                    Height="150"
+                    Width="266"
+                    material:ShadowAssist.ShadowDepth="Depth4"
+                    material:ShadowAssist.ShadowEdges="Bottom,Left"
+                    Padding="32">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <material:PackIcon Kind="Account" HorizontalAlignment="Left" Height="50" Width="50" />
+                            <TextBlock Text="User" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
+                        </StackPanel>
+                        <TextBlock Text="200" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </material:Card>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <material:Card
+                    Height="150"
+                    Width="266"
+                    material:ShadowAssist.ShadowDepth="Depth4"
+                    material:ShadowAssist.ShadowEdges="Bottom,Left"
+                    Padding="32">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <material:PackIcon Kind="Account" HorizontalAlignment="Left" Height="50" Width="50" />
+                            <TextBlock Text="User" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
+                        </StackPanel>
+                        <TextBlock Text="200" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </material:Card>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="2">
+                <material:Card
+                    Height="150"
+                    Width="266"
+                    material:ShadowAssist.ShadowDepth="Depth4"
+                    material:ShadowAssist.ShadowEdges="Bottom,Left"
+                    Padding="32">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <material:PackIcon Kind="Account" HorizontalAlignment="Left" Height="50" Width="50" />
+                            <TextBlock Text="User" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
+                        </StackPanel>
+                        <TextBlock Text="200" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </material:Card>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Grid.Column="0">
+                <material:Card
+                    Height="150"
+                    Width="266"
+                    material:ShadowAssist.ShadowDepth="Depth4"
+                    material:ShadowAssist.ShadowEdges="Bottom,Left"
+                    Padding="32">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <material:PackIcon Kind="Account" HorizontalAlignment="Left" Height="50" Width="50" />
+                            <TextBlock Text="User" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
+                        </StackPanel>
+                        <TextBlock Text="200" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </material:Card>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Grid.Column="1">
+                <material:Card
+                    Height="150"
+                    Width="266"
+                    material:ShadowAssist.ShadowDepth="Depth4"
+                    material:ShadowAssist.ShadowEdges="Bottom,Left"
+                    Padding="32">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <material:PackIcon Kind="Account" HorizontalAlignment="Left" Height="50" Width="50" />
+                            <TextBlock Text="User" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
+                        </StackPanel>
+                        <TextBlock Text="200" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </material:Card>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Grid.Column="2">
+                <material:Card
+                    Height="150"
+                    Width="266"
+                    material:ShadowAssist.ShadowDepth="Depth4"
+                    material:ShadowAssist.ShadowEdges="Bottom,Left"
+                    Padding="32">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <material:PackIcon Kind="Account" HorizontalAlignment="Left" Height="50" Width="50" />
+                            <TextBlock Text="User" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
+                        </StackPanel>
+                        <TextBlock Text="200" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </material:Card>
+            </StackPanel>
+        </Grid>
+    </Border>
 </Page>

@@ -150,7 +150,7 @@
     <Compile Include="Pages\adminPages\Profile.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\adminPages\StatisticsPage.xaml.cs">
+    <Compile Include="Pages\userPages\StatisticsPage.xaml.cs">
       <DependentUpon>StatisticsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\adminPages\UserControl.xaml.cs">
@@ -208,7 +208,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\adminPages\StatisticsPage.xaml">
+    <Page Include="Pages\userPages\StatisticsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
