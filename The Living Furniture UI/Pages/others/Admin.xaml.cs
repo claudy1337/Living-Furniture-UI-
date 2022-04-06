@@ -38,5 +38,10 @@ namespace The_Living_Furniture_UI.Pages.others
         {
             PagesNavigation.Navigate(new System.Uri("Pages/adminPages/UserControl.xaml", UriKind.RelativeOrAbsolute));
         }
+
+        private void rdAccount_Click(object sender, RoutedEventArgs e)
+        {
+            PagesNavigation.Navigate(new System.Uri("Pages/userPages/FollowPage.xaml", UriKind.RelativeOrAbsolute));
+        }
     }
 }
