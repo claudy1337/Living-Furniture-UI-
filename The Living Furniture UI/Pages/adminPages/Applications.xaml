@@ -88,9 +88,9 @@
                              Height="Auto" />
                         </Grid.RowDefinitions>
                         <Image
-                             Source="/Assets/Images/user.png" 
-                             Height="140"
-                             Width="196"
+                             Source="/Assets/Images/usrStat.png" 
+                             Height="160"
+                             Width="180"
                              Stretch="UniformToFill" />
                         <Button
                               Grid.Row="0"
@@ -105,11 +105,15 @@
                                 Grid.Row="1"
                                 Margin="8 24 8 0">
                             <TextBlock
-                                FontWeight="Bold" Text="User"/>
+                                FontWeight="Bold" Text="User"
+                                FontFamily="Ubuntu Medium"
+                                FontSize="18"/>
                             <TextBlock
                                    TextWrapping="Wrap"
                                    VerticalAlignment="Center"
-                                   Text="A great way to keep fit and forget about the constant grind of IT." />
+                                   Text="Monitoring and counting the number of users"
+                                   FontSize="15"
+                                   FontFamily="Ubuntu Light"/>
                         </StackPanel>
                         <StackPanel
                                 HorizontalAlignment="Right"
@@ -130,15 +134,15 @@
                                     Padding="2 0 2 0"
                                     material:RippleAssist.IsCentered="True">
                                 <material:PackIcon
-                                     Kind="Heart" />
+                                     Kind="ChartBox" Height="22" Width="23"/>
                             </Button>
                             <material:PopupBox
                                      Padding="2 0 2 0">
                                 <StackPanel>
                                     <Button
-                                      Content="More" />
+                                      Content="More"/>
                                     <Button
-                                       Content="Options" />
+                                       Content="Options"/>
                                 </StackPanel>
                             </material:PopupBox>
                         </StackPanel>
@@ -159,58 +163,62 @@
                                 Height="Auto" />
                         </Grid.RowDefinitions>
                         <Image
-      Source="/Assets/Images/user.png" 
-      Height="140"
-      Width="196"
-      Stretch="UniformToFill" />
+                                Source="/Assets/Images/ordStat.png" 
+                                Height="160"
+                                Width="180"
+                                Stretch="UniformToFill" />
                         <Button
-      Grid.Row="0"
-      Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
-      HorizontalAlignment="Right"
-      VerticalAlignment="Bottom"
-      Margin="0 0 16 -20">
+                            Grid.Row="0"
+                            Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Margin="0 0 16 -20">
                             <material:PackIcon
-        Kind="Update" />
+                                Kind="Update" />
                         </Button>
                         <StackPanel
-      Grid.Row="1"
-      Margin="8 24 8 0">
+                            Grid.Row="1"
+                            Margin="8 24 8 0">
                             <TextBlock
-        FontWeight="Bold" Text="Orders"/>
+                                FontWeight="Bold" Text="Orders"
+                                FontFamily="Ubuntu Medium"
+                                FontSize="18"/>
                             <TextBlock
-        TextWrapping="Wrap"
-        VerticalAlignment="Center"
-        Text="A great way to keep fit and forget about the constant grind of IT." />
+                                FontFamily="Ubuntu Light"
+                                FontSize="15"
+                                TextWrapping="Wrap"
+                                VerticalAlignment="Center"
+                                Text="Сontrol and counting of the number of orders" />  
                         </StackPanel>
                         <StackPanel
-      HorizontalAlignment="Right"
-      Grid.Row="2"
-      Orientation="Horizontal"
-      Margin="8">
+                              HorizontalAlignment="Right"
+                              Grid.Row="2"
+                              Orientation="Horizontal"
+                              Margin="8">
                             <Button
-        Style="{StaticResource MaterialDesignToolButton}"
-        Width="30"
-        Padding="2 0 2 0"
-        material:RippleAssist.IsCentered="True">
+                                Style="{StaticResource MaterialDesignToolButton}"
+                                Width="30"
+                                Padding="2 0 2 0"
+                                material:RippleAssist.IsCentered="True">    
                                 <material:PackIcon
-          Kind="ShareVariant" />
+                                        Kind="ShareVariant" />
                             </Button>
                             <Button
-        Style="{StaticResource MaterialDesignToolButton}"
-        Width="30"
-        Padding="2 0 2 0"
-        material:RippleAssist.IsCentered="True">
+                                    Style="{StaticResource MaterialDesignToolButton}"
+                                    Width="30"
+                                    Padding="2 0 2 0"
+                                    material:RippleAssist.IsCentered="True">
                                 <material:PackIcon
-          Kind="Heart" />
+                                     Kind="ChartBox" Height="22" Width="23"/>
                             </Button>
                             <material:PopupBox
        
-        Padding="2 0 2 0">
+                                    Padding="2 0 2 0">
                                 <StackPanel>
                                     <Button
-            Content="More" />
+                                         Content="More" />
                                     <Button
-            Content="Options" />
+                                         Content="Options" />
                                 </StackPanel>
                             </material:PopupBox>
                         </StackPanel>
@@ -232,9 +240,9 @@
                                 Height="Auto" />
                         </Grid.RowDefinitions>
                         <Image
-                                Source="/Assets/Images/user.png" 
-                                Height="140"
-                                Width="196"
+                                Source="/Assets/Images/prdStat.png" 
+                                Height="160"
+                                Width="180"
                                 Stretch="UniformToFill" />
                         <Button
                                 Grid.Row="0"
@@ -249,11 +257,15 @@
                                      Grid.Row="1"
                                      Margin="8 24 8 0">
                             <TextBlock
-                                     FontWeight="Bold" Text="Products"/>
+                                     FontWeight="Bold" Text="Products"
+                                     FontFamily="Ubuntu Medium"
+                                     FontSize="18"/>
                             <TextBlock
                                 TextWrapping="Wrap"
                                 VerticalAlignment="Center"
-                                Text="A great way to keep fit and forget about the constant grind of IT." />
+                                FontFamily="Ubuntu Light"
+                                FontSize="15"
+                                Text="Сontrol and counting of the quantity of goods" />
                         </StackPanel>
                         <StackPanel
                                 HorizontalAlignment="Right"
@@ -269,12 +281,12 @@
                                         Kind="ShareVariant" />
                             </Button>
                             <Button
-                                        Style="{StaticResource MaterialDesignToolButton}"
-                                        Width="30"
-                                        Padding="2 0 2 0"
-                                        material:RippleAssist.IsCentered="True">
+                                    Style="{StaticResource MaterialDesignToolButton}"
+                                    Width="30"
+                                    Padding="2 0 2 0"
+                                    material:RippleAssist.IsCentered="True">
                                 <material:PackIcon
-                                        Kind="Heart" />
+                                     Kind="ChartBox" Height="22" Width="23"/>
                             </Button>
                             <material:PopupBox
        

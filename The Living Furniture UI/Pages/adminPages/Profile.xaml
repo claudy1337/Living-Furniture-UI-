@@ -6,9 +6,134 @@
       xmlns:local="clr-namespace:The_Living_Furniture_UI.Pages.adminPages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Profile">
+      Title="Profile"
+      xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes">
 
-    <Grid>
-        
-    </Grid>
+    <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="97*"/>
+                <ColumnDefinition Width="63*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <material:Card Width="483" Height="470" material:ShadowAssist.ShadowDepth="Depth5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Orientation="Vertical" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
+                                    <Image Source="/Assets/Images/user.png" Height="175" material:ShadowAssist.ShadowDepth="Depth1" Width="219"/>
+                                    <Button Style="{DynamicResource MaterialDesignRaisedLightButton}" Background="#EB8F4C" Content="ADD" Margin="0,5,0,0"/>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200">
+                                    <TextBox
+                                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                                            VerticalAlignment="Top"
+                                            TextWrapping="Wrap"
+                                            MaxLength="12"
+                                            FontSize="15"
+                                            FontFamily="Ubuntu Light"
+                                            Margin="0,20,0,0"
+                                            material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                            material:HintAssist.Hint="Name"/>
+
+                                    <TextBox
+                                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                                            VerticalAlignment="Top"
+                                            TextWrapping="Wrap"
+                                            MaxLength="12"
+                                            FontSize="15"
+                                            FontFamily="Ubuntu Light"
+                                            Margin="0,20,0,0"
+                                            material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                            material:HintAssist.Hint="Login"/>
+
+                                    <TextBox
+                                            Style="{StaticResource MaterialDesignFilledTextBox}"
+                                            VerticalAlignment="Top"
+                                            TextWrapping="Wrap"
+                                            MaxLength="12"
+                                            FontSize="15"
+                                            FontFamily="Ubuntu Light"
+                                            Margin="0,20,0,0"
+                                            material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                            material:HintAssist.Hint="Address"/>
+
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+                            <Image Source="{Binding imgCollection}" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+                            <Image Source="/Assets/Images/Card/Furniture/f1.png" />
+                        </StackPanel>
+
+                    </Grid>
+                </material:Card>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0">
+                        <StackPanel Grid.RowSpan="2">
+                            <material:Card Width="331" material:ShadowAssist.ShadowDepth="Depth5" >
+                                <StackPanel Orientation="Horizontal" Height="200">
+                                    <Expander ExpandDirection="Left">
+                                        <Expander.Header>
+                                            <TextBlock Text="Admin Card"
+                                         FontSize="20"
+                                         FontFamily="Ubuntu Medium"
+                                         RenderTransformOrigin=".5,.5">
+                                                <TextBlock.LayoutTransform>
+                                                    <RotateTransform Angle="90" />
+                                                </TextBlock.LayoutTransform>
+                                            </TextBlock>
+                                        </Expander.Header>
+                                        <StackPanel Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" Margin="8,24,16,24">
+                                            <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua " TextWrapping="Wrap" FontSize="15" />
+                                            <TextBlock/>
+                                        </StackPanel>
+                                    </Expander>
+                                </StackPanel>
+                            </material:Card>
+                        </StackPanel>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0">
+                        <material:Card material:ShadowAssist.ShadowDepth="Depth5">
+                            <TabControl
+                                    Width="300"
+                                    material:ColorZoneAssist.Mode="SecondaryMid" Height="250">
+                                <TabItem
+                                    Header="Order">
+                                    <TextBlock
+                                        Margin="8"
+                                        Text="SecondaryMid Tab 1" />
+                                </TabItem>
+                                <TabItem
+                                    Header="TAB 2">
+                                    <TextBlock
+                                    Margin="8"
+                                     Text="SecondaryMid Tab 2" />
+                                </TabItem>
+                            </TabControl>
+                        </material:Card>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Border>
 </Page>

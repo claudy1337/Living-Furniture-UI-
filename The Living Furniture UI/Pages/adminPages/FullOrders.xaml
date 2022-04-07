@@ -10,6 +10,21 @@
       xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes">
     
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
-       
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <DataGrid Grid.Row="0" x:Name="DGEmployee" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" SelectionChanged="DGEmployee_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name Product" Binding="{Binding fullNameEmployee}"/>
+                    <DataGridTextColumn Header="ID Order" Binding="{Binding number}"/>
+                    <DataGridTextColumn Header="User Login" Binding="{Binding worksEmployee}"/>
+                    <DataGridTextColumn Header="Configuration" Binding="{Binding worksEmployee}"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Background="#EB8F4C" Margin="5" Width="auto" Height="50" Grid.Row="1" x:Name="BRemove" Content="Remove"/>
+        </Grid>
     </Border>
 </Page>

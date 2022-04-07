@@ -150,6 +150,9 @@
     <Compile Include="Pages\adminPages\Profile.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\adminPages\Requests.xaml.cs">
+      <DependentUpon>Requests.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\userPages\StatisticsPage.xaml.cs">
       <DependentUpon>StatisticsPage.xaml</DependentUpon>
     </Compile>
@@ -205,6 +208,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\adminPages\Profile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\adminPages\Requests.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -395,6 +402,9 @@
     <Resource Include="Assets\Images\wallpapers\furn1.png" />
     <Resource Include="Assets\Images\wallpapers\furn2.png" />
     <Resource Include="Assets\Images\wallpapers\furn3.png" />
+    <Resource Include="Assets\Images\ordStat.png" />
+    <Resource Include="Assets\Images\prdStat.png" />
+    <Resource Include="Assets\Images\usrStat.png" />
     <Content Include="Core\Compression\Snappy\lib\win\snappy32.dll" />
     <Content Include="Core\Compression\Snappy\lib\win\snappy64.dll" />
     <Content Include="Core\Compression\Zstandard\lib\win\libzstd.dll" />
