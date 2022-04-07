@@ -15,7 +15,7 @@
                 <RowDefinition/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <DataGrid Grid.Row="0" x:Name="DGEmployee" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" SelectionChanged="DGEmployee_SelectionChanged">
+            <DataGrid Grid.Row="0" x:Name="DGEmployee" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Name Product" Binding="{Binding fullNameEmployee}"/>
                     <DataGridTextColumn Header="ID Order" Binding="{Binding number}"/>

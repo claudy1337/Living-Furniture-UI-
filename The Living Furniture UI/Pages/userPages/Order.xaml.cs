@@ -13,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace The_Living_Furniture_UI.Pages.adminPages
+namespace The_Living_Furniture_UI.Pages.userPages
 {
     /// <summary>
-    /// Логика взаимодействия для Requests.xaml
+    /// Логика взаимодействия для Order.xaml
     /// </summary>
-    public partial class Requests : Page
+    public partial class Order : Page
     {
-        public Requests()
+        public Order()
         {
             InitializeComponent();
-            
         }
     }
 }

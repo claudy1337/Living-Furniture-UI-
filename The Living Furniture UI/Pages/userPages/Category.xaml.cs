@@ -31,5 +31,10 @@ namespace The_Living_Furniture_UI.Pages.userPages
             InitializeComponent();
 
         }
+
+        private void CabinetCard_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new System.Uri("Pages/Product/ProductList.xaml", UriKind.RelativeOrAbsolute));
+        }
     }
 }

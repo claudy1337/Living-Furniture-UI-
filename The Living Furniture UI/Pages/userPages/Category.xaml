@@ -27,7 +27,7 @@
                     </Grid.ColumnDefinitions>
 
                     <StackPanel Grid.Column="0" Margin="15">
-                        <Image Source="/Assets/Images/Furniture/Collection/Cabinet.png" />
+                        <Image Source="/Assets/Images/Furniture/Collection/Cabinet.png" x:Name="CabinetCard" MouseLeftButtonDown="CabinetCard_MouseLeftButtonDown"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="1" Margin="15">

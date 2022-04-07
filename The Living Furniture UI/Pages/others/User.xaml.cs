@@ -36,20 +36,9 @@ namespace The_Living_Furniture_UI.Pages.others
         {
             PagesNavigation.Navigate(new System.Uri("Pages/userPages/main.xaml", UriKind.RelativeOrAbsolute));
         }
-
-        private void rdCategory_Click(object sender, RoutedEventArgs e)
-        {
-            PagesNavigation.Navigate(new System.Uri("Pages/userPages/Category.xaml", UriKind.RelativeOrAbsolute));
-        }
-
-        private void rdOrider_Click(object sender, RoutedEventArgs e)
-        {
-            PagesNavigation.Navigate(new System.Uri("Pages/userPages/Profile.xaml", UriKind.RelativeOrAbsolute));
-        }
-
         private void rdAccount_Click(object sender, RoutedEventArgs e)
         {
-            PagesNavigation.Navigate(new System.Uri("Pages/Product/ProductInfo.xaml", UriKind.RelativeOrAbsolute));
+            PagesNavigation.Navigate(new System.Uri("Pages/userPages/Profile.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void StackPanel_MouseDown(object sender, MouseButtonEventArgs e)
@@ -62,17 +51,33 @@ namespace The_Living_Furniture_UI.Pages.others
 
         private void rdBasket_Click(object sender, RoutedEventArgs e)
         {
-            PagesNavigation.Navigate(new System.Uri("Pages/userPages/Baket.xaml", UriKind.RelativeOrAbsolute));
+            
         }
 
         private void rdCategory_Checked(object sender, RoutedEventArgs e)
         {
-
+            PagesNavigation.Navigate(new System.Uri("Pages/userPages/Category.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void PagesNavigation_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
         {
 
+        }
+
+        private void rdCategory_Click(object sender, RoutedEventArgs e)
+        {
+            PagesNavigation.Navigate(new System.Uri("Pages/userPages/Category.xaml", UriKind.RelativeOrAbsolute));
+            
+        }
+
+        private void rdOrder_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void rdBasket_Checked(object sender, RoutedEventArgs e)
+        {
+            PagesNavigation.Navigate(new System.Uri("Pages/userPages/Baket.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }
