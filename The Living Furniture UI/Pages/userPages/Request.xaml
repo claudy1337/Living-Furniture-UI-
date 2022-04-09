@@ -31,6 +31,7 @@
                         <TextBox
                      material:HintAssist.Hint="Name"
                      Margin="0,10,0,0"
+                     x:Name="usrName"
                      FontSize="25" HorizontalAlignment="Center"
                      BorderBrush="Gray"
                      Padding="7"
@@ -38,6 +39,7 @@
                      FontFamily="Ubuntu Light" Width="256" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
 
                         <TextBox
+                     x:Name="UsrNumber"
                      material:HintAssist.Hint="Number"
                      FontSize="25" HorizontalAlignment="Center"
                      BorderBrush="Gray"
@@ -106,6 +108,8 @@
                             Width="220"
                             Style="{StaticResource MaterialDesignRaisedDarkButton}"
                             Height="55"
+                            x:Name="BtnSendRequest"
+                            Click="BtnSendRequest_Click"
                             material:ButtonAssist.CornerRadius="25"
                             ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
                             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"

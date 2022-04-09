@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using The_Living_Furniture_UI.Db;
 
 namespace The_Living_Furniture_UI.Pages.userPages
 {
@@ -23,6 +24,14 @@ namespace The_Living_Furniture_UI.Pages.userPages
         public Request()
         {
             InitializeComponent();
+        }
+
+        private void BtnSendRequest_Click(object sender, RoutedEventArgs e)
+        {
+            //User user = new User();
+            //Requests request = new Requests();
+            //Requests.SendToDB(request);
+            //MessageBox.Show($"{request._id}" + "отправлен");
         }
     }
 }

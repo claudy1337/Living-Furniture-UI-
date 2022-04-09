@@ -35,8 +35,16 @@ namespace The_Living_Furniture_UI.Pages.userPages
 
         private void BtnSignUp_Click(object sender, RoutedEventArgs e)
         {
+            Db.Product product = new Db.Product();
+            Db.Order order = new Db.Order(product);
+            Db.Basket basket = new Db.Basket(product);
+            Random rnd = new Random();
+            int cardNumber = rnd.Next(100, 999);
+            Db.User usr = new Db.User(usrLogin.Text,usrPassword.ToString(),usrName.Text,cardNumber,"", order, basket);
+            Db.User.usrAddToDB(usr);
             others.User user = new others.User();
             user.Show();
         }
+        
     }
 }
