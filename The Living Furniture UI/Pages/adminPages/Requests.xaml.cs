@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections;
+using System.Collections.ObjectModel;
 
 namespace The_Living_Furniture_UI.Pages.adminPages
 {
@@ -23,7 +25,8 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         public Requests()
         {
             InitializeComponent();
-            
         }
+       
+    
     }
 }

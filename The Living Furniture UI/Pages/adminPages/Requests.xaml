@@ -11,21 +11,6 @@
       xmlns:domain="clr-namespace:The_Living_Furniture_UI.Pages.adminPages.Domain">
 
     <Border CornerRadius="10" Background="#FFF7EE">
-        <ListBox
-                IsEnabled="{Binding IsChecked, ElementName=EnableListBox}">
-            <TextBlock>
-                <StackPanel Orientation="Horizontal">
-                     <CheckBox Height="50"/>
-                    <StackPanel Orientation="Vertical">
-                        <Label Content="Name" Margin="0,5,0,0" FontSize="15" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
-                        <Label Content="Name" Margin="0,-5,0,0" FontSize="10" FontFamily="Ubuntu Light" HorizontalAlignment="Center"/>
-                    </StackPanel>
-                    
-                </StackPanel>
-               
-                
-            </TextBlock>
-            
-        </ListBox>
+        
     </Border>
 </Page>
