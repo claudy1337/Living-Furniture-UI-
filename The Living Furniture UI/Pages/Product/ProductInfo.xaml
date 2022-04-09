@@ -43,7 +43,7 @@
                         Orientation="Vertical"
                         TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
                         Margin="8,24,16,24">
-                                    <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." TextWrapping="Wrap" Width="213" FontFamily="Ubuntu Light" FontSize="15"/>
+                                    <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." TextWrapping="Wrap" Width="178" FontFamily="Ubuntu Light" FontSize="15"/>
                                     <TextBlock/>
                                 </StackPanel>
                             </Expander>
@@ -128,9 +128,10 @@
                     <StackPanel Grid.Row="0" Orientation="Vertical">
                         <TextBlock Text="Configuration:" FontSize="22" FontFamily="Ubuntu Medium"/>
                         <ComboBox
+                            x:Name="CBheight"
                              Margin="0,20,0,0"
                              Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                             material:HintAssist.Hint="Size"
+                             material:HintAssist.Hint="Height"
                              ItemsSource="{Binding ShortStringList}"
                              material:TextFieldAssist.HasClearButton="True"
                              Width="256">
@@ -153,9 +154,10 @@
                         </ComboBox>
 
                         <ComboBox
+                             x:Name="CBwidth"
                              Margin="0,20,0,0"
                              Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                             material:HintAssist.Hint="Size"
+                             material:HintAssist.Hint="Width"
                              ItemsSource="{Binding ShortStringList}"
                              material:TextFieldAssist.HasClearButton="True"
                              Width="256">
@@ -178,9 +180,10 @@
                         </ComboBox>
 
                         <ComboBox
+                            x:Name="CBcolor"
                              Margin="0,20,0,0"
                              Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                             material:HintAssist.Hint="Size"
+                             material:HintAssist.Hint="Color"
                              ItemsSource="{Binding ShortStringList}"
                              material:TextFieldAssist.HasClearButton="True"
                              Width="256">
@@ -203,9 +206,10 @@
                         </ComboBox>
 
                         <ComboBox
+                            x:Name="CBmaterial"
                              Margin="0,20,0,0"
                              Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                             material:HintAssist.Hint="Size"
+                             material:HintAssist.Hint="Material"
                              ItemsSource="{Binding ShortStringList}"
                              material:TextFieldAssist.HasClearButton="True"
                              Width="256">
