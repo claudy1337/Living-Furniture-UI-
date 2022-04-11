@@ -30,7 +30,7 @@
                                 </Grid.ColumnDefinitions>
                                 <StackPanel Orientation="Vertical" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
                                     <Image Source="/Assets/Images/user.png" Height="175" material:ShadowAssist.ShadowDepth="Depth1" Width="219"/>
-                                    <Button Style="{DynamicResource MaterialDesignRaisedLightButton}" Background="#EB8F4C" Content="ADD" Margin="0,5,0,0"/>
+                                    <Button HorizontalAlignment="Center" Style="{DynamicResource MaterialDesignRaisedLightButton}" Width="146" Background="#EB8F4C" Content="ADD" Margin="0,10,0,0"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,10,0,0" Width="200">
                                     <TextBox
@@ -72,7 +72,8 @@
 
                         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
                             <Image Source="{Binding imgCollection}" />
-                            <Image Source="/Assets/Images/Card/Furniture/f1.png" />
+                            <Image x:Name="imgCard" MouseLeftButtonDown="imgCard_MouseLeftButtonDown"/>
+
                         </StackPanel>
 
                     </Grid>

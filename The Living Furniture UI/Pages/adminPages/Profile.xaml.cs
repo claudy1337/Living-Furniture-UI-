@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using System.IO;
 namespace The_Living_Furniture_UI.Pages.adminPages
 {
     /// <summary>
@@ -24,5 +24,26 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         {
             InitializeComponent();
         }
-    }
+        int count = 1;
+        private void imgCard_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            count++;
+            switch (count)
+            {
+                case 1:
+                    imgCard.Source = new BitmapImage(new Uri("/Assets/Images/Card/Furniture/f1.png", UriKind.Relative));
+                    break;
+                case 2:
+                    imgCard.Source = new BitmapImage(new Uri("/Assets/Images/Card/Furniture/f2.png", UriKind.Relative));
+                    break;
+                case 3:
+                    imgCard.Source = new BitmapImage(new Uri("/Assets/Images/Card/Furniture/f3.png", UriKind.Relative));
+                    break;
+                default:
+                    count = 0;
+                    break;
+            }
+        }
+    }   
 }
+
