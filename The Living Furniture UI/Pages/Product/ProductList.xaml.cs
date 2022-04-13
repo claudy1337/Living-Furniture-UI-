@@ -24,5 +24,26 @@ namespace The_Living_Furniture_UI.Pages.Product
         {
             InitializeComponent();
         }
+
+        private void ProductOne_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new System.Uri("Pages/Product/ProductInfo.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void ProductTwo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new System.Uri("Pages/Product/ProductInfo.xaml", UriKind.RelativeOrAbsolute));
+
+        }
+
+        private void ProductThree_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new System.Uri("Pages/Product/ProductInfo.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void ProductFour_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new System.Uri("Pages/Product/ProductInfo.xaml", UriKind.RelativeOrAbsolute));
+        }
     }
 }

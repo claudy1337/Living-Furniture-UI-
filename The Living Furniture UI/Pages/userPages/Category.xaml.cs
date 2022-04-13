@@ -36,5 +36,20 @@ namespace The_Living_Furniture_UI.Pages.userPages
         {
             NavigationService.Navigate(new System.Uri("Pages/Product/ProductList.xaml", UriKind.RelativeOrAbsolute));
         }
+
+        private void ChairCard_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new System.Uri("Pages/Product/ProductList.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void LampCrd_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new System.Uri("Pages/Product/ProductList.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void TableCard_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new System.Uri("Pages/Product/ProductList.xaml", UriKind.RelativeOrAbsolute));
+        }
     }
 }

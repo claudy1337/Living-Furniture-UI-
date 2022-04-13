@@ -26,21 +26,22 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0" Orientation="Vertical" Margin="10">
+                    <StackPanel Grid.Column="0" Orientation="Vertical" Margin="10" x:Name="ProductOne" MouseLeftButtonDown="ProductOne_MouseLeftButtonDown">
                         <Image Source="/Assets/Images/Furniture/Cabinet/Cabinet (1).png" Height="170"/>
                         <TextBlock Text="Name Products" FontSize="20" FontFamily="Ubuntu Medium"/>
                         <Image Source="/Assets/Images/raiting.png" Height="25" HorizontalAlignment="Left"/>
                         <TextBlock Text="Price" FontSize="20" FontFamily="Ubuntu Medium"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10">
+
+                    <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10" x:Name="ProductTwo" MouseLeftButtonDown="ProductTwo_MouseLeftButtonDown">
                         <Image Source="/Assets/Images/Furniture/Cabinet/Cabinet (2).png" Height="170"/>
                         <TextBlock Text="Name Products" FontSize="20" FontFamily="Ubuntu Medium"/>
                         <Image Source="/Assets/Images/raiting.png" Height="25" HorizontalAlignment="Left"/>
                         <TextBlock Text="Price" FontSize="20" FontFamily="Ubuntu Medium"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Column="2" Orientation="Vertical" Margin="10">
+                    <StackPanel Grid.Column="2" Orientation="Vertical" Margin="10" x:Name="ProductThree" MouseLeftButtonDown="ProductThree_MouseLeftButtonDown">
                         <Image Source="/Assets/Images/Furniture/Cabinet/Cabinet (4).png" Height="170" />
                         <TextBlock Text="Name Products" FontSize="20" FontFamily="Ubuntu Medium"/>
                         <Image Source="/Assets/Images/raiting.png" Height="25" HorizontalAlignment="Left"/>
@@ -48,7 +49,7 @@
                         <TextBlock Text="Price" FontSize="20" FontFamily="Ubuntu Medium"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Column="3" Orientation="Vertical" Margin="10">
+                    <StackPanel Grid.Column="3" Orientation="Vertical" Margin="10" x:Name="ProductFour" MouseLeftButtonDown="ProductFour_MouseLeftButtonDown">
                         <Image Source="/Assets/Images/Furniture/Cabinet/Cabinet (3).png" Height="170"/>
                         <TextBlock Text="Name Products" FontSize="20" FontFamily="Ubuntu Medium"/>
                         <Image Source="/Assets/Images/raiting.png" Height="25" HorizontalAlignment="Left"/>

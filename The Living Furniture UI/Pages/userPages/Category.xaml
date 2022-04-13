@@ -31,15 +31,15 @@
                     </StackPanel>
 
                     <StackPanel Grid.Column="1" Margin="15">
-                        <Image Source="/Assets/Images/Furniture/Collection/Chair.png" />
+                        <Image Source="/Assets/Images/Furniture/Collection/Chair.png" x:Name="ChairCard" MouseLeftButtonDown="ChairCard_MouseLeftButtonDown"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="2" Margin="15">
-                        <Image Source="/Assets/Images/Furniture/Collection/Lamp.png" />
+                        <Image Source="/Assets/Images/Furniture/Collection/Lamp.png" x:Name="LampCrd" MouseLeftButtonDown="LampCrd_MouseLeftButtonDown"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="3" Margin="15">
-                        <Image Source="/Assets/Images/Furniture/Collection/Table.png" />
+                        <Image Source="/Assets/Images/Furniture/Collection/Table.png" x:Name="TableCard" MouseLeftButtonDown="TableCard_MouseLeftButtonDown"/>
                     </StackPanel>
                 </Grid>
             </StackPanel>
