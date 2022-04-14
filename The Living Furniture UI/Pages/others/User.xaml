@@ -118,13 +118,16 @@
                 </StackPanel>
                 <!--End: Search Bar-->
 
-                
-                    
+
+
                 <Border Grid.Row="1" Margin="10">
+                    <StackPanel>
+                        <TextBlock FontSize="24" x:Name="txtq"/>
+                        <Frame x:Name="PagesNavigation" NavigationUIVisibility="Hidden" Margin="0,-10,0,0" Navigated="PagesNavigation_Navigated">
 
-                    <Frame x:Name="PagesNavigation" NavigationUIVisibility="Hidden" Margin="0,-10,0,0" Navigated="PagesNavigation_Navigated">
-
-                    </Frame>
+                        </Frame>
+                    </StackPanel>
+                   
 
                 </Border>
             </Grid>

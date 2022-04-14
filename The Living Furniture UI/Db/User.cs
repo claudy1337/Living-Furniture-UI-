@@ -11,7 +11,7 @@ using The_Living_Furniture_UI.Db;
 
 namespace The_Living_Furniture_UI.Db
 {
-    class User
+    public class User
     {
         public User(string login, string password, string name, int card, string address, Order order, Basket basket )
         {

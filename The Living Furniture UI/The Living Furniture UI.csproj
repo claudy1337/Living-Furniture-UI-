@@ -366,7 +366,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\Images\Furniture\Lamp\" />
+    <Folder Include="Logged\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\category.png" />
@@ -453,6 +453,16 @@
     <Resource Include="Assets\Images\Furniture\Cabinet\Micke\micke-mikke-tumba.png" />
     <Resource Include="Assets\Images\Furniture\Cabinet\Micke\micke-mikke.png" />
     <Resource Include="Assets\Images\Furniture\Cabinet\Micke\size.jpg" />
+    <Resource Include="Assets\Images\Furniture\Lamp\Musik\musik-muzik-bra.png" />
+    <Resource Include="Assets\Images\Furniture\Lamp\Musik\musik-muzik.png" />
+    <Resource Include="Assets\Images\Furniture\Lamp\Nimone\nymane-nimone-rabochay.png" />
+    <Resource Include="Assets\Images\Furniture\Lamp\Nimone\nymane-nimone.png" />
+    <Resource Include="Assets\Images\Furniture\Lamp\Nymane\nymane-nimone-poto.png" />
+    <Resource Include="Assets\Images\Furniture\Lamp\Nymane\nymane-nimone.png" />
+    <Resource Include="Assets\Images\Furniture\Lamp\Skaftet\skaftet-osnovanie-napoln-svetiln.png" />
+    <Resource Include="Assets\Images\Furniture\Lamp\Skaftet\skaftet-osnovanie.png" />
+    <Resource Include="Assets\Images\Furniture\Lamp\Taellbyn\taellbyn-tellbyun-lampa-nastolnaya-nikelirovannyy.png" />
+    <Resource Include="Assets\Images\Furniture\Lamp\Taellbyn\taellbyn-tellbyun.png" />
     <Content Include="Core\Compression\Snappy\lib\win\snappy32.dll" />
     <Content Include="Core\Compression\Snappy\lib\win\snappy64.dll" />
     <Content Include="Core\Compression\Zstandard\lib\win\libzstd.dll" />

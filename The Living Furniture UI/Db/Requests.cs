@@ -28,7 +28,7 @@ namespace The_Living_Furniture_UI.Db
         public string Type { get; set; }
         public User User { get; set; }
 
-        public static void SendToDB(Requests request)
+        public static void SendToRequest(Requests request)
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("FurnitureBD");

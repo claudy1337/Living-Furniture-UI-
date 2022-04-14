@@ -15,6 +15,7 @@ using System.Windows.Controls.Primitives;
 using The_Living_Furniture_UI.Pages.userPages;
 using The_Living_Furniture_UI.Pages.Product;
 using The_Living_Furniture_UI.Pages.others;
+using The_Living_Furniture_UI.Db;
 
 namespace The_Living_Furniture_UI.Pages.others
 {
@@ -23,14 +24,20 @@ namespace The_Living_Furniture_UI.Pages.others
     /// </summary>
     public partial class User : Window
     {
-        public User()
+        private static Db.User currentUser;
+        public User(Db.User user)
         {
             InitializeComponent();
+            txtq.Text = user.Name;
+            currentUser = user;
         }
 
         private void rdRequest_Click(object sender, RoutedEventArgs e)
         {
-            PagesNavigation.Navigate(new System.Uri("Pages/userPages/Request.xaml", UriKind.RelativeOrAbsolute));
+           // PagesNavigation.Navigate(new System.Uri("Pages/userPages/Request.xaml", UriKind.RelativeOrAbsolute));
+            PagesNavigation.Navigate(new Request(currentUser));
+
+
         }
         private void rdHome_Click(object sender, RoutedEventArgs e)
         {

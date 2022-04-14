@@ -21,17 +21,23 @@ namespace The_Living_Furniture_UI.Pages.userPages
     /// </summary>
     public partial class Request : Page
     {
-        public Request()
+        private static Db.User currentUser;
+        public Request(Db.User user)
         {
             InitializeComponent();
+            currentUser = user;
+
+
         }
 
         private void BtnSendRequest_Click(object sender, RoutedEventArgs e)
         {
-            //User user = new User();
-            //Requests request = new Requests();
-            //Requests.SendToDB(request);
-            //MessageBox.Show($"{request._id}" + "отправлен");
+            Db.Product product = new Db.Product("", "", 0, 0, 0, 0, "", false, "", "", "");
+            Db.Order order = new Db.Order(product, false);
+            Db.Basket basket = new Db.Basket(product);
+            //User user = new User("", "", "", 0, "" , order, basket);
+            Db.Requests request = new Db.Requests(usrName.Text, UsrNumber.Text, CBTypeProduct.Text, CBSizeProduct.Text, currentUser);
+            Requests.SendToRequest(request); 
         }
     }
 }

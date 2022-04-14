@@ -12,6 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MongoDB.Bson;
+using MongoDB.Driver.Core;
+using The_Living_Furniture_UI.Db;
+using MongoDB.Driver;
+using The_Living_Furniture_UI.Db;
 
 namespace The_Living_Furniture_UI.Pages.Product
 {
@@ -23,6 +28,8 @@ namespace The_Living_Furniture_UI.Pages.Product
         public ProductList()
         {
             InitializeComponent();
+            // imgProductOne.Source = new BitmapImage(new Uri(Db.Product.GetLoginList(), UriKind.RelativeOrAbsolute)); 
+            
         }
 
         private void ProductOne_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -45,5 +52,7 @@ namespace The_Living_Furniture_UI.Pages.Product
         {
             NavigationService.Navigate(new System.Uri("Pages/Product/ProductInfo.xaml", UriKind.RelativeOrAbsolute));
         }
+        
     }
+        
 }

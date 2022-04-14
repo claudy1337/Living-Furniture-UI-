@@ -11,7 +11,7 @@ using The_Living_Furniture_UI.Db;
 
 namespace The_Living_Furniture_UI.Db
 {
-    class Order
+    public  class Order
     {
         public Order(Product product, bool isOrder)
         {

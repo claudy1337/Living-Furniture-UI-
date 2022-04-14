@@ -50,6 +50,7 @@
 
                         <ComboBox
                              Margin="0,20,0,0"
+                             x:Name="CBSizeProduct"
                              Style="{StaticResource MaterialDesignOutlinedComboBox}"
                              material:HintAssist.Hint="Size"
                              ItemsSource="{Binding ShortStringList}"
@@ -75,6 +76,7 @@
 
                         <ComboBox
                             Margin="0,20,0,0"
+                            x:Name="CBTypeProduct"
                              Style="{StaticResource MaterialDesignOutlinedComboBox}"
                              material:HintAssist.Hint="Furniture type"
                              ItemsSource="{Binding ShortStringList}"

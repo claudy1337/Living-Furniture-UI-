@@ -27,8 +27,8 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0" Orientation="Vertical" Margin="10" x:Name="ProductOne" MouseLeftButtonDown="ProductOne_MouseLeftButtonDown">
-                        <Image Source="/Assets/Images/Furniture/Cabinet/Cabinet (1).png" Height="170"/>
-                        <TextBlock Text="Name Products" FontSize="20" FontFamily="Ubuntu Medium"/>
+                        <Image Source="{Binding Logo}" Height="170" x:Name="imgProductOne"/>
+                        <TextBlock Text="{Binding Name}" FontSize="20" FontFamily="Ubuntu Medium" x:Name="NameProductOne"/>
                         <Image Source="/Assets/Images/raiting.png" Height="25" HorizontalAlignment="Left"/>
                         <TextBlock Text="Price" FontSize="20" FontFamily="Ubuntu Medium"/>
                     </StackPanel>
@@ -45,7 +45,6 @@
                         <Image Source="/Assets/Images/Furniture/Cabinet/Cabinet (4).png" Height="170" />
                         <TextBlock Text="Name Products" FontSize="20" FontFamily="Ubuntu Medium"/>
                         <Image Source="/Assets/Images/raiting.png" Height="25" HorizontalAlignment="Left"/>
-
                         <TextBlock Text="Price" FontSize="20" FontFamily="Ubuntu Medium"/>
                     </StackPanel>
 

@@ -11,7 +11,7 @@ using The_Living_Furniture_UI.Db;
 
 namespace The_Living_Furniture_UI.Db
 {
-    class Basket
+    public class Basket
     {
         public Basket(Product product)
         {
