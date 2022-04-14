@@ -141,6 +141,7 @@
       <DependentUpon>FurnitureItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="Db\Basket.cs" />
+    <Compile Include="Db\Consultation.cs" />
     <Compile Include="Db\Order.cs" />
     <Compile Include="Db\Product.cs" />
     <Compile Include="Db\Requests.cs" />
@@ -463,6 +464,14 @@
     <Resource Include="Assets\Images\Furniture\Lamp\Skaftet\skaftet-osnovanie.png" />
     <Resource Include="Assets\Images\Furniture\Lamp\Taellbyn\taellbyn-tellbyun-lampa-nastolnaya-nikelirovannyy.png" />
     <Resource Include="Assets\Images\Furniture\Lamp\Taellbyn\taellbyn-tellbyun.png" />
+    <Resource Include="Assets\Images\loading\pic1.png" />
+    <Resource Include="Assets\Images\loading\pic2.png" />
+    <Resource Include="Assets\Images\loading\pic3.png" />
+    <Resource Include="Assets\Images\loading\pic4.png" />
+    <Resource Include="Assets\Images\loading\pic5.png" />
+    <Resource Include="Assets\Images\loading\pic6.png" />
+    <Resource Include="Assets\Images\loading\pic7.png" />
+    <Resource Include="Assets\Images\loading\pic8.png" />
     <Content Include="Core\Compression\Snappy\lib\win\snappy32.dll" />
     <Content Include="Core\Compression\Snappy\lib\win\snappy64.dll" />
     <Content Include="Core\Compression\Zstandard\lib\win\libzstd.dll" />

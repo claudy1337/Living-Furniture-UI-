@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace The_Living_Furniture_UI.Pages.userPages
 {
     /// <summary>
@@ -29,6 +30,12 @@ namespace The_Living_Furniture_UI.Pages.userPages
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
            
+        }
+
+        private void BSendConsultation_Click(object sender, RoutedEventArgs e)
+        {
+            Db.Consultation consultation = new Db.Consultation(TBusrName.Text, TBusrName.Text);
+            Db.Consultation.SendToConsultation(consultation);
         }
     }
 }

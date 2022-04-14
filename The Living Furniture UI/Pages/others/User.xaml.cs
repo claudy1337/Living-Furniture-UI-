@@ -28,7 +28,7 @@ namespace The_Living_Furniture_UI.Pages.others
         public User(Db.User user)
         {
             InitializeComponent();
-            txtq.Text = user.Name;
+            usrName.Text = user.Name;
             currentUser = user;
         }
 
@@ -45,7 +45,8 @@ namespace The_Living_Furniture_UI.Pages.others
         }
         private void rdAccount_Click(object sender, RoutedEventArgs e)
         {
-            PagesNavigation.Navigate(new System.Uri("Pages/userPages/Profile.xaml", UriKind.RelativeOrAbsolute));
+           // PagesNavigation.Navigate(new System.Uri("Pages/userPages/Profile.xaml", UriKind.RelativeOrAbsolute));
+            PagesNavigation.Navigate(new Profile(currentUser));
         }
 
         private void StackPanel_MouseDown(object sender, MouseButtonEventArgs e)

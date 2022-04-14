@@ -30,10 +30,11 @@
                                 </Grid.ColumnDefinitions>
                                 <StackPanel Orientation="Vertical" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
                                     <Image Source="/Assets/Images/user.png" Height="175" material:ShadowAssist.ShadowDepth="Depth1" Width="219"/>
-                                    <Button Style="{DynamicResource MaterialDesignRaisedLightButton}" Background="#EB8F4C" Content="ADD" Margin="0,5,0,0"/>
+                                    <Button x:Name="changeProfile" Click="changeProfile_Click" Style="{DynamicResource MaterialDesignRaisedLightButton}" Background="#EB8F4C" Content="ADD" Margin="0,5,0,0"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,10,0,0" Width="200">
                                     <TextBox
+                                            x:Name="TBusrName"
                                             Style="{StaticResource MaterialDesignFilledTextBox}"
                                             VerticalAlignment="Top"
                                             TextWrapping="Wrap"
@@ -45,6 +46,7 @@
                                             material:HintAssist.Hint="Name"/>
 
                                     <TextBox
+                                            x:Name="TBusrLogin"
                                             Style="{StaticResource MaterialDesignFilledTextBox}"
                                             VerticalAlignment="Top"
                                             TextWrapping="Wrap"
@@ -56,6 +58,7 @@
                                             material:HintAssist.Hint="Login"/>
 
                                     <TextBox
+                                            x:Name="TBusrAddress"
                                             Style="{StaticResource MaterialDesignFilledTextBox}"
                                             VerticalAlignment="Top"
                                             TextWrapping="Wrap"

@@ -22,15 +22,24 @@ namespace The_Living_Furniture_UI.Pages.userPages
     public partial class Profile : Page
     {
         ObservableCollection<string> imgCollection;
-        public Profile()
+        private static Db.User currentUser;
+        public Profile(Db.User user)
         {
             InitializeComponent();
+            currentUser = user;
+            TBusrName.Text = user.Name;
+            TBusrLogin.Text = user.Login;
             imgCollection = new ObservableCollection<string> { "/Assets/Images/Card/Furniture/f1.png", "/Assets/Images/Card/Furniture/f2.png" };
             
         }
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             
+        }
+
+        private void changeProfile_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

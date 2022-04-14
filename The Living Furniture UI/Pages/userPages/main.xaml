@@ -21,10 +21,18 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                 </Grid>
-                
-                <StackPanel Grid.Row="0" HorizontalAlignment="Left" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,10,0,0">
 
-                   
+                <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,40,0,0">
+                    <ScrollViewer Height="440" HorizontalScrollBarVisibility="Visible" >
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="/Assets/Images/Card/Auth/1.png" Height="470" />
+                            <Image Source="/Assets/Images/Card/Auth/2.png" Height="470"/>
+                            <Image Source="/Assets/Images/Card/Auth/3.png" Height="470"/>
+
+                        
+                       
+                        </StackPanel>
+                    </ScrollViewer>
                 </StackPanel>
                
                
@@ -44,6 +52,7 @@
                                     <StackPanel>
 
                                         <TextBox
+                                            x:Name="TBusrName"
                                             Margin="0,20,0,0"
                                             Style="{StaticResource MaterialDesignFilledTextBox}"
                                             VerticalAlignment="Top"
@@ -55,6 +64,7 @@
                                             FontSize="15"/>
 
                                         <TextBox
+                                            x:Name="TBusrNumber"
                                             Style="{StaticResource MaterialDesignFilledTextBox}"
                                             VerticalAlignment="Top"
                                             TextWrapping="Wrap"
@@ -68,7 +78,8 @@
 
                                     </StackPanel>
                                     <Button
-                                         x:Name="Btn"
+                                         x:Name="BSendConsultation"
+                                         Click="BSendConsultation_Click"
                                          Margin="0,20,20,0"
                                          Width="220"
                                          Style="{StaticResource MaterialDesignRaisedDarkButton}"
@@ -76,8 +87,7 @@
                                          material:ButtonAssist.CornerRadius="25"
                                          ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
                                          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
-                                         Background="#388F72"
->
+                                         Background="#388F72">
                                         <TextBlock
                                         HorizontalAlignment="Right"
                                         Text="Send"

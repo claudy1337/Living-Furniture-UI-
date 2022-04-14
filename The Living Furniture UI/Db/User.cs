@@ -41,6 +41,15 @@ namespace The_Living_Furniture_UI.Db
             var collection = database.GetCollection<User>("User");
             collection.InsertOne(user);
         }
+        public async static void usrUpdate(Db.User user)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<User>("User");
+           // var result = await collection.ReplaceOneAsync(new BsonDocument(user);
+                
+            //var people = await collection.Find(new BsonDocument()).ToListAsync();
+        }
         
     }
     
