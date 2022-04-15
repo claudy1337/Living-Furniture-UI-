@@ -40,7 +40,7 @@ namespace The_Living_Furniture_UI.Pages.userPages
             {
                 Db.Product product = new Db.Product("", "", 0, 0, 0, 0, "", false, "", "", "");
                 Db.Order order = new Db.Order(product, false);
-                Db.Basket basket = new Db.Basket(product);
+                Db.Basket basket = new Db.Basket("", "", "");
                 Random rnd = new Random();
                 int cardNumber = rnd.Next(10000, 99999);
                 Db.User usr = new Db.User(usrLogin.Text, usrPassword.ToString(), usrName.Text, cardNumber, "", order, basket);

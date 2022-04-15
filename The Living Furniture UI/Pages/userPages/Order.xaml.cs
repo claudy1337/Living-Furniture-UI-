@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using The_Living_Furniture_UI.Db;
+using MongoDB.Bson;
+using MongoDB.Driver.Core;
+using MongoDB.Driver;
 
 namespace The_Living_Furniture_UI.Pages.userPages
 {
@@ -23,6 +27,15 @@ namespace The_Living_Furniture_UI.Pages.userPages
         public Order()
         {
             InitializeComponent();
+            //listlogin.ItemsSource = Basket.GetLoginList();
+            TBNames.Text = Basket.GetUser(listlogin.SelectedItem.ToString()).Name;
+            
+            TBPrice.Text = Basket.GetUser(listlogin.SelectedItem.ToString()).Size;
+        }
+
+        private void listlogin_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
         }
     }
 }

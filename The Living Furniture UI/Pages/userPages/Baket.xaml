@@ -17,7 +17,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
                 <StackPanel Orientation="Horizontal">
-                    <ListView>
+                    <ListView x:Name="listlogin">
                         <ListViewItem>
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="/Assets/Images/mainC.png" Height="250"/>
@@ -48,6 +48,7 @@
                                                 Margin="8,24,16,24">
 
                                                 <TextBox
+                                            x:Name="TBName"
                                             Margin="0,20,0,0"
                                             Style="{StaticResource MaterialDesignFilledTextBox}"
                                             VerticalAlignment="Top"
@@ -60,6 +61,7 @@
 
                                                 <TextBox
                                             Margin="0,20,0,0"
+                                            x:Name="TBSize"
                                             Style="{StaticResource MaterialDesignFilledTextBox}"
                                             VerticalAlignment="Top"
                                             TextWrapping="Wrap"
@@ -70,6 +72,7 @@
                                             FontSize="15"/>
 
                                                 <TextBox
+                                            x:Name="TBMaterial"
                                             Margin="0,20,0,0"
                                             Style="{StaticResource MaterialDesignFilledTextBox}"
                                             VerticalAlignment="Top"

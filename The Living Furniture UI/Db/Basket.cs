@@ -13,12 +13,39 @@ namespace The_Living_Furniture_UI.Db
 {
     public class Basket
     {
-        public Basket(Product product)
+        public Basket(string name, string size, string material)
         {
-            Product = product;
+            Name = name;
+            Size = size;
+            Material = material;
         }
         public ObjectId _id { get; set; }
-        public Product Product { get; set; }
+        public string Name { get; set; }
+        public string Size { get; set; }
+        public string Material { get; set; }
+        public static List<string> GetLoginList()
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Basket>("Basket");
+            var listUsersFromDB = collection.Find(x => true).ToList();
+            List<string> listToReturn = new List<string>();
+            foreach (var item in listUsersFromDB)
+            {
+                listToReturn.Add(item.Name);
+                listToReturn.Add(item.Size);
+                listToReturn.Add(item.Material);
+            }
+            return listToReturn;
+        }
+        public static Basket GetUser(string name)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Basket>("Basket");
+            var foundedUser = collection.Find(x => x.Name == name).FirstOrDefault();
+            return foundedUser;
+        }
     }
 
 }

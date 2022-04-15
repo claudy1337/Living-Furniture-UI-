@@ -7,8 +7,24 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Order">
-
-    <Grid>
+    <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
         
-    </Grid>
+
+
+        <ListView x:Name="listlogin" SelectionChanged="listlogin_SelectionChanged">
+            
+                
+                    
+               
+                <StackPanel Orientation="Vertical" Margin="10">
+                   
+                    <TextBlock Text="Name Products" x:Name="TBNames" FontSize="20" FontFamily="Ubuntu Medium"/>
+                        <TextBlock x:Name="aboba"/>
+                        <TextBlock Text="Price" FontSize="20" x:Name="TBPrice" FontFamily="Ubuntu Medium"/>
+                </StackPanel>
+               
+           
+
+        </ListView>
+    </Border>
 </Page>
