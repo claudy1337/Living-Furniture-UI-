@@ -8,7 +8,6 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 using The_Living_Furniture_UI.Db;
-
 namespace The_Living_Furniture_UI.Db
 {
     class Requests
@@ -22,18 +21,41 @@ namespace The_Living_Furniture_UI.Db
             User = user;
         }
         public ObjectId _id { get; set; }
+        public int id { get; set; }
         public string Name { get; set; }
         public string Number { get; set; }
         public string Size { get; set; }
         public string Type { get; set; }
         public User User { get; set; }
 
-        public static void SendToRequest(Requests request)
+        //public static void SendToRequest(Requests request)
+        //{
+        //    var client = new MongoClient("mongodb://localhost");
+        //    var database = client.GetDatabase("FurnitureBD");
+        //    var collection = database.GetCollection<Requests>("Request");
+        //    collection.InsertOne(request);
+        //}
+        public static List<string> GetRequestList()
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("FurnitureBD");
             var collection = database.GetCollection<Requests>("Request");
-            collection.InsertOne(request);
+            var listUsersFromDB = collection.Find(x => true).ToList();
+            List<string> listToReturn = new List<string>();
+            foreach (var item in listUsersFromDB)
+            {
+                listToReturn.Add(item.Name);
+            }
+            return listToReturn;
+        }
+        public static Requests GetRequest(string number)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Requests>("Request");
+           
+            var foundedUser = collection.Find(x => x.Number == number).FirstOrDefault();
+            return foundedUser;
         }
     }
 }

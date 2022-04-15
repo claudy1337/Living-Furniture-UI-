@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:The_Living_Furniture_UI.Pages.Product"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="500" d:DesignWidth="800"
       Title="ProductInfo"
       xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes">
     <Border CornerRadius="5" Background="#FFF7EE">
@@ -95,26 +95,18 @@
 
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
-                            <Image Source="/Assets/Images/Furniture/Collection/Cabinet.png" Height="200" Margin="0,15,0,0"/>
+                            
+                            <Image Source="/Assets/Images/Furniture/Cabinet/Alex/alex-alek.png" Height="200" Margin="0,15,0,0"/>
+
+
                             <Image Source="/Assets/Images/raiting.png" Height="25" HorizontalAlignment="Left"/>
                         </StackPanel>
                         
                     </StackPanel>
 
-                    <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0" Orientation="Vertical">
-                        <Expander
-                            material:ShadowAssist.ShadowDepth="Depth5"
-                            HorizontalAlignment="Stretch"
-                            Header="Photo">
-                            <StackPanel
-                                    Orientation="Vertical"
-                                    TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
-                                    Margin="24,8,24,16">
-                                <StackPanel Orientation="Vertical">
-                                    <Image Source="/Assets/Images/Furniture/Cabinet/Cabinet (1).png"  Height="150"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </Expander>
+                    <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,30,0,0" Orientation="Vertical">
+                        <Image Source="/Assets/Images/Furniture/Cabinet/Alex/alex-aleks.png" Height="200"/>
+
                     </StackPanel>
                 </Grid>
             </StackPanel>

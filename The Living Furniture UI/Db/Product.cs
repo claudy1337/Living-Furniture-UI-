@@ -36,6 +36,14 @@ namespace The_Living_Furniture_UI.Db
         public string Logo { get; set; }
         public string Photo { get; set; }
 
+        public static void GetProduct()
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Db.Product>("Product");
+            var listUsersFromDB = collection.Find(x => true);
+            
+        }
         
     }
     

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections;
 using System.Collections.ObjectModel;
+using The_Living_Furniture_UI.Db;
 
 namespace The_Living_Furniture_UI.Pages.adminPages
 {
@@ -25,8 +26,22 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         public Requests()
         {
             InitializeComponent();
+            listLogin.ItemsSource  = Db.Requests.GetRequestList();
         }
-       
-    
+
+        private void listLogin_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (listLogin.SelectedIndex == -1)
+            {
+                return;
+            }
+            else
+            {
+                TBusrName.Text = Db.Requests.GetRequest(listLogin.SelectedItem.ToString()).Name;
+                TBusrNumber.Text = Db.Requests.GetRequest(listLogin.SelectedItem.ToString()).Number;
+                TBchangeSize.Text = Db.Requests.GetRequest(listLogin.SelectedItem.ToString()).Size;
+                TBchangeType.Text = Db.Requests.GetRequest(listLogin.SelectedItem.ToString()).Type;
+            }
+        }
     }
 }

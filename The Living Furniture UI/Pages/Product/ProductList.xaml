@@ -27,10 +27,10 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0" Orientation="Vertical" Margin="10" x:Name="ProductOne" MouseLeftButtonDown="ProductOne_MouseLeftButtonDown">
-                        <Image Source="{Binding Logo}" Height="170" x:Name="imgProductOne"/>
-                        <TextBlock Text="{Binding Name}" FontSize="20" FontFamily="Ubuntu Medium" x:Name="NameProductOne"/>
+                        <Image Height="170" x:Name="imgProductOne"/>
+                        <TextBlock FontSize="20" FontFamily="Ubuntu Medium" x:Name="NameProductOne"/>
                         <Image Source="/Assets/Images/raiting.png" Height="25" HorizontalAlignment="Left"/>
-                        <TextBlock Text="Price" FontSize="20" FontFamily="Ubuntu Medium"/>
+                        <TextBlock Text="Price" FontSize="20" FontFamily="Ubuntu Medium" x:Name="PriceProductOne"/>
                     </StackPanel>
 
 
