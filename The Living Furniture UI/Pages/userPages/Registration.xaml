@@ -70,11 +70,12 @@
                         <StackPanel Orientation="Horizontal" Margin="0,5,0,5" >
 
                             <CheckBox
+                        x:Name="isCheсkAgree"      
                         Margin="45,10,0,0"
                         FontSize="15"
                         FontFamily="Ubuntu Light"
                         Style="{DynamicResource MaterialDesignDataGridCheckBoxColumnEditingStyle}"
-                        x:Name="MaterialDesignOutlinedPasswordBoxEnabledComboBox"
+                        Checked="isCheсkAgree_Checked"
                         Content="I've read and agree with our Privacy Policed"  Width="262">
                                 <CheckBox.RenderTransform>
                                     <TransformGroup>

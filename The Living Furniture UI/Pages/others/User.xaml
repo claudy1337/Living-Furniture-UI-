@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:The_Living_Furniture_UI.Pages.others"
         mc:Ignorable="d"
-        Title="User" Height="590" Width="990"
+        Title="User" Height="600" Width="990"
          WindowStartupLocation="CenterScreen" WindowStyle="None"
         Background="Transparent" AllowsTransparency="True"
         ResizeMode="NoResize" WindowState="Normal"
@@ -123,10 +123,12 @@
                 <Border Grid.Row="1" Margin="10">
                     <StackPanel>
                         
+                        <!--
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="Welcome!" FontSize="25" FontFamily="Ubuntu Medium"/>
                             <TextBlock Text="UsrName" FontSize="20" Margin="10,10,0,0" FontFamily="Ubuntu Meidum" x:Name="usrName"/>
                         </StackPanel>
+                        -->
                         <Frame x:Name="PagesNavigation" NavigationUIVisibility="Hidden" Margin="0,-10,0,0" Navigated="PagesNavigation_Navigated">
 
                         </Frame>

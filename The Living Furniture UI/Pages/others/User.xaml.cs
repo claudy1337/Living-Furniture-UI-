@@ -28,7 +28,7 @@ namespace The_Living_Furniture_UI.Pages.others
         public User(Db.User user)
         {
             InitializeComponent();
-            usrName.Text = user.Name;
+            //usrName.Text = user.Name;
             currentUser = user;
         }
 

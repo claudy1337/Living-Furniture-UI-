@@ -12,23 +12,21 @@
     
        
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
-       
+
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="340"/>
-                
-                <RowDefinition />
+                <RowDefinition Height="400"/>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0">
+            <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Image Source="/Assets/Images/loading/pic1.png" Grid.Column="0" />
-                    <Image Source="/Assets/Images/loading/pic2.png" Grid.Column="1"/>
-                    <Image Source="/Assets/Images/loading/pic3.png" Grid.Column="2"/>
+                    <Image Source="/Assets/Images/loading/pic3.png" Grid.Column="0"/>
+                    <Image Source="/Assets/Images/loading/pic1.png" Grid.Column="1" Margin="10,0,10,0"/>
+                    <Image Source="/Assets/Images/loading/pic2.png" Grid.Column="2"/>
                 </Grid>
             </StackPanel>
 
@@ -38,13 +36,11 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Image Source="/Assets/Images/loading/pic7.png" Grid.Column="0"/>
-                    <Image Source="/Assets/Images/loading/pic8.png" Grid.Column="1"/>
+                    
 
                 </Grid>
             </StackPanel>
         </Grid>
-        
     </Border>
     
 </Page>

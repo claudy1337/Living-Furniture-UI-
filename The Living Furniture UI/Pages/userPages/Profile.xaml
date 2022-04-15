@@ -93,7 +93,7 @@
                         <StackPanel Grid.RowSpan="2">
                             <material:Card Width="331" material:ShadowAssist.ShadowDepth="Depth5" >
                                 <StackPanel Orientation="Horizontal" Height="200">
-                                    <Expander ExpandDirection="Left">
+                                    <Expander ExpandDirection="Left" Height="215">
                                         <Expander.Header>
                                             <TextBlock Text="User Card"
                                          FontSize="22"
@@ -105,8 +105,15 @@
                                             </TextBlock>
                                         </Expander.Header>
                                         <StackPanel Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" Margin="8,24,16,24">
-                                            <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua " TextWrapping="Wrap" FontSize="15" />
-                                            <TextBlock/>
+                                            <StackPanel Orientation="Vertical">
+                                                <TextBlock Text="99999" HorizontalAlignment="Center" FontSize="19" FontFamily="Ubuntu Medium"/>
+                                                <Image Source="/Assets/Images/userCards.png" Height="174" Width="187" />
+                                            </StackPanel>
+                                           
+
+
+
+
                                         </StackPanel>
                                     </Expander>
                                 </StackPanel>
