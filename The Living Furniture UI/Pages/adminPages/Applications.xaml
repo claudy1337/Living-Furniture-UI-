@@ -29,8 +29,8 @@
                     Padding="32">
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <StackPanel Orientation="Horizontal">
-                            <material:PackIcon Kind="Account" Foreground="{DynamicResource PrimaryBlueColor}" HorizontalAlignment="Left" Height="50" Width="50" />
-                            <TextBlock Text="User" Foreground="{DynamicResource PrimaryBlueColor}" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
+                            <material:PackIcon Kind="User" Foreground="{DynamicResource PrimaryBlueColor}" HorizontalAlignment="Left" Height="50" Width="50" />
+                            <TextBlock Text="Users" Foreground="{DynamicResource PrimaryBlueColor}" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
                         </StackPanel>
                         <TextBlock Text="200" Foreground="{DynamicResource PrimaryBlueColor}" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
                     </StackPanel>
