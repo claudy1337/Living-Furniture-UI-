@@ -23,22 +23,28 @@ namespace The_Living_Furniture_UI.Db
         public string Name { get; set; }
         public string Size { get; set; }
         public string Material { get; set; }
-        public static List<string> GetLoginList()
+        public static List<Product> GetBasketList()
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("FurnitureBD");
             var collection = database.GetCollection<Basket>("Basket");
             var listUsersFromDB = collection.Find(x => true).ToList();
-            List<string> listToReturn = new List<string>();
+            List<Product> listToReturn = new List<Product>();
             foreach (var item in listUsersFromDB)
             {
-                listToReturn.Add(item.Name);
-                listToReturn.Add(item.Size);
-                listToReturn.Add(item.Material);
+                
             }
             return listToReturn;
         }
-        public static Basket GetUser(string name)
+
+        public static List<Product> Showprods()
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Product>("Basket");
+            return collection.Find(x => true).ToList();
+        }
+        public static Basket GetBasket(string name)
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("FurnitureBD");

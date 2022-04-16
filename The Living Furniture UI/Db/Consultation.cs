@@ -10,15 +10,18 @@ namespace The_Living_Furniture_UI.Db
 {
     public class Consultation
     {
-        public Consultation(string name, string number)
+        public Consultation(string name, string number, bool ischeck)
         {
             Name = name;
             Number = number;
+            isCheck = ischeck;
 
         }
         public ObjectId _id { get; set; }
         public string Name{ get; set; }
         public string Number { get; set; }
+        public bool isCheck { get; set; }
+
         public static void SendToConsultation(Db.Consultation consultation)
         {
             var client = new MongoClient("mongodb://localhost");

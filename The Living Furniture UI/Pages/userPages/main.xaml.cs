@@ -34,7 +34,7 @@ namespace The_Living_Furniture_UI.Pages.userPages
 
         private void BSendConsultation_Click(object sender, RoutedEventArgs e)
         {
-            Db.Consultation consultation = new Db.Consultation(TBusrName.Text, TBusrName.Text);
+            Db.Consultation consultation = new Db.Consultation(TBusrName.Text, TBusrName.Text, false);
             Db.Consultation.SendToConsultation(consultation);
         }
     }

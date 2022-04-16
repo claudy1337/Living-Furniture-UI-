@@ -17,37 +17,44 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
                 <StackPanel Orientation="Horizontal">
-                    <ListView x:Name="listlogin">
-                        <ListViewItem>
-                            <StackPanel Orientation="Horizontal">
-                                <Image Source="/Assets/Images/mainC.png" Height="250"/>
-                                <StackPanel Orientation="Vertical" Margin="20,0,0,0">
-                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                        
-                                        <Border/>
-                                        <Expander
+                    <ScrollViewer Height="440" HorizontalScrollBarVisibility="Visible" >
+
+
+
+
+                        <ListView x:Name="listlogin">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Assets/Images/mainC.png" Height="250"/>
+                                        <StackPanel Orientation="Vertical" Margin="20,0,0,0">
+                                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+
+                                                <Border/>
+                                                <Expander
                                             Width="auto"
                                             Height="250"
                                             ExpandDirection="Right">
-                                            <Expander.Header>
-                                                <TextBlock
+                                                    <Expander.Header>
+                                                        <TextBlock
                                                     Text="Information"
                                                     FontSize="22"
                                                     RenderTransformOrigin=".5,.5">
-                                                    <TextBlock.LayoutTransform>
-                                                        <RotateTransform
+                                                            <TextBlock.LayoutTransform>
+                                                                <RotateTransform
                                                             Angle="90" />
-                                                    </TextBlock.LayoutTransform>
-                                                </TextBlock>
-                                                
-                                            </Expander.Header>
-                                            
-                                            <StackPanel
+                                                            </TextBlock.LayoutTransform>
+                                                        </TextBlock>
+
+                                                    </Expander.Header>
+
+                                                    <StackPanel
                                                 Orientation="Vertical"
                                                 TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
                                                 Margin="8,24,16,24">
 
-                                                <TextBox
+                                                        <TextBox
+                                            Text="{Binding Path=Name}"
                                             x:Name="TBName"
                                             Margin="0,20,0,0"
                                             Style="{StaticResource MaterialDesignFilledTextBox}"
@@ -59,7 +66,8 @@
                                             FontFamily="Ubuntu Light"
                                             FontSize="15"/>
 
-                                                <TextBox
+                                                        <TextBox
+                                              Text="{Binding Path=Name}"
                                             Margin="0,20,0,0"
                                             x:Name="TBSize"
                                             Style="{StaticResource MaterialDesignFilledTextBox}"
@@ -71,7 +79,8 @@
                                             FontFamily="Ubuntu Light"
                                             FontSize="15"/>
 
-                                                <TextBox
+                                                        <TextBox
+                                                     Text="{Binding Path=Name}"
                                             x:Name="TBMaterial"
                                             Margin="0,20,0,0"
                                             Style="{StaticResource MaterialDesignFilledTextBox}"
@@ -82,45 +91,47 @@
                                             material:HintAssist.Hint="Material"
                                             FontFamily="Ubuntu Light"
                                             FontSize="15"/>
-                                            </StackPanel>
-                                        </Expander>
-                                        
-                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
-                                            <material:PopupBox
+                                                    </StackPanel>
+                                                </Expander>
+
+                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                                    <material:PopupBox
                                                 StaysOpen="True"
                                                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
-                                                <Grid Width="200" Margin="8,8,8,8">
-                                                    <Grid.Resources>
-                                                        <Style TargetType="TextBox"
+                                                        <Grid Width="200" Margin="8,8,8,8">
+                                                            <Grid.Resources>
+                                                                <Style TargetType="TextBox"
                                                                 BasedOn="{StaticResource MaterialDesignTextBox}">
-                                                            <Setter
+                                                                    <Setter
                                                                 Property="material:HintAssist.IsFloating"
                                                                 Value="True" />
-                                                            <Setter
+                                                                    <Setter
                                                                 Property="Margin"
                                                                 Value="8,8,8,8" />
-                                                        </Style>
-                                                    </Grid.Resources>
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="*" />
-                                                        <ColumnDefinition Width="Auto" />
-                                                    </Grid.ColumnDefinitions>
-                                                    <Grid.RowDefinitions>
-                                                        <RowDefinition Height="*"/>
-                                                        <RowDefinition Height="*"/>
-                                                        <RowDefinition Height="*"/>
-                                                        <RowDefinition Height="*"/>
-                                                        <RowDefinition Height="*"/>
-                                                        <RowDefinition Height="*"/>
-                                                    </Grid.RowDefinitions>
-                                                    <TextBlock Grid.Column="0"
+                                                                </Style>
+                                                            </Grid.Resources>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="*" />
+                                                                <ColumnDefinition Width="Auto" />
+                                                            </Grid.ColumnDefinitions>
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="*"/>
+                                                                <RowDefinition Height="*"/>
+                                                                <RowDefinition Height="*"/>
+                                                                <RowDefinition Height="*"/>
+                                                                <RowDefinition Height="*"/>
+                                                                <RowDefinition Height="*"/>
+                                                            </Grid.RowDefinitions>
+                                                            <TextBlock Grid.Column="0"
                                                         Grid.Row="0"
                                                         Style="{StaticResource MaterialDesignHeadline6TextBlock}"
                                                         Margin="8,8,8,16"
                                                         Text="Full Information"/>
 
-                                                    <StackPanel Orientation="Vertical" Margin="0,20,0,0">
-                                                        <TextBox
+                                                            <StackPanel Orientation="Vertical" Margin="0,20,0,0">
+                                                                <TextBox
+                                                             Text="{Binding Path=Name}"
+                                            x:Name="Aboba"
                                             Grid.Row="1"
                                             Margin="0,20,0,0"
                                             Style="{StaticResource MaterialDesignFilledTextBox}"
@@ -132,7 +143,8 @@
                                             FontFamily="Ubuntu Light"
                                             FontSize="15"/>
 
-                                                        <TextBox
+                                                                <TextBox
+                                            Text="{Binding Path=Name}"
                                             Grid.Row="2"                
                                             Margin="0,20,0,0"
                                             Style="{StaticResource MaterialDesignFilledTextBox}"
@@ -144,7 +156,8 @@
                                             FontFamily="Ubuntu Light"
                                             FontSize="15"/>
 
-                                                        <TextBox
+                                                                <TextBox
+                                                             Text="{Binding Path=Name}"
                                             Grid.Row="3"                
                                             Margin="0,20,0,0"
                                             Style="{StaticResource MaterialDesignFilledTextBox}"
@@ -156,7 +169,8 @@
                                             FontFamily="Ubuntu Light"
                                             FontSize="15"/>
 
-                                                        <TextBox
+                                                                <TextBox
+                                                             Text="{Binding Path=Name}"
                                             Grid.Row="4"                
                                             Margin="0,20,0,0"
                                             Style="{StaticResource MaterialDesignFilledTextBox}"
@@ -168,21 +182,22 @@
                                             FontFamily="Ubuntu Light"
                                             FontSize="15"/>
 
-                                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5" Margin="0,20,0,0">
-                                                            <Button Width="150" Background="Gray" Content="Close" Style="{DynamicResource MaterialDesignFlatAccentBgButton}"/>
-                                                          
-                                                        </StackPanel>
-                                                    </StackPanel>
-                                                </Grid>
-                                            </material:PopupBox>
+                                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5" Margin="0,20,0,0">
+                                                                    <Button Width="150" Background="Gray" Content="Close" Style="{DynamicResource MaterialDesignFlatAccentBgButton}"/>
+
+                                                                </StackPanel>
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </material:PopupBox>
+                                                </StackPanel>
+                                            </StackPanel>
                                         </StackPanel>
                                     </StackPanel>
-                                </StackPanel>
-                            </StackPanel>
-                        </ListViewItem>
-                        
-                        
-                    </ListView>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+
+                        </ListView>
+                    </ScrollViewer>
                 </StackPanel>
             </StackPanel>
         </Grid>

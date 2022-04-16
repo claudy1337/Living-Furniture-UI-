@@ -28,9 +28,9 @@ namespace The_Living_Furniture_UI.Pages.userPages
         {
             InitializeComponent();
             //listlogin.ItemsSource = Basket.GetLoginList();
-            TBNames.Text = Basket.GetUser(listlogin.SelectedItem.ToString()).Name;
+            //TBNames.Text = Basket.GetUser(listlogin.SelectedItem.ToString()).Name;
             
-            TBPrice.Text = Basket.GetUser(listlogin.SelectedItem.ToString()).Size;
+            //TBPrice.Text = Basket.GetUser(listlogin.SelectedItem.ToString()).Size;
         }
 
         private void listlogin_SelectionChanged(object sender, SelectionChangedEventArgs e)

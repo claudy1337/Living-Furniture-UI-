@@ -38,15 +38,31 @@
                      Background="#FAF8F6"
                      FontFamily="Ubuntu Light" Width="256" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
 
-                        <TextBox
-                     x:Name="UsrNumber"
-                     material:HintAssist.Hint="Number"
-                     FontSize="25" HorizontalAlignment="Center"
-                     BorderBrush="Gray"
-                     Padding="7"
-                     Margin="0,20,0,0"
-                     Background="#FAF8F6"
-                     FontFamily="Ubuntu Light" Width="256" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
+                        <ComboBox
+                             Margin="0,20,0,0"
+                             x:Name="CBMaterialProduct"
+                             Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                             material:HintAssist.Hint="Material"
+                             ItemsSource="{Binding ShortStringList}"
+                             material:TextFieldAssist.HasClearButton="True"
+                             Width="256">
+                            <TextBlock Text="Wood"/>
+                            <TextBlock Text="Substitute"/>
+                            <TextBlock Text="Polyester"/>
+                            <ComboBox.SelectedItem>
+
+                                <Binding
+                                    Path="SelectedValidationOutlined"
+                                    Mode="TwoWay"
+                                    UpdateSourceTrigger="PropertyChanged">
+                                    <Binding.ValidationRules>
+
+                                    </Binding.ValidationRules>
+
+
+                                </Binding>
+                            </ComboBox.SelectedItem>
+                        </ComboBox>
 
                         <ComboBox
                              Margin="0,20,0,0"
@@ -57,6 +73,7 @@
                              material:TextFieldAssist.HasClearButton="True"
                              Width="256">
                             <TextBlock Text="25x25"/>
+                            <TextBlock Text="50x50"/>
                             <TextBlock Text="100x100"/>
                             <TextBlock Text="300x300"/>
                             <ComboBox.SelectedItem>

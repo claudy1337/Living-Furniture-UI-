@@ -8,23 +8,20 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Order">
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
-        
 
-
-        <ListView x:Name="listlogin" SelectionChanged="listlogin_SelectionChanged">
+        <ListView Name="listView2" Background="White" Height="439" >
             
-                
-                    
-               
-                <StackPanel Orientation="Vertical" Margin="10">
-                   
-                    <TextBlock Text="Name Products" x:Name="TBNames" FontSize="20" FontFamily="Ubuntu Medium"/>
-                        <TextBlock x:Name="aboba"/>
-                        <TextBlock Text="Price" FontSize="20" x:Name="TBPrice" FontFamily="Ubuntu Medium"/>
-                </StackPanel>
-               
-           
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
+                <Image Source="/Assets/Images/Furniture/Cabinet/Alex/alex-aleks.png" Width="100" Height="100"/>
 
+                <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="name" FontSize="22"/>
+                            <TextBlock Text="aboba" Margin="20,0,0,0" HorizontalAlignment="Center" FontSize="22"/>
+                        </StackPanel>
+
+                    </StackPanel>
+              
+          
         </ListView>
     </Border>
 </Page>
