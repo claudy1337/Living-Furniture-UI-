@@ -45,22 +45,14 @@ namespace The_Living_Furniture_UI.Pages.userPages
                 int cardNumber = rnd.Next(10000, 99999);
                 Db.User usr = new Db.User(usrLogin.Text, usrPassword.ToString(), usrName.Text, cardNumber, "", order, basket);
                 Db.User.usrAddToDB(usr);
-
                 others.User user = new others.User(usr);
                 user.Show();
             }
             else
             {
                 MessageBox.Show("none");
-            }
-            
-            
-            
-            
-           
+            }           
         }
-
-
         private void isCheсkAgree_Checked(object sender, RoutedEventArgs e)
         {
 

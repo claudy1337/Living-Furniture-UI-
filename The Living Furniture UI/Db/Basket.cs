@@ -18,11 +18,14 @@ namespace The_Living_Furniture_UI.Db
             Name = name;
             Size = size;
             Material = material;
+            
+            
         }
         public ObjectId _id { get; set; }
         public string Name { get; set; }
         public string Size { get; set; }
         public string Material { get; set; }
+        
         public static List<Product> GetBasketList()
         {
             var client = new MongoClient("mongodb://localhost");

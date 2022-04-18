@@ -18,10 +18,6 @@
             <StackPanel Grid.Column="0">
                 <StackPanel Orientation="Horizontal">
                     <ScrollViewer Height="440" HorizontalScrollBarVisibility="Visible" >
-
-
-
-
                         <ListView x:Name="listlogin">
                             <ListView.ItemTemplate>
                                 <DataTemplate>

@@ -73,21 +73,16 @@
                         </ListView>
                     </StackPanel>
                     <StackPanel Grid.Column="1">
-                        <ListView Name="lstws">
-                            <ListView.View> 
-                                <GridView>
-                                    <GridView.Columns>
-                                        
-                                        <GridViewColumn Header="Height" DisplayMemberBinding="{Binding Path=ModelName}"></GridViewColumn>
-                                        <GridViewColumn Header="Width" DisplayMemberBinding="{Binding Path=ModelNumber}"></GridViewColumn>
-                                        <GridViewColumn Header="Heigth" DisplayMemberBinding="{Binding Path=UnitCost}"></GridViewColumn>
-                                        <GridViewColumn Header="Color" DisplayMemberBinding="{Binding Path=UnitCost}"></GridViewColumn>
-                                        <GridViewColumn Header="Color" DisplayMemberBinding="{Binding Path=UnitCost}"></GridViewColumn>
-                                        
-
-                                    </GridView.Columns>
-                                </GridView>
-                            </ListView.View>
+                        <ListView x:Name="listlogin">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBox Text="{Binding Path=Name}" FontSize="24"/>
+                                        <TextBox Text="{Binding Path=Number}" FontSize="24"/>
+                                    </StackPanel>
+                                    
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
                         </ListView>
                     </StackPanel>
                 </Grid>

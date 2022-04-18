@@ -25,22 +25,25 @@ namespace The_Living_Furniture_UI.Pages.userPages
     
     public partial class Baket : Page
     {
-        public Baket()
+        private static Db.User currentUser;
+        public Baket(Db.User user)
         {
             InitializeComponent();
+            currentUser = user;
             LoadData();
-            //listlogin.ItemsSource = 
+            
         }
 
         private async void LoadData()
         {
+           
             string connectionString = "mongodb://localhost";
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("FurnitureBD");
             var collection = database.GetCollection<Db.Basket>("Basket");
             var filter = new BsonDocument();
 
-            List<Db.Basket> students = new List<Db.Basket>();
+            List<Db.Basket> basket = new List<Db.Basket>();
 
             using (var cursor = await collection.FindAsync(filter))
             {
@@ -49,11 +52,11 @@ namespace The_Living_Furniture_UI.Pages.userPages
                     var people = cursor.Current;
                     foreach (Db.Basket doc in people)
                     {
-                        students.Add(new Db.Basket(doc.Name, doc.Size, doc.Material));
+                        basket.Add(new Db.Basket(doc.Name, doc.Size, doc.Material));
                     }
                 }
             }
-            listlogin.ItemsSource = students;
+            listlogin.ItemsSource = basket.Where(b => b._id == currentUser.Basket._id).ToList();
 
         }
 

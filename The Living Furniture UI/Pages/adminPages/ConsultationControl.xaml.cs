@@ -12,29 +12,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Collections;
-using System.Collections.ObjectModel;
 using The_Living_Furniture_UI.Db;
-using MongoDB.Bson;
-using MongoDB.Driver;
 
 namespace The_Living_Furniture_UI.Pages.adminPages
 {
     /// <summary>
-    /// Логика взаимодействия для Requests.xaml
+    /// Логика взаимодействия для ConsultationControl.xaml
     /// </summary>
-    public partial class Requests : Page
+    public partial class ConsultationControl : Page
     {
-        public Requests()
+        public ConsultationControl()
         {
             InitializeComponent();
-            listlogin.ItemsSource = Consultation.GetConsList();
+           
+            lstv.ItemsSource = Consultation.GetConsList();
         }
-
-        private void lstw_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-       
     }
 }

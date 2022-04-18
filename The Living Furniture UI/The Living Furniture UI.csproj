@@ -149,6 +149,9 @@
     <Compile Include="Pages\adminPages\Applications.xaml.cs">
       <DependentUpon>Applications.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\adminPages\ConsultationControl.xaml.cs">
+      <DependentUpon>ConsultationControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\adminPages\Domain\ListsAndGridsViewModel.cs" />
     <Compile Include="Pages\adminPages\Domain\SelectableViewModel.cs" />
     <Compile Include="Pages\adminPages\Domain\ViewModelBase.cs" />
@@ -208,6 +211,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\adminPages\Applications.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\adminPages\ConsultationControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

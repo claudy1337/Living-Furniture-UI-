@@ -39,7 +39,8 @@ namespace The_Living_Furniture_UI.Pages.userPages
             Db.Basket basket = new Db.Basket("", "", "");
             //User user = new User("", "", "", 0, "" , order, basket);
             Db.Requests request = new Db.Requests(usrName.Text, CBMaterialProduct.Text, CBTypeProduct.Text, CBSizeProduct.Text, currentUser);
-            //Requests.SendToRequest(request); 
+            //Requests.SendToRequest(request);
+            Db.Requests.requestAddToDB(request);
         }
     }
 }
