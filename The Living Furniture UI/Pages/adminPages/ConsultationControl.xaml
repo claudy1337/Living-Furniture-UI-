@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:The_Living_Furniture_UI.Pages.adminPages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="455" d:DesignWidth="800"
       Title="ConsultationControl"
       Background="White"
       xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes">
@@ -15,7 +15,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0">
+        <StackPanel Grid.Column="0" Margin="10">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -27,20 +27,21 @@
                                FontSize="24"
                                FontFamily="Ubuntu Medium"
                                Grid.Row="0"/>
-                
-                <ListBox Margin="0,20,0,0" SelectionChanged="listLogin_SelectionChanged" FontFamily="Ubuntu Medium" FontSize="15" x:Name="listLogin" Height="365" ItemsSource="{Binding Elements}" Grid.Row="1"/>
+
+                <ListBox Margin="0,20,0,0" SelectionChanged="listLogin_SelectionChanged" FontFamily="Ubuntu Medium" FontSize="15" x:Name="listLogin" Height="340" ItemsSource="{Binding Elements}" Grid.Row="1"/>
                 <Button Grid.Row="2" 
-                        Height="40" 
-                        Width="400"
+                        Margin="20,5,20,0"
+                        Background="AliceBlue"
+                        Height="40"
                         FontFamily="Ubuntu Medium" 
                         FontSize="24" Content="ALL"
                         x:Name="BFullList"
                         Click="BFullList_Click"
-                        Style="{DynamicResource MaterialDesignRaisedLightButton}" />
+                        Style="{DynamicResource MaterialDesignRaisedLightButton}"/>
             </Grid>
         </StackPanel>
-        
-        <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Top" Height="450">
+
+        <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Top" Height="450" Margin="10">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="130"/>
@@ -69,13 +70,13 @@
                           material:HintAssist.Hint="Number"/>
 
                     <Button x:Name="BisCheckConsultation"
-                            Style="{DynamicResource MaterialDesignRaisedLightButton}" 
-                            Background="#EB8F4C" 
+                            Style="{DynamicResource MaterialDesignPaperLightButton}" 
+                            Background="AliceBlue"
                             Content="Checking" 
                             FontFamily="Ubuntu Medium"
                             FontSize="24"
                             Height="40" 
-                            Margin="0,30,0,0" Width="400"
+                            Margin="0,30,0,0" Width="370"
                             Click="BisCheckConsultation_Click"
                             HorizontalAlignment="Center"/>
                 </StackPanel>

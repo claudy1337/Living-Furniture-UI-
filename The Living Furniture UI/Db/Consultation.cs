@@ -49,6 +49,15 @@ namespace The_Living_Furniture_UI.Db
             var foundedUser = collection.Find(x => x.Number == number).FirstOrDefault();
             return foundedUser;
         }
+        public static void EditCons(bool isCheck, bool isNewCheck)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Db.Consultation>("Consultation");
+            var filterCheck = Builders<Db.Consultation>.Filter.Eq("isCheck", isCheck);
+            var updateCheck = Builders<Db.Consultation>.Update.Set(x => x.isCheck, isNewCheck);
+            collection.UpdateOne(filterCheck, updateCheck);
+        }
     }
     
 }

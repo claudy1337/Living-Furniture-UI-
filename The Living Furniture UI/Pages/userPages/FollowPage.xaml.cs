@@ -24,5 +24,18 @@ namespace The_Living_Furniture_UI.Pages.userPages
         {
             InitializeComponent();
         }
+        private void OnPhotoMove(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            Refresh();
+        }
+        private void Refresh()
+        {
+           
+        }
+
+        private void PhotosListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            PhotosListBox.SelectedItem = ViewedPhoto;
+        }
     }
 }

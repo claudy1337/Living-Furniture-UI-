@@ -9,38 +9,57 @@
       Title="FollowPage"
       xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes">
 
-    
-       
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
-
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="400"/>
-            </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Image Source="/Assets/Images/loading/pic3.png" Grid.Column="0"/>
-                    <Image Source="/Assets/Images/loading/pic1.png" Grid.Column="1" Margin="10,0,10,0"/>
-                    <Image Source="/Assets/Images/loading/pic2.png" Grid.Column="2"/>
-                </Grid>
-            </StackPanel>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="13*"/>
+                <ColumnDefinition Width="27*"/>
+            </Grid.ColumnDefinitions>
+            <GroupBox Grid.Column="0">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" 
+                          HorizontalScrollBarVisibility="Disabled">
+                    <ListBox Name="PhotosListBox"
+                         MouseMove="OnPhotoMove"
+                         IsSynchronizedWithCurrentItem="True" 
+                         SelectionMode="Extended" 
+                         ItemsSource="{Binding}" 
+                         SelectedIndex="0"
+                         SelectionChanged="PhotosListBox_SelectionChanged">
+                        <ListBoxItem HorizontalAlignment="Center">
+                            <Image Source="/Assets/Images/loading/pic1.png" Height="250" Width="200"/>
+                        </ListBoxItem>
+                        <ListBoxItem HorizontalAlignment="Center">
+                            <Image Source="/Assets/Images/loading/pic2.png" Height="250" Width="200"/>
+                        </ListBoxItem>
 
-            <StackPanel Grid.Row="1">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    
+                        <ListBoxItem HorizontalAlignment="Center">
+                            <Image Source="/Assets/Images/loading/pic3.png" Height="250" Width="200"/>
+                        </ListBoxItem>
 
-                </Grid>
-            </StackPanel>
+                        <ListBoxItem HorizontalAlignment="Center">
+                            <Image Source="/Assets/Images/loading/pic4.png" Height="250" Width="200"/>
+                        </ListBoxItem>
+
+                        <ListBoxItem HorizontalAlignment="Center">
+                            <Image Source="/Assets/Images/loading/pic5.png" Height="250" Width="200"/>
+                        </ListBoxItem>
+
+                        <ListBoxItem HorizontalAlignment="Center">
+                            <Image Source="/Assets/Images/loading/pic6.png" Height="250" Width="200"/>
+                        </ListBoxItem>
+                    </ListBox>
+                </ScrollViewer>
+            </GroupBox>
+
+            <Border Grid.Column="1" 
+                Padding="4" 
+                Margin="4,4,4,4" 
+                Background="White" 
+                BorderBrush="#22000000" 
+                BorderThickness="1">
+                <Image Name="ViewedPhoto" Height="auto" Width="auto"/>
+            </Border>
         </Grid>
     </Border>
-    
+
 </Page>

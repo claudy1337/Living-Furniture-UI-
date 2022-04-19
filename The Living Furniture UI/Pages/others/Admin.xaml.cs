@@ -31,7 +31,7 @@ namespace The_Living_Furniture_UI.Pages.others
 
         private void rdStatistic_Click(object sender, RoutedEventArgs e)
         {
-            PagesNavigation.Navigate(new System.Uri("Pages/adminPages/Applications.xaml", UriKind.RelativeOrAbsolute));
+            PagesNavigation.Navigate(new System.Uri("Pages/userPages/FollowPage.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void rdUsrAccounts_Click(object sender, RoutedEventArgs e)

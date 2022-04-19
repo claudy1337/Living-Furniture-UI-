@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:The_Living_Furniture_UI.Pages.adminPages"
       mc:Ignorable="d" 
       xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="510" d:DesignWidth="800"
       Title="UserControl">
     <Border CornerRadius="10" Background="{DynamicResource SecundaryBackgroundColor}">
         <Grid>
@@ -54,36 +54,62 @@
             <StackPanel Grid.Row="2">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="350"/>
-                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0">
-                        <ListView Name="lstw">
-                            <ListView.View>
-                                <GridView>
-                                    <GridView.Columns>
-                                        
-                                        <GridViewColumn Header="Login" DisplayMemberBinding="{Binding Path=ModelName}"></GridViewColumn>
-                                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=ModelNumber}"></GridViewColumn>
-                                        <GridViewColumn Header="Card" DisplayMemberBinding="{Binding Path=ModelNumber}"></GridViewColumn>
-                                        
-                                    </GridView.Columns>
-                                </GridView>
-                            </ListView.View>
-                        </ListView>
+                    <StackPanel Grid.Column="0" Orientation="Vertical">
+                        <TextBlock Text="User" HorizontalAlignment="Center" FontSize="24" FontFamily="Ubuntu Medium"/>
+                        <ListBox Margin="0,10,0,0" Height="272" FontFamily="Ubuntu Medium" FontSize="15"/>
                     </StackPanel>
-                    <StackPanel Grid.Column="1">
-                        <ListView x:Name="listlogin">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Vertical">
-                                        <TextBox Text="{Binding Path=Name}" FontSize="24"/>
-                                        <TextBox Text="{Binding Path=Number}" FontSize="24"/>
-                                    </StackPanel>
-                                    
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
+
+                    <StackPanel Grid.Column="1" Orientation="Vertical">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="0">
+                                <TextBlock Text="Full Information" HorizontalAlignment="Center" FontSize="24" FontFamily="Ubuntu Medium"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1">
+                                <TextBox
+                                Margin="0,30,0,0"
+                                x:Name="TBusrName"
+                                Style="{StaticResource MaterialDesignFilledTextBox}"
+                                TextWrapping="Wrap"
+                                material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                material:HintAssist.Hint="Name"
+                                FontFamily="Ubuntu Light"
+                                FontSize="15" Width="255"/>
+
+                                <TextBox
+                                Margin="0,20,0,0"
+                                x:Name="TBusrNamde"
+                                Style="{StaticResource MaterialDesignFilledTextBox}"
+                                TextWrapping="Wrap"
+                                material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                material:HintAssist.Hint="Login"
+                                FontFamily="Ubuntu Light"
+                                FontSize="15" Width="255"/>
+
+                                <TextBox
+                                Margin="0,20,0,0"
+                                x:Name="TBusrdName"
+                                Style="{StaticResource MaterialDesignFilledTextBox}"
+                                TextWrapping="Wrap"
+                                material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                material:HintAssist.Hint="Card"
+                                FontFamily="Ubuntu Light"
+                                FontSize="15" Width="255"/>
+
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button Margin="0,20,10,0" Style="{DynamicResource MaterialDesignPaperLightButton}" Background="AliceBlue" Content="Processed" Width="120" Height="35"/>
+                                    <Button Margin="10,20,0,0" Style="{DynamicResource MaterialDesignPaperLightButton}" Background="AliceBlue" Content="Processed" Width="120" Height="35"/>
+                                </StackPanel>
+                                
+
+                            </StackPanel>
+                        </Grid>
                     </StackPanel>
                 </Grid>
             </StackPanel>

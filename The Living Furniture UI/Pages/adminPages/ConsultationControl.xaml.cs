@@ -35,7 +35,9 @@ namespace The_Living_Furniture_UI.Pages.adminPages
 
         private void BisCheckConsultation_Click(object sender, RoutedEventArgs e)
         {
-
+            var selectedCons = listLogin.SelectedItem as Db.Consultation;
+            Db.Consultation.EditCons(selectedCons.isCheck, true);
+            MessageBox.Show("Заявка обработана");
         }
 
         private void listLogin_SelectionChanged(object sender, SelectionChangedEventArgs e)
