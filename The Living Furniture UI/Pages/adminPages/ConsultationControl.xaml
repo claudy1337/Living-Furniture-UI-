@@ -7,9 +7,80 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ConsultationControl"
-      Background="White">
+      Background="White"
+      xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes">
 
     <Grid>
-        <ListBox x:Name="lstv" Height="200" Width="300"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Consultation List"
+                               HorizontalAlignment="Center"
+                               FontSize="24"
+                               FontFamily="Ubuntu Medium"
+                               Grid.Row="0"/>
+                
+                <ListBox Margin="0,20,0,0" SelectionChanged="listLogin_SelectionChanged" FontFamily="Ubuntu Medium" FontSize="15" x:Name="listLogin" Height="365" ItemsSource="{Binding Elements}" Grid.Row="1"/>
+                <Button Grid.Row="2" 
+                        Height="40" 
+                        Width="400"
+                        FontFamily="Ubuntu Medium" 
+                        FontSize="24" Content="ALL"
+                        x:Name="BFullList"
+                        Click="BFullList_Click"
+                        Style="{DynamicResource MaterialDesignRaisedLightButton}" />
+            </Grid>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Top" Height="450">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="130"/>
+                    <RowDefinition Height="300"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Full Information" FontSize="24" Grid.Row="0" HorizontalAlignment="Center" FontFamily="Ubuntu Medium"/>
+                <StackPanel Orientation="Vertical" Grid.Row="1">
+                    <TextBox
+                         x:Name="TBusrName"
+                         Style="{StaticResource MaterialDesignFilledTextBox}"
+                         VerticalAlignment="Top"
+                         TextWrapping="Wrap"
+                         FontSize="24"
+                         FontFamily="Ubuntu Light"
+                         material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                         material:HintAssist.Hint="Name"/>
+                    <TextBox
+                          x:Name="TBusrNumber"
+                          Style="{StaticResource MaterialDesignFilledTextBox}"
+                          VerticalAlignment="Top"
+                          TextWrapping="Wrap"
+                          FontSize="24"
+                          FontFamily="Ubuntu Light"
+                          Margin="0,30,0,0"
+                          material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                          material:HintAssist.Hint="Number"/>
+
+                    <Button x:Name="BisCheckConsultation"
+                            Style="{DynamicResource MaterialDesignRaisedLightButton}" 
+                            Background="#EB8F4C" 
+                            Content="Checking" 
+                            FontFamily="Ubuntu Medium"
+                            FontSize="24"
+                            Height="40" 
+                            Margin="0,30,0,0" Width="400"
+                            Click="BisCheckConsultation_Click"
+                            HorizontalAlignment="Center"/>
+                </StackPanel>
+
+            </Grid>
+        </StackPanel>
     </Grid>
 </Page>

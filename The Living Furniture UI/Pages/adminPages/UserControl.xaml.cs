@@ -47,7 +47,7 @@ namespace The_Living_Furniture_UI.Pages.adminPages
                     var people = cursor.Current;
                     foreach (Db.Consultation doc in people)
                     {
-                        basket.Add(new Db.Consultation(doc.Name, doc.Number, doc.IsCheck));
+                        basket.Add(new Db.Consultation(doc.Name, doc.Number, doc.isCheck));
                     }
                 }
             }

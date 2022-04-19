@@ -28,7 +28,7 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         public Requests()
         {
             InitializeComponent();
-            listlogin.ItemsSource = Consultation.GetConsList();
+            //listlogin.ItemsSource = Consultation.GetConsList();
         }
 
         private void lstw_SelectionChanged(object sender, SelectionChangedEventArgs e)

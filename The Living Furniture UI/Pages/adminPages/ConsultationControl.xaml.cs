@@ -24,8 +24,31 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         public ConsultationControl()
         {
             InitializeComponent();
-           
-            lstv.ItemsSource = Consultation.GetConsList();
+            listLogin.ItemsSource = Db.Consultation.GetConsList();
+            
+        }
+
+        private void BFullList_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BisCheckConsultation_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void listLogin_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (listLogin.SelectedIndex == -1)
+            {
+                return;
+            }
+            else
+            {
+                TBusrName.Text = Consultation.GetCons(listLogin.SelectedItem.ToString()).Name;
+                TBusrNumber.Text = Consultation.GetCons(listLogin.SelectedItem.ToString()).Number;
+            }
         }
     }
 }
