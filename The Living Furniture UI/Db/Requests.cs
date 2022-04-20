@@ -12,21 +12,21 @@ namespace The_Living_Furniture_UI.Db
 {
     class Requests
     {
-        public Requests(string name, string material, string type, string size, User user)
+        public Requests(string name, string material, string type, string size, User user, bool ischeck)
         {
             Name = name;
             Material = material;
             Type = type;
             Size = size;
             User = user;
+            isCheck = ischeck;
         }
         public ObjectId _id { get; set; }
-        public int id { get; set; }
         public string Name { get; set; }
         public string Material { get; set; }
-        public string Number { get; set; }
         public string Size { get; set; }
         public string Type { get; set; }
+        public bool isCheck { get; set; }
         public User User { get; set; }
 
         public static void requestAddToDB(Requests requests)
@@ -49,13 +49,12 @@ namespace The_Living_Furniture_UI.Db
             }
             return listToReturn;
         }
-        public static Requests GetRequest(string number)
+        public static Requests GetisRequest(string name)
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("FurnitureBD");
             var collection = database.GetCollection<Requests>("Request");
-           
-            var foundedUser = collection.Find(x => x.Number == number).FirstOrDefault();
+            var foundedUser = collection.Find(x => x.Name == name).FirstOrDefault();
             return foundedUser;
         }
     }

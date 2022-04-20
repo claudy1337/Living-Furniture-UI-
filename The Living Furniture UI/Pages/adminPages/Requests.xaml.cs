@@ -28,13 +28,72 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         public Requests()
         {
             InitializeComponent();
-            //listlogin.ItemsSource = Consultation.GetConsList();
+            Refresh();
         }
 
         private void lstw_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
-       
+
+        private async void BisCheck_Click(object sender, RoutedEventArgs e)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<BsonDocument>("Request");
+            var result = await collection.ReplaceOneAsync(new BsonDocument("isCheck", true),
+                new BsonDocument
+                {
+                   //current user add
+
+                });
+            var people = await collection.Find(new BsonDocument()).ToListAsync();
+            Refresh();
+        }
+        public void Refresh()
+        {
+            listRequest.ItemsSource = null;
+            listRequest.ItemsSource = Db.Requests.GetRequestList();
+
+            //requst list
+            TBName.Text = null;
+            TBMaterial.Text = null;
+            TBSize.Text = null;
+            TBType.Text = null;
+
+            //usr list
+            TBusrAddress.Text = null;
+            TBusrName.Text = null;
+            TBusrLogin.Text = null;
+            TBusrCard.Text = null;
+
+        }
+
+        private void listRequest_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+            try
+            {
+                if (listRequest.SelectedIndex == -1)
+                {
+                    return;
+                }
+                else
+                {
+                    TBName.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).Name;
+                    TBMaterial.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).Material;
+                    TBSize.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).Size;
+                    TBType.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).Type;
+                   
+                    
+
+                    // TBconsIsCheck.Text = Consultation.GetisCheckCons(listLogin.SelectedItems.ToString()).isCheck.ToString(); bool convert in string 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error", ex.Message);
+            }
+        }
     }
 }
