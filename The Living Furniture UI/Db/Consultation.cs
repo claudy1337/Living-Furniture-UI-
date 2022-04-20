@@ -33,7 +33,7 @@ namespace The_Living_Furniture_UI.Db
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("FurnitureBD");
             var collection = database.GetCollection<Consultation>("Consultation");
-            var listUsersFromDB = collection.Find(x => true).ToList();
+            var listUsersFromDB = collection.Find(x => x.isCheck == false).ToList();
             List<string> listToReturn = new List<string>();
             foreach (var item in listUsersFromDB)
             {
@@ -41,7 +41,7 @@ namespace The_Living_Furniture_UI.Db
             }
             return listToReturn;
         }
-        public static Consultation GetCons(string number)
+        public static Consultation GetisCheckCons(string number)
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("FurnitureBD");
@@ -49,14 +49,18 @@ namespace The_Living_Furniture_UI.Db
             var foundedUser = collection.Find(x => x.Number == number).FirstOrDefault();
             return foundedUser;
         }
-        public static void EditCons(bool isCheck, bool isNewCheck)
+        public static List<string> GetAllConsList()
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("FurnitureBD");
-            var collection = database.GetCollection<Db.Consultation>("Consultation");
-            var filterCheck = Builders<Db.Consultation>.Filter.Eq("isCheck", isCheck);
-            var updateCheck = Builders<Db.Consultation>.Update.Set(x => x.isCheck, isNewCheck);
-            collection.UpdateOne(filterCheck, updateCheck);
+            var collection = database.GetCollection<Consultation>("Consultation");
+            var listUsersFromDB = collection.Find(x=> true).ToList();
+            List<string> listToReturn = new List<string>();
+            foreach (var item in listUsersFromDB)
+            {
+                listToReturn.Add(item.Number);
+            }
+            return listToReturn;
         }
     }
     

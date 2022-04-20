@@ -29,28 +29,47 @@
                                Grid.Row="0"/>
 
                 <ListBox Margin="0,20,0,0" SelectionChanged="listLogin_SelectionChanged" FontFamily="Ubuntu Medium" FontSize="15" x:Name="listLogin" Height="340" ItemsSource="{Binding Elements}" Grid.Row="1"/>
-                <Button Grid.Row="2" 
+
+                <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
+                    <Button Grid.Row="2" 
                         Margin="20,5,20,0"
                         Background="AliceBlue"
                         Height="40"
+                        Width="150"
                         FontFamily="Ubuntu Medium" 
                         FontSize="24" Content="ALL"
                         x:Name="BFullList"
                         Click="BFullList_Click"
                         Style="{DynamicResource MaterialDesignRaisedLightButton}"/>
+
+                    <Button Grid.Row="2" 
+                        Margin="20,5,20,0"
+                        Background="AliceBlue"
+                        Height="40"
+                        Width="150"
+                        FontFamily="Ubuntu Medium" 
+                        FontSize="24" Content="dCheck"
+                        x:Name="BDontCheck"
+                        Click="BDontCheck_Click"
+                        Style="{DynamicResource MaterialDesignRaisedLightButton}"/>
+                </StackPanel>
+                
+                
+                
             </Grid>
         </StackPanel>
 
         <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Top" Height="450" Margin="10">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="130"/>
-                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="90"/>
+                    <RowDefinition Height="350"/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Full Information" FontSize="24" Grid.Row="0" HorizontalAlignment="Center" FontFamily="Ubuntu Medium"/>
                 <StackPanel Orientation="Vertical" Grid.Row="1">
                     <TextBox
                          x:Name="TBusrName"
+                         IsReadOnly="True"
                          Style="{StaticResource MaterialDesignFilledTextBox}"
                          VerticalAlignment="Top"
                          TextWrapping="Wrap"
@@ -60,6 +79,7 @@
                          material:HintAssist.Hint="Name"/>
                     <TextBox
                           x:Name="TBusrNumber"
+                          IsReadOnly="True"
                           Style="{StaticResource MaterialDesignFilledTextBox}"
                           VerticalAlignment="Top"
                           TextWrapping="Wrap"
@@ -68,6 +88,18 @@
                           Margin="0,30,0,0"
                           material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
                           material:HintAssist.Hint="Number"/>
+
+                    <TextBox
+                          x:Name="TBconsIsCheck"
+                          IsReadOnly="True"
+                          Style="{StaticResource MaterialDesignFilledTextBox}"
+                          VerticalAlignment="Top"
+                          TextWrapping="Wrap"
+                          FontSize="24"
+                          FontFamily="Ubuntu Light"
+                          Margin="0,30,0,0"
+                          material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                          material:HintAssist.Hint="is Check"/>
 
                     <Button x:Name="BisCheckConsultation"
                             Style="{DynamicResource MaterialDesignPaperLightButton}" 

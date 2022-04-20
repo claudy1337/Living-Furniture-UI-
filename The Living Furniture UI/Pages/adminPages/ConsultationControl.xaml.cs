@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using The_Living_Furniture_UI.Db;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using MongoDB.Bson.IO;
 
 namespace The_Living_Furniture_UI.Pages.adminPages
 {
@@ -24,33 +27,65 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         public ConsultationControl()
         {
             InitializeComponent();
-            listLogin.ItemsSource = Db.Consultation.GetConsList();
-            
+            Refresh();  
         }
 
         private void BFullList_Click(object sender, RoutedEventArgs e)
         {
-
+            listLogin.ItemsSource = Db.Consultation.GetAllConsList();
         }
-
-        private void BisCheckConsultation_Click(object sender, RoutedEventArgs e)
+        private async void BisCheckConsultation_Click(object sender, RoutedEventArgs e)
         {
-            var selectedCons = listLogin.SelectedItem as Db.Consultation;
-            Db.Consultation.EditCons(selectedCons.isCheck, true);
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<BsonDocument>("Consultation");
+            var result = await collection.ReplaceOneAsync(new BsonDocument("Number", TBusrNumber.Text),
+                new BsonDocument
+                {
+                    {"Number", TBusrNumber.Text },
+                    {"Name",TBusrName.Text},
+                    {"isCheck", true }
+
+                });
+            var people = await collection.Find(new BsonDocument()).ToListAsync();
             MessageBox.Show("Заявка обработана");
+            Refresh();
         }
 
         private void listLogin_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (listLogin.SelectedIndex == -1)
+            try
             {
-                return;
+                if (listLogin.SelectedIndex == -1)
+                {
+                    return;
+                }
+                else
+                {
+                    TBusrName.Text = Consultation.GetisCheckCons(listLogin.SelectedItem.ToString()).Name;
+                    TBusrNumber.Text = Consultation.GetisCheckCons(listLogin.SelectedItem.ToString()).Number;
+                  // TBconsIsCheck.Text = Consultation.GetisCheckCons(listLogin.SelectedItems.ToString()).isCheck.ToString(); bool convert in string 
+                }
             }
-            else
-            {
-                TBusrName.Text = Consultation.GetCons(listLogin.SelectedItem.ToString()).Name;
-                TBusrNumber.Text = Consultation.GetCons(listLogin.SelectedItem.ToString()).Number;
+            catch(Exception ex)
+            { 
+                Console.WriteLine(ex.ToString()); 
             }
+            
+        }
+
+        public void Refresh()
+        {
+            TBusrName.Text = null;
+            TBusrNumber.Text = null;
+            listLogin.ItemsSource = null;
+            listLogin.ItemsSource = Db.Consultation.GetConsList();
+            
+        }
+
+        private void BDontCheck_Click(object sender, RoutedEventArgs e)
+        {
+            listLogin.ItemsSource = Db.Consultation.GetConsList();
         }
     }
 }
