@@ -48,7 +48,7 @@
                         Height="40"
                         Width="150"
                         FontFamily="Ubuntu Medium" 
-                        FontSize="24" Content="dCheck"
+                        FontSize="24" Content="DCheck"
                         x:Name="BDontCheck"
                         Click="BDontCheck_Click"
                         Style="{DynamicResource MaterialDesignRaisedLightButton}"/>

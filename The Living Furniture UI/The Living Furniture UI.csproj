@@ -167,6 +167,9 @@
     <Compile Include="Pages\adminPages\UserControl.xaml.cs">
       <DependentUpon>UserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Product\CustomList.xaml.cs">
+      <DependentUpon>CustomList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\userPages\Baket.xaml.cs">
       <DependentUpon>Baket.xaml</DependentUpon>
     </Compile>
@@ -243,6 +246,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\others\User.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Product\CustomList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
