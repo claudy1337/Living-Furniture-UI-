@@ -25,12 +25,13 @@ namespace The_Living_Furniture_UI.Pages.adminPages
     /// </summary>
     public partial class Requests : Page
     {
-        public List<string> requests { get;  set; }
+        
         public Requests()
         {
             InitializeComponent();
             Refresh();
-            requests = Db.Requests.GetRequestList();
+          
+            
         }
 
         private void lstw_SelectionChanged(object sender, SelectionChangedEventArgs e)
