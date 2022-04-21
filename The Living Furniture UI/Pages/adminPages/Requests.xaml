@@ -102,6 +102,7 @@
                     <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300">
                         <TextBox
                                 x:Name="TBusrName"
+                                IsReadOnly="True"
                                 Style="{StaticResource MaterialDesignFilledTextBox}"
                                 TextWrapping="Wrap"
                                 MaxLength="25"
@@ -113,6 +114,7 @@
                         <TextBox
                                 x:Name="TBusrLogin"
                                 Margin="0,20,0,0"
+                                IsReadOnly="True"
                                 Style="{StaticResource MaterialDesignFilledTextBox}"
                                 TextWrapping="Wrap"
                                 MaxLength="25"
@@ -124,6 +126,7 @@
                         <TextBox
                                 x:Name="TBusrAddress"
                                 Margin="0,20,0,0"
+                                IsReadOnly="True"
                                 Style="{StaticResource MaterialDesignFilledTextBox}"
                                 TextWrapping="Wrap"
                                 MaxLength="25"
@@ -137,6 +140,7 @@
                                 Margin="0,20,0,0"
                                 Style="{StaticResource MaterialDesignFilledTextBox}"
                                 TextWrapping="Wrap"
+                                IsReadOnly="True"
                                 MaxLength="25"
                                 material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
                                 material:HintAssist.Hint="Card"

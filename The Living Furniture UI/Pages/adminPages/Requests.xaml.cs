@@ -87,7 +87,11 @@ namespace The_Living_Furniture_UI.Pages.adminPages
                     TBMaterial.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).Material;
                     TBSize.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).Size;
                     TBType.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).Type;
+
                     TBusrCard.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).User.Card.ToString();
+                    TBusrName.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).User.Name.ToString();
+                    TBusrLogin.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).User.Login.ToString();
+                    TBusrAddress.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).User.Address.ToString();
                     
                    
                     

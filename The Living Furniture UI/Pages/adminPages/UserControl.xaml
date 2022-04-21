@@ -60,7 +60,7 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0" Orientation="Vertical">
                         <TextBlock Text="User" HorizontalAlignment="Center" FontSize="24" FontFamily="Ubuntu Medium"/>
-                        <ListBox Margin="0,10,0,0" x:Name="usrList" Height="272" FontFamily="Ubuntu Medium" FontSize="15"/>
+                        <ListBox Margin="0,10,0,0" SelectionChanged="usrList_SelectionChanged" x:Name="usrList" Height="272" FontFamily="Ubuntu Medium" FontSize="15"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="1" Orientation="Vertical">
@@ -74,7 +74,8 @@
                             </StackPanel>
                             <StackPanel Grid.Row="1">
                                 <TextBox
-                                Margin="0,30,0,0"
+                                IsReadOnly="True"
+                                Margin="0,10,0,0"
                                 x:Name="TBusrName"
                                 Style="{StaticResource MaterialDesignFilledTextBox}"
                                 TextWrapping="Wrap"
@@ -85,7 +86,8 @@
 
                                 <TextBox
                                 Margin="0,20,0,0"
-                                x:Name="TBusrNamde"
+                                IsReadOnly="True"
+                                x:Name="TBusrLogin"
                                 Style="{StaticResource MaterialDesignFilledTextBox}"
                                 TextWrapping="Wrap"
                                 material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
@@ -95,7 +97,8 @@
 
                                 <TextBox
                                 Margin="0,20,0,0"
-                                x:Name="TBusrdName"
+                                IsReadOnly="True"
+                                x:Name="TBusrdCard"
                                 Style="{StaticResource MaterialDesignFilledTextBox}"
                                 TextWrapping="Wrap"
                                 material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
@@ -103,11 +106,16 @@
                                 FontFamily="Ubuntu Light"
                                 FontSize="15" Width="255"/>
 
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                    <Button Margin="0,20,10,0" Style="{DynamicResource MaterialDesignPaperLightButton}" Background="AliceBlue" Content="Processed" Width="120" Height="35"/>
-                                    <Button Margin="10,20,0,0" Style="{DynamicResource MaterialDesignPaperLightButton}" Background="AliceBlue" Content="Processed" Width="120" Height="35"/>
-                                </StackPanel>
-                                
+                                <TextBox
+                                Margin="0,20,0,0"
+                                IsReadOnly="True"
+                                x:Name="TBusrdAddress"
+                                Style="{StaticResource MaterialDesignFilledTextBox}"
+                                TextWrapping="Wrap"
+                                material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                material:HintAssist.Hint="Address"
+                                FontFamily="Ubuntu Light"
+                                FontSize="15" Width="255"/>
 
                             </StackPanel>
                         </Grid>

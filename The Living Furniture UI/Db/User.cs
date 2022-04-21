@@ -63,6 +63,14 @@ namespace The_Living_Furniture_UI.Db
             }
             return listToReturn;
         }
+        public static User GetUser(string login)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Db.User>("User");
+            var foundedUser = collection.Find(x => x.Login == login).FirstOrDefault();
+            return foundedUser;
+        }
 
     }
     

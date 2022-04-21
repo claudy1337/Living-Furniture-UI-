@@ -54,5 +54,27 @@ namespace The_Living_Furniture_UI.Pages.adminPages
            // listlogin.ItemsSource = basket.ToList();
 
         }
+
+        private void usrList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                if (usrList.SelectedIndex == -1)
+                {
+                    return;
+                }
+                else
+                {
+                    var slectedRequest = usrList.SelectedItem.ToString();
+                    TBusrName.Text = Db.User.GetUser(slectedRequest).Name;
+                    TBusrLogin.Text = Db.User.GetUser(slectedRequest).Login;
+                    TBusrdCard.Text = Db.User.GetUser(slectedRequest).Card.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
 }
