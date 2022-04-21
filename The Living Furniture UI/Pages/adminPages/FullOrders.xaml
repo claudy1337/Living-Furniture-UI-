@@ -17,10 +17,9 @@
             </Grid.RowDefinitions>
             <DataGrid Grid.Row="0" x:Name="DGEmployee" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Name Product" Binding="{Binding fullNameEmployee}"/>
-                    <DataGridTextColumn Header="ID Order" Binding="{Binding number}"/>
-                    <DataGridTextColumn Header="User Login" Binding="{Binding worksEmployee}"/>
-                    <DataGridTextColumn Header="Configuration" Binding="{Binding worksEmployee}"/>
+                    <DataGridTextColumn Header="Name Product" Binding="{Binding Number}"/>
+                    <DataGridTextColumn Header="ID Order" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="User Login" Binding="{Binding isCheck}"/>
 
                 </DataGrid.Columns>
             </DataGrid>

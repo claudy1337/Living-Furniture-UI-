@@ -26,8 +26,8 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         public UserControl()
         {
             InitializeComponent();
-            
             LoadData();
+            usrList.ItemsSource = Db.User.GetAllUserList();
         }
         private async void LoadData()
         {

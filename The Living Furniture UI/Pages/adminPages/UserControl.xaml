@@ -44,10 +44,11 @@
                   Style="{StaticResource MaterialDesignFilledTextBox}"
                   TextWrapping="Wrap"
                   MaxLength="35"
+                  Margin="30,0,0,0"
                   material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
                   material:HintAssist.Hint="Search"
                   FontFamily="Ubuntu Light"
-                  FontSize="15" Width="650"/>
+                  FontSize="15" Width="550"/>
                 <Button Width="110" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Margin="20,0,0,0" Content="Search"/>
             </StackPanel>
 
@@ -59,7 +60,7 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0" Orientation="Vertical">
                         <TextBlock Text="User" HorizontalAlignment="Center" FontSize="24" FontFamily="Ubuntu Medium"/>
-                        <ListBox Margin="0,10,0,0" Height="272" FontFamily="Ubuntu Medium" FontSize="15"/>
+                        <ListBox Margin="0,10,0,0" x:Name="usrList" Height="272" FontFamily="Ubuntu Medium" FontSize="15"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="1" Orientation="Vertical">

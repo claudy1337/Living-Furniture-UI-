@@ -23,6 +23,7 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         public FullOrders()
         {
             InitializeComponent();
+           
         }
     }
 }

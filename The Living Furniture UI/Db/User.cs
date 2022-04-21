@@ -50,7 +50,20 @@ namespace The_Living_Furniture_UI.Db
                 
             //var people = await collection.Find(new BsonDocument()).ToListAsync();
         }
-        
+        public static List<string> GetAllUserList()
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<User>("User");
+            var listUsersFromDB = collection.Find(x => true).ToList();
+            List<string> listToReturn = new List<string>();
+            foreach (var item in listUsersFromDB)
+            {
+                listToReturn.Add(item.Login);
+            }
+            return listToReturn;
+        }
+
     }
     
 }
