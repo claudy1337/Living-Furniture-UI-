@@ -62,9 +62,14 @@ namespace The_Living_Furniture_UI.Pages.adminPages
                 }
                 else
                 {
-                    TBusrName.Text = Consultation.GetisCheckCons(listLogin.SelectedItem.ToString()).Name;
-                    TBusrNumber.Text = Consultation.GetisCheckCons(listLogin.SelectedItem.ToString()).Number;
-                  // TBconsIsCheck.Text = Consultation.GetisCheckCons(listLogin.SelectedItems.ToString()).isCheck.ToString(); bool convert in string 
+                    var slectedRequest = listLogin.SelectedItem.ToString();
+                    TBusrName.Text = Consultation.GetisCheckCons(slectedRequest).Name;
+                    TBusrNumber.Text = Consultation.GetisCheckCons(slectedRequest).Number;
+                    if (Consultation.GetisCheckCons(slectedRequest).isCheck == true)
+                        TBconsIsCheck.Text = "ДА";
+                    else
+                        TBconsIsCheck.Text = "НЕТ";
+                  
                 }
             }
             catch(Exception ex)

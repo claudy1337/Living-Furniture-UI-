@@ -19,7 +19,8 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Margin="10">
                 <TextBlock Text="Request" FontSize="24" FontFamily="Ubuntu Medium" HorizontalAlignment="Center" />
-                <ListBox Height="392" SelectionChanged="listRequest_SelectionChanged" x:Name="listRequest" Margin="0,10,0,0" >
+                <ListBox Height="392" SelectionChanged="listRequest_SelectionChanged" x:Name="listRequest" Margin="0,10,0,0" 
+                         ItemsSource="{Binding Requests}">
                    
                 </ListBox>
             </StackPanel>

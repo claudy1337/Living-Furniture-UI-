@@ -25,10 +25,12 @@ namespace The_Living_Furniture_UI.Pages.adminPages
     /// </summary>
     public partial class Requests : Page
     {
+        public List<string> requests { get;  set; }
         public Requests()
         {
             InitializeComponent();
             Refresh();
+            requests = Db.Requests.GetRequestList();
         }
 
         private void lstw_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -84,6 +86,8 @@ namespace The_Living_Furniture_UI.Pages.adminPages
                     TBMaterial.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).Material;
                     TBSize.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).Size;
                     TBType.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).Type;
+                    TBusrCard.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).User.Card.ToString();
+                    
                    
                     
 
