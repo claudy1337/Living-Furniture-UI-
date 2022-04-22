@@ -17,7 +17,93 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Margin="10">
-                    <TextBlock Text="Sort" FontSize="24"/>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="400"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Sort" FontSize="24" Grid.Row="0"/>
+
+                        <StackPanel Grid.Row="1">
+
+                            <ComboBox
+                             x:Name="CBheight"
+                             Margin="0,20,0,0"
+                             Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                             material:HintAssist.Hint="Height"
+                             ItemsSource="{Binding ShortStringList}"
+                             material:TextFieldAssist.HasClearButton="True"
+                             Width="206">
+                                <TextBlock Text="25x25"/>
+                                <TextBlock Text="100x100"/>
+                                <TextBlock Text="300x300"/>
+                                <ComboBox.SelectedItem>
+
+                                    <Binding
+                                    Path="SelectedValidationOutlined"
+                                    Mode="TwoWay"
+                                    UpdateSourceTrigger="PropertyChanged">
+                                        <Binding.ValidationRules>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </ComboBox.SelectedItem>
+                            </ComboBox>
+
+                            <ComboBox
+                             x:Name="CBheigмht"
+                             Margin="0,20,0,0"
+                             Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                             material:HintAssist.Hint="Height"
+                             ItemsSource="{Binding ShortStringList}"
+                             material:TextFieldAssist.HasClearButton="True"
+                             Width="206">
+                                <TextBlock Text="25x25"/>
+                                <TextBlock Text="100x100"/>
+                                <TextBlock Text="300x300"/>
+                                <ComboBox.SelectedItem>
+
+                                    <Binding
+                                    Path="SelectedValidationOutlined"
+                                    Mode="TwoWay"
+                                    UpdateSourceTrigger="PropertyChanged">
+                                        <Binding.ValidationRules>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </ComboBox.SelectedItem>
+                            </ComboBox>
+                            
+                            <TextBox
+                                  x:Name="TBusrNumber"
+                                  Style="{StaticResource MaterialDesignFilledTextBox}"
+                                  VerticalAlignment="Top"
+                                  TextWrapping="Wrap"
+                                  MaxLength="12"
+                                  Width="206"
+                                  FontSize="15"
+                                  FontFamily="Ubuntu Light"
+                                  Margin="0,20,0,0"
+                                  material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                  material:HintAssist.Hint="Number"/>
+
+                            <TextBox
+                                  x:Name="TBusrNumfber"
+                                  Style="{StaticResource MaterialDesignFilledTextBox}"
+                                  VerticalAlignment="Top"
+                                  TextWrapping="Wrap"
+                                  MaxLength="12"
+                                  Width="206"
+                                  FontSize="15"
+                                  FontFamily="Ubuntu Light"
+                                  Margin="0,20,0,0"
+                                  material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                  material:HintAssist.Hint="Number"/>
+                            
+                            
+
+                            <Button Width="206" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Margin="0,30,0,0" Content="Search"/>
+                            
+                        </StackPanel>
+                    </Grid>
                     
                 </StackPanel>
                 
