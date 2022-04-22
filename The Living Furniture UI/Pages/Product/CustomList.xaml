@@ -18,6 +18,7 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Margin="10">
                     <TextBlock Text="Sort" FontSize="24"/>
+                    
                 </StackPanel>
                 
                 <StackPanel Grid.Column="1">
@@ -37,20 +38,43 @@
                   material:HintAssist.Hint="Search"
                   FontFamily="Ubuntu Light"
                   FontSize="15" Width="350"/>
-                            <Button Width="110" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Margin="20,0,0,0" Content="Search"/>
+                            <Button Width="110" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Margin="20,0,0,0" Content="Search" Click="Button_Click"/>
+                            
                         </StackPanel>
 
                         <StackPanel Grid.Row="1" Margin="10" Height="350"  VerticalAlignment="Top">
-                            <Line X1="10" Y1="90" X2="550" Y2="90" Stroke="Red" Margin="0,-60,0,10"/>
-                            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                                <Image Source="/Assets/Images/Furniture/Cabinet/Alex/alex-alek.png" Height="170" HorizontalAlignment="Left"/>
-
-                                <TextBlock Text="Name Products" FontSize="20" FontFamily="Ubuntu Medium"/>
-                                <Image Source="/Assets/Images/raiting.png" Height="25" HorizontalAlignment="Left"/>
-                                <TextBlock Text="Price" FontSize="20" FontFamily="Ubuntu Medium"/>
-                            </StackPanel>
-                            <Line X1="0" Y1="90" X2="550" Y2="90" Stroke="Red" Margin="0,-50,0,0"/>
+                            <ScrollViewer Height="440" HorizontalScrollBarVisibility="Visible" >
+                                <ListView x:Name="listlogin">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <material:Card
+                                 material:ShadowAssist.ShadowDepth="Depth3"
+                                 material:ShadowAssist.ShadowEdges="Bottom,Left"
+                                 Padding="32">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition/>
+                                                        <ColumnDefinition/>
+                                                        <ColumnDefinition/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Image Source="/Assets/Images/Furniture/Cabinet/Alex/alex-alek.png" Height="170" HorizontalAlignment="Left" Grid.Column="0"/>
+                                                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" Grid.Column="1">
+                                                        <TextBlock Text="{Binding Path=Name}"  FontSize="20" FontFamily="Ubuntu Medium"/>
+                                                        <TextBlock Text="{Binding Path=Name}" FontSize="20" FontFamily="Ubuntu Mlight"/>
+                                                        <Image Source="/Assets/Images/raiting.png" Height="25" HorizontalAlignment="Left"/>
+                                                    </StackPanel>
+                                                    <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                        <TextBlock Text="{Binding Path=Name}" FontSize="20" HorizontalAlignment="Left" FontFamily="Ubuntu Medium"/>
+                                                        <Button Width="110" HorizontalAlignment="Left" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Content="Search" Click="Button_Click"/>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </material:Card>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </ScrollViewer>
                         </StackPanel>
+                                       
                     </Grid>
                     
 
