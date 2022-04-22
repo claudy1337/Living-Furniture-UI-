@@ -53,7 +53,7 @@ namespace The_Living_Furniture_UI.Pages.Product
                     var people = cursor.Current;
                     foreach (Db.Basket doc in people)
                     {
-                        basket.Add(new Db.Basket(doc.Name, doc.Size, doc.Material));
+                        basket.Add(new Db.Basket(doc.Name, doc.Size, doc.Material, doc.Image));
                     }
                 }
             }

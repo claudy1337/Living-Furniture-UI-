@@ -13,18 +13,20 @@ namespace The_Living_Furniture_UI.Db
 {
     public class Basket
     {
-        public Basket(string name, string size, string material)
+        public Basket(string name, string size, string material, string image)
         {
             Name = name;
             Size = size;
             Material = material;
-            
+            Image = image;
             
         }
         public ObjectId _id { get; set; }
         public string Name { get; set; }
         public string Size { get; set; }
         public string Material { get; set; }
+        public string Image { get; set; }
+       
         
         public static List<Product> GetBasketList()
         {

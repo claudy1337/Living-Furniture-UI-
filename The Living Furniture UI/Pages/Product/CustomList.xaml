@@ -30,7 +30,7 @@
                              x:Name="CBheight"
                              Margin="0,20,0,0"
                              Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                             material:HintAssist.Hint="Height"
+                             material:HintAssist.Hint="Category"
                              ItemsSource="{Binding ShortStringList}"
                              material:TextFieldAssist.HasClearButton="True"
                              Width="206">
@@ -43,8 +43,7 @@
                                     Path="SelectedValidationOutlined"
                                     Mode="TwoWay"
                                     UpdateSourceTrigger="PropertyChanged">
-                                        <Binding.ValidationRules>
-                                        </Binding.ValidationRules>
+                                        
                                     </Binding>
                                 </ComboBox.SelectedItem>
                             </ComboBox>
@@ -53,7 +52,7 @@
                              x:Name="CBheigмht"
                              Margin="0,20,0,0"
                              Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                             material:HintAssist.Hint="Height"
+                             material:HintAssist.Hint="Material"
                              ItemsSource="{Binding ShortStringList}"
                              material:TextFieldAssist.HasClearButton="True"
                              Width="206">
@@ -66,8 +65,7 @@
                                     Path="SelectedValidationOutlined"
                                     Mode="TwoWay"
                                     UpdateSourceTrigger="PropertyChanged">
-                                        <Binding.ValidationRules>
-                                        </Binding.ValidationRules>
+                                        
                                     </Binding>
                                 </ComboBox.SelectedItem>
                             </ComboBox>
@@ -83,7 +81,7 @@
                                   FontFamily="Ubuntu Light"
                                   Margin="0,20,0,0"
                                   material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                  material:HintAssist.Hint="Number"/>
+                                  material:HintAssist.Hint="Price"/>
 
                             <TextBox
                                   x:Name="TBusrNumfber"
@@ -96,7 +94,7 @@
                                   FontFamily="Ubuntu Light"
                                   Margin="0,20,0,0"
                                   material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                  material:HintAssist.Hint="Number"/>
+                                  material:HintAssist.Hint="Raiting"/>
                             
                             
 
@@ -134,18 +132,18 @@
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
                                             <material:Card
+                              
                                                 Height="auto"
-                                                Width="auto"
+                                                Width="450"
                                  material:ShadowAssist.ShadowDepth="Depth3"
-                                 material:ShadowAssist.ShadowEdges="Bottom,Left"
-                                 Padding="10">
+                                 material:ShadowAssist.ShadowEdges="Bottom,Left">
                                                 <Grid>
                                                     <Grid.ColumnDefinitions>
                                                         <ColumnDefinition/>
                                                         <ColumnDefinition/>
                                                         <ColumnDefinition/>
                                                     </Grid.ColumnDefinitions>
-                                                    <Image Source="/Assets/Images/Furniture/Cabinet/Alex/alex-alek.png" Height="170" HorizontalAlignment="Left" Grid.Column="0"/>
+                                                    <Image Source="{Binding Path=Image}" Height="170" HorizontalAlignment="Left" Grid.Column="0"/>
                                                     <StackPanel Orientation="Vertical" VerticalAlignment="Center" Grid.Column="1">
                                                         <TextBlock Text="{Binding Path=Name}"  FontSize="20" FontFamily="Ubuntu Medium"/>
                                                         <TextBlock Text="{Binding Path=Name}" FontSize="20" FontFamily="Ubuntu Mlight"/>

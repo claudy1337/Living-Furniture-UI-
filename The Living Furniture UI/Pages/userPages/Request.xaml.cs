@@ -36,7 +36,7 @@ namespace The_Living_Furniture_UI.Pages.userPages
             
             Db.Product product = new Db.Product("", "", 0, 0, 0, 0, "", false, "", "", "");
             Db.Order order = new Db.Order(product, false);
-            Db.Basket basket = new Db.Basket("", "", "");
+            Db.Basket basket = new Db.Basket("", "", "", "");
             Db.Requests request = new Db.Requests(usrName.Text, CBMaterialProduct.Text, CBTypeProduct.Text, CBSizeProduct.Text, currentUser, false);
             //Requests.SendToRequest(request);
             Db.Requests.requestAddToDB(request);
