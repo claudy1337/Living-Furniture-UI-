@@ -132,7 +132,6 @@
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
                                             <material:Card
-                              
                                                 Height="auto"
                                                 Width="450"
                                  material:ShadowAssist.ShadowDepth="Depth3"

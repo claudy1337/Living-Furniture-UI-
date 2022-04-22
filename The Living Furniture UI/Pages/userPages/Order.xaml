@@ -6,22 +6,80 @@
       xmlns:local="clr-namespace:The_Living_Furniture_UI.Pages.userPages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Order">
+      Title="Order"
+      xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes">
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="Order" FontSize="24" FontFamily="Ubuntu Medium"/>
+                    <ListBox Height="400" SelectionChanged="listRequest_SelectionChanged" x:Name="listOrder" Margin="0,20,0,0" 
+                         ItemsSource="{Binding Order}" Grid.Row="1"/>
+                </Grid>
+            </StackPanel>
 
-        <ListView Name="listView2" Background="White" Height="439" >
-            
-                    <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
-                <Image Source="/Assets/Images/Furniture/Cabinet/Alex/alex-aleks.png" Width="100" Height="100"/>
-
-                <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="name" FontSize="22"/>
-                            <TextBlock Text="aboba" Margin="20,0,0,0" HorizontalAlignment="Center" FontSize="22"/>
-                        </StackPanel>
+            <StackPanel Grid.Column="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+                        <TextBox
+                  x:Name="TBChearchUser" VerticalAlignment="Center"
+                  Style="{StaticResource MaterialDesignFilledTextBox}"
+                  TextWrapping="Wrap"
+                  MaxLength="35"
+                  Margin="30,0,0,0"
+                  material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                  material:HintAssist.Hint="Search"
+                  FontFamily="Ubuntu Light"
+                  FontSize="15" Width="350"/>
+                        <Button Width="110" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Margin="20,0,0,0" Content="Search" Click="Button_Click"/>
 
                     </StackPanel>
-              
-          
-        </ListView>
+
+
+                    <StackPanel Grid.Row="1">
+                        <material:Card
+                                 Height="auto"
+                                 Width="450"
+                                 material:ShadowAssist.ShadowDepth="Depth3"
+                                 material:ShadowAssist.ShadowEdges="Bottom,Left">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="/Assets/Images/Furniture/Chair/Poaeng/poaeng-armchair-black.png" Height="170" HorizontalAlignment="Left" Grid.Column="0"/>
+                                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Grid.Column="1" Margin="10,0,0,0">
+                                    <TextBlock Text="Name"  FontSize="20" FontFamily="Ubuntu Medium"/>
+                                    <TextBlock Text="Category"  FontSize="20" FontFamily="Ubuntu Medium"/>
+                                    <TextBlock Text="Material" FontSize="20" FontFamily="Ubuntu Mlight"/>
+                                   
+                                </StackPanel>
+                                <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <TextBlock Text="Price" FontSize="20" HorizontalAlignment="Left" FontFamily="Ubuntu Medium"/>
+                                    <Button Width="110" HorizontalAlignment="Left" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Content="Show" Click="Button_Click"/>
+                                </StackPanel>
+                            </Grid>
+                        </material:Card>
+                    </StackPanel>
+                    
+                </Grid>
+            </StackPanel>
+            
+        </Grid>
+        
     </Border>
 </Page>
