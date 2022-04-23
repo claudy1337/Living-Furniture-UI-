@@ -16,6 +16,7 @@ using The_Living_Furniture_UI.Pages.userPages;
 using The_Living_Furniture_UI.Pages.Product;
 using The_Living_Furniture_UI.Pages.others;
 using The_Living_Furniture_UI.Db;
+using The_Living_Furniture_UI.Pages;
 
 namespace The_Living_Furniture_UI.Pages.others
 {
@@ -88,6 +89,24 @@ namespace The_Living_Furniture_UI.Pages.others
         {
             //PagesNavigation.Navigate(new System.Uri("Pages/userPages/Baket.xaml", UriKind.RelativeOrAbsolute));
             PagesNavigation.Navigate(new Baket(currentUser));
+        }
+
+        private void rdExit_Click(object sender, RoutedEventArgs e)
+        {
+            string messageBoxText = "Do you want to exit account?";
+            string caption = "Exit Accout";
+            MessageBoxButton button = MessageBoxButton.YesNoCancel;
+            MessageBoxImage icon = MessageBoxImage.Warning;
+            MessageBoxResult result;
+
+            result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+            if (result == MessageBoxResult.Yes)
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+            }
+            
+
         }
     }
 }

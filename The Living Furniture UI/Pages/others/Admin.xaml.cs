@@ -49,5 +49,22 @@ namespace The_Living_Furniture_UI.Pages.others
            // PagesNavigation.Navigate(new System.Uri("Pages/adminPages/Requests.xaml", UriKind.RelativeOrAbsolute));
            PagesNavigation.Navigate(new System.Uri("Pages/Product/CreateProduct.xaml", UriKind.RelativeOrAbsolute));
         }
+
+        private void rdExit_Click(object sender, RoutedEventArgs e)
+        {
+            string messageBoxText = "Do you want to exit account?";
+            string caption = "Exit Accout";
+            MessageBoxButton button = MessageBoxButton.YesNoCancel;
+            MessageBoxImage icon = MessageBoxImage.Warning;
+            MessageBoxResult result;
+
+            result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+            if (result == MessageBoxResult.Yes)
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+            }
+            
+        }
     }
 }

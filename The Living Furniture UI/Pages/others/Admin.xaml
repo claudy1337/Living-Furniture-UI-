@@ -60,6 +60,7 @@
                         <RadioButton x:Name="rdUsrAccounts" Click="rdUsrAccounts_Click" Content="Order" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource customers}" />
                         <RadioButton x:Name="rdRequests" Click="rdRequests_Click"  Content="Request" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource request}"/>
                         <RadioButton x:Name="rdAccount" Content="Account" Style="{DynamicResource MenuRadioButtonStyle}" Click="rdAccount_Click" Tag="{DynamicResource yey}"/>
+                        <RadioButton x:Name="rdExit" Content="Exit" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource more}" Click="rdExit_Click"/>
 
 
 

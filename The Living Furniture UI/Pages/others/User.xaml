@@ -66,6 +66,7 @@
 
                         <RadioButton x:Name="rdRequest" Content="Request" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource request}" Click="rdRequest_Click" Cursor="Hand"/>
                         <RadioButton x:Name="rdAccount" Content="Account" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource account}" Click="rdAccount_Click"/>
+                        <RadioButton x:Name="rdExit" Content="Exit" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource more}" Click="rdExit_Click"/>
 
 
 

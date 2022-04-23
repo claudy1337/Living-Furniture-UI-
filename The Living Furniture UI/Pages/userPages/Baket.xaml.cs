@@ -56,7 +56,7 @@ namespace The_Living_Furniture_UI.Pages.userPages
                     }
                 }
             }
-            //listlogin.ItemsSource = basket.Where(b => b._id == currentUser.Basket._id).ToList();
+            listBasket.ItemsSource = basket.Where(b => b._id == currentUser.Basket._id).ToList();
 
         }
 
