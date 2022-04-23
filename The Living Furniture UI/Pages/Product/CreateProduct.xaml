@@ -1,0 +1,204 @@
+﻿<Page x:Class="The_Living_Furniture_UI.Pages.Product.CreateProduct"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:The_Living_Furniture_UI.Pages.Product"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CreateProduct"
+      xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Create Product" FontSize="24" FontFamily="Ubuntu Medium" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            <StackPanel Grid.Row="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <ComboBox
+                             x:Name="CBCategory"
+                             Margin="0,20,0,0"
+                             Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                             material:HintAssist.Hint="Category"
+                             ItemsSource="{Binding ShortStringList}"
+                             material:TextFieldAssist.HasClearButton="True"
+                             Width="206">
+                            <TextBlock Text="Cabinet"/>
+                            <TextBlock Text="Chair"/>
+                            <TextBlock Text="Lamp"/>
+                            <TextBlock Text="Table"/>
+                            <ComboBox.SelectedItem>
+
+                                <Binding
+                                    Path="SelectedValidationOutlined"
+                                    Mode="TwoWay"
+                                    UpdateSourceTrigger="PropertyChanged">
+
+                                </Binding>
+                            </ComboBox.SelectedItem>
+                        </ComboBox>
+
+                        <ComboBox
+                             x:Name="CBwidth"
+                             Margin="0,20,0,0"
+                             Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                             material:HintAssist.Hint="Width"
+                             ItemsSource="{Binding ShortStringList}"
+                             material:TextFieldAssist.HasClearButton="True"
+                             Width="206">
+                            <TextBlock Text="25x25"/>
+                            <TextBlock Text="100x100"/>
+                            <TextBlock Text="300x300"/>
+                            <ComboBox.SelectedItem>
+
+                                <Binding
+                                    Path="SelectedValidationOutlined"
+                                    Mode="TwoWay"
+                                    UpdateSourceTrigger="PropertyChanged">
+                                    <Binding.ValidationRules>
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </ComboBox.SelectedItem>
+                        </ComboBox>
+
+                        <ComboBox
+                             x:Name="CBHeidht"
+                             Margin="0,20,0,0"
+                             Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                             material:HintAssist.Hint="Height"
+                             ItemsSource="{Binding ShortStringList}"
+                             material:TextFieldAssist.HasClearButton="True"
+                             Width="206">
+                            <TextBlock Text="25x25"/>
+                            <TextBlock Text="100x100"/>
+                            <TextBlock Text="300x300"/>
+                            <ComboBox.SelectedItem>
+
+                                <Binding
+                                    Path="SelectedValidationOutlined"
+                                    Mode="TwoWay"
+                                    UpdateSourceTrigger="PropertyChanged">
+                                    <Binding.ValidationRules>
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </ComboBox.SelectedItem>
+                        </ComboBox>
+
+                        <ComboBox
+                             x:Name="CBMaterial"
+                             Margin="0,20,0,0"
+                             Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                             material:HintAssist.Hint="Material"
+                             ItemsSource="{Binding ShortStringList}"
+                             material:TextFieldAssist.HasClearButton="True"
+                             Width="206">
+                            <TextBlock Text="Array"/>
+                            <TextBlock Text="Plywood"/>
+                            <TextBlock Text="MDF"/>
+                            <TextBlock Text="Wood"/>
+                            <ComboBox.SelectedItem>
+
+                                <Binding
+                                    Path="SelectedValidationOutlined"
+                                    Mode="TwoWay"
+                                    UpdateSourceTrigger="PropertyChanged">
+
+                                </Binding>
+                            </ComboBox.SelectedItem>
+                        </ComboBox>
+
+                        <ComboBox
+                             x:Name="CBColor"
+                             Margin="0,20,0,0"
+                             Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                             material:HintAssist.Hint="Color"
+                             ItemsSource="{Binding ShortStringList}"
+                             material:TextFieldAssist.HasClearButton="True"
+                             Width="206">
+                            <TextBlock Text="Orange"/>
+                            <TextBlock Text="Purple"/>
+                            <TextBlock Text="Blue"/>
+                            <TextBlock Text="Red"/>
+                            <TextBlock Text="White"/>
+                            <ComboBox.SelectedItem>
+
+                                <Binding
+                                    Path="SelectedValidationOutlined"
+                                    Mode="TwoWay"
+                                    UpdateSourceTrigger="PropertyChanged">
+
+                                </Binding>
+                            </ComboBox.SelectedItem>
+                        </ComboBox>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1">
+                        <TextBox
+                       x:Name="TBName"
+                       Style="{StaticResource MaterialDesignFilledTextBox}"
+                       VerticalAlignment="Top"
+                       TextWrapping="Wrap"
+                       MaxLength="20"
+                       Width="206"
+                       FontSize="15"
+                       FontFamily="Ubuntu Light"
+                       Margin="0,20,0,0"
+                       material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       material:HintAssist.Hint="Name"/>
+
+                        <TextBox
+                       x:Name="TBPrice"
+                       Style="{StaticResource MaterialDesignFilledTextBox}"
+                       VerticalAlignment="Top"
+                       TextWrapping="Wrap"
+                       MaxLength="6"
+                       Width="206"
+                       FontSize="15"
+                       FontFamily="Ubuntu Light"
+                       Margin="0,20,0,0"
+                       material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       material:HintAssist.Hint="Price"/>
+
+                        <TextBox
+                       x:Name="TBLogo"
+                       Style="{StaticResource MaterialDesignFilledTextBox}"
+                       VerticalAlignment="Top"
+                       TextWrapping="Wrap"
+                       MaxLength="6"
+                       Width="206"
+                       FontSize="15"
+                       FontFamily="Ubuntu Light"
+                       Margin="0,20,0,0"
+                       material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       material:HintAssist.Hint="Logo"/>
+
+                        <TextBox
+                       x:Name="TBPhoto"
+                       Style="{StaticResource MaterialDesignFilledTextBox}"
+                       VerticalAlignment="Top"
+                       TextWrapping="Wrap"
+                       MaxLength="6"
+                       Width="206"
+                       FontSize="15"
+                       FontFamily="Ubuntu Light"
+                       Margin="0,20,0,0"
+                       material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       material:HintAssist.Hint="Image"/>
+
+                        <CheckBox x:Name="CStructure" Content="Structure" FontSize="15" FontFamily="Ubuntu Medium" HorizontalAlignment="Center" Margin="-110,10,0,0"/>
+                        <Button Width="206" x:Name="BCreateProduct" Click="BCreateProduct_Click" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Margin="0,20,0,0" Content="Create"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Page>

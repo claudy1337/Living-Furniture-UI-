@@ -22,21 +22,22 @@
                             <RowDefinition/>
                             <RowDefinition Height="400"/>
                         </Grid.RowDefinitions>
-                        <TextBlock Text="Sort" FontSize="24" Grid.Row="0"/>
+                        <TextBlock Text="Sort" FontSize="24" Grid.Row="0" FontFamily="Ubuntu Medium"/>
 
                         <StackPanel Grid.Row="1">
 
                             <ComboBox
-                             x:Name="CBheight"
+                             x:Name="CBCategory"
                              Margin="0,20,0,0"
                              Style="{StaticResource MaterialDesignOutlinedComboBox}"
                              material:HintAssist.Hint="Category"
                              ItemsSource="{Binding ShortStringList}"
                              material:TextFieldAssist.HasClearButton="True"
                              Width="206">
-                                <TextBlock Text="25x25"/>
-                                <TextBlock Text="100x100"/>
-                                <TextBlock Text="300x300"/>
+                                <TextBlock Text="Cabinet"/>
+                                <TextBlock Text="Chair"/>
+                                <TextBlock Text="Lamp"/>
+                                <TextBlock Text="Table"/>
                                 <ComboBox.SelectedItem>
 
                                     <Binding
@@ -49,16 +50,17 @@
                             </ComboBox>
 
                             <ComboBox
-                             x:Name="CBheigмht"
+                             x:Name="CBMaterial"
                              Margin="0,20,0,0"
                              Style="{StaticResource MaterialDesignOutlinedComboBox}"
                              material:HintAssist.Hint="Material"
                              ItemsSource="{Binding ShortStringList}"
                              material:TextFieldAssist.HasClearButton="True"
                              Width="206">
-                                <TextBlock Text="25x25"/>
-                                <TextBlock Text="100x100"/>
-                                <TextBlock Text="300x300"/>
+                                <TextBlock Text="Array"/>
+                                <TextBlock Text="Plywood"/>
+                                <TextBlock Text="MDF"/>
+                                <TextBlock Text="Wood"/>
                                 <ComboBox.SelectedItem>
 
                                     <Binding
@@ -71,11 +73,11 @@
                             </ComboBox>
                             
                             <TextBox
-                                  x:Name="TBusrNumber"
+                                  x:Name="TBPrice"
                                   Style="{StaticResource MaterialDesignFilledTextBox}"
                                   VerticalAlignment="Top"
                                   TextWrapping="Wrap"
-                                  MaxLength="12"
+                                  MaxLength="6"
                                   Width="206"
                                   FontSize="15"
                                   FontFamily="Ubuntu Light"
@@ -83,21 +85,29 @@
                                   material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
                                   material:HintAssist.Hint="Price"/>
 
-                            <TextBox
-                                  x:Name="TBusrNumfber"
-                                  Style="{StaticResource MaterialDesignFilledTextBox}"
-                                  VerticalAlignment="Top"
-                                  TextWrapping="Wrap"
-                                  MaxLength="12"
-                                  Width="206"
-                                  FontSize="15"
-                                  FontFamily="Ubuntu Light"
-                                  Margin="0,20,0,0"
-                                  material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                  material:HintAssist.Hint="Raiting"/>
-                            
-                            
+                            <ComboBox
+                             x:Name="CBColor"
+                             Margin="0,20,0,0"
+                             Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                             material:HintAssist.Hint="Color"
+                             ItemsSource="{Binding ShortStringList}"
+                             material:TextFieldAssist.HasClearButton="True"
+                             Width="206">
+                                <TextBlock Text="Orange"/>
+                                <TextBlock Text="Purple"/>
+                                <TextBlock Text="Blue"/>
+                                <TextBlock Text="Red"/>
+                                <TextBlock Text="White"/>
+                                <ComboBox.SelectedItem>
 
+                                    <Binding
+                                    Path="SelectedValidationOutlined"
+                                    Mode="TwoWay"
+                                    UpdateSourceTrigger="PropertyChanged">
+
+                                    </Binding>
+                                </ComboBox.SelectedItem>
+                            </ComboBox>
                             <Button Width="206" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Margin="0,30,0,0" Content="Search"/>
                             
                         </StackPanel>
@@ -113,7 +123,7 @@
                         </Grid.RowDefinitions>
                         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
                             <TextBox
-                  x:Name="TBChearchUser" VerticalAlignment="Center"
+                  x:Name="TBChearchProduct" VerticalAlignment="Center"
                   Style="{StaticResource MaterialDesignFilledTextBox}"
                   TextWrapping="Wrap"
                   MaxLength="35"
@@ -122,8 +132,8 @@
                   material:HintAssist.Hint="Search"
                   FontFamily="Ubuntu Light"
                   FontSize="15" Width="350"/>
-                            <Button Width="110" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Margin="20,0,0,0" Content="Search" Click="Button_Click"/>
-                            
+                            <Button Width="110" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Margin="20,0,0,0" Content="Search" x:Name="BSerchProdcut"/>
+
                         </StackPanel>
 
                         <StackPanel Grid.Row="1" Margin="10" Height="auto"  VerticalAlignment="Top">
@@ -150,7 +160,7 @@
                                                     </StackPanel>
                                                     <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
                                                         <TextBlock Text="{Binding Path=Name}" FontSize="20" HorizontalAlignment="Left" FontFamily="Ubuntu Medium"/>
-                                                        <Button Width="110" HorizontalAlignment="Left" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Content="Search" Click="Button_Click"/>
+                                                        <Button Width="110" HorizontalAlignment="Left" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Content="Search"/>
                                                     </StackPanel>
                                                 </Grid>
                                             </material:Card>
@@ -158,12 +168,8 @@
                                     </ListView.ItemTemplate>
                                 </ListView>
                             </ScrollViewer>
-                            </StackPanel>
-                                       
+                        </StackPanel>
                     </Grid>
-                    
-
-                   
                 </StackPanel>
             </Grid>
         </Border>

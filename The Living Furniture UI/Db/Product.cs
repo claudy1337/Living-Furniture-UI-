@@ -15,13 +15,17 @@ namespace The_Living_Furniture_UI.Db
     {
         public Product(string category, string name, int price, int raiting, int width, int height,string color, bool structure, string material, string logo, string photo)
         {
+            Category = category;
             Name = name;
             Price = price;
             Raiting = raiting;
             Width = width;
             Height = height;
-            Height = height;
-            Category = category;
+            Color = color;
+            Structure = structure;
+            Material = material;
+            Logo = logo;
+            Photo = photo;
         }
         public ObjectId _id { get; set; }
         public string Name { get; set; }
@@ -44,7 +48,14 @@ namespace The_Living_Furniture_UI.Db
             var listUsersFromDB = collection.Find(x => true);
             
         }
-        
+        public static void ProductAddtoDb(Db.Product product)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Product>("Product");
+            collection.InsertOne(product);
+        }
+
     }
     
 }

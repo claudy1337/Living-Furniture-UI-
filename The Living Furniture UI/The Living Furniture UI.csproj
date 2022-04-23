@@ -167,6 +167,9 @@
     <Compile Include="Pages\adminPages\UserControl.xaml.cs">
       <DependentUpon>UserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Product\CreateProduct.xaml.cs">
+      <DependentUpon>CreateProduct.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Product\CustomList.xaml.cs">
       <DependentUpon>CustomList.xaml</DependentUpon>
     </Compile>
@@ -249,15 +252,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Product\CreateProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Product\CustomList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Product\ProductInfo.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Product\ProductList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -314,9 +317,6 @@
     </Compile>
     <Compile Include="Pages\Product\ProductInfo.xaml.cs">
       <DependentUpon>ProductInfo.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Product\ProductList.xaml.cs">
-      <DependentUpon>ProductList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\userPages\Category.xaml.cs">
       <DependentUpon>Category.xaml</DependentUpon>

@@ -66,9 +66,9 @@ namespace The_Living_Furniture_UI.Pages.adminPages
                     TBusrName.Text = Consultation.GetisCheckCons(slectedRequest).Name;
                     TBusrNumber.Text = Consultation.GetisCheckCons(slectedRequest).Number;
                     if (Consultation.GetisCheckCons(slectedRequest).isCheck == true)
-                        TBconsIsCheck.Text = "ДА";
+                        TBconsIsCheck.Text = "DONE";
                     else
-                        TBconsIsCheck.Text = "НЕТ";
+                        TBconsIsCheck.Text = "NOT DONE";
                   
                 }
             }

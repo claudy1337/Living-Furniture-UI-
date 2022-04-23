@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using The_Living_Furniture_UI.Db;
+using MongoDB.Bson;
+using MongoDB.Driver;
 
 namespace The_Living_Furniture_UI.Pages.adminPages
 {
@@ -23,7 +26,34 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         public FullOrders()
         {
             InitializeComponent();
-           
+            LoadData();
+
+
+        }
+        private async void LoadData()
+        {
+
+            string connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Db.Consultation>("Consultation");
+            var filter = new BsonDocument();
+
+            List<Db.Consultation> basket = new List<Db.Consultation>();
+
+            using (var cursor = await collection.FindAsync(filter))
+            {
+                while (await cursor.MoveNextAsync())
+                {
+                    var people = cursor.Current;
+                    foreach (Db.Consultation doc in people)
+                    {
+                        basket.Add(new Db.Consultation(doc.Name, doc.Number, doc.isCheck));
+                    }
+                }
+            }
+            DGEmployee.ItemsSource = Db.Consultation.GetAllConsList();
+
         }
     }
 }

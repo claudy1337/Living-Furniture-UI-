@@ -31,10 +31,7 @@ namespace The_Living_Furniture_UI.Pages.Product
             LoadData();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+      
         private async void LoadData()
         {
 

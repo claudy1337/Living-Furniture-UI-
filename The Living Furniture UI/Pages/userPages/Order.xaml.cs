@@ -33,9 +33,6 @@ namespace The_Living_Furniture_UI.Pages.userPages
             //TBPrice.Text = Basket.GetUser(listlogin.SelectedItem.ToString()).Size;
         }
 
-        private void listlogin_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-        }
+       
     }
 }

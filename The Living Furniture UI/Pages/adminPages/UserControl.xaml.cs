@@ -23,37 +23,14 @@ namespace The_Living_Furniture_UI.Pages.adminPages
     /// </summary>
     public partial class UserControl : Page
     {
+        
         public UserControl()
         {
             InitializeComponent();
-            LoadData();
             usrList.ItemsSource = Db.User.GetAllUserList();
+            
         }
-        private async void LoadData()
-        {
-
-            string connectionString = "mongodb://localhost";
-            var client = new MongoClient(connectionString);
-            var database = client.GetDatabase("Consultation");
-            var collection = database.GetCollection<Db.Consultation>("Consultation");
-            var filter = new BsonDocument();
-
-            List<Db.Consultation> basket = new List<Db.Consultation>();
-
-            using (var cursor = await collection.FindAsync(filter))
-            {
-                while (await cursor.MoveNextAsync())
-                {
-                    var people = cursor.Current;
-                    foreach (Db.Consultation doc in people)
-                    {
-                        basket.Add(new Db.Consultation(doc.Name, doc.Number, doc.isCheck));
-                    }
-                }
-            }
-           // listlogin.ItemsSource = basket.ToList();
-
-        }
+       
 
         private void usrList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -75,6 +52,11 @@ namespace The_Living_Furniture_UI.Pages.adminPages
             {
 
             }
+        }
+
+        private void BSearchUsr_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

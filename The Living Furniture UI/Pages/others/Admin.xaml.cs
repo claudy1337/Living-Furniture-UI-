@@ -41,12 +41,13 @@ namespace The_Living_Furniture_UI.Pages.others
 
         private void rdAccount_Click(object sender, RoutedEventArgs e)
         {
-            PagesNavigation.Navigate(new System.Uri("Pages/adminPages/UserControl.xaml", UriKind.RelativeOrAbsolute));
+            PagesNavigation.Navigate(new System.Uri("Pages/adminPages/FullOrders.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void rdRequests_Click(object sender, RoutedEventArgs e)
         {
-            PagesNavigation.Navigate(new System.Uri("Pages/adminPages/Requests.xaml", UriKind.RelativeOrAbsolute));
+           // PagesNavigation.Navigate(new System.Uri("Pages/adminPages/Requests.xaml", UriKind.RelativeOrAbsolute));
+           PagesNavigation.Navigate(new System.Uri("Pages/Product/CreateProduct.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

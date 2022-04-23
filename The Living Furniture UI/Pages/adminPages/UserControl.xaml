@@ -49,7 +49,7 @@
                   material:HintAssist.Hint="Search"
                   FontFamily="Ubuntu Light"
                   FontSize="15" Width="550"/>
-                <Button Width="110" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Margin="20,0,0,0" Content="Search"/>
+                <Button Width="110" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Margin="20,0,0,0" Content="Search" x:Name="BSearchUsr" Click="BSearchUsr_Click"/>
             </StackPanel>
 
             <StackPanel Grid.Row="2">
@@ -62,7 +62,7 @@
                         <TextBlock Text="User" HorizontalAlignment="Center" FontSize="24" FontFamily="Ubuntu Medium"/>
                         <ListBox Margin="0,10,0,0" SelectionChanged="usrList_SelectionChanged" x:Name="usrList" Height="272" FontFamily="Ubuntu Medium" FontSize="15"/>
                     </StackPanel>
-
+                    
                     <StackPanel Grid.Column="1" Orientation="Vertical">
                         <Grid>
                             <Grid.RowDefinitions>

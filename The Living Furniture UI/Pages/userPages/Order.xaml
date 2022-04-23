@@ -21,7 +21,7 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Text="Order" FontSize="24" FontFamily="Ubuntu Medium"/>
-                    <ListBox Height="400" SelectionChanged="listRequest_SelectionChanged" x:Name="listOrder" Margin="0,20,0,0" 
+                    <ListBox Height="400" x:Name="listOrder" Margin="0,20,0,0" 
                          ItemsSource="{Binding Order}" Grid.Row="1"/>
                 </Grid>
             </StackPanel>
@@ -43,7 +43,7 @@
                   material:HintAssist.Hint="Search"
                   FontFamily="Ubuntu Light"
                   FontSize="15" Width="350"/>
-                        <Button Width="110" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Margin="20,0,0,0" Content="Search" Click="Button_Click"/>
+                        <Button Width="110" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Margin="20,0,0,0" Content="Search"/>
 
                     </StackPanel>
 
@@ -70,7 +70,7 @@
                                 </StackPanel>
                                 <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
                                     <TextBlock Text="Price" FontSize="20" HorizontalAlignment="Left" FontFamily="Ubuntu Medium"/>
-                                    <Button Width="110" HorizontalAlignment="Left" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Content="Show" Click="Button_Click"/>
+                                    <Button Width="110" HorizontalAlignment="Left" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Content="Show"/>
                                 </StackPanel>
                             </Grid>
                         </material:Card>
