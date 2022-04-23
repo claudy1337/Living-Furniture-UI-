@@ -5,25 +5,97 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:The_Living_Furniture_UI.Pages.adminPages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="900"
       Title="FullOrders"
       xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes">
     
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
-            <DataGrid Grid.Row="0" x:Name="DGEmployee" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Name Product" Binding="{Binding Number}" FontSize="24"/>
-                    <DataGridTextColumn Header="ID Order" Binding="{Binding Path=Name}" FontSize="20"/>
-                    <DataGridTextColumn Header="User Login" Binding="{Binding Path=Height}"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="250"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Vertical" Margin="10">
+                <TextBlock Text="Order Number" FontSize="24" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBox
+                  IsReadOnly="True"
+                  x:Name="TBfusrName"
+                  Style="{StaticResource MaterialDesignFilledTextBox}"
+                  TextWrapping="Wrap"
+                  Margin="0,20,0,0"
+                  material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                  material:HintAssist.Hint="Name"
+                  FontFamily="Ubuntu Light"
+                  FontSize="15" Width="160"/>
 
-                </DataGrid.Columns>
-            </DataGrid>
-            <Button Background="#EB8F4C" Margin="5" Width="auto" Height="50" Grid.Row="1" x:Name="BRemove" Content="Remove"/>
+                    <Button Width="90" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Margin="10,20,0,0" Content="Search" x:Name="BSearchUsr"/>
+
+                </StackPanel>
+                <ListBox Margin="0,20,0,0"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10">
+                <TextBlock Text="Product List" FontSize="24" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
+                <TextBlock Text="CUSTOM LIST ADD"/>
+            </StackPanel>
+            
+           <StackPanel Grid.Column="2" Margin="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="90"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="User" FontSize="24" FontFamily="Ubuntu Medium" HorizontalAlignment="Center" Grid.Row="0"/>
+
+                    <StackPanel Grid.Row="1" VerticalAlignment="Center">
+                        <TextBox
+                                IsReadOnly="True"
+                                VerticalContentAlignment="Center"
+                                x:Name="TBusrName"
+                                Style="{StaticResource MaterialDesignFilledTextBox}"
+                                TextWrapping="Wrap"
+                                material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                material:HintAssist.Hint="Name"
+                                FontFamily="Ubuntu Light"
+                                FontSize="15" Width="215"/>
+
+                        <TextBox
+                                Margin="0,20,0,0"
+                                IsReadOnly="True"
+                                x:Name="TBusrLogin"
+                                Style="{StaticResource MaterialDesignFilledTextBox}"
+                                TextWrapping="Wrap"
+                                material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                material:HintAssist.Hint="Login"
+                                FontFamily="Ubuntu Light"
+                                FontSize="15" Width="215"/>
+
+                        <TextBox
+                                Margin="0,20,0,0"
+                                IsReadOnly="True"
+                                x:Name="TBusrdCard"
+                                Style="{StaticResource MaterialDesignFilledTextBox}"
+                                TextWrapping="Wrap"
+                                material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                material:HintAssist.Hint="Card"
+                                FontFamily="Ubuntu Light"
+                                FontSize="15" Width="215"/>
+
+                        <TextBox
+                                Margin="0,20,0,0"
+                                IsReadOnly="True"
+                                x:Name="TBusrdAddress"
+                                Style="{StaticResource MaterialDesignFilledTextBox}"
+                                TextWrapping="Wrap"
+                                material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                material:HintAssist.Hint="Address"
+                                FontFamily="Ubuntu Light"
+                                FontSize="15" Width="215"/>
+                    </StackPanel>
+                </Grid>
+           </StackPanel>
         </Grid>
     </Border>
 </Page>
