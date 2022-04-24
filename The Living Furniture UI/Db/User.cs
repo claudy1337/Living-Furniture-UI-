@@ -71,6 +71,19 @@ namespace The_Living_Furniture_UI.Db
             var foundedUser = collection.Find(x => x.Login == login).FirstOrDefault();
             return foundedUser;
         }
+        public static List<string> SearchUser(string value)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Db.User>("User");
+            var listUsersFromDB = collection.Find(x => x.Login == value).ToList();
+            List<string> listToReturn = new List<string>();
+            foreach (var item in listUsersFromDB)
+            {
+                listToReturn.Add(item.Login);
+            }
+            return listToReturn;
+        }
 
     }
     

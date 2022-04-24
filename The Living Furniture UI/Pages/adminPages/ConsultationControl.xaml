@@ -33,25 +33,24 @@
                 <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
                     <Button Grid.Row="2" 
                         Margin="20,5,20,0"
-                        Background="AliceBlue"
                         Height="40"
                         Width="150"
                         FontFamily="Ubuntu Medium" 
                         FontSize="24" Content="ALL"
                         x:Name="BFullList"
                         Click="BFullList_Click"
-                        Style="{DynamicResource MaterialDesignRaisedLightButton}"/>
+                        Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}"/>
 
                     <Button Grid.Row="2" 
                         Margin="20,5,20,0"
-                        Background="AliceBlue"
                         Height="40"
                         Width="150"
                         FontFamily="Ubuntu Medium" 
                         FontSize="24" Content="DCheck"
                         x:Name="BDontCheck"
                         Click="BDontCheck_Click"
-                        Style="{DynamicResource MaterialDesignRaisedLightButton}"/>
+                        Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}"/>
+                    
                 </StackPanel>
                 
                 
@@ -102,8 +101,7 @@
                           material:HintAssist.Hint="is Check"/>
 
                     <Button x:Name="BisCheckConsultation"
-                            Style="{DynamicResource MaterialDesignPaperLightButton}" 
-                            Background="AliceBlue"
+                            Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}"
                             Content="Checking" 
                             FontFamily="Ubuntu Medium"
                             FontSize="24"

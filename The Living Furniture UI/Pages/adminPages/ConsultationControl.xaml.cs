@@ -34,6 +34,10 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         {
             listLogin.ItemsSource = Db.Consultation.GetAllConsList();
         }
+        private void BDontCheck_Click(object sender, RoutedEventArgs e)
+        {
+            listLogin.ItemsSource = Db.Consultation.GetConsList();
+        }
         private async void BisCheckConsultation_Click(object sender, RoutedEventArgs e)
         {
             var client = new MongoClient("mongodb://localhost");
@@ -88,9 +92,6 @@ namespace The_Living_Furniture_UI.Pages.adminPages
             
         }
 
-        private void BDontCheck_Click(object sender, RoutedEventArgs e)
-        {
-            listLogin.ItemsSource = Db.Consultation.GetConsList();
-        }
+       
     }
 }

@@ -52,7 +52,7 @@ namespace The_Living_Furniture_UI.Pages.adminPages
                     }
                 }
             }
-            DGEmployee.ItemsSource = Db.Consultation.GetAllConsList();
+           // DGEmployee.ItemsSource = Db.Consultation.GetAllConsList();
 
         }
     }

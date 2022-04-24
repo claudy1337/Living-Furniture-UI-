@@ -57,7 +57,7 @@
                 Background="White" 
                 BorderBrush="#22000000" 
                 BorderThickness="1">
-                <Image Name="ViewedPhoto" Height="auto" Width="auto"/>
+                
             </Border>
         </Grid>
     </Border>

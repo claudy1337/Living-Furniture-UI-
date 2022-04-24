@@ -35,7 +35,7 @@ namespace The_Living_Furniture_UI.Pages.userPages
 
         private void PhotosListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            PhotosListBox.SelectedItem = ViewedPhoto;
+            
         }
     }
 }

@@ -31,6 +31,8 @@ namespace The_Living_Furniture_UI.Pages.others
             InitializeComponent();
             //usrName.Text = user.Name;
             currentUser = user;
+            usrLogin.Text = user.Login.ToString();
+            usrName.Text = user.Name.ToString();
         }
 
         private void rdRequest_Click(object sender, RoutedEventArgs e)

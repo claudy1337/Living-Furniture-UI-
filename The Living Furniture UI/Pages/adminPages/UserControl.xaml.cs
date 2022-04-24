@@ -56,7 +56,7 @@ namespace The_Living_Furniture_UI.Pages.adminPages
 
         private void BSearchUsr_Click(object sender, RoutedEventArgs e)
         {
-            
+            usrList.ItemsSource = Db.User.SearchUser(TBChearchUser.Text);
         }
     }
 }
