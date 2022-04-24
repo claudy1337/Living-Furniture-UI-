@@ -55,11 +55,14 @@
                     </ToggleButton>
 
                     <StackPanel Grid.Row="3">
-                        <RadioButton x:Name="rdHome" Click="rdHome_Click" IsChecked="True" Content="Home" Style="{DynamicResource MenuRadioButtonStyle}"  Tag="{DynamicResource home}" />
-                        <RadioButton x:Name="rdStatistic" Click="rdStatistic_Click" Content="Category" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource notes}"/>
-                        <RadioButton x:Name="rdUsrAccounts" Click="rdUsrAccounts_Click" Content="Order" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource customers}" />
-                        <RadioButton x:Name="rdRequests" Click="rdRequests_Click"  Content="Request" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource request}"/>
-                        <RadioButton x:Name="rdAccount" Content="Account" Style="{DynamicResource MenuRadioButtonStyle}" Click="rdAccount_Click" Tag="{DynamicResource yey}"/>
+                        <RadioButton x:Name="rdHome" Click="rdHome_Click" IsChecked="True" Content="Home" Style="{DynamicResource MenuRadioButtonStyle}"  Tag="{DynamicResource home}"/>
+                        <RadioButton x:Name="rdStatistic" Click="rdStatistic_Click" Content="Statistic" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource notes}"/>
+                        <RadioButton x:Name="rdUsrAccounts" Click="rdUsrAccounts_Click" Content="Users" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource customers}" />
+                        <RadioButton x:Name="rdRequests" Click="rdRequests_Click"  Content="Requests" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource request}"/>
+                        <RadioButton x:Name="rdOrders" Click="rdOrders_Click" Content="Orders" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource supplier}"/>
+                        <RadioButton x:Name="rdConsultation" Content="Consultations" Style="{DynamicResource MenuRadioButtonStyle}" Click="rdConsultation_Click" Tag="{DynamicResource yey}"/>
+                        <RadioButton x:Name="rdCreateProduct" Click="rdCreateProduct_Click"  Content="New Product" Style="{DynamicResource MenuRadioButtonStyle}"  Tag="{DynamicResource account}" Cursor="Hand"/>
+                        
                         <RadioButton x:Name="rdExit" Content="Exit" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource more}" Click="rdExit_Click"/>
 
 
@@ -91,8 +94,8 @@
 
                 <!-- Start: Button Close | Restore-->
                 <StackPanel Grid.Row="0" Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0" Height="30" Orientation="Horizontal" FlowDirection="RightToLeft">
-                    <Button x:Name="btnClose" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}"  Tag="IsCloseButton"/>
-                    <Button x:Name="btnMinimize" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource minimize}" />
+                    <Button x:Name="btnClose" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}"  Tag="IsCloseButton" Click="btnClose_Click"/>
+                    <Button x:Name="btnMinimize" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource minimize}" Click="btnMinimize_Click" Cursor="Hand"/>
                 </StackPanel>
                 <!-- End: Button Close | Restore-->
 

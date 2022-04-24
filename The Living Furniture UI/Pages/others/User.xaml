@@ -98,8 +98,8 @@
 
                 <!-- Start: Button Close | Restore-->
                 <StackPanel Grid.Row="0" Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0" Height="30" Orientation="Horizontal" FlowDirection="RightToLeft">
-                    <Button x:Name="btnClose" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}"  Tag="IsCloseButton"/>
-                    <Button x:Name="btnMinimize" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource minimize}" />
+                    <Button x:Name="btnClose" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}"  Tag="IsCloseButton" Click="btnClose_Click"/>
+                    <Button x:Name="btnMinimize" Click="btnMinimize_Click" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource minimize}" />
                 </StackPanel>
                 <!-- End: Button Close | Restore-->
 

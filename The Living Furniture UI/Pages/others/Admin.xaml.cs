@@ -26,28 +26,24 @@ namespace The_Living_Furniture_UI.Pages.others
 
         private void rdHome_Click(object sender, RoutedEventArgs e)
         {
-            PagesNavigation.Navigate(new System.Uri("Pages/adminPages/UserControl.xaml", UriKind.RelativeOrAbsolute));
+            PagesNavigation.Navigate(new System.Uri("Pages/adminPages/Profile.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void rdStatistic_Click(object sender, RoutedEventArgs e)
         {
-            PagesNavigation.Navigate(new System.Uri("Pages/userPages/FollowPage.xaml", UriKind.RelativeOrAbsolute));
+            PagesNavigation.Navigate(new System.Uri("Pages/adminPages/Applications.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void rdUsrAccounts_Click(object sender, RoutedEventArgs e)
         {
-            PagesNavigation.Navigate(new System.Uri("Pages/adminPages/Profile.xaml", UriKind.RelativeOrAbsolute));
+            PagesNavigation.Navigate(new System.Uri("Pages/adminPages/UserControl.xaml", UriKind.RelativeOrAbsolute));
         }
 
-        private void rdAccount_Click(object sender, RoutedEventArgs e)
-        {
-            PagesNavigation.Navigate(new System.Uri("Pages/adminPages/FullOrders.xaml", UriKind.RelativeOrAbsolute));
-        }
+        
 
         private void rdRequests_Click(object sender, RoutedEventArgs e)
         {
-           // PagesNavigation.Navigate(new System.Uri("Pages/adminPages/Requests.xaml", UriKind.RelativeOrAbsolute));
-           PagesNavigation.Navigate(new System.Uri("Pages/Product/CreateProduct.xaml", UriKind.RelativeOrAbsolute));
+           PagesNavigation.Navigate(new System.Uri("Pages/adminPages/Requests.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void rdExit_Click(object sender, RoutedEventArgs e)
@@ -65,6 +61,31 @@ namespace The_Living_Furniture_UI.Pages.others
                 mainWindow.Show();
             }
             
+        }
+
+        private void rdOrders_Click(object sender, RoutedEventArgs e)
+        {
+            PagesNavigation.Navigate(new System.Uri("Pages/adminPages/FullOrders.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void rdConsultation_Click(object sender, RoutedEventArgs e)
+        {
+            PagesNavigation.Navigate(new System.Uri("Pages/adminPages/ConsultationControl.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void rdCreateProduct_Click(object sender, RoutedEventArgs e)
+        {
+            PagesNavigation.Navigate(new System.Uri("Pages/Product/CreateProduct.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }
