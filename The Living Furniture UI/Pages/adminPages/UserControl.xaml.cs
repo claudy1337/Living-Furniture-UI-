@@ -28,6 +28,7 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         {
             InitializeComponent();
             usrList.ItemsSource = Db.User.GetAllUserList();
+            usrCounts.Text = Db.User.GetAllUserList().Count.ToString();
             
         }
        

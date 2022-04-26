@@ -29,7 +29,7 @@ namespace The_Living_Furniture_UI.Pages.Product
         private void BCreateProduct_Click(object sender, RoutedEventArgs e)
         {
             string value = TBPrice.ToString();
-            Db.Product product = new Db.Product(CBCategory.Text, TBName.Text, 1000, 0, 200, 300,CBColor.Text,false,CBMaterial.Text,TBLogo.Text, TBPhoto.Text);
+            Db.Product product = new Db.Product(CBCategory.Text, TBName.Text, 1000, 0, 200, 300,CBColor.Text,false,CBMaterial.Text,TBLogo.Text, TBPhoto.Text, "");
             Db.Product.ProductAddtoDb(product);
         }
     }

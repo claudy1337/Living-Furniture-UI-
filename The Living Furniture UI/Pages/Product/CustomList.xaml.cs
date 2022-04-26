@@ -38,23 +38,23 @@ namespace The_Living_Furniture_UI.Pages.Product
             string connectionString = "mongodb://localhost";
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("FurnitureBD");
-            var collection = database.GetCollection<Db.Basket>("Basket");
+            var collection = database.GetCollection<Db.Product>("Product");
             var filter = new BsonDocument();
 
-            List<Db.Basket> basket = new List<Db.Basket>();
+            List<Db.Product> basket = new List<Db.Product>();
 
             using (var cursor = await collection.FindAsync(filter))
             {
                 while (await cursor.MoveNextAsync())
                 {
                     var people = cursor.Current;
-                    foreach (Db.Basket doc in people)
+                    foreach (Db.Product doc in people)
                     {
-                        basket.Add(new Db.Basket(doc.Name, doc.Size, doc.Material, doc.Image));
+                        basket.Add(new Db.Product(doc.Category,doc.Name, doc.Price,doc.Raiting,doc.Width, doc.Height,doc.Color,doc.Structure,doc.Material,doc.Logo,doc.Photo, doc.SizeImage));
                     }
                 }
             }
-           listlogin.ItemsSource = basket.Where(b => b._id == currentUser.Basket._id).ToList();
+           listlogin.ItemsSource = basket.ToList();
 
         }
     }

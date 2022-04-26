@@ -62,6 +62,13 @@ namespace The_Living_Furniture_UI.Db
             }
             return listToReturn;
         }
+        public static void UpdateCons(Consultation consultation, string number)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Consultation>("Consultation");
+            collection.ReplaceOne(x => x.Number == number, consultation);
+        }
     }
     
 }

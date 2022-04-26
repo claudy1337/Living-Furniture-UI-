@@ -13,7 +13,7 @@ namespace The_Living_Furniture_UI.Db
 {
     public class Product
     {
-        public Product(string category, string name, int price, int raiting, int width, int height,string color, bool structure, string material, string logo, string photo)
+        public Product(string category, string name, int price, int raiting, int width, int height,string color, bool structure, string material, string logo, string photo, string sizeImage)
         {
             Category = category;
             Name = name;
@@ -26,6 +26,7 @@ namespace The_Living_Furniture_UI.Db
             Material = material;
             Logo = logo;
             Photo = photo;
+            SizeImage = sizeImage;
         }
         public ObjectId _id { get; set; }
         public string Name { get; set; }
@@ -39,6 +40,7 @@ namespace The_Living_Furniture_UI.Db
         public string Material { get; set; }
         public string Logo { get; set; }
         public string Photo { get; set; }
+        public string SizeImage { get; set; }
 
         public static void GetProduct()
         {

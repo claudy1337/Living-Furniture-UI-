@@ -71,19 +71,7 @@
                                     </Binding>
                                 </ComboBox.SelectedItem>
                             </ComboBox>
-                            
-                            <TextBox
-                                  x:Name="TBPrice"
-                                  Style="{StaticResource MaterialDesignFilledTextBox}"
-                                  VerticalAlignment="Top"
-                                  TextWrapping="Wrap"
-                                  MaxLength="6"
-                                  Width="206"
-                                  FontSize="15"
-                                  FontFamily="Ubuntu Light"
-                                  Margin="0,20,0,0"
-                                  material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                  material:HintAssist.Hint="Price"/>
+                               
 
                             <ComboBox
                              x:Name="CBColor"
@@ -108,6 +96,20 @@
                                     </Binding>
                                 </ComboBox.SelectedItem>
                             </ComboBox>
+
+                            <TextBox
+                                  x:Name="TBPrice"
+                                  Style="{StaticResource MaterialDesignFilledTextBox}"
+                                  VerticalAlignment="Top"
+                                  TextWrapping="Wrap"
+                                  MaxLength="6"
+                                  Width="206"
+                                  FontSize="15"
+                                  FontFamily="Ubuntu Light"
+                                  Margin="0,20,0,0"
+                                  material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                  material:HintAssist.Hint="Price"/>
+
                             <Button Width="206" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Margin="0,30,0,0" Content="Search"/>
                             
                         </StackPanel>
@@ -152,7 +154,7 @@
                                                         <ColumnDefinition/>
                                                         <ColumnDefinition/>
                                                     </Grid.ColumnDefinitions>
-                                                    <Image Source="{Binding Path=Image}" Height="170" HorizontalAlignment="Left" Grid.Column="0"/>
+                                                    <Image Source="{Binding Path=Photo}" Height="170" HorizontalAlignment="Left" Grid.Column="0"/>
                                                     <StackPanel Orientation="Vertical" VerticalAlignment="Center" Grid.Column="1">
                                                         <TextBlock Text="{Binding Path=Name}"  FontSize="20" FontFamily="Ubuntu Medium"/>
                                                         <TextBlock Text="{Binding Path=Name}" FontSize="20" FontFamily="Ubuntu Mlight"/>

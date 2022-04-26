@@ -57,5 +57,12 @@ namespace The_Living_Furniture_UI.Db
             var foundedUser = collection.Find(x => x.Name == name).FirstOrDefault();
             return foundedUser;
         }
+        public static void UpdateRequest(Requests requests, string name)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Db.Requests>("Request");
+            collection.ReplaceOne(x => x.Name==name, requests);
+        }
     }
 }

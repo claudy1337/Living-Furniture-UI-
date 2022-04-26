@@ -41,16 +41,8 @@ namespace The_Living_Furniture_UI.Pages.adminPages
 
         private async void BisCheck_Click(object sender, RoutedEventArgs e)
         {
-            var client = new MongoClient("mongodb://localhost");
-            var database = client.GetDatabase("FurnitureBD");
-            var collection = database.GetCollection<BsonDocument>("Request");
-            var result = await collection.ReplaceOneAsync(new BsonDocument("isCheck", true),
-                new BsonDocument
-                {
-                   //current user add
-
-                });
-            var people = await collection.Find(new BsonDocument()).ToListAsync();
+            //Db.Requests requests = new Db.Requests(TBName.Text, TBMaterial.Text, TBType.Text, TBSize.Text, User , true);
+            //Db.Requests.UpdateRequest(requests, TBName.Text);
             Refresh();
         }
         public void Refresh()
@@ -92,10 +84,6 @@ namespace The_Living_Furniture_UI.Pages.adminPages
                     TBusrName.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).User.Name.ToString();
                     TBusrLogin.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).User.Login.ToString();
                     TBusrAddress.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).User.Address.ToString();
-                    
-                   
-                    
-
                     // TBconsIsCheck.Text = Consultation.GetisCheckCons(listLogin.SelectedItems.ToString()).isCheck.ToString(); bool convert in string 
                 }
             }

@@ -40,18 +40,21 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         }
         private async void BisCheckConsultation_Click(object sender, RoutedEventArgs e)
         {
-            var client = new MongoClient("mongodb://localhost");
-            var database = client.GetDatabase("FurnitureBD");
-            var collection = database.GetCollection<BsonDocument>("Consultation");
-            var result = await collection.ReplaceOneAsync(new BsonDocument("Number", TBusrNumber.Text),
-                new BsonDocument
-                {
-                    {"Number", TBusrNumber.Text },
-                    {"Name",TBusrName.Text},
-                    {"isCheck", true }
+            //var client = new MongoClient("mongodb://localhost");
+            //var database = client.GetDatabase("FurnitureBD");
+            //var collection = database.GetCollection<BsonDocument>("Consultation");
+            //var result = await collection.ReplaceOneAsync(new BsonDocument("Number", TBusrNumber.Text),
+            //    new BsonDocument
+            //    {
+            //        {"Number", TBusrNumber.Text },
+            //        {"Name",TBusrName.Text},
+            //        {"isCheck", true }
 
-                });
-            var people = await collection.Find(new BsonDocument()).ToListAsync();
+            //    });
+            //var people = await collection.Find(new BsonDocument()).ToListAsync();
+
+            Consultation consultation = new Consultation(TBusrName.Text, TBusrNumber.Text, true);
+            Db.Consultation.UpdateCons(consultation, TBusrNumber.Text);
             MessageBox.Show("Заявка обработана");
             Refresh();
         }
@@ -88,10 +91,8 @@ namespace The_Living_Furniture_UI.Pages.adminPages
             TBusrName.Text = null;
             TBusrNumber.Text = null;
             listLogin.ItemsSource = null;
-            listLogin.ItemsSource = Db.Consultation.GetConsList();
-            
+            listLogin.ItemsSource = Db.Consultation.GetConsList();   
         }
-
        
     }
 }

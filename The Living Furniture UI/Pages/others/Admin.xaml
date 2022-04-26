@@ -8,7 +8,8 @@
         Title="Admin" Height="590" Width="990"
         WindowStartupLocation="CenterScreen" WindowStyle="None"
         Background="Transparent" AllowsTransparency="True"
-        ResizeMode="NoResize" WindowState="Normal">
+        ResizeMode="NoResize" WindowState="Normal"
+        xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes">
 <!--admin-->
     <Border CornerRadius="8" Background="{DynamicResource PrimaryBackgroundColor}">
         <Grid>
@@ -97,6 +98,9 @@
                     <Button x:Name="btnClose" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}"  Tag="IsCloseButton" Click="btnClose_Click"/>
                     <Button x:Name="btnMinimize" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource minimize}" Click="btnMinimize_Click" Cursor="Hand"/>
                 </StackPanel>
+
+                    <material:PackIcon Kind="KeyboardBackspace"  Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="35" Width="35" Margin="20,0,0,0"/>
+           
                 <!-- End: Button Close | Restore-->
 
 

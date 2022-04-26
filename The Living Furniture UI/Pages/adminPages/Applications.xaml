@@ -32,7 +32,9 @@
                             <material:PackIcon Kind="User" Foreground="{DynamicResource PrimaryBlueColor}" HorizontalAlignment="Left" Height="50" Width="50" />
                             <TextBlock Text="Users" Foreground="{DynamicResource PrimaryBlueColor}" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
                         </StackPanel>
-                        <TextBlock Text="200" Foreground="{DynamicResource PrimaryBlueColor}" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="usrCounts" Foreground="{DynamicResource PrimaryBlueColor}" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
+                        <ProgressBar x:Name="prg"
+                                     Visibility="Hidden"/>
                     </StackPanel>
                 </material:Card>
 
@@ -94,12 +96,16 @@
                              Stretch="UniformToFill" />
                         <Button
                               Grid.Row="0"
+                              x:Name="Btnupdate"
+                              Click="Btnupdate_Click"
                               Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                               HorizontalAlignment="Right"
                               VerticalAlignment="Bottom"
                               Margin="0 0 16 -20">
+                            
                             <material:PackIcon
                                Kind="Update" />
+                            
                         </Button>
                         <StackPanel
                                 Grid.Row="1"
@@ -121,18 +127,12 @@
                                 Orientation="Horizontal"
                                 Margin="8">
                             <Button
-                                Style="{StaticResource MaterialDesignToolButton}"
-                                Width="30"
-                                Padding="2 0 2 0"
-                                material:RippleAssist.IsCentered="True">
-                                <material:PackIcon
-                                     Kind="ShareVariant" />
-                            </Button>
-                            <Button
                                     Style="{StaticResource MaterialDesignToolButton}"
                                     Width="30"
                                     Padding="2 0 2 0"
-                                    material:RippleAssist.IsCentered="True">
+                                    material:RippleAssist.IsCentered="True"
+                                    x:Name="BtnUsrControl"
+                                    Click="BtnUsrControl_Click">
                                 <material:PackIcon
                                      Kind="ChartBox" Height="22" Width="23"/>
                             </Button>
@@ -195,14 +195,7 @@
                               Grid.Row="2"
                               Orientation="Horizontal"
                               Margin="8">
-                            <Button
-                                Style="{StaticResource MaterialDesignToolButton}"
-                                Width="30"
-                                Padding="2 0 2 0"
-                                material:RippleAssist.IsCentered="True">    
-                                <material:PackIcon
-                                        Kind="ShareVariant" />
-                            </Button>
+                            
                             <Button
                                     Style="{StaticResource MaterialDesignToolButton}"
                                     Width="30"
@@ -272,14 +265,7 @@
                                 Grid.Row="2"
                                 Orientation="Horizontal"
                                 Margin="8">
-                            <Button
-                                        Style="{StaticResource MaterialDesignToolButton}"
-                                        Width="30"
-                                        Padding="2 0 2 0"
-                                        material:RippleAssist.IsCentered="True">
-                                <material:PackIcon
-                                        Kind="ShareVariant" />
-                            </Button>
+                            
                             <Button
                                     Style="{StaticResource MaterialDesignToolButton}"
                                     Width="30"
