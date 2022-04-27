@@ -71,7 +71,7 @@
                             <material:PackIcon Foreground="{DynamicResource PrimaryBlueColor}" Kind="Warehouse" HorizontalAlignment="Left" Height="50" Width="50" />
                             <TextBlock Foreground="{DynamicResource PrimaryBlueColor}" Text="Products" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
                         </StackPanel>
-                        <TextBlock Foreground="{DynamicResource PrimaryBlueColor}" Text="200" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
+                        <TextBlock Foreground="{DynamicResource PrimaryBlueColor}" x:Name="prdCount" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </material:Card>
             </StackPanel>

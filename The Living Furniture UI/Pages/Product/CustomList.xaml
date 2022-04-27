@@ -155,7 +155,7 @@
                                                         <ColumnDefinition/>
                                                         <ColumnDefinition/>
                                                     </Grid.ColumnDefinitions>
-                                                    <Image Source="{Binding Path=Photo}" Height="170" HorizontalAlignment="Left" Grid.Column="0"/>
+                                                    <Image Source="{Binding Path=Photo}" Height="auto" HorizontalAlignment="Left" Grid.Column="0"/>
                                                     <StackPanel Orientation="Vertical" VerticalAlignment="Center" Grid.Column="1" Margin="10,0,0,0">
                                                         <TextBlock Text="{Binding Path=Name}"  FontSize="20" FontFamily="Ubuntu Medium"/>
                                                         <TextBlock Text="{Binding Path=Color}" FontSize="20" FontFamily="Ubuntu Mlight"/>

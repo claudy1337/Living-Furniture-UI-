@@ -25,6 +25,7 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         {
             InitializeComponent();
             usrCounts.Text = Db.User.GetAllUserList().Count.ToString();
+            prdCount.Text = Db.Product.GetAllProductList().Count.ToString();
         }
 
         private void Btnupdate_Click(object sender, RoutedEventArgs e)

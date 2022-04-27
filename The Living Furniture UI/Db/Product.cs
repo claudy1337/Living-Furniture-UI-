@@ -58,6 +58,19 @@ namespace The_Living_Furniture_UI.Db
             var collection = database.GetCollection<Product>("Product");
             collection.InsertOne(product);
         }
+        public static List<string> GetAllProductList()
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Product>("Product");
+            var listUsersFromDB = collection.Find(x => true).ToList();
+            List<string> listToReturn = new List<string>();
+            foreach (var item in listUsersFromDB)
+            {
+                listToReturn.Add(item.Name);
+            }
+            return listToReturn;
+        }
 
     }
     
