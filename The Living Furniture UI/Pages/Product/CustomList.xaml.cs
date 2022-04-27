@@ -24,9 +24,11 @@ namespace The_Living_Furniture_UI.Pages.Product
     public partial class CustomList : Page
     {
         private static Db.User currentUser;
+       
         public CustomList(Db.User user)
         {
             InitializeComponent();
+            TBPrice.Text = CategoryLogged.Category;
             currentUser = user;
             LoadData();
         }
@@ -54,8 +56,19 @@ namespace The_Living_Furniture_UI.Pages.Product
                     }
                 }
             }
-           listlogin.ItemsSource = basket.ToList();
+           listlogin.ItemsSource = basket.ToList().Where(b=> b.Category== CategoryLogged.Category);
 
+        }
+
+        private void BtnShowProd_Click(object sender, RoutedEventArgs e)
+        {
+            
+            NavigationService.Navigate(new ProductInfo());
+        }
+
+        private void listlogin_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
         }
     }
 }

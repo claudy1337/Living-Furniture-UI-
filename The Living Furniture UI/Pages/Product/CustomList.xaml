@@ -140,7 +140,8 @@
 
                         <StackPanel Grid.Row="1" Margin="10" Height="auto"  VerticalAlignment="Top">
                             <ScrollViewer Height="440" HorizontalScrollBarVisibility="Visible" >
-                                <ListView x:Name="listlogin" Height="auto">
+
+                                <ListView x:Name="listlogin" Height="auto" SelectionChanged="listlogin_SelectionChanged">
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
                                             <material:Card
@@ -155,14 +156,14 @@
                                                         <ColumnDefinition/>
                                                     </Grid.ColumnDefinitions>
                                                     <Image Source="{Binding Path=Photo}" Height="170" HorizontalAlignment="Left" Grid.Column="0"/>
-                                                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" Grid.Column="1">
+                                                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" Grid.Column="1" Margin="10,0,0,0">
                                                         <TextBlock Text="{Binding Path=Name}"  FontSize="20" FontFamily="Ubuntu Medium"/>
-                                                        <TextBlock Text="{Binding Path=Name}" FontSize="20" FontFamily="Ubuntu Mlight"/>
+                                                        <TextBlock Text="{Binding Path=Color}" FontSize="20" FontFamily="Ubuntu Mlight"/>
                                                         <Image Source="/Assets/Images/raiting.png" Height="25" HorizontalAlignment="Left"/>
                                                     </StackPanel>
                                                     <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                                        <TextBlock Text="{Binding Path=Name}" FontSize="20" HorizontalAlignment="Left" FontFamily="Ubuntu Medium"/>
-                                                        <Button Width="110" HorizontalAlignment="Left" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Content="Search"/>
+                                                        <TextBlock Text="{Binding Path=Price}" FontSize="20" HorizontalAlignment="Left" FontFamily="Ubuntu Medium"/>
+                                                        <Button Width="110" HorizontalAlignment="Left" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Content="Add" x:Name="BtnShowProd" Click="BtnShowProd_Click"/>
                                                     </StackPanel>
                                                 </Grid>
                                             </material:Card>

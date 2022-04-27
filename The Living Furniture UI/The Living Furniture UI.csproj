@@ -167,6 +167,7 @@
     <Compile Include="Pages\adminPages\UserControl.xaml.cs">
       <DependentUpon>UserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Product\CategoryLogged.cs" />
     <Compile Include="Pages\Product\CreateProduct.xaml.cs">
       <DependentUpon>CreateProduct.xaml</DependentUpon>
     </Compile>

@@ -20,6 +20,7 @@ namespace The_Living_Furniture_UI.Pages.Product
     /// </summary>
     public partial class ProductInfo : Page
     {
+        private static Db.Product currentProduct;
         public ProductInfo()
         {
             InitializeComponent();

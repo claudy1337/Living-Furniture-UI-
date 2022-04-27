@@ -35,22 +35,26 @@ namespace The_Living_Furniture_UI.Pages.userPages
 
         private void CabinetCard_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            CategoryLogged.Category = "Cabinet";
             NavigationService.Navigate(new CustomList(currentUser));
         }
 
         private void ChairCard_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            NavigationService.Navigate(new System.Uri("Pages/Product/CustomList.xaml", UriKind.RelativeOrAbsolute));
+            CategoryLogged.Category = "Chair";
+            NavigationService.Navigate(new CustomList(currentUser));           
         }
 
         private void LampCrd_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            NavigationService.Navigate(new System.Uri("Pages/Product/CustomList.xaml", UriKind.RelativeOrAbsolute));
+            CategoryLogged.Category = "Lamp";
+            NavigationService.Navigate(new CustomList(currentUser));
         }
 
         private void TableCard_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            NavigationService.Navigate(new System.Uri("Pages/Product/CustomList.xaml", UriKind.RelativeOrAbsolute));
+            CategoryLogged.Category = "Table";
+            NavigationService.Navigate(new CustomList(currentUser));
         }
     }
 }
