@@ -21,13 +21,34 @@ namespace The_Living_Furniture_UI.Pages.Product
     public partial class ProductInfo : Page
     {
         private static Db.Product currentProduct;
-        public ProductInfo()
+        public ProductInfo(Db.Product product)
         {
             InitializeComponent();
+            currentProduct = product;
+            ProdName.Text = currentProduct.Name;
+            ProdPrice.Text = currentProduct.Price.ToString();
+            ProdLogo.Source = new BitmapImage(new Uri(currentProduct.Photo, UriKind.RelativeOrAbsolute));
+            imgProd.Source = new BitmapImage(new Uri(currentProduct.Logo, UriKind.RelativeOrAbsolute));
+            CBmaterial.Text = currentProduct.Material;
+            DataContext = this;
         }
 
         private void ProductRatingBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<int> e)
         {
+
+        }
+
+        int c=0;
+        private void imgProd_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            c++;
+            if (c == 1)
+                imgProd.Source = new BitmapImage(new Uri(currentProduct.SizeImage, UriKind.RelativeOrAbsolute));
+            else
+            {
+                imgProd.Source = new BitmapImage(new Uri(currentProduct.Logo, UriKind.RelativeOrAbsolute));
+                c = 0;
+            }
 
         }
     }

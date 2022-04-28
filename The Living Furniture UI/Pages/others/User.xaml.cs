@@ -38,8 +38,9 @@ namespace The_Living_Furniture_UI.Pages.others
 
         private void rdRequest_Click(object sender, RoutedEventArgs e)
         {
-           // PagesNavigation.Navigate(new System.Uri("Pages/userPages/Request.xaml", UriKind.RelativeOrAbsolute));
-            PagesNavigation.Navigate(new Request(currentUser));
+            // PagesNavigation.Navigate(new System.Uri("Pages/userPages/Request.xaml", UriKind.RelativeOrAbsolute));
+            //  PagesNavigation.Navigate(new Request(currentUser));
+            PagesNavigation.Navigate(new FollowPage());
 
 
         }
@@ -120,6 +121,12 @@ namespace The_Living_Furniture_UI.Pages.others
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
         }
     }
 }

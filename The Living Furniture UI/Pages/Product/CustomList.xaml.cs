@@ -62,8 +62,8 @@ namespace The_Living_Furniture_UI.Pages.Product
 
         private void BtnShowProd_Click(object sender, RoutedEventArgs e)
         {
-            
-            NavigationService.Navigate(new ProductInfo());
+            var selectedProduct = listlogin.SelectedItem as Db.Product;
+            NavigationService.Navigate(new ProductInfo(selectedProduct));
         }
 
         private void listlogin_SelectionChanged(object sender, SelectionChangedEventArgs e)

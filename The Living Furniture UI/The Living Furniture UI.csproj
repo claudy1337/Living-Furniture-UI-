@@ -142,6 +142,7 @@
     </Compile>
     <Compile Include="Db\Basket.cs" />
     <Compile Include="Db\Consultation.cs" />
+    <Compile Include="Db\ImageCollection.cs" />
     <Compile Include="Db\Order.cs" />
     <Compile Include="Db\Product.cs" />
     <Compile Include="Db\Requests.cs" />

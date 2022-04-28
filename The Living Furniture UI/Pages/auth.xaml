@@ -6,6 +6,7 @@
       xmlns:local="clr-namespace:The_Living_Furniture_UI.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+      MouseDown="Page_MouseDown"
       Title="auth"
       xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes">
     <Border CornerRadius="10" Background="#FFF7EE">

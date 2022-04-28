@@ -27,7 +27,7 @@ namespace The_Living_Furniture_UI.Pages.others
         private void rdHome_Click(object sender, RoutedEventArgs e)
         {
             //PagesNavigation.Navigate(new System.Uri("Pages/adminPages/Profile.xaml", UriKind.RelativeOrAbsolute));
-            PagesNavigation.Navigate(new System.Uri("Pages/Product/CustomList.xaml", UriKind.RelativeOrAbsolute));
+            PagesNavigation.Navigate(new System.Uri("Pages/userPages/FollowPage", UriKind.RelativeOrAbsolute));
         }
 
         private void rdStatistic_Click(object sender, RoutedEventArgs e)
@@ -87,6 +87,12 @@ namespace The_Living_Furniture_UI.Pages.others
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
         }
     }
 }

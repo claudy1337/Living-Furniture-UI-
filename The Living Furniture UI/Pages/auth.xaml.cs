@@ -46,5 +46,10 @@ namespace The_Living_Furniture_UI.Pages
             Admin admin = new Admin();
             admin.Show();
         }
+
+        private void Page_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            
+        }
     }
 }

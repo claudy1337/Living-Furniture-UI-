@@ -12,49 +12,26 @@
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="13*"/>
                 <ColumnDefinition Width="27*"/>
+                <ColumnDefinition Width="53*"/>
             </Grid.ColumnDefinitions>
-            <GroupBox Grid.Column="0">
-                <ScrollViewer VerticalScrollBarVisibility="Auto" 
-                          HorizontalScrollBarVisibility="Disabled">
-                    <ListBox Name="PhotosListBox"
-                         MouseMove="OnPhotoMove"
-                         IsSynchronizedWithCurrentItem="True" 
-                         SelectionMode="Extended" 
-                         ItemsSource="{Binding}" 
-                         SelectedIndex="0"
-                         SelectionChanged="PhotosListBox_SelectionChanged">
-                        <ListBoxItem HorizontalAlignment="Center">
-                            <Image Source="/Assets/Images/loading/pic1.png" Height="250" Width="200"/>
-                        </ListBoxItem>
-                        <ListBoxItem HorizontalAlignment="Center">
-                            <Image Source="/Assets/Images/loading/pic2.png" Height="250" Width="200"/>
-                        </ListBoxItem>
 
-                        <ListBoxItem HorizontalAlignment="Center">
-                            <Image Source="/Assets/Images/loading/pic3.png" Height="250" Width="200"/>
-                        </ListBoxItem>
+            <StackPanel Grid.Column="0">
+                <ScrollViewer Height="440" HorizontalScrollBarVisibility="Visible" >
+                    <ListView x:Name="PhotosListBox" SelectionChanged="PhotosListBox_SelectionChanged">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <Image Source="{Binding Path=Paths}" Height="300"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
 
-                        <ListBoxItem HorizontalAlignment="Center">
-                            <Image Source="/Assets/Images/loading/pic4.png" Height="250" Width="200"/>
-                        </ListBoxItem>
-
-                        <ListBoxItem HorizontalAlignment="Center">
-                            <Image Source="/Assets/Images/loading/pic5.png" Height="250" Width="200"/>
-                        </ListBoxItem>
-
-                        <ListBoxItem HorizontalAlignment="Center">
-                            <Image Source="/Assets/Images/loading/pic6.png" Height="250" Width="200"/>
-                        </ListBoxItem>
-                    </ListBox>
+                    </ListView>
                 </ScrollViewer>
-            </GroupBox>
-
-            <StackPanel Grid.Column="1">
-<Image Source="/Assets/Images/Furniture/Cabinet/Alex/size.png" />
-
             </StackPanel>
+
+                <Image Height="400" Grid.Column="1" Width="500" x:Name="imgScreen"/>
         </Grid>
     </Border>
 

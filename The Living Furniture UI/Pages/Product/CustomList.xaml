@@ -139,9 +139,9 @@
                         </StackPanel>
 
                         <StackPanel Grid.Row="1" Margin="10" Height="auto"  VerticalAlignment="Top">
-                            <ScrollViewer Height="440" HorizontalScrollBarVisibility="Visible" >
+                            
 
-                                <ListView x:Name="listlogin" Height="auto" SelectionChanged="listlogin_SelectionChanged">
+                                <ListView x:Name="listlogin"  Height="350" Width="500" SelectionChanged="listlogin_SelectionChanged">
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
                                             <material:Card
@@ -163,14 +163,19 @@
                                                     </StackPanel>
                                                     <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
                                                         <TextBlock Text="{Binding Path=Price}" FontSize="20" HorizontalAlignment="Left" FontFamily="Ubuntu Medium"/>
-                                                        <Button Width="110" HorizontalAlignment="Left" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Content="Add" x:Name="BtnShowProd" Click="BtnShowProd_Click"/>
+                                                        <Button Width="110"
+                                                                HorizontalAlignment="Left" 
+                                                                Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" 
+                                                                Content="Add"
+                                                                x:Name="BtnShowProd"
+                                                                Click="BtnShowProd_Click"/>
                                                     </StackPanel>
                                                 </Grid>
                                             </material:Card>
                                         </DataTemplate>
                                     </ListView.ItemTemplate>
                                 </ListView>
-                            </ScrollViewer>
+          
                         </StackPanel>
                     </Grid>
                 </StackPanel>
