@@ -25,7 +25,7 @@ namespace The_Living_Furniture_UI.Pages.others
     /// </summary>
     public partial class User : Window
     {
-        private static Db.User currentUser;
+        public static Db.User currentUser;
         public User(Db.User user)
         {
             InitializeComponent();
@@ -68,10 +68,6 @@ namespace The_Living_Furniture_UI.Pages.others
             
         }
 
-        private void rdCategory_Checked(object sender, RoutedEventArgs e)
-        {
-            PagesNavigation.Navigate(new System.Uri("Pages/userPages/Category.xaml", UriKind.RelativeOrAbsolute));
-        }
 
         private void PagesNavigation_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
         {
@@ -80,8 +76,9 @@ namespace The_Living_Furniture_UI.Pages.others
 
         private void rdCategory_Click(object sender, RoutedEventArgs e)
         {
-            PagesNavigation.Navigate(new System.Uri("Pages/userPages/Category.xaml", UriKind.RelativeOrAbsolute));
             
+            PagesNavigation.Navigate(new Category(currentUser));
+
         }
 
         private void rdOrder_Checked(object sender, RoutedEventArgs e)

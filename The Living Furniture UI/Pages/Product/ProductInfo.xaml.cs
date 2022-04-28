@@ -21,15 +21,18 @@ namespace The_Living_Furniture_UI.Pages.Product
     public partial class ProductInfo : Page
     {
         private static Db.Product currentProduct;
-        public ProductInfo(Db.Product product)
+        public static Db.User currentUser;
+        public ProductInfo(Db.Product product, Db.User user)
         {
             InitializeComponent();
             currentProduct = product;
+            currentUser = user;
             ProdName.Text = currentProduct.Name;
             ProdPrice.Text = currentProduct.Price.ToString();
             ProdLogo.Source = new BitmapImage(new Uri(currentProduct.Photo, UriKind.RelativeOrAbsolute));
             imgProd.Source = new BitmapImage(new Uri(currentProduct.Logo, UriKind.RelativeOrAbsolute));
             CBmaterial.Text = currentProduct.Material;
+            tvs.Text = currentUser.Login;
             DataContext = this;
         }
 

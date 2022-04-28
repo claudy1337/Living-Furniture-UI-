@@ -110,7 +110,7 @@
                                   material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
                                   material:HintAssist.Hint="Price"/>
 
-                            <Button Width="206" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Margin="0,30,0,0" Content="Search"/>
+                            <Button Width="206" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Margin="0,30,0,0" x:Name="BtnSearch" Content="Search" Click="BtnSearch_Click"/>
                             
                         </StackPanel>
                     </Grid>
@@ -139,9 +139,7 @@
                         </StackPanel>
 
                         <StackPanel Grid.Row="1" Margin="10" Height="auto"  VerticalAlignment="Top">
-                            
-
-                                <ListView x:Name="listlogin"  Height="350" Width="500" SelectionChanged="listlogin_SelectionChanged">
+                            <ListView x:Name="listlogin"  Height="350" Width="500" SelectionChanged="listlogin_SelectionChanged">
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
                                             <material:Card

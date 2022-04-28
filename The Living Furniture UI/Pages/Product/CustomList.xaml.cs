@@ -23,7 +23,7 @@ namespace The_Living_Furniture_UI.Pages.Product
     /// </summary>
     public partial class CustomList : Page
     {
-        private static Db.User currentUser;
+        public static Db.User currentUser;
        
         public CustomList(Db.User user)
         {
@@ -63,12 +63,42 @@ namespace The_Living_Furniture_UI.Pages.Product
         private void BtnShowProd_Click(object sender, RoutedEventArgs e)
         {
             var selectedProduct = listlogin.SelectedItem as Db.Product;
-            NavigationService.Navigate(new ProductInfo(selectedProduct));
+            NavigationService.Navigate(new ProductInfo(selectedProduct, currentUser));
         }
 
         private void listlogin_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             
+        }
+
+        private void BtnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            CategoryLstw();
+        }
+        public async void CategoryLstw()
+        {
+
+            string connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Db.Product>("Product");
+            var filter = new BsonDocument();
+
+            List<Db.Product> basket = new List<Db.Product>();
+
+            using (var cursor = await collection.FindAsync(filter))
+            {
+                while (await cursor.MoveNextAsync())
+                {
+                    var people = cursor.Current;
+                    foreach (Db.Product doc in people)
+                    {
+                        basket.Add(new Db.Product(doc.Category, doc.Name, doc.Price, doc.Raiting, doc.Width, doc.Height, doc.Color, doc.Structure, doc.Material, doc.Logo, doc.Photo, doc.SizeImage));
+                    }
+                }
+            }
+            listlogin.ItemsSource = basket.ToList().Where(b => b.Category == CBCategory.Text && b.Material == CBMaterial.Text );
+            //cb.category="" 
         }
     }
 }

@@ -27,9 +27,10 @@ namespace The_Living_Furniture_UI.Pages.userPages
     public partial class Category : Page
     {
         private static Db.User currentUser;
-        public Category()
+        public Category(Db.User user)
         {
             InitializeComponent();
+            currentUser = user;
 
         }
 
