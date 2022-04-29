@@ -24,16 +24,34 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         public Applications()
         {
             InitializeComponent();
-            usrCounts.Text = Db.User.GetAllUserList().Count.ToString();
-            prdCount.Text = Db.Product.GetAllProductList().Count.ToString();
+            Refresh();
            
         }
-
+        public void Refresh()
+        {
+            usrCounts.Text = null;
+            prdCount.Text = null;
+            usrCounts.Text = Db.User.GetAllUserList().Count.ToString();
+            prdCount.Text = Db.Product.GetAllProductList().Count.ToString();
+        }
+        int value = 0;
         private void Btnupdate_Click(object sender, RoutedEventArgs e)
         {
-            //TimerCallback tm = new TimerCallback(Prg());
-           // Timer timer = new Timer(tm, 0, 0, 2000);
-           // prg.IsIndeterminate = true;
+           value++;
+           Refresh();
+           if (value==1)
+           {
+                prgUsr.IsIndeterminate = true;
+                prgUsr.Visibility = Visibility.Visible;
+               
+           }
+            else if (value==2)
+            {
+                prgUsr.IsIndeterminate = false;
+                prgUsr.Visibility = Visibility.Hidden;
+                value = 0;
+            }
+          
             
         }
 
@@ -41,6 +59,33 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         {
             NavigationService.Navigate(new UserControl());
         }
-        
+
+        private void BtnProdControl_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Product.CreateProduct());
+        }
+
+        private void ordControl_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new FullOrders());
+        }
+
+        private void prodUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            value++;
+            Refresh();
+            if (value == 1)
+            {
+                prgProd.IsIndeterminate = true;
+                prgProd.Visibility = Visibility.Visible;
+
+            }
+            else if (value == 2)
+            {
+                prgProd.IsIndeterminate = false;
+                prgProd.Visibility = Visibility.Hidden;
+                value = 0;
+            }
+        }
     }
 }

@@ -32,9 +32,15 @@
                             <material:PackIcon Kind="User" Foreground="{DynamicResource PrimaryBlueColor}" HorizontalAlignment="Left" Height="50" Width="50" />
                             <TextBlock Text="Users" Foreground="{DynamicResource PrimaryBlueColor}" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
                         </StackPanel>
-                        <TextBlock x:Name="usrCounts" Foreground="{DynamicResource PrimaryBlueColor}" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
-                        <ProgressBar x:Name="prg"
-                                     Visibility="Hidden"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <ProgressBar
+                                      x:Name="prgUsr"
+                                      Style="{StaticResource MaterialDesignCircularProgressBar}"
+                                      Value="20"
+                                      IsIndeterminate="False"
+                                      Visibility="Hidden"/>
+                            <TextBlock x:Name="usrCounts" Foreground="{DynamicResource PrimaryBlueColor}" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
+                        </StackPanel>
                     </StackPanel>
                 </material:Card>
 
@@ -71,7 +77,16 @@
                             <material:PackIcon Foreground="{DynamicResource PrimaryBlueColor}" Kind="Warehouse" HorizontalAlignment="Left" Height="50" Width="50" />
                             <TextBlock Foreground="{DynamicResource PrimaryBlueColor}" Text="Products" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
                         </StackPanel>
-                        <TextBlock Foreground="{DynamicResource PrimaryBlueColor}" x:Name="prdCount" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <ProgressBar
+                                      x:Name="prgProd"
+                                      IsIndeterminate="False"
+                                      Visibility="Hidden"
+                                      Style="{StaticResource MaterialDesignCircularProgressBar}"
+                                      Value="20"/>
+
+                            <TextBlock Foreground="{DynamicResource PrimaryBlueColor}" x:Name="prdCount" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
+                        </StackPanel>
                     </StackPanel>
                 </material:Card>
             </StackPanel>
@@ -197,6 +212,8 @@
                               Margin="8">
                             
                             <Button
+                                    x:Name="ordControl"
+                                    Click="ordControl_Click"
                                     Style="{StaticResource MaterialDesignToolButton}"
                                     Width="30"
                                     Padding="2 0 2 0"
@@ -242,7 +259,9 @@
                                 Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                                 HorizontalAlignment="Right"
                                 VerticalAlignment="Bottom"
-                                Margin="0 0 16 -20">
+                                Margin="0 0 16 -20"
+                                x:Name="prodUpdate"
+                                Click="prodUpdate_Click">
                             <material:PackIcon
                                     Kind="Update" />
                         </Button>
@@ -267,6 +286,8 @@
                                 Margin="8">
                             
                             <Button
+                                    x:Name="BtnProdControl"
+                                    Click="BtnProdControl_Click"
                                     Style="{StaticResource MaterialDesignToolButton}"
                                     Width="30"
                                     Padding="2 0 2 0"
@@ -279,7 +300,7 @@
                                         Padding="2 0 2 0">
                                 <StackPanel>
                                     <Button
-                                        Content="More" />
+                                        Content="More"/>
                                     <Button
                                         Content="Options" />
                                 </StackPanel>

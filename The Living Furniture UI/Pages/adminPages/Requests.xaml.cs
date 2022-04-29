@@ -43,6 +43,7 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         {
             //Db.Requests requests = new Db.Requests(TBName.Text, TBMaterial.Text, TBType.Text, TBSize.Text, User , true);
             //Db.Requests.UpdateRequest(requests, TBName.Text);
+            Db.Requests.EditRequests(false, true);
             Refresh();
         }
         public void Refresh()

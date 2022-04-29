@@ -31,7 +31,16 @@
                 </ScrollViewer>
             </StackPanel>
 
-                <Image Height="400" Grid.Column="1" Width="500" x:Name="imgScreen"/>
+            <StackPanel
+  VerticalAlignment="Center">
+                
+                <Button
+    Click="Button_Click"
+    Width="128"
+    Margin="0 32 0 0"
+    Content="EXTENDED" />
+            </StackPanel>
+            <Image Height="400" Grid.Column="1" Width="500" x:Name="imgScreen"/>
         </Grid>
     </Border>
 

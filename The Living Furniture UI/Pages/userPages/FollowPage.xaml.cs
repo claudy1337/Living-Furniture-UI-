@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MongoDB.Driver;
 using MongoDB.Bson;
+using System.Diagnostics;
+using MaterialDesignThemes.Wpf;
 
 namespace The_Living_Furniture_UI.Pages.userPages
 {
@@ -67,6 +69,11 @@ namespace The_Living_Furniture_UI.Pages.userPages
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            DialogHost.Show("dads");
         }
     }
 }
