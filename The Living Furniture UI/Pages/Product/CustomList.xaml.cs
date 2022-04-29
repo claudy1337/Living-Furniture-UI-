@@ -28,7 +28,7 @@ namespace The_Living_Furniture_UI.Pages.Product
         public CustomList(Db.User user)
         {
             InitializeComponent();
-            TBPrice.Text = CategoryLogged.Category;
+            CBCategory.Text = CategoryLogged.Category;
             currentUser = user;
             LoadData();
         }
@@ -97,8 +97,7 @@ namespace The_Living_Furniture_UI.Pages.Product
                     }
                 }
             }
-            listlogin.ItemsSource = basket.ToList().Where(b => b.Category == CBCategory.Text && b.Material == CBMaterial.Text );
-            //cb.category="" 
+            listlogin.ItemsSource = basket.ToList().Where(b => b.Category == CBCategory.Text || b.Material == CBMaterial.Text || b.Color == CBColor.Text || b.Category == CBCategory.Text && b.Material == CBMaterial.Text || b.Category == CBCategory.Text && b.Material == CBMaterial.Text && b.Color == CBColor.Text);
         }
     }
 }

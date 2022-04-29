@@ -29,6 +29,7 @@ namespace The_Living_Furniture_UI.Pages.userPages
             currentUser = user;
             TBusrName.Text = user.Name;
             TBusrLogin.Text = user.Login;
+            TBusrAddress.Text = user.Address;
             imgCollection = new ObservableCollection<string> { "/Assets/Images/Card/Furniture/f1.png", "/Assets/Images/Card/Furniture/f2.png" };
             
         }

@@ -47,6 +47,7 @@
 
                                     <TextBox
                                             x:Name="TBusrLogin"
+                                            IsReadOnly="True"
                                             Style="{StaticResource MaterialDesignFilledTextBox}"
                                             VerticalAlignment="Top"
                                             TextWrapping="Wrap"

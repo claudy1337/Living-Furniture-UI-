@@ -113,7 +113,7 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="0" Orientation="Vertical">
-                        <TextBlock  x:Name="tvs" FontSize="22" FontFamily="Ubuntu Medium"/>
+                        <TextBlock Text="Customize:" FontSize="22" FontFamily="Ubuntu Medium"/>
                         <ComboBox
                             x:Name="CBheight"
                              Margin="0,20,0,0"

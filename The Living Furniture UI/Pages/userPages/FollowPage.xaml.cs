@@ -60,11 +60,13 @@ namespace The_Living_Furniture_UI.Pages.userPages
 
         private void PhotosListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var slectedRequest = PhotosListBox.SelectedItem.ToString();
-            //string img = Db.ImageCollection.GetisImage(slectedRequest).Paths.ToString();
-          //  imgScreen.Source = new BitmapImage(new Uri(img, UriKind.RelativeOrAbsolute));
+            
+            
+        }
 
-
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            
         }
     }
 }
