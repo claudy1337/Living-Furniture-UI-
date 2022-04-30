@@ -157,7 +157,7 @@
                                                     <StackPanel Orientation="Vertical" VerticalAlignment="Center" Grid.Column="1" Margin="10,0,0,0">
                                                         <TextBlock Text="{Binding Path=Name}"  FontSize="20" FontFamily="Ubuntu Medium"/>
                                                         <TextBlock Text="{Binding Path=Color}" FontSize="20" FontFamily="Ubuntu Mlight"/>
-                                                        <Image Source="/Assets/Images/raiting.png" Height="25" HorizontalAlignment="Left"/>
+                                                        <Image Source="/Assets/Images/raiting.png" RenderOptions.BitmapScalingMode="HighQuality" Height="25" HorizontalAlignment="Left"/>
                                                     </StackPanel>
                                                     <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
                                                         <TextBlock Text="{Binding Path=Price}" FontSize="20" HorizontalAlignment="Left" FontFamily="Ubuntu Medium"/>

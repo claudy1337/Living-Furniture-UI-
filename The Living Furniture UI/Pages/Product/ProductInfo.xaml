@@ -95,14 +95,14 @@
 
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
-                            <Image x:Name="ProdLogo" Height="200"/>
+                            <Image x:Name="ProdLogo" Height="200" RenderOptions.BitmapScalingMode="HighQuality"/>
                             <Image Source="/Assets/Images/raiting.png" Height="25" HorizontalAlignment="Left" Margin="0,15,0,0"/>
                         </StackPanel>
                         
                     </StackPanel>
 
 
-                    <Image x:Name="imgProd" MouseLeftButtonDown="imgProd_MouseLeftButtonDown" Height="250" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,15,0,0"/>
+                    <Image x:Name="imgProd" RenderOptions.BitmapScalingMode="HighQuality" MouseLeftButtonDown="imgProd_MouseLeftButtonDown" Height="250" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,15,0,0"/>
                 </Grid>
             </StackPanel>
 

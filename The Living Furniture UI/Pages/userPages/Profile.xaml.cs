@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
+using System.Timers;
 
 namespace The_Living_Furniture_UI.Pages.userPages
 {
@@ -29,7 +30,7 @@ namespace The_Living_Furniture_UI.Pages.userPages
             currentUser = user;
             TBusrName.Text = user.Name;
             TBusrLogin.Text = user.Login;
-            TBusrAddress.Text = user.Address;
+            TBusrAddress.Text = currentUser.Address;
             Random rnd = new Random();
             int value = rnd.Next(1, 3);
             if (value == 1)
@@ -44,10 +45,20 @@ namespace The_Living_Furniture_UI.Pages.userPages
         {
             
         }
-
+        int num = 0;
         private void changeProfile_Click(object sender, RoutedEventArgs e)
         {
-
+            if (num == 0)
+            {
+                Db.User.EditUser(currentUser.Address, TBusrAddress.Text, currentUser.Name, TBusrName.Text);
+                MessageBox.Show("update verificated");
+                num++;
+            }
+            else
+            {
+                MessageBox.Show("след изменение можно будет исп через: 10мин");
+                num = 0;
+            }
         }
 
         private void ProductCart_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

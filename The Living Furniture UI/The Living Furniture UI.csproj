@@ -140,6 +140,7 @@
     <Compile Include="Assets\items\FurnitureItem.xaml.cs">
       <DependentUpon>FurnitureItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Db\Admin.cs" />
     <Compile Include="Db\Basket.cs" />
     <Compile Include="Db\Consultation.cs" />
     <Compile Include="Db\ImageCollection.cs" />

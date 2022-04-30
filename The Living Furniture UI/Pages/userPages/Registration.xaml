@@ -57,7 +57,7 @@
                      FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
 
 
-                        <PasswordBox
+                        <TextBox
                      x:Name="usrPassword"
                      material:HintAssist.Hint="Password"
                      Margin="0,20,0,0"
@@ -65,7 +65,7 @@
                      BorderBrush="Gray"
                      Padding="7"
                      Background="#FAF8F6"
-                     FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedPasswordBox}" />
+                     FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
 
                         <StackPanel Orientation="Horizontal" Margin="0,5,0,5" >
 

@@ -76,7 +76,29 @@ namespace The_Living_Furniture_UI.Db
             }
             return listToReturn;
         }
-        
+        public static void EditUser(string address, string newAddress, string name, string newName)
+        {
+            var std = new MongoClient("mongodb://localhost");
+            var database = std.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Db.User>("User");
+
+            var filterName = Builders<Db.User>.Filter.Eq("Name", name);
+            var updateName = Builders<Db.User>.Update.Set(x => x.Name, newName);
+
+            var filterAddress = Builders<Db.User>.Filter.Eq("Address", address);
+            var updateAddress = Builders<Db.User>.Update.Set(x => x.Address, newAddress);
+
+            collection.UpdateOne(filterName, updateName);
+            collection.UpdateOne(filterAddress, updateAddress);
+        }
+        public static List<Db.User> UserIsExists(string login, string password)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<User>("User");
+            return collection.Find(x => x.Login == login && x.Password == password).ToList();
+        }
+
     }
     
 }

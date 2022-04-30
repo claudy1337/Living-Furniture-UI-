@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using The_Living_Furniture_UI.Db;
+using MongoDB.Bson;
+using MongoDB.Driver;
 
 namespace The_Living_Furniture_UI.Pages.Product
 {
@@ -61,11 +63,15 @@ namespace The_Living_Furniture_UI.Pages.Product
             var usr = Db.Basket.BasketIsExists().FirstOrDefault(u => u.User.Login == currentUser.Login);
             if (usr != null)
             {
+                var client = new MongoClient("mongodb://localhost");
+                var database = client.GetDatabase("FurnitureBD");
+                var collection = database.GetCollection<Basket>("Basket");
                 MessageBox.Show("пользак есть");
+               
             }
             else
             {
-                List<Db.Product> cart = new List<Db.Product>() { currentProduct };
+                List<Db.Product> cart = new List<Db.Product> { currentProduct };
                 Db.Basket basket = new Basket(cart, currentUser);
                 Db.Basket.BasketAddToDB(basket);
             }

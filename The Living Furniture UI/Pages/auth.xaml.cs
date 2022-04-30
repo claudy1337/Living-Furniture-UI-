@@ -46,8 +46,25 @@ namespace The_Living_Furniture_UI.Pages
 
         private void BtnSignIn_Click(object sender, RoutedEventArgs e)
         {
-            Admin admin = new Admin();
-            admin.Show();
+            var usr = Db.User.UserIsExists(clientLogin.Text, clientPassword.Text).FirstOrDefault();
+            if (usr != null)
+            {
+                others.User us = new others.User(usr);
+                us.Show();
+            }
+            else if (usr == null)
+            {
+                var adm = Db.Admin.AdminIsExists(clientLogin.Text, clientPassword.Text);
+                if (adm != null)
+                {
+                    others.Admin admin = new Admin();
+                    admin.Show();
+                }
+                else
+                    MessageBox.Show("dont search adm");
+            }
+            else
+                MessageBox.Show("dont search user");
         }
 
 
