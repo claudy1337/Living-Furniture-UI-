@@ -13,13 +13,13 @@ namespace The_Living_Furniture_UI.Db
 {
     public  class Order
     {
-        public Order(Product product, bool isOrder)
+        public Order(List<Product> product, bool isOrder)
         {
             Product = product;
             IsOrder = isOrder;
         }
         public ObjectId _id { get; set; }
-        public Product Product { get; set; }
+        public List<Product> Product { get; set; }
         public bool IsOrder { get; set; }
     }
 }

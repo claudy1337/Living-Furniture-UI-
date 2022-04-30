@@ -13,7 +13,7 @@ namespace The_Living_Furniture_UI.Db
 {
     public class Product
     {
-        public Product(string category, string name, int price, int raiting, int width, int height,string color, bool structure, string material, string logo, string photo, string sizeImage)
+        public Product(string category, string name, int price, int raiting, int width, int height, string color, bool structure, string material, string logo, string photo, string sizeImage)
         {
             Category = category;
             Name = name;
@@ -27,6 +27,10 @@ namespace The_Living_Furniture_UI.Db
             Logo = logo;
             Photo = photo;
             SizeImage = sizeImage;
+        }
+        public Product(string name)
+        {
+            Name = name;
         }
         public ObjectId _id { get; set; }
         public string Name { get; set; }
@@ -47,7 +51,7 @@ namespace The_Living_Furniture_UI.Db
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("FurnitureBD");
             var collection = database.GetCollection<Db.Product>("Product");
-            var foundedProd = collection.Find(x => x.Name == name ).FirstOrDefault();
+            var foundedProd = collection.Find(x => x.Name == name).FirstOrDefault();
             return foundedProd;
 
         }
@@ -71,7 +75,5 @@ namespace The_Living_Furniture_UI.Db
             }
             return listToReturn;
         }
-
     }
-    
 }

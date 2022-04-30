@@ -14,6 +14,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using The_Living_Furniture_UI.Pages.others;
 using The_Living_Furniture_UI.Pages.userPages;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using MongoDB.Driver.Core;
 
 namespace The_Living_Furniture_UI.Pages
 {
@@ -42,10 +46,10 @@ namespace The_Living_Furniture_UI.Pages
 
         private void BtnSignIn_Click(object sender, RoutedEventArgs e)
         {
-
             Admin admin = new Admin();
             admin.Show();
         }
+
 
         private void Page_MouseDown(object sender, MouseButtonEventArgs e)
         {

@@ -30,8 +30,15 @@ namespace The_Living_Furniture_UI.Pages.userPages
             TBusrName.Text = user.Name;
             TBusrLogin.Text = user.Login;
             TBusrAddress.Text = user.Address;
-            imgCollection = new ObservableCollection<string> { "/Assets/Images/Card/Furniture/f1.png", "/Assets/Images/Card/Furniture/f2.png" };
-            
+            Random rnd = new Random();
+            int value = rnd.Next(1, 3);
+            if (value == 1)
+                ProductCart.Source = new BitmapImage(new Uri("/Assets/Images/Card/Furniture/f1.png", UriKind.RelativeOrAbsolute));
+            else if (value == 2)
+                ProductCart.Source = new BitmapImage(new Uri("/Assets/Images/Card/Furniture/f2.png", UriKind.RelativeOrAbsolute));
+            else
+                ProductCart.Source = new BitmapImage(new Uri("/Assets/Images/Card/Furniture/f3.png", UriKind.RelativeOrAbsolute));
+
         }
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -41,6 +48,11 @@ namespace The_Living_Furniture_UI.Pages.userPages
         private void changeProfile_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void ProductCart_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new Category(currentUser));
         }
     }
 }

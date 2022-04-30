@@ -28,6 +28,7 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         {
             InitializeComponent();
             Refresh();  
+
         }
 
         private void BFullList_Click(object sender, RoutedEventArgs e)

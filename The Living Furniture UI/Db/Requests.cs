@@ -62,9 +62,9 @@ namespace The_Living_Furniture_UI.Db
             var std = new MongoClient("mongodb://localhost");
             var database = std.GetDatabase("FurnitureBD");
             var collection = database.GetCollection<Db.Requests>("Request");
-            var filterName = Builders<Db.Requests>.Filter.Eq("isCheck", isCheck);
-            var updateName = Builders<Db.Requests>.Update.Set(x => x.isCheck, IsCheeck);
-            collection.UpdateOne(filterName, updateName);
+            var filterCheck = Builders<Db.Requests>.Filter.Eq("isCheck", isCheck); 
+            var updateCheck = Builders<Db.Requests>.Update.Set(x => x.isCheck, IsCheeck);
+            collection.UpdateOne(filterCheck, updateCheck);
         }
     }
 }

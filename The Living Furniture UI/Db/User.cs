@@ -13,13 +13,12 @@ namespace The_Living_Furniture_UI.Db
 {
     public class User
     {
-        public User(string login, string password, string name, int card, string address, Order order, Basket basket )
+        public User(string login, string password, string name, int card, string address, Order order)
         {
             Login = login;
             Password = password;    
             Name = name;
             Order = order;
-            Basket = basket;
             Card = card;
             Address = address;
 
@@ -31,7 +30,7 @@ namespace The_Living_Furniture_UI.Db
         public string Address { get; set; }
         public string Name { get; set; }
         public Order Order { get; set; }
-        public Basket Basket { get; set; }
+        
         
 
         public static void usrAddToDB(Db.User user)
@@ -41,14 +40,7 @@ namespace The_Living_Furniture_UI.Db
             var collection = database.GetCollection<User>("User");
             collection.InsertOne(user);
         }
-        public async static void usrUpdate(Db.User user)
-        {
-            var client = new MongoClient("mongodb://localhost");
-            var database = client.GetDatabase("FurnitureBD");
-            var collection = database.GetCollection<User>("User");
-           //var result = await collection.ReplaceOneAsync(new BsonDocument(user);       
-            //var people = await collection.Find(new BsonDocument()).ToListAsync();
-        }
+        
         public static List<string> GetAllUserList()
         {
             var client = new MongoClient("mongodb://localhost");
@@ -62,6 +54,7 @@ namespace The_Living_Furniture_UI.Db
             }
             return listToReturn;
         }
+        
         public static User GetUser(string login)
         {
             var client = new MongoClient("mongodb://localhost");
@@ -83,7 +76,7 @@ namespace The_Living_Furniture_UI.Db
             }
             return listToReturn;
         }
-
+        
     }
     
 }

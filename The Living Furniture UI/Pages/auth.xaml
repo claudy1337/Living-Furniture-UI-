@@ -42,6 +42,7 @@
                      FontSize="25" HorizontalAlignment="Center"
                      BorderBrush="Gray"
                      Padding="7"
+                     x:Name="clientLogin"
                      Background="#FAF8F6"
                      FontFamily="Ubuntu Light" Height="45" Width="220" Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
                         </StackPanel>
@@ -49,6 +50,7 @@
                         <TextBox
                      material:HintAssist.Hint="Password"
                      Margin="0,20,0,0"
+                     x:Name="clientPassword" 
                      FontSize="25" HorizontalAlignment="Center"
                      BorderBrush="Gray"
                      Padding="7"

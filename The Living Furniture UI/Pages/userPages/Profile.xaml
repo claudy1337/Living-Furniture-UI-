@@ -76,7 +76,7 @@
 
                         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
                             <Image Source="{Binding imgCollection}" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
-                            <Image Source="/Assets/Images/Card/Furniture/f1.png" />
+                            <Image Source="/Assets/Images/Card/Furniture/f3.png" MouseLeftButtonDown="ProductCart_MouseLeftButtonDown" x:Name="ProductCart" />
                         </StackPanel>
                         
                     </Grid>

@@ -13,49 +13,29 @@ namespace The_Living_Furniture_UI.Db
 {
     public class Basket
     {
-        public Basket(string name, string size, string material, string image)
+        public Basket(List<Product> products, User user)
         {
-            Name = name;
-            Size = size;
-            Material = material;
-            Image = image;
+            Products = products;
+            User = user;
             
         }
         public ObjectId _id { get; set; }
-        public string Name { get; set; }
-        public string Size { get; set; }
-        public string Material { get; set; }
-        public string Image { get; set; }
-       
-        
-        public static List<Product> GetBasketList()
-        {
-            var client = new MongoClient("mongodb://localhost");
-            var database = client.GetDatabase("FurnitureBD");
-            var collection = database.GetCollection<Basket>("Basket");
-            var listUsersFromDB = collection.Find(x => true).ToList();
-            List<Product> listToReturn = new List<Product>();
-            foreach (var item in listUsersFromDB)
-            {
-                
-            }
-            return listToReturn;
-        }
+        public  List<Product> Products { get; set; }
+        public User User { get; set; }
 
-        public static List<Product> Showprods()
-        {
-            var client = new MongoClient("mongodb://localhost");
-            var database = client.GetDatabase("FurnitureBD");
-            var collection = database.GetCollection<Product>("Basket");
-            return collection.Find(x => true).ToList();
-        }
-        public static Basket GetBasket(string name)
+        public static void BasketAddToDB(Db.Basket basket)
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("FurnitureBD");
             var collection = database.GetCollection<Basket>("Basket");
-            var foundedUser = collection.Find(x => x.Name == name).FirstOrDefault();
-            return foundedUser;
+            collection.InsertOne(basket);
+        }
+        public static List<Db.Basket> BasketIsExists()
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Basket>("Basket");
+            return collection.Find(x => true).ToList();
         }
     }
 

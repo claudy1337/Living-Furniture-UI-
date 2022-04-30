@@ -52,7 +52,7 @@ namespace The_Living_Furniture_UI.Pages.userPages
                     var people = cursor.Current;
                     foreach (Db.Basket doc in people)
                     {
-                        basket.Add(new Db.Basket(doc.Name, doc.Size, doc.Material, doc.Image));
+                       // basket.Add(new Db.Basket());
                     }
                 }
             }

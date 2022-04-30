@@ -31,6 +31,9 @@ namespace The_Living_Furniture_UI.Pages.Product
             CBCategory.Text = CategoryLogged.Category;
             currentUser = user;
             LoadData();
+
+            //var products = currentUser.Basket.Products.ToList();
+            //listlogin.ItemsSource = products;
         }
 
       
@@ -62,6 +65,7 @@ namespace The_Living_Furniture_UI.Pages.Product
 
         private void BtnShowProd_Click(object sender, RoutedEventArgs e)
         {
+           
             var selectedProduct = listlogin.SelectedItem as Db.Product;
             NavigationService.Navigate(new ProductInfo(selectedProduct, currentUser));
         }

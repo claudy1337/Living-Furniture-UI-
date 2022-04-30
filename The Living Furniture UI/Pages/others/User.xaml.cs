@@ -38,20 +38,14 @@ namespace The_Living_Furniture_UI.Pages.others
 
         private void rdRequest_Click(object sender, RoutedEventArgs e)
         {
-            // PagesNavigation.Navigate(new System.Uri("Pages/userPages/Request.xaml", UriKind.RelativeOrAbsolute));
-            //  PagesNavigation.Navigate(new Request(currentUser));
-            PagesNavigation.Navigate(new FollowPage());
-
-
+            PagesNavigation.Navigate(new Request(currentUser));
         }
         private void rdHome_Click(object sender, RoutedEventArgs e)
         {
-            // PagesNavigation.Navigate(new System.Uri("Pages/userPages/main.xaml", UriKind.RelativeOrAbsolute));
             PagesNavigation.Navigate(new Product.CustomList(currentUser));
         }
         private void rdAccount_Click(object sender, RoutedEventArgs e)
         {
-           // PagesNavigation.Navigate(new System.Uri("Pages/userPages/Profile.xaml", UriKind.RelativeOrAbsolute));
             PagesNavigation.Navigate(new Profile(currentUser));
         }
 

@@ -30,8 +30,6 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         {
             InitializeComponent();
             Refresh();
-          
-            
         }
 
         private void lstw_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -41,8 +39,6 @@ namespace The_Living_Furniture_UI.Pages.adminPages
 
         private async void BisCheck_Click(object sender, RoutedEventArgs e)
         {
-            //Db.Requests requests = new Db.Requests(TBName.Text, TBMaterial.Text, TBType.Text, TBSize.Text, User , true);
-            //Db.Requests.UpdateRequest(requests, TBName.Text);
             Db.Requests.EditRequests(false, true);
             Refresh();
         }

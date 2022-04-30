@@ -38,12 +38,11 @@ namespace The_Living_Furniture_UI.Pages.userPages
         {
             if (isCheсkAgree.IsChecked == true)
             {
-                Db.Product product = new Db.Product("", "", 0, 0, 0, 0, "", false, "", "", "", "");
+                List<Db.Product> product = new List<Db.Product>();
                 Db.Order order = new Db.Order(product, false);
-                Db.Basket basket = new Db.Basket("", "", "", "");
                 Random rnd = new Random();
                 int cardNumber = rnd.Next(10000, 99999);
-                Db.User usr = new Db.User(usrLogin.Text, usrPassword.ToString(), usrName.Text, cardNumber, "", order, basket);
+                Db.User usr = new Db.User(usrLogin.Text, usrPassword.ToString(), usrName.Text, cardNumber, "", order);
                 Db.User.usrAddToDB(usr);
                 others.User user = new others.User(usr);
                 user.Show();
