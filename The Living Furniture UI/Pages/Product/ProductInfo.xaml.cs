@@ -59,45 +59,29 @@ namespace The_Living_Furniture_UI.Pages.Product
         }
         private async void BtnBuy_Click(object sender, RoutedEventArgs e)
         {
-
-            var std = new MongoClient("mongodb://localhost");
-            var database = std.GetDatabase("FurnitureBD");
-            var collection = database.GetCollection<Db.Test>("Test");
-
-            var filterCheck = Builders<Db.Test>.Filter.Empty;
-
-            var update = Builders<Db.Test>.Update.PushEach(x => x.Trashes, new[]
+            var stds = new MongoClient("mongodb://localhost");
+            var datasbase = stds.GetDatabase("FurnitureBD");
+            var collecstion = datasbase.GetCollection<Db.User>("User");
+            var filterCheck = Builders<Db.User>.Filter.Where(u => u.Login == currentUser.Login );
+            var update = Builders<Db.User>.Update.PushEach(x => x.Basket.Product, new[]
             {
-                        new Trash{name = "dda", add="fd"}
-                    });
+                        new ModifyProducts{ _id = currentProduct._id,
+                            Name = currentProduct.Name,
+                            Price = currentProduct.Price,
+                            Raiting = currentProduct.Raiting,
+                            Width = currentProduct.Width,
+                            Height = currentProduct.Height,
+                            Color = currentProduct.Color,
+                            Category = currentProduct.Category,
+                            Structure = currentProduct.Structure,
+                            Material = currentProduct.Material,
+                            Photo = currentProduct.Photo,
+                            SizeImage = currentProduct.SizeImage,
+                            Logo = currentProduct.Logo,
+                        }
+            });
 
-            await collection.UpdateOneAsync(filterCheck, update);
-            //var usr = Db.Basket.BasketIsExists().FirstOrDefault(u => u.User.Login == currentUser.Login);
-            //if (usr != null)
-            //{
-            //    //var client = new MongoClient("mongodb://localhost");
-            //    //var database = client.GetDatabase("FurnitureBD");
-            //    //var collection = database.GetCollection<Basket>("Basket");
-            //    //MessageBox.Show("пользак есть");
-            //    //List<Db.Product> cart = new List<Db.Product> { currentProduct };
-            //    //List<Db.Product> carts = new List<Db.Product> { };
-            //    //Db.Basket basket = new Basket(cart, currentUser);
-            //    ////Db.Basket.BasketAddToDB(basket);
-            //    //Db.Basket.EditBasket(carts, cart);
-
-                    
-
-
-            //}
-            //else
-            //{
-            //    List<Db.Product> cart = new List<Db.Product> { currentProduct };
-            //    List<Db.Product> carts = new List<Db.Product> {  };
-            //    Db.Basket basket = new Basket(cart, currentUser);
-            //    Db.Basket.BasketAddToDB(basket);
-            //}
-            //currentUser.Basket.Products.Add(currentProduct);
-            //currentUser.AddProductToDB(currentUser.Basket.Products, currentUser);
+            await collecstion.UpdateOneAsync(filterCheck, update);
         }
     }
 }

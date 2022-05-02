@@ -13,7 +13,7 @@ namespace The_Living_Furniture_UI.Db
 {
     public class User
     {
-        public User(string login, string password, string name, int card, string address,string photo, Order order, Trash trash)
+        public User(string login, string password, string name, int card, string address,string photo, Order order, Basket basket)
         {
             Login = login;
             Password = password;    
@@ -22,7 +22,7 @@ namespace The_Living_Furniture_UI.Db
             Card = card;
             Address = address;
             Photo = photo;
-            Trash = trash;
+            Basket = basket;
             
         }
         public ObjectId _id { get; set; }
@@ -33,7 +33,7 @@ namespace The_Living_Furniture_UI.Db
         public string Name { get; set; }
         public string Photo { get; set; }
         public Order Order { get; set; }
-        public Trash Trash { get; set; }
+        public Basket Basket { get; set; }
         
         public static void usrAddToDB(Db.User user)
         {

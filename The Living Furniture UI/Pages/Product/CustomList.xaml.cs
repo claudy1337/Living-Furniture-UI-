@@ -55,7 +55,7 @@ namespace The_Living_Furniture_UI.Pages.Product
                     var people = cursor.Current;
                     foreach (Db.Product doc in people)
                     {
-                        basket.Add(new Db.Product(doc.Category,doc.Name, doc.Price,doc.Raiting,doc.Width, doc.Height,doc.Color,doc.Structure,doc.Material,doc.Logo,doc.Photo, doc.SizeImage));
+                        basket.Add(new Db.Product(doc._id,doc.Category,doc.Name, doc.Price,doc.Raiting,doc.Width, doc.Height,doc.Color,doc.Structure,doc.Material,doc.Logo,doc.Photo, doc.SizeImage));
                     }
                 }
             }
@@ -97,7 +97,7 @@ namespace The_Living_Furniture_UI.Pages.Product
                     var people = cursor.Current;
                     foreach (Db.Product doc in people)
                     {
-                        basket.Add(new Db.Product(doc.Category, doc.Name, doc.Price, doc.Raiting, doc.Width, doc.Height, doc.Color, doc.Structure, doc.Material, doc.Logo, doc.Photo, doc.SizeImage));
+                        basket.Add(new Db.Product(doc._id,doc.Category, doc.Name, doc.Price, doc.Raiting, doc.Width, doc.Height, doc.Color, doc.Structure, doc.Material, doc.Logo, doc.Photo, doc.SizeImage));
                     }
                 }
             }

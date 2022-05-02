@@ -13,7 +13,7 @@ namespace The_Living_Furniture_UI.Db
 {
     public class Product
     {
-        public Product(string category, string name, int price, int raiting, int width, int height, string color, bool structure, string material, string logo, string photo, string sizeImage)
+        public Product(ObjectId id,string category, string name, int price, int raiting, int width, int height, string color, bool structure, string material, string logo, string photo, string sizeImage)
         {
             Category = category;
             Name = name;
@@ -27,6 +27,7 @@ namespace The_Living_Furniture_UI.Db
             Logo = logo;
             Photo = photo;
             SizeImage = sizeImage;
+            _id = id;
         }
         public Product(string name)
         {
@@ -77,8 +78,5 @@ namespace The_Living_Furniture_UI.Db
             }
             return listToReturn;
         }
-        
-
-
     }
 }
