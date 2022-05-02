@@ -148,6 +148,7 @@
     <Compile Include="Db\Product.cs" />
     <Compile Include="Db\Requests.cs" />
     <Compile Include="Db\Test.cs" />
+    <Compile Include="Db\Trash.cs" />
     <Compile Include="Db\User.cs" />
     <Compile Include="Pages\adminPages\Applications.xaml.cs">
       <DependentUpon>Applications.xaml</DependentUpon>

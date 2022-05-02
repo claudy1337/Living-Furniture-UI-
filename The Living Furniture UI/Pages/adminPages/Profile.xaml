@@ -32,7 +32,7 @@
                                     <Image Source="/Assets/Images/user.png" Height="175" material:ShadowAssist.ShadowDepth="Depth1" Width="219"/>
                                     <Button HorizontalAlignment="Center" Style="{DynamicResource MaterialDesignRaisedLightButton}" Width="146" Background="#EB8F4C" Content="ADD" Margin="0,10,0,0"/>
                                 </StackPanel>
-                                <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,10,0,0" Width="200">
+                                <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,0,0" Width="200">
                                     <TextBox
                                             Style="{StaticResource MaterialDesignFilledTextBox}"
                                             VerticalAlignment="Top"
@@ -54,17 +54,6 @@
                                             Margin="0,20,0,0"
                                             material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
                                             material:HintAssist.Hint="Login"/>
-
-                                    <TextBox
-                                            Style="{StaticResource MaterialDesignFilledTextBox}"
-                                            VerticalAlignment="Top"
-                                            TextWrapping="Wrap"
-                                            MaxLength="12"
-                                            FontSize="15"
-                                            FontFamily="Ubuntu Light"
-                                            Margin="0,20,0,0"
-                                            material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                            material:HintAssist.Hint="Address"/>
 
                                 </StackPanel>
                             </Grid>

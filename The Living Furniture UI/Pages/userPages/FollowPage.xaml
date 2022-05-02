@@ -12,35 +12,22 @@
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="27*"/>
-                <ColumnDefinition Width="53*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="0">
-                <ScrollViewer Height="440" HorizontalScrollBarVisibility="Visible" >
-                    <ListView x:Name="PhotosListBox" SelectionChanged="PhotosListBox_SelectionChanged">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Vertical">
-                                    <Image Source="{Binding Path=Paths}" Height="300" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-
-                    </ListView>
-                </ScrollViewer>
+                <ListView x:Name="PhotosListBox" SelectionChanged="PhotosListBox_SelectionChanged" Height="500" Width="300">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <Image Source="{Binding Path=Paths}" Height="300" MouseLeftButtonDown="Image_MouseLeftButtonDown" x:Name="imgr" RenderOptions.BitmapScalingMode="HighQuality"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackPanel>
-
-            <StackPanel
-  VerticalAlignment="Center">
-                
-                <Button
-    Click="Button_Click"
-    Width="128"
-    Margin="0 32 0 0"
-    Content="EXTENDED" />
-            </StackPanel>
-            <Image Height="400" Grid.Column="1" Width="500" x:Name="imgScreen"/>
+            <Image Grid.Column="1" x:Name="imgScreen" RenderOptions.BitmapScalingMode="HighQuality" Margin="13,25,12,25"/>
         </Grid>
     </Border>
 

@@ -27,7 +27,7 @@ namespace The_Living_Furniture_UI.Pages.others
         private void rdHome_Click(object sender, RoutedEventArgs e)
         {
             //PagesNavigation.Navigate(new System.Uri("Pages/adminPages/Profile.xaml", UriKind.RelativeOrAbsolute));
-            PagesNavigation.Navigate(new System.Uri("Pages/userPages/FollowPage", UriKind.RelativeOrAbsolute));
+            PagesNavigation.Navigate(new userPages.FollowPage());
         }
 
         private void rdStatistic_Click(object sender, RoutedEventArgs e)

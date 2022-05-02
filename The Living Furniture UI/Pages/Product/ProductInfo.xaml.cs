@@ -57,25 +57,45 @@ namespace The_Living_Furniture_UI.Pages.Product
                 c = 0;
             }
         }
-
-        private void BtnBuy_Click(object sender, RoutedEventArgs e)
+        private async void BtnBuy_Click(object sender, RoutedEventArgs e)
         {
-            var usr = Db.Basket.BasketIsExists().FirstOrDefault(u => u.User.Login == currentUser.Login);
-            if (usr != null)
+
+            var std = new MongoClient("mongodb://localhost");
+            var database = std.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Db.Test>("Test");
+
+            var filterCheck = Builders<Db.Test>.Filter.Empty;
+
+            var update = Builders<Db.Test>.Update.PushEach(x => x.Trashes, new[]
             {
-                var client = new MongoClient("mongodb://localhost");
-                var database = client.GetDatabase("FurnitureBD");
-                var collection = database.GetCollection<Basket>("Basket");
-                MessageBox.Show("пользак есть");
-               
-            }
-            else
-            {
-                List<Db.Product> cart = new List<Db.Product> { currentProduct };
-                Db.Basket basket = new Basket(cart, currentUser);
-                Db.Basket.BasketAddToDB(basket);
-            }
-           
+                        new Trash{name = "dda", add="fd"}
+                    });
+
+            await collection.UpdateOneAsync(filterCheck, update);
+            //var usr = Db.Basket.BasketIsExists().FirstOrDefault(u => u.User.Login == currentUser.Login);
+            //if (usr != null)
+            //{
+            //    //var client = new MongoClient("mongodb://localhost");
+            //    //var database = client.GetDatabase("FurnitureBD");
+            //    //var collection = database.GetCollection<Basket>("Basket");
+            //    //MessageBox.Show("пользак есть");
+            //    //List<Db.Product> cart = new List<Db.Product> { currentProduct };
+            //    //List<Db.Product> carts = new List<Db.Product> { };
+            //    //Db.Basket basket = new Basket(cart, currentUser);
+            //    ////Db.Basket.BasketAddToDB(basket);
+            //    //Db.Basket.EditBasket(carts, cart);
+
+                    
+
+
+            //}
+            //else
+            //{
+            //    List<Db.Product> cart = new List<Db.Product> { currentProduct };
+            //    List<Db.Product> carts = new List<Db.Product> {  };
+            //    Db.Basket basket = new Basket(cart, currentUser);
+            //    Db.Basket.BasketAddToDB(basket);
+            //}
             //currentUser.Basket.Products.Add(currentProduct);
             //currentUser.AddProductToDB(currentUser.Basket.Products, currentUser);
         }

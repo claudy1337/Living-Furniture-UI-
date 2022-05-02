@@ -65,6 +65,7 @@ namespace The_Living_Furniture_UI.Db
             var filterCheck = Builders<Db.Requests>.Filter.Eq("isCheck", isCheck); 
             var updateCheck = Builders<Db.Requests>.Update.Set(x => x.isCheck, IsCheeck);
             collection.UpdateOne(filterCheck, updateCheck);
+           
         }
     }
 }

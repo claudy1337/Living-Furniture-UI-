@@ -20,7 +20,7 @@ namespace The_Living_Furniture_UI.Db
 
         }
         public ObjectId _id { get; set; }
-        public List<Product> Product{ get; set; }
+        public List<Product> Product{ get; set; } = new List<Product>();
         public User User { get; set; }
 
         public static void BasketAddToDB(Db.Basket basket)
@@ -37,18 +37,6 @@ namespace The_Living_Furniture_UI.Db
             var collection = database.GetCollection<Basket>("Basket");
             return collection.Find(x => true).ToList();
         }
-
-        public static void EditBasket(List<Product> product,List<Product> newProduct)
-        {
-            var std = new MongoClient("mongodb://localhost");
-            var database = std.GetDatabase("FurnitureBD");
-            var collection = database.GetCollection<Db.Basket>("Basket");
-            var filterCheck = Builders<Db.Basket>.Filter.Eq("Product", product);
-            var updateCheck = Builders<Db.Basket>.Update.Set(x => x.Product, newProduct);
-            collection.UpdateOne(filterCheck,updateCheck);
-        }
-
-
 
     }
 

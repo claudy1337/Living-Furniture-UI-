@@ -7,14 +7,8 @@ using System.Threading.Tasks;
 namespace The_Living_Furniture_UI.Db
 {
     public class Test
-    {
-        public Test(string name, string dad)
-        {
-            Name = name;
-            Dad = dad;
-        }
-        public string Name { get; set; }
-        public string Dad { get; set; }
+    { 
+        public  List<Trash> Trashes { get; set; } = new List<Trash>();
        
     }
 }

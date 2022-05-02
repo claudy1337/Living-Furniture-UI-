@@ -13,7 +13,7 @@ namespace The_Living_Furniture_UI.Db
 {
     public class User
     {
-        public User(string login, string password, string name, int card, string address, Order order)
+        public User(string login, string password, string name, int card, string address,string photo, Order order, Trash trash)
         {
             Login = login;
             Password = password;    
@@ -21,7 +21,9 @@ namespace The_Living_Furniture_UI.Db
             Order = order;
             Card = card;
             Address = address;
-
+            Photo = photo;
+            Trash = trash;
+            
         }
         public ObjectId _id { get; set; }
         public string Login { get; set; }
@@ -29,10 +31,10 @@ namespace The_Living_Furniture_UI.Db
         public int Card { get; set; }
         public string Address { get; set; }
         public string Name { get; set; }
+        public string Photo { get; set; }
         public Order Order { get; set; }
+        public Trash Trash { get; set; }
         
-        
-
         public static void usrAddToDB(Db.User user)
         {
             var client = new MongoClient("mongodb://localhost");
@@ -81,13 +83,10 @@ namespace The_Living_Furniture_UI.Db
             var std = new MongoClient("mongodb://localhost");
             var database = std.GetDatabase("FurnitureBD");
             var collection = database.GetCollection<Db.User>("User");
-
             var filterName = Builders<Db.User>.Filter.Eq("Name", name);
             var updateName = Builders<Db.User>.Update.Set(x => x.Name, newName);
-
             var filterAddress = Builders<Db.User>.Filter.Eq("Address", address);
             var updateAddress = Builders<Db.User>.Update.Set(x => x.Address, newAddress);
-
             collection.UpdateOne(filterName, updateName);
             collection.UpdateOne(filterAddress, updateAddress);
         }

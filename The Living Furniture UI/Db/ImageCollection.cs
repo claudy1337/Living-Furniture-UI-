@@ -28,5 +28,13 @@ namespace The_Living_Furniture_UI.Db
             var foundedUser = collection.Find(x => x.Paths == paths).FirstOrDefault();
             return foundedUser;
         }
+        public static ImageCollection SetisImage()
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Db.ImageCollection>("Consultation");
+            var foundedUser = collection.Find(x => true).FirstOrDefault();
+            return foundedUser;
+        }
     }
 }

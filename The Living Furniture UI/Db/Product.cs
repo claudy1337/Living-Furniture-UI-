@@ -55,6 +55,7 @@ namespace The_Living_Furniture_UI.Db
             return foundedProd;
 
         }
+
         public static void ProductAddtoDb(Db.Product product)
         {
             var client = new MongoClient("mongodb://localhost");
@@ -62,6 +63,7 @@ namespace The_Living_Furniture_UI.Db
             var collection = database.GetCollection<Product>("Product");
             collection.InsertOne(product);
         }
+
         public static List<string> GetAllProductList()
         {
             var client = new MongoClient("mongodb://localhost");
@@ -75,5 +77,8 @@ namespace The_Living_Furniture_UI.Db
             }
             return listToReturn;
         }
+        
+
+
     }
 }

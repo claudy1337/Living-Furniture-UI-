@@ -11,9 +11,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using System.Reflection;
 using System.Windows.Shapes;
 using MongoDB.Driver;
 using MongoDB.Bson;
+using System.Collections.ObjectModel;
+using System.Reflection;
 using System.Diagnostics;
 using MaterialDesignThemes.Wpf;
 
@@ -28,6 +31,7 @@ namespace The_Living_Furniture_UI.Pages.userPages
         {
             InitializeComponent();
             LoadData();
+
         }
         private void OnPhotoMove(object sender, System.Windows.Input.MouseEventArgs e)
         {
@@ -52,7 +56,7 @@ namespace The_Living_Furniture_UI.Pages.userPages
                     var people = cursor.Current;
                     foreach (Db.ImageCollection doc in people)
                     {
-                        basket.Add(new Db.ImageCollection(doc.Paths, doc.Category));
+                       basket.Add(new Db.ImageCollection(doc.Paths, doc.Category));
                     }
                 }
             }
@@ -62,12 +66,13 @@ namespace The_Living_Furniture_UI.Pages.userPages
 
         private void PhotosListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
-            
+            var image = Db.ImageCollection.GetisImage(PhotosListBox.SelectedItems.ToString()).Paths;
+            imgScreen.Source = new BitmapImage(new Uri(image, UriKind.RelativeOrAbsolute));
         }
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            
             
         }
 
