@@ -41,23 +41,13 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         }
         private async void BisCheckConsultation_Click(object sender, RoutedEventArgs e)
         {
-            //var client = new MongoClient("mongodb://localhost");
-            //var database = client.GetDatabase("FurnitureBD");
-            //var collection = database.GetCollection<BsonDocument>("Consultation");
-            //var result = await collection.ReplaceOneAsync(new BsonDocument("Number", TBusrNumber.Text),
-            //    new BsonDocument
-            //    {
-            //        {"Number", TBusrNumber.Text },
-            //        {"Name",TBusrName.Text},
-            //        {"isCheck", true }
-
-            //    });
-            //var people = await collection.Find(new BsonDocument()).ToListAsync();
+            //Db.Consultation.DeletePerson(Consultation.GetisCheckCons(listLogin.SelectedItem.ToString()).Number);
 
             Consultation consultation = new Consultation(TBusrName.Text, TBusrNumber.Text, true);
             Db.Consultation.UpdateCons(consultation, TBusrNumber.Text);
             MessageBox.Show("Заявка обработана");
             Refresh();
+
         }
 
         private void listLogin_SelectionChanged(object sender, SelectionChangedEventArgs e)

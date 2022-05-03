@@ -39,7 +39,7 @@ namespace The_Living_Furniture_UI.Pages.adminPages
 
         private async void BisCheck_Click(object sender, RoutedEventArgs e)
         {
-            Db.Requests.EditRequests(false, true);
+            Db.Requests.EditRequests(true, Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).User.Login);
             Refresh();
         }
         public void Refresh()
@@ -63,7 +63,6 @@ namespace The_Living_Furniture_UI.Pages.adminPages
 
         private void listRequest_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
             try
             {
                 if (listRequest.SelectedIndex == -1)
@@ -76,12 +75,15 @@ namespace The_Living_Furniture_UI.Pages.adminPages
                     TBMaterial.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).Material;
                     TBSize.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).Size;
                     TBType.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).Type;
-
+                    if (Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).isCheck == true)
+                        TBStatus.Text = "ПРОВЕДЕНА";
+                    else
+                        TBStatus.Text = "НЕ ПРОВЕДЕНА";
                     TBusrCard.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).User.Card.ToString();
                     TBusrName.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).User.Name.ToString();
                     TBusrLogin.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).User.Login.ToString();
                     TBusrAddress.Text = Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).User.Address.ToString();
-                    // TBconsIsCheck.Text = Consultation.GetisCheckCons(listLogin.SelectedItems.ToString()).isCheck.ToString(); bool convert in string 
+
                 }
             }
             catch (Exception ex)

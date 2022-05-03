@@ -65,7 +65,7 @@ namespace The_Living_Furniture_UI.Pages.Product
             var filterCheck = Builders<Db.User>.Filter.Where(u => u.Login == currentUser.Login );
             var update = Builders<Db.User>.Update.PushEach(x => x.Basket.Product, new[]
             {
-                        new ModifyProducts{ _id = currentProduct._id,
+                        new ModifyProducts { _id = currentProduct._id,
                             Name = currentProduct.Name,
                             Price = currentProduct.Price,
                             Raiting = currentProduct.Raiting,
@@ -79,6 +79,7 @@ namespace The_Living_Furniture_UI.Pages.Product
                             SizeImage = currentProduct.SizeImage,
                             Logo = currentProduct.Logo,
                         }
+
             });
 
             await collecstion.UpdateOneAsync(filterCheck, update);

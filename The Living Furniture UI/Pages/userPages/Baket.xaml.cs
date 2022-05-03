@@ -30,36 +30,34 @@ namespace The_Living_Furniture_UI.Pages.userPages
         {
             InitializeComponent();
             currentUser = user;
+            //listBasket.ItemsSource = Db.Basket.ShowProductsInCategory("Table");
             LoadData();
-            
         }
-
         private async void LoadData()
         {
-           
+
             string connectionString = "mongodb://localhost";
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("FurnitureBD");
-            var collection = database.GetCollection<Db.Basket>("Basket");
+            var collection = database.GetCollection<Db.User>("User");
             var filter = new BsonDocument();
 
-            List<Db.Basket> basket = new List<Db.Basket>();
+            List<Db.ModifyProducts> basket = new List<Db.ModifyProducts>();
 
             using (var cursor = await collection.FindAsync(filter))
             {
                 while (await cursor.MoveNextAsync())
                 {
                     var people = cursor.Current;
-                    foreach (Db.Basket doc in people)
+                    foreach (Db.ModifyProducts doc in people)
                     {
-                       // basket.Add(new Db.Basket());
+                        basket.Add(new Db.ModifyProducts(doc._id, doc.Category, doc.Name, doc.Price, doc.Raiting, doc.Width, doc.Height, doc.Color, doc.Structure, doc.Material, doc.Logo, doc.Photo, doc.SizeImage));
                     }
                 }
             }
-            //listBasket.ItemsSource = basket.Where(b => b._id == currentUser.Basket._id).ToList();
+            listlogin.ItemsSource = basket.ToList().Where(b => b.Category == CategoryLogged.Category);
 
         }
-
 
     }
 }

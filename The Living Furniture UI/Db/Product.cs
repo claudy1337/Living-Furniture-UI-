@@ -29,10 +29,6 @@ namespace The_Living_Furniture_UI.Db
             SizeImage = sizeImage;
             _id = id;
         }
-        public Product(string name)
-        {
-            Name = name;
-        }
         public ObjectId _id { get; set; }
         public string Name { get; set; }
         public int Price { get; set; }

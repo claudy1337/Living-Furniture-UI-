@@ -17,7 +17,7 @@ namespace The_Living_Furniture_UI.Db
             isCheck = ischeck;
         }
         public ObjectId _id { get; set; }
-        public string Name{ get; set; }
+        public string Name { get; set; }
         public string Number { get; set; }
         public bool isCheck { get; set; }
 
@@ -54,7 +54,7 @@ namespace The_Living_Furniture_UI.Db
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("FurnitureBD");
             var collection = database.GetCollection<Consultation>("Consultation");
-            var listUsersFromDB = collection.Find(x=> true).ToList();
+            var listUsersFromDB = collection.Find(x => true).ToList();
             List<string> listToReturn = new List<string>();
             foreach (var item in listUsersFromDB)
             {
@@ -69,6 +69,13 @@ namespace The_Living_Furniture_UI.Db
             var collection = database.GetCollection<Consultation>("Consultation");
             collection.ReplaceOne(x => x.Number == number, consultation);
         }
+        public static async void DeletePerson(string number)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Consultation>("Consultation");
+            var result = await collection.DeleteOneAsync(p => p.Number == number);
+        }
+
     }
-    
 }

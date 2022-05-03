@@ -17,14 +17,10 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
                 <StackPanel Orientation="Horizontal">
-                   
                     <ScrollViewer Height="440" HorizontalScrollBarVisibility="Visible" >
-
-                        <!--
                         <ListView x:Name="listBasket">
                             <ListView.ItemTemplate>
-                                <DataTemplate> -->
-
+                                <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
                                         <CheckBox Height="30" VerticalAlignment="Top" Margin="10,0,10,0"/>
                                         <Image Source="/Assets/Images/mainC.png" Height="250" VerticalAlignment="Top"/>
@@ -201,7 +197,9 @@
                                             </StackPanel>
                                         </StackPanel>
                                     </StackPanel>
-                               
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                     </ScrollViewer>
                 </StackPanel>
             </StackPanel>
