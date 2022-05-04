@@ -16,7 +16,6 @@ using System.Windows.Shapes;
 using MongoDB.Driver;
 using MongoDB.Bson;
 using System.Collections.ObjectModel;
-using System.Reflection;
 using System.Diagnostics;
 using MaterialDesignThemes.Wpf;
 
@@ -46,17 +45,17 @@ namespace The_Living_Furniture_UI.Pages.userPages
             string connectionString = "mongodb://localhost";
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("FurnitureBD");
-            var collection = database.GetCollection<Db.ImageCollection>("ImageCollection");
+            var collection = database.GetCollection<Db.Product>("Product");
             var filter = new BsonDocument();
-            List<Db.ImageCollection> basket = new List<Db.ImageCollection>();
+            List<Db.Product> basket = new List<Db.Product>();
             using (var cursor = await collection.FindAsync(filter))
             {
                 while (await cursor.MoveNextAsync())
                 {
                     var people = cursor.Current;
-                    foreach (Db.ImageCollection doc in people)
+                    foreach (Db.Product doc in people)
                     {
-                       basket.Add(new Db.ImageCollection(doc.Paths, doc.Category));
+                       basket.Add(new Db.Product(doc._id, doc.Category, doc.Name, doc.Price, doc.Raiting, doc.Width, doc.Height, doc.Color, doc.Structure, doc.Material, doc.Logo, doc.Photo, doc.SizeImage));
                     }
                 }
             }
@@ -66,8 +65,8 @@ namespace The_Living_Furniture_UI.Pages.userPages
 
         private void PhotosListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var image = Db.ImageCollection.GetisImage(PhotosListBox.SelectedItems.ToString()).Paths;
-            imgScreen.Source = new BitmapImage(new Uri(image, UriKind.RelativeOrAbsolute));
+            Db.Product imageCollection = (Db.Product)PhotosListBox.SelectedItem;
+            imgScreen.Source = new BitmapImage(new Uri(imageCollection.Photo, UriKind.Relative));
         }
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

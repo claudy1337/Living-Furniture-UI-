@@ -62,12 +62,13 @@ namespace The_Living_Furniture_UI.Db
             }
             return listToReturn;
         }
-        public static void UpdateCons(Consultation consultation, string number)
+        public static void UpdateCons(string number, bool ischeck)
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("FurnitureBD");
             var collection = database.GetCollection<Consultation>("Consultation");
-            collection.ReplaceOne(x => x.Number == number, consultation);
+            var updateCheck = Builders<Db.Consultation>.Update.Set(x => x.isCheck, ischeck);
+            collection.UpdateOne(x => x.Number == number, updateCheck);//редактирование
         }
         public static async void DeletePerson(string number)
         {

@@ -41,10 +41,7 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         }
         private async void BisCheckConsultation_Click(object sender, RoutedEventArgs e)
         {
-            //Db.Consultation.DeletePerson(Consultation.GetisCheckCons(listLogin.SelectedItem.ToString()).Number);
-
-            Consultation consultation = new Consultation(TBusrName.Text, TBusrNumber.Text, true);
-            Db.Consultation.UpdateCons(consultation, TBusrNumber.Text);
+            Db.Consultation.UpdateCons(Consultation.GetisCheckCons(listLogin.SelectedItem.ToString()).Number, true);
             MessageBox.Show("Заявка обработана");
             Refresh();
 

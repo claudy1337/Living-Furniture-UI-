@@ -13,7 +13,7 @@ namespace The_Living_Furniture_UI.Db
 {
     public class User
     {
-        public User(string login, string password, string name, int card, string address,string photo, Order order, Basket basket)
+        public User(string login, string password, string name, int card, string address,string photo, Order order, Basket basket,Trash trash)
         {
             Login = login;
             Password = password;    
@@ -23,6 +23,7 @@ namespace The_Living_Furniture_UI.Db
             Address = address;
             Photo = photo;
             Basket = basket;
+            Trash = trash;
             
         }
         public ObjectId _id { get; set; }
@@ -34,7 +35,7 @@ namespace The_Living_Furniture_UI.Db
         public string Photo { get; set; }
         public Order Order { get; set; }
         public Basket Basket { get; set; }
-        
+        public Trash Trash { get; set; }
         public static void usrAddToDB(Db.User user)
         {
             var client = new MongoClient("mongodb://localhost");
@@ -78,17 +79,13 @@ namespace The_Living_Furniture_UI.Db
             }
             return listToReturn;
         }
-        public static void EditUser(string address, string newAddress, string name, string newName)
+        public static void EditUser(string login, string address)
         {
             var std = new MongoClient("mongodb://localhost");
             var database = std.GetDatabase("FurnitureBD");
             var collection = database.GetCollection<Db.User>("User");
-            var filterName = Builders<Db.User>.Filter.Eq("Name", name);
-            var updateName = Builders<Db.User>.Update.Set(x => x.Name, newName);
-            var filterAddress = Builders<Db.User>.Filter.Eq("Address", address);
-            var updateAddress = Builders<Db.User>.Update.Set(x => x.Address, newAddress);
-            collection.UpdateOne(filterName, updateName);
-            collection.UpdateOne(filterAddress, updateAddress);
+            var update = Builders<Db.User>.Update.Set(x => x.Address, address);
+            collection.UpdateOne(x => x.Login == login, update);//редактирование
         }
         public static List<Db.User> UserIsExists(string login, string password)
         {

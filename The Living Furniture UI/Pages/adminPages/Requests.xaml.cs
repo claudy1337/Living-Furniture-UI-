@@ -48,6 +48,7 @@ namespace The_Living_Furniture_UI.Pages.adminPages
             listRequest.ItemsSource = Db.Requests.GetRequestList();
 
             //requst list
+            TBStatus.Text = null;
             TBName.Text = null;
             TBMaterial.Text = null;
             TBSize.Text = null;

@@ -16,6 +16,9 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 using The_Living_Furniture_UI.Db;
+using MongoDB.Libmongocrypt;
+using MongoDB.Driver.Linq;
+
 
 namespace The_Living_Furniture_UI.Pages.userPages
 {
@@ -30,34 +33,8 @@ namespace The_Living_Furniture_UI.Pages.userPages
         {
             InitializeComponent();
             currentUser = user;
-            //listBasket.ItemsSource = Db.Basket.ShowProductsInCategory("Table");
-            LoadData();
+            
         }
-        private async void LoadData()
-        {
-
-            string connectionString = "mongodb://localhost";
-            var client = new MongoClient(connectionString);
-            var database = client.GetDatabase("FurnitureBD");
-            var collection = database.GetCollection<Db.User>("User");
-            var filter = new BsonDocument();
-
-            List<Db.ModifyProducts> basket = new List<Db.ModifyProducts>();
-
-            using (var cursor = await collection.FindAsync(filter))
-            {
-                while (await cursor.MoveNextAsync())
-                {
-                    var people = cursor.Current;
-                    foreach (Db.ModifyProducts doc in people)
-                    {
-                        basket.Add(new Db.ModifyProducts(doc._id, doc.Category, doc.Name, doc.Price, doc.Raiting, doc.Width, doc.Height, doc.Color, doc.Structure, doc.Material, doc.Logo, doc.Photo, doc.SizeImage));
-                    }
-                }
-            }
-            listlogin.ItemsSource = basket.ToList().Where(b => b.Category == CategoryLogged.Category);
-
-        }
-
+        
     }
 }

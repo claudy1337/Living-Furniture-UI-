@@ -21,13 +21,14 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Vertical">
-                                <Image Source="{Binding Path=Paths}" Height="300" MouseLeftButtonDown="Image_MouseLeftButtonDown" x:Name="imgr" RenderOptions.BitmapScalingMode="HighQuality"/>
+                                <Image Source="{Binding Path=Photo}" Height="300" MouseLeftButtonDown="Image_MouseLeftButtonDown" x:Name="imgr" RenderOptions.BitmapScalingMode="HighQuality"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
             </StackPanel>
             <Image Grid.Column="1" x:Name="imgScreen" RenderOptions.BitmapScalingMode="HighQuality" Margin="13,25,12,25"/>
+            
         </Grid>
     </Border>
 

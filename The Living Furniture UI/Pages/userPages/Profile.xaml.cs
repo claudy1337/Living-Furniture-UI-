@@ -50,7 +50,7 @@ namespace The_Living_Furniture_UI.Pages.userPages
         {
             if (num == 0)
             {
-                Db.User.EditUser(currentUser.Address, TBusrAddress.Text, currentUser.Name, TBusrName.Text);
+                Db.User.EditUser(currentUser.Login, TBusrAddress.Text);
                 MessageBox.Show("update verificated");
                 num++;
             }

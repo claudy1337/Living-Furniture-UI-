@@ -42,7 +42,7 @@ namespace The_Living_Furniture_UI.Pages.others
         }
         private void rdHome_Click(object sender, RoutedEventArgs e)
         {
-            PagesNavigation.Navigate(new Product.CustomList(currentUser));
+            PagesNavigation.Navigate(new main());
         }
         private void rdAccount_Click(object sender, RoutedEventArgs e)
         {
