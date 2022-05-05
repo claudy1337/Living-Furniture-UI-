@@ -28,7 +28,7 @@
                 </ListView>
             </StackPanel>
             <Image Grid.Column="1" x:Name="imgScreen" RenderOptions.BitmapScalingMode="HighQuality" Margin="13,25,12,25"/>
-            
+            <TextBlock x:Name="prdName" Grid.Column="1" FontFamily="Ubuntu Medium" HorizontalAlignment="Left" Margin="10,5,0,0"/>
         </Grid>
     </Border>
 

@@ -63,7 +63,7 @@
                                             FontSize="15"/>
 
                                                         <TextBox
-                                              Text="{Binding Path=Name}"
+                                              Text="{Binding Price}"
                                             Margin="0,20,0,0"
                                             x:Name="TBSize"
                                             Style="{StaticResource MaterialDesignFilledTextBox}"
@@ -219,7 +219,7 @@
                             <TextBlock Text="Basket" FontFamily="Ubuntu Medium" FontSize="24"/>
                             <TextBlock Text="Count Product:32" FontFamily="Ubuntu Medium" FontSize="24" Margin="0,20,0,0"/>
                             <TextBlock Text="All Price:1233" FontFamily="Ubuntu Medium" FontSize="24" Margin="0,20,0,0"/>
-                            <Button Width="206" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Margin="0,30,0,0" Content="Buy"/>
+                            <Button Width="206" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Margin="0,30,0,0" Content="Buy" Click="Button_Click"/>
                         </StackPanel>
                     </material:Card>
                     

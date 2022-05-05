@@ -26,20 +26,15 @@ namespace The_Living_Furniture_UI.Pages.userPages
         {
             InitializeComponent();
             currentUser = user;
-
-
         }
 
         private void BtnSendRequest_Click(object sender, RoutedEventArgs e)
         {
-            
-            
             List<Db.Product> products = new List<Db.Product>();
             Db.Order order = new Db.Order(products, false);
-           // Db.Basket basket = new Db.Basket(new List<Db.Product>());
             Db.Requests request = new Db.Requests(usrName.Text, CBMaterialProduct.Text, CBTypeProduct.Text, CBSizeProduct.Text, currentUser, false);
-            //Requests.SendToRequest(request);
             Db.Requests.requestAddToDB(request);
+            MessageBox.Show("заявка отправлена");
         }
     }
 }

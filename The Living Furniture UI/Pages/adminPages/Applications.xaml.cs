@@ -41,8 +41,13 @@ namespace The_Living_Furniture_UI.Pages.adminPages
            Refresh();
            if (value==1)
            {
-                prgUsr.IsIndeterminate = true;
-                prgUsr.Visibility = Visibility.Visible;
+                for (int i = 0; i < 1000; i++)
+                {
+                    if (i==100)
+                        prgUsr.Visibility = Visibility.Hidden;
+                    else
+                        prgUsr.Visibility = Visibility.Visible;
+                }
                
            }
             else if (value==2)

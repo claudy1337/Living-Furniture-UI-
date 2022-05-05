@@ -49,6 +49,7 @@ namespace The_Living_Furniture_UI.Pages.userPages
                 {
                     Db.User usr = new Db.User(usrLogin.Text, usrPassword.Text, usrName.Text, cardNumber, "","", order, basket, trash);
                     Db.User.usrAddToDB(usr);
+                    MessageBox.Show("Welcome: " + $"{usrLogin.Text} " + $"{usrName.Text}");
                     others.User user = new others.User(usr);
                     user.Show();
                 }

@@ -49,6 +49,7 @@ namespace The_Living_Furniture_UI.Pages
             var usr = Db.User.UserIsExists(clientLogin.Text, clientPassword.Text).FirstOrDefault();
             if (usr != null)
             {
+                MessageBox.Show("Welcome " + $"{clientLogin.Text}");
                 others.User us = new others.User(usr);
                 us.Show();
             }
@@ -57,6 +58,7 @@ namespace The_Living_Furniture_UI.Pages
                 var adm = Db.Admin.AdminIsExists(clientLogin.Text, clientPassword.Text);
                 if (adm != null)
                 {
+                    MessageBox.Show("Welcome admin: " + $"{clientLogin.Text}");
                     others.Admin admin = new Admin();
                     admin.Show();
                 }

@@ -35,10 +35,7 @@
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <ProgressBar
                                       x:Name="prgUsr"
-                                      Style="{StaticResource MaterialDesignCircularProgressBar}"
-                                      Value="20"
-                                      IsIndeterminate="False"
-                                      Visibility="Hidden"/>
+                                      Style="{StaticResource MaterialDesignCircularProgressBar}"/>
                             <TextBlock x:Name="usrCounts" Foreground="{DynamicResource PrimaryBlueColor}" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
                         </StackPanel>
                     </StackPanel>
@@ -79,11 +76,8 @@
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <ProgressBar
-                                      x:Name="prgProd"
-                                      IsIndeterminate="False"
-                                      Visibility="Hidden"
-                                      Style="{StaticResource MaterialDesignCircularProgressBar}"
-                                      Value="20"/>
+                                x:Name="prgProd"
+                                Style="{StaticResource MaterialDesignCircularProgressBar}" />
 
                             <TextBlock Foreground="{DynamicResource PrimaryBlueColor}" x:Name="prdCount" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
                         </StackPanel>

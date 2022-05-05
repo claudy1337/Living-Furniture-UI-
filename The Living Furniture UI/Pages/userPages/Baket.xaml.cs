@@ -25,7 +25,6 @@ namespace The_Living_Furniture_UI.Pages.userPages
     /// <summary>
     /// Логика взаимодействия для Baket.xaml
     /// </summary>
-    
     public partial class Baket : Page
     {
         private static Db.User currentUser;
@@ -33,8 +32,16 @@ namespace The_Living_Furniture_UI.Pages.userPages
         {
             InitializeComponent();
             currentUser = user;
-            
+            listBasket.ItemsSource = user.Trash.Products;
         }
-        
+        public void Method()
+        {
+            listBasket.ItemsSource = Db.Trash.GetProducts().GetAwaiter().GetResult();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

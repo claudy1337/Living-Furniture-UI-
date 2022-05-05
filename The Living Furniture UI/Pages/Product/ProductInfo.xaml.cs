@@ -85,6 +85,12 @@ namespace The_Living_Furniture_UI.Pages.Product
             //await collecstion.UpdateOneAsync(filterCheck, update);
 
             Db.Trash.AddToCliensCart(currentUser.Login, currentProduct.Name, "332");
+            prg.Visibility = Visibility.Visible;
+            for (int i = 0; i < 100; i++)
+                prg.Value = i;
+            MessageBox.Show("добавлен в корзину");
+            prg.Visibility = Visibility.Hidden;
+            prg.Value = 0;
         }
     }
 }

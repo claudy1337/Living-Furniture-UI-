@@ -24,7 +24,6 @@ namespace The_Living_Furniture_UI.Pages.Product
     public partial class CustomList : Page
     {
         public static Db.User currentUser;
-       
         public CustomList(Db.User user)
         {
             InitializeComponent();
@@ -32,8 +31,6 @@ namespace The_Living_Furniture_UI.Pages.Product
             currentUser = user;
             LoadData();
 
-            //var products = currentUser.Basket.Products.ToList();
-            //listlogin.ItemsSource = products;
         }
 
       
@@ -45,9 +42,7 @@ namespace The_Living_Furniture_UI.Pages.Product
             var database = client.GetDatabase("FurnitureBD");
             var collection = database.GetCollection<Db.Product>("Product");
             var filter = new BsonDocument();
-
             List<Db.Product> basket = new List<Db.Product>();
-
             using (var cursor = await collection.FindAsync(filter))
             {
                 while (await cursor.MoveNextAsync())

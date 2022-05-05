@@ -93,6 +93,16 @@
                                         Text="Send"
                                         FontSize="29" Height="45"/>
                                     </Button>
+                                    <ProgressBar
+                                            x:Name="prg"
+                                            Background="White"
+                                            Width="220"
+                                            Height="10"
+                                            Margin="0,10,0,0"
+                                            Visibility="Hidden"
+                                            IsIndeterminate="False" 
+                                            Value="0"
+                                            Maximum="100"/>
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>

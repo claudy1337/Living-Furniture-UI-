@@ -16,6 +16,8 @@ namespace The_Living_Furniture_UI.Db
     {
         public ObjectId Id { get; set; }
         public List<Test> Products = new List<Test>();
+
+
         public static async void AddToCliensCart(string login, string name, string price)
         {
             var client = new MongoClient("mongodb://localhost");
@@ -27,17 +29,21 @@ namespace The_Living_Furniture_UI.Db
             });
             await collection.UpdateOneAsync(filterCheck, update);
         }
-        
-        //public async Task<IEnumerable<Test>> GetProducts(string name)
-        //{
-        //    var client = new MongoClient("mongodb://localhost");
-        //    var database = client.GetDatabase("FurnitureBD");
-        //    var collection = database.GetCollection<Test>("User");
-        //    var cursor = await collection.FindAsync(x => x.Name == name).ConfigureAwait(false);
-        //    var entity = cursor.FirstOrDefaultAsync().ConfigureAwait(false);
-        //   
-        //}
 
+        public static async Task<IEnumerable<Test>> GetProducts()
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Test>("User");
+            var cursor = await collection.Find(x => true).ToListAsync();
+            //var entity = cursor.FirstOrDefaultAsync().ConfigureAwait(false);
+            return cursor;
+
+        }
+        public static void Method()
+        {
+            GetProducts().GetAwaiter().GetResult();
+        }
     }
     public class Test
     {

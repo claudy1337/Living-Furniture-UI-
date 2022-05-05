@@ -67,6 +67,7 @@ namespace The_Living_Furniture_UI.Pages.userPages
         {
             Db.Product imageCollection = (Db.Product)PhotosListBox.SelectedItem;
             imgScreen.Source = new BitmapImage(new Uri(imageCollection.Photo, UriKind.Relative));
+            prdName.Text = imageCollection.Name;
         }
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

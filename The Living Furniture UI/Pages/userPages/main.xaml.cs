@@ -34,8 +34,22 @@ namespace The_Living_Furniture_UI.Pages.userPages
 
         private void BSendConsultation_Click(object sender, RoutedEventArgs e)
         {
-            Db.Consultation consultation = new Db.Consultation(TBusrName.Text, TBusrName.Text, false);
-            Db.Consultation.SendToConsultation(consultation);
+            if (string.IsNullOrEmpty(TBusrName.Text) && string.IsNullOrEmpty(TBusrNumber.Text))
+                MessageBox.Show("null");
+            else
+            {
+                Db.Consultation consultation = new Db.Consultation(TBusrName.Text, TBusrName.Text, false);
+                Db.Consultation.SendToConsultation(consultation);
+                prg.Visibility = Visibility.Visible;
+                for (int i = 0; i < 100; i++)
+                    prg.Value = i;
+                MessageBox.Show("консультация отправлена");
+                prg.Value = 0;
+                prg.Visibility = Visibility.Hidden;
+                TBusrNumber.Text = null;
+                TBusrName.Text = null;
+            }
+            
         }
     }
 }
