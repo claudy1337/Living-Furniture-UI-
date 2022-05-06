@@ -18,17 +18,17 @@ namespace The_Living_Furniture_UI.Db
         public List<Test> Products = new List<Test>();
 
 
-        public static async void AddToCliensCart(string login, string name, string price)
-        {
-            var client = new MongoClient("mongodb://localhost");
-            var database = client.GetDatabase("FurnitureBD");
-            var collection = database.GetCollection<User>("User");
-            var filterCheck = Builders<Db.User>.Filter.Where(u => u.Login == login);
-            var update = Builders<User>.Update.PushEach(x => x.Trash.Products, new[]{
-                new Test{Name = name, Price = price }
-            });
-            await collection.UpdateOneAsync(filterCheck, update);
-        }
+        //public static async void AddToCliensCart(string login, string name, string price)
+        //{
+        //    var client = new MongoClient("mongodb://localhost");
+        //    var database = client.GetDatabase("FurnitureBD");
+        //    var collection = database.GetCollection<User>("User");
+        //    var filterCheck = Builders<Db.User>.Filter.Where(u => u.Login == login);
+        //    var update = Builders<User>.Update.PushEach(x => x.Trash.Products, new[]{
+        //        new Test{Name = name, Price = price }
+        //    });
+        //    await collection.UpdateOneAsync(filterCheck, update);
+        //}
 
         public static async Task<IEnumerable<Test>> GetProducts()
         {

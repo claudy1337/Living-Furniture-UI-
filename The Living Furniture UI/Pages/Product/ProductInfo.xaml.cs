@@ -36,6 +36,7 @@ namespace The_Living_Furniture_UI.Pages.Product
             ProdPrice.Text = currentProduct.Price.ToString();
             ProdLogo.Source = new BitmapImage(new Uri(currentProduct.Photo, UriKind.RelativeOrAbsolute));
             imgProd.Source = new BitmapImage(new Uri(currentProduct.Logo, UriKind.RelativeOrAbsolute));
+            CBcolor.Text = currentProduct.Color;
             CBmaterial.Text = currentProduct.Material;
             DataContext = this;
            
@@ -59,38 +60,27 @@ namespace The_Living_Furniture_UI.Pages.Product
         }
         private async void BtnBuy_Click(object sender, RoutedEventArgs e)
         {
-            //var stds = new MongoClient("mongodb://localhost");
-            //var datasbase = stds.GetDatabase("FurnitureBD");
-            //var collecstion = datasbase.GetCollection<Db.User>("User");
-            //var filterCheck = Builders<Db.User>.Filter.Where(u => u.Login == currentUser.Login );
-            //var update = Builders<Db.User>.Update.PushEach(x => x.Basket.Product, new[]
-            //{
-            //            new ModifyProducts { _id = currentProduct._id,
-            //                Name = currentProduct.Name,
-            //                Price = currentProduct.Price,
-            //                Raiting = currentProduct.Raiting,
-            //                Width = currentProduct.Width,
-            //                Height = currentProduct.Height,
-            //                Color = currentProduct.Color,
-            //                Category = currentProduct.Category,
-            //                Structure = currentProduct.Structure,
-            //                Material = currentProduct.Material,
-            //                Photo = currentProduct.Photo,
-            //                SizeImage = currentProduct.SizeImage,
-            //                Logo = currentProduct.Logo,
-            //            }
-
-            //});
-
-            //await collecstion.UpdateOneAsync(filterCheck, update);
-
-            Db.Trash.AddToCliensCart(currentUser.Login, currentProduct.Name, "332");
+            
+            if (CBmaterial.Text == null && CBcolor.Text == null && CBwidth == null && CBheight == null )
+            {
+                Db.Basket.AddProductToBasket(currentUser.Login, currentProduct._id, currentProduct.Category, currentProduct.Name, currentProduct.Price, currentProduct.Width, currentProduct.Height, currentProduct.Color, currentProduct.Structure, currentProduct.Material, currentProduct.Photo);
+            }
+            else
+            {
+                string color = CBcolor.SelectedIndex.ToString();
+                int width = Convert.ToInt32(CBwidth.SelectedIndex);
+                int height = Convert.ToInt32(CBheight.SelectedIndex);
+                string material = CBmaterial.SelectedIndex.ToString();
+                Db.Basket.AddProductToBasket(currentUser.Login, currentProduct._id, currentProduct.Category, currentProduct.Name, currentProduct.Price, width, height, color, currentProduct.Structure, material, currentProduct.Photo);
+                
+            }
             prg.Visibility = Visibility.Visible;
             for (int i = 0; i < 100; i++)
                 prg.Value = i;
             MessageBox.Show("добавлен в корзину");
             prg.Visibility = Visibility.Hidden;
             prg.Value = 0;
+
         }
     }
 }

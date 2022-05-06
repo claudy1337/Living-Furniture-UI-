@@ -31,7 +31,7 @@ namespace The_Living_Furniture_UI.Pages.userPages
         private void BtnSendRequest_Click(object sender, RoutedEventArgs e)
         {
             List<Db.Product> products = new List<Db.Product>();
-            Db.Order order = new Db.Order(products, false);
+            Db.Order order = new Db.Order();
             Db.Requests request = new Db.Requests(usrName.Text, CBMaterialProduct.Text, CBTypeProduct.Text, CBSizeProduct.Text, currentUser, false);
             Db.Requests.requestAddToDB(request);
             MessageBox.Show("заявка отправлена");

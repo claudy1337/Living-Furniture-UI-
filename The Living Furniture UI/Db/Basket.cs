@@ -11,15 +11,30 @@ namespace The_Living_Furniture_UI.Db
     public class Basket
     {
         public List<Db.ModifyProducts> Product { get; set; } = new List<Db.ModifyProducts>();
-        public static List<Basket> ShowProductsInCategory(string category)
+        public static async void AddProductToBasket(string login, ObjectId id, string category, string name, int price,int width, int height, string color, bool structure, string material, string photo)
         {
             var client = new MongoClient("mongodb://localhost");
-            var database = client.GetDatabase("User");
-            var collection = database.GetCollection<Basket>(category);
-            return collection.Find(x => true).ToList();
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<User>("User");
+            var filterCheck = Builders<Db.User>.Filter.Where(u => u.Login == login);
+            var update = Builders<User>.Update.PushEach(x => x.Basket.Product, new[]{
+                new ModifyProducts{_id = id, Category = category, Name = name, Price = price, Color = color, Height = height, Width=width, Material = material, Structure = structure, Photo = photo}
+            });
+            await collection.UpdateOneAsync(filterCheck, update);
         }
-       
-
     }
-    
+    public class ModifyProducts
+    {
+        public ObjectId _id { get; set; }
+        public string Name { get; set; }
+        public int Price { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
+        public string Color { get; set; }
+        public string Category { get; set; }
+        public bool Structure { get; set; }
+        public string Material { get; set; }
+        public string Photo { get; set; }
+    }
+
 }

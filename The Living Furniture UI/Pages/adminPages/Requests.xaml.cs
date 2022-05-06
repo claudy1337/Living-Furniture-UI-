@@ -39,7 +39,12 @@ namespace The_Living_Furniture_UI.Pages.adminPages
 
         private async void BisCheck_Click(object sender, RoutedEventArgs e)
         {
-            Db.Requests.EditRequests(true, Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).User.Login);
+            if (listRequest.SelectedIndex == -1)
+            {
+                MessageBox.Show("select request");
+            }
+            else
+                Db.Requests.EditRequests(true, Db.Requests.GetisRequest(listRequest.SelectedItem.ToString()).User.Login);
             Refresh();
         }
         public void Refresh()
@@ -91,6 +96,11 @@ namespace The_Living_Furniture_UI.Pages.adminPages
             {
                 MessageBox.Show("error", ex.Message);
             }
+        }
+
+        private void BisDontCheck_Click(object sender, RoutedEventArgs e)
+        {
+            listRequest.ItemsSource = Db.Requests.GetRequestDontCheckList();
         }
     }
 }

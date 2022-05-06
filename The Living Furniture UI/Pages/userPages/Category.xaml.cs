@@ -57,5 +57,10 @@ namespace The_Living_Furniture_UI.Pages.userPages
             CategoryLogged.Category = "Table";
             NavigationService.Navigate(new CustomList(currentUser));
         }
+
+        private void BtnFollow_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new FollowPage());
+        }
     }
 }

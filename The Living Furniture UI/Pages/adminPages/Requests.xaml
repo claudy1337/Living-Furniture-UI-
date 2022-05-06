@@ -17,12 +17,21 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0" Margin="10">
+            <StackPanel Grid.Column="0" Margin="10" Orientation="Vertical">
                 <TextBlock Text="Request" FontSize="24" FontFamily="Ubuntu Medium" HorizontalAlignment="Center" />
-                <ListBox Height="392" SelectionChanged="listRequest_SelectionChanged" x:Name="listRequest" Margin="0,10,0,0" 
+                <ListBox Height="330" SelectionChanged="listRequest_SelectionChanged" x:Name="listRequest" Margin="0,10,0,0" 
                          ItemsSource="{Binding Requests}">
 
                 </ListBox>
+                <Button Grid.Row="2" 
+                     Height="40"
+                     Margin="0,20,0,0"
+                     Width="200"
+                     FontFamily="Ubuntu Medium" 
+                     FontSize="24" Content="DCheck"
+                     x:Name="BisDontCheck"
+                     Style="{DynamicResource MaterialDesignPaperLightButton}" 
+                     Background="AliceBlue" Click="BisDontCheck_Click" />
             </StackPanel>
 
             <StackPanel Grid.Column="1">

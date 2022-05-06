@@ -18,6 +18,7 @@ using MongoDB.Driver;
 using The_Living_Furniture_UI.Db;
 using MongoDB.Libmongocrypt;
 using MongoDB.Driver.Linq;
+using System.CodeDom;
 
 
 namespace The_Living_Furniture_UI.Pages.userPages
@@ -27,12 +28,24 @@ namespace The_Living_Furniture_UI.Pages.userPages
     /// </summary>
     public partial class Baket : Page
     {
+        List<Db.OrderedProduct> products = new List<Db.OrderedProduct>();
         private static Db.User currentUser;
         public Baket(Db.User user)
         {
             InitializeComponent();
             currentUser = user;
-            listBasket.ItemsSource = user.Trash.Products;
+            listBasket.ItemsSource = null;
+            listBasket.ItemsSource = currentUser.Basket.Product;
+
+            int sum = 0;
+            foreach (var item in user.Basket.Product)
+            {
+                sum += item.Price;
+            }
+            countProd.Text = user.Basket.Product.Count.ToString();
+            priceProd.Text = sum.ToString();
+            
+            
         }
         public void Method()
         {
@@ -41,7 +54,13 @@ namespace The_Living_Furniture_UI.Pages.userPages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            
 
+        }
+
+        private void BtnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            listBasket.ItemsSource = currentUser.Basket.Product;
         }
     }
 }

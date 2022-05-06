@@ -78,6 +78,7 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         {
             TBusrName.Text = null;
             TBusrNumber.Text = null;
+            TBconsIsCheck.Text = null;
             listLogin.ItemsSource = null;
             listLogin.ItemsSource = Db.Consultation.GetConsList();   
         }

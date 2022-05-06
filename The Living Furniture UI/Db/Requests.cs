@@ -49,6 +49,19 @@ namespace The_Living_Furniture_UI.Db
             }
             return listToReturn;
         }
+        public static List<string> GetRequestDontCheckList()
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Requests>("Request");
+            var listUsersFromDB = collection.Find(x => x.isCheck == false).ToList();
+            List<string> listToReturn = new List<string>();
+            foreach (var item in listUsersFromDB)
+            {
+                listToReturn.Add(item.Name);
+            }
+            return listToReturn;
+        }
         public static Requests GetisRequest(string name)
         {
             var client = new MongoClient("mongodb://localhost");

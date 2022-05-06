@@ -144,7 +144,6 @@
     <Compile Include="Db\Basket.cs" />
     <Compile Include="Db\Consultation.cs" />
     <Compile Include="Db\ImageCollection.cs" />
-    <Compile Include="Db\ModifyProducts.cs" />
     <Compile Include="Db\Order.cs" />
     <Compile Include="Db\Product.cs" />
     <Compile Include="Db\Requests.cs" />
@@ -496,6 +495,7 @@
     <Resource Include="Assets\Images\Usr_Employee\employee.png" />
     <Resource Include="Assets\Images\Usr_Employee\admin.png" />
     <Resource Include="Assets\Images\PaymenCard.png" />
+    <Resource Include="Assets\Images\Card\ordcard.png" />
     <Content Include="Core\Compression\Snappy\lib\win\snappy32.dll" />
     <Content Include="Core\Compression\Snappy\lib\win\snappy64.dll" />
     <Content Include="Core\Compression\Zstandard\lib\win\libzstd.dll" />

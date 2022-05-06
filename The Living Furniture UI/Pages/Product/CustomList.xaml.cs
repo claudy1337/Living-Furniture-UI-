@@ -98,5 +98,10 @@ namespace The_Living_Furniture_UI.Pages.Product
             }
             listlogin.ItemsSource = basket.ToList().Where(b => b.Category == CBCategory.Text || b.Material == CBMaterial.Text || b.Color == CBColor.Text || b.Category == CBCategory.Text && b.Material == CBMaterial.Text || b.Category == CBCategory.Text && b.Material == CBMaterial.Text && b.Color == CBColor.Text);
         }
+
+        private void BSerchProdcut_Click(object sender, RoutedEventArgs e)
+        {
+            listlogin.ItemsSource = Db.Product.SearchProduct(TBChearchProduct.Text);
+        }
     }
 }

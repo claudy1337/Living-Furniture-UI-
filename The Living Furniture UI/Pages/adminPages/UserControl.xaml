@@ -50,6 +50,7 @@
                   FontFamily="Ubuntu Light"
                   FontSize="15" Width="550"/>
                 <Button Width="110" Style="{DynamicResource MaterialDesignFlatSecondaryMidBgButton}" Margin="20,0,0,0" Content="Search" x:Name="BSearchUsr" Click="BSearchUsr_Click"/>
+                <material:PackIcon Kind="Update" VerticalAlignment="Center" Margin="20,0,0,0" Height="25" Width="25" MouseLeftButtonDown="PackIcon_MouseLeftButtonDown"/>
             </StackPanel>
 
             <StackPanel Grid.Row="2">

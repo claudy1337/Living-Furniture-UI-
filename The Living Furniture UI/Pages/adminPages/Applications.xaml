@@ -56,7 +56,7 @@
                             <material:PackIcon Kind="ChartLine" Foreground="{DynamicResource PrimaryBlueColor}" HorizontalAlignment="Left" Height="50" Width="50" />
                             <TextBlock Foreground="{DynamicResource PrimaryBlueColor}" Text="Orders" VerticalAlignment="Center" FontSize="30" FontFamily="Ubuntu Medium"/>
                         </StackPanel>
-                        <TextBlock Foreground="{DynamicResource PrimaryBlueColor}" Text="200" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
+                        <TextBlock Foreground="{DynamicResource PrimaryBlueColor}" x:Name="ordCount" FontSize="30" FontFamily="Ubuntu Medium" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </material:Card>
             </StackPanel>

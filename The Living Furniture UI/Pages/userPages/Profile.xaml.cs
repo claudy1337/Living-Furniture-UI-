@@ -30,7 +30,7 @@ namespace The_Living_Furniture_UI.Pages.userPages
             currentUser = user;
             TBusrName.Text = user.Name;
             TBusrLogin.Text = user.Login;
-            TBusrAddress.Text = currentUser.Address;
+            TBusrAddress.Text = user.Address;
             Random rnd = new Random();
             int value = rnd.Next(1, 3);
             if (value == 1)
@@ -52,6 +52,7 @@ namespace The_Living_Furniture_UI.Pages.userPages
             {
                 Db.User.EditUser(currentUser.Login, TBusrAddress.Text);
                 MessageBox.Show("update verificated");
+                TBusrAddress.Text = currentUser.Login;
                 num++;
             }
             else

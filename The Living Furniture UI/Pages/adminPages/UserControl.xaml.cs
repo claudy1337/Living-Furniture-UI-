@@ -30,6 +30,7 @@ namespace The_Living_Furniture_UI.Pages.adminPages
             usrList.ItemsSource = Db.User.GetAllUserList();
             usrCounts.Text = Db.User.GetAllUserList().Count.ToString();
             usrConsultation.Text = Db.Consultation.GetAllConsList().Count.ToString();
+            usrRequest.Text = Db.Requests.GetRequestList().Count.ToString();
            // usrRequest.Text = Db.
         }
        
@@ -58,13 +59,17 @@ namespace The_Living_Furniture_UI.Pages.adminPages
 
         private void BSearchUsr_Click(object sender, RoutedEventArgs e)
         {
-          //usrList.ItemsSource = Db.User.SearchUser(TBChearchUser.Text.Contains(TBChearchUser.Text).ToString());
-         // usrList.ItemsSource = Db.User.GetUser(TBChearchUser.Text).Where(c => c..Contains(TB.Cheartch.Text)).ToList(
+          usrList.ItemsSource = Db.User.SearchUser(TBChearchUser.Text, TBChearchUser.Text);
         }
 
         public static void hui()
         {
             MessageBox.Show("fdfsdf");
+        }
+
+        private void PackIcon_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            usrList.ItemsSource = Db.User.GetAllUserList();
         }
     }
 }

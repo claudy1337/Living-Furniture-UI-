@@ -8,7 +8,7 @@
       d:DesignHeight="550" d:DesignWidth="850"
       Title="ProductInfo"
       xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes">
-    <Border CornerRadius="5" Background="#FFF7EE">
+    <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -122,9 +122,10 @@
                              ItemsSource="{Binding ShortStringList}"
                              material:TextFieldAssist.HasClearButton="True"
                              Width="256">
-                            <TextBlock Text="25x25"/>
-                            <TextBlock Text="100x100"/>
-                            <TextBlock Text="300x300"/>
+                            <TextBlock Text="{Binding Path=Height}"/>
+                            <TextBlock Text="25"/>
+                            <TextBlock Text="100"/>
+                            <TextBlock Text="300"/>
                             <ComboBox.SelectedItem>
 
                                 <Binding
@@ -148,9 +149,10 @@
                              ItemsSource="{Binding ShortStringList}"
                              material:TextFieldAssist.HasClearButton="True"
                              Width="256">
-                            <TextBlock Text="25x25"/>
-                            <TextBlock Text="100x100"/>
-                            <TextBlock Text="300x300"/>
+                            <TextBlock Text="{Binding Width}"/>
+                            <TextBlock Text="25"/>
+                            <TextBlock Text="100"/>
+                            <TextBlock Text="300"/>
                             <ComboBox.SelectedItem>
 
                                 <Binding
@@ -174,9 +176,9 @@
                              ItemsSource="{Binding ShortStringList}"
                              material:TextFieldAssist.HasClearButton="True"
                              Width="256">
-                            <TextBlock Text="25x25"/>
-                            <TextBlock Text="100x100"/>
-                            <TextBlock Text="300x300"/>
+                            <TextBlock Text="Black"/>
+                            <TextBlock Text="White"/>
+                            <TextBlock Text="Brown"/>
                             <ComboBox.SelectedItem>
 
                                 <Binding

@@ -39,15 +39,14 @@ namespace The_Living_Furniture_UI.Pages.userPages
             if (isCheсkAgree.IsChecked == true)
             {
                 List<Db.Product> product = new List<Db.Product>();
-                Db.Order order = new Db.Order(product, false);;
+                Db.Order order = new Db.Order();;
                 Random rnd = new Random();
                 Basket basket = new Basket();
-                Trash trash = new Trash(); 
                 int cardNumber = rnd.Next(10000, 99999);
                 var login = Db.User.GetUser(usrLogin.Text);
                 if (login == null)
                 {
-                    Db.User usr = new Db.User(usrLogin.Text, usrPassword.Text, usrName.Text, cardNumber, "","", order, basket, trash);
+                    Db.User usr = new Db.User(usrLogin.Text, usrPassword.Text, usrName.Text, cardNumber, "","", order, basket);
                     Db.User.usrAddToDB(usr);
                     MessageBox.Show("Welcome: " + $"{usrLogin.Text} " + $"{usrName.Text}");
                     others.User user = new others.User(usr);

@@ -13,7 +13,7 @@ namespace The_Living_Furniture_UI.Db
 {
     public class User
     {
-        public User(string login, string password, string name, int card, string address,string photo, Order order, Basket basket,Trash trash)
+        public User(string login, string password, string name, int card, string address,string photo, Order order, Basket basket)
         {
             Login = login;
             Password = password;    
@@ -23,7 +23,6 @@ namespace The_Living_Furniture_UI.Db
             Address = address;
             Photo = photo;
             Basket = basket;
-            Trash = trash;
             
         }
         public ObjectId _id { get; set; }
@@ -35,7 +34,6 @@ namespace The_Living_Furniture_UI.Db
         public string Photo { get; set; }
         public Order Order { get; set; }
         public Basket Basket { get; set; }
-        public Trash Trash { get; set; }
         public static void usrAddToDB(Db.User user)
         {
             var client = new MongoClient("mongodb://localhost");
@@ -66,12 +64,12 @@ namespace The_Living_Furniture_UI.Db
             var foundedUser = collection.Find(x => x.Login == login).FirstOrDefault();
             return foundedUser;
         }
-        public static List<string> SearchUser(string value)
+        public static List<string> SearchUser(string value, string name)
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("FurnitureBD");
             var collection = database.GetCollection<Db.User>("User");
-            var listUsersFromDB = collection.Find(x => x.Login == value).ToList();
+            var listUsersFromDB = collection.Find(x => x.Login == value || x.Name == name).ToList();
             List<string> listToReturn = new List<string>();
             foreach (var item in listUsersFromDB)
             {
