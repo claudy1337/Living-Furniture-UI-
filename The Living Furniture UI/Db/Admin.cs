@@ -33,5 +33,14 @@ namespace The_Living_Furniture_UI.Db
             var collection = database.GetCollection<Db.Admin>("User");
             return collection.Find(x => x.Login == login && x.Password == password).ToList();
         }
+        public static Admin GetAdmin(string name)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Db.Admin>("Admin");
+            var foundedProd = collection.Find(x => x.Login == name).FirstOrDefault();
+            return foundedProd;
+
+        }
     }
 }

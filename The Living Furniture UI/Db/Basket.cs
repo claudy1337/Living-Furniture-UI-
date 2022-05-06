@@ -22,6 +22,7 @@ namespace The_Living_Furniture_UI.Db
             });
             await collection.UpdateOneAsync(filterCheck, update);
         }
+        
     }
     public class ModifyProducts
     {

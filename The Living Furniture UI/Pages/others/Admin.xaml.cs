@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using The_Living_Furniture_UI.Pages;
+using The_Living_Furniture_UI.Pages.adminPages;
 
 namespace The_Living_Furniture_UI.Pages.others
 {
@@ -19,6 +21,7 @@ namespace The_Living_Furniture_UI.Pages.others
     /// </summary>
     public partial class Admin : Window
     {
+        public static Db.Admin currentAdmin;
         public Admin()
         {
             InitializeComponent();
@@ -26,7 +29,7 @@ namespace The_Living_Furniture_UI.Pages.others
 
         private void rdHome_Click(object sender, RoutedEventArgs e)
         {
-            PagesNavigation.Navigate(new System.Uri("Pages/adminPages/Profile.xaml", UriKind.RelativeOrAbsolute));
+            PagesNavigation.Navigate(new Profile());
         }
 
         private void rdStatistic_Click(object sender, RoutedEventArgs e)

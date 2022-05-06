@@ -26,6 +26,7 @@ namespace The_Living_Furniture_UI.Pages
     /// </summary>
     public partial class auth : Page
     {
+        public Admin Admin;
         public auth()
         {
             InitializeComponent();

@@ -36,7 +36,8 @@ namespace The_Living_Furniture_UI.Pages.Product
             ProdPrice.Text = currentProduct.Price.ToString();
             ProdLogo.Source = new BitmapImage(new Uri(currentProduct.Photo, UriKind.RelativeOrAbsolute));
             imgProd.Source = new BitmapImage(new Uri(currentProduct.Logo, UriKind.RelativeOrAbsolute));
-            CBcolor.Text = currentProduct.Color;
+           
+     
             CBmaterial.Text = currentProduct.Material;
             DataContext = this;
            

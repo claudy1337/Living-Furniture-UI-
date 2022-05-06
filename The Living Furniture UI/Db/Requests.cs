@@ -77,7 +77,7 @@ namespace The_Living_Furniture_UI.Db
             var collection = database.GetCollection<Db.Requests>("Request");
          
             var updateCheck = Builders<Db.Requests>.Update.Set(x => x.isCheck, IsCheeck);
-            collection.UpdateOne(x => x.User.Login == login, updateCheck);//редактирование
+            collection.UpdateOne(x => x.User.Login == login, updateCheck);
            
         }
     }

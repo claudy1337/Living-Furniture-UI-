@@ -21,6 +21,7 @@ using MongoDB.Driver.Linq;
 using System.CodeDom;
 
 
+
 namespace The_Living_Furniture_UI.Pages.userPages
 {
     /// <summary>
@@ -28,7 +29,7 @@ namespace The_Living_Furniture_UI.Pages.userPages
     /// </summary>
     public partial class Baket : Page
     {
-        List<Db.OrderedProduct> products = new List<Db.OrderedProduct>();
+       // List<Db.OrderedProduct> products = new List<Db.OrderedProduct>();
         private static Db.User currentUser;
         public Baket(Db.User user)
         {
@@ -47,20 +48,29 @@ namespace The_Living_Furniture_UI.Pages.userPages
             
             
         }
-        public void Method()
-        {
-            listBasket.ItemsSource = Db.Trash.GetProducts().GetAwaiter().GetResult();
-        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
-
+            DateTime currentDate = DateTime.Now.Date;
+            Db.Order order = new Db.Order(currentUser, currentUser.Basket.Product.Where(x => true).ToList(), currentDate);
+            Db.Order.ProductAddToOrder(order);
+            //var aboba = Db.Order.ShowProductInOrder();
+            // List<User> users = new List<User>(aboba);
+            //MessageBox.Show(users.ToString());
+            // Db.Order.ShowProductInOrder();
+           
+            //Db.Order order = new Db.Order(currentUser, modifyProducts, currentDate);
+            //Db.Order.ProductAddToOrder(order);
         }
-
+        
         private void BtnUpdate_Click(object sender, RoutedEventArgs e)
         {
             listBasket.ItemsSource = currentUser.Basket.Product;
+        }
+
+        private void listBasket_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MessageBox.Show(listBasket.SelectedItem.ToString());
         }
     }
 }

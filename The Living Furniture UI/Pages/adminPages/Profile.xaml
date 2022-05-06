@@ -12,15 +12,15 @@
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="97*"/>
-                <ColumnDefinition Width="63*"/>
+                <ColumnDefinition Width="51*"/>
+                <ColumnDefinition Width="29*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
-                <material:Card Width="483" Height="470" material:ShadowAssist.ShadowDepth="Depth5">
+                <material:Card Width="500" Height="470" material:ShadowAssist.ShadowDepth="Depth5">
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
+                            <RowDefinition Height="49*"/>
+                            <RowDefinition Height="45*"/>
                         </Grid.RowDefinitions>
                         <StackPanel Grid.Row="0">
                             <Grid>
@@ -34,6 +34,7 @@
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,0,0" Width="200">
                                     <TextBox
+                                            x:Name="admName"
                                             Style="{StaticResource MaterialDesignFilledTextBox}"
                                             VerticalAlignment="Top"
                                             TextWrapping="Wrap"
@@ -45,6 +46,7 @@
                                             material:HintAssist.Hint="Name"/>
 
                                     <TextBox
+                                            x:Name="admLogin"
                                             Style="{StaticResource MaterialDesignFilledTextBox}"
                                             VerticalAlignment="Top"
                                             TextWrapping="Wrap"
@@ -59,11 +61,7 @@
                             </Grid>
                         </StackPanel>
 
-                        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
-                            <Image Source="{Binding imgCollection}" />
-                            <Image x:Name="imgCard" MouseLeftButtonDown="imgCard_MouseLeftButtonDown"/>
-
-                        </StackPanel>
+                        
 
                     </Grid>
                 </material:Card>
@@ -103,23 +101,62 @@
                     </StackPanel>
 
                     <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0">
-                        <material:Card material:ShadowAssist.ShadowDepth="Depth5">
-                            <TabControl
-                                    Width="300"
-                                    material:ColorZoneAssist.Mode="SecondaryMid" Height="250">
-                                <TabItem
-                                    Header="Order">
-                                    <TextBlock
-                                        Margin="8"
-                                        Text="SecondaryMid Tab 1" />
-                                </TabItem>
-                                <TabItem
-                                    Header="TAB 2">
-                                    <TextBlock
-                                    Margin="8"
-                                     Text="SecondaryMid Tab 2" />
-                                </TabItem>
-                            </TabControl>
+                        <material:Card
+                               Background="#EB8F4C"
+                                Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                                Padding="0"
+                                Width="250">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+        Height="Auto" />
+                                    <RowDefinition
+        Height="Auto" />
+                                    <RowDefinition
+        Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <TextBlock
+      Grid.Row="0"
+      Margin="16 16 16 4"
+      Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+      Text="Admin Jon" />
+                                <Separator
+      Grid.Row="1"
+      Style="{StaticResource MaterialDesignLightSeparator}" />
+                                <TextBlock
+      Grid.Row="2"
+      Margin="16 0 16 8"
+      VerticalAlignment="Center"
+      HorizontalAlignment="Left"
+      Style="{StaticResource MaterialDesignBody2TextBlock}"
+      Text="May 07, 2022" />
+                                <StackPanel
+      Grid.Row="2"
+      Orientation="Horizontal"
+      Margin="16 0 16 8"
+      HorizontalAlignment="Right">
+                                    <Button
+        HorizontalAlignment="Right"
+        Style="{StaticResource MaterialDesignToolForegroundButton}"
+        Width="30"
+        Padding="2 0 2 0"
+        material:RippleAssist.IsCentered="True">
+                                        <material:PackIcon
+          Kind="Account" />
+                                    </Button>
+                                    <material:PopupBox
+        HorizontalAlignment="Right"
+        
+        Padding="2 0 2 0">
+                                        <StackPanel>
+                                            <Button
+            Content="More" />
+                                            <Button
+            Content="Options" />
+                                        </StackPanel>
+                                    </material:PopupBox>
+                                </StackPanel>
+                            </Grid>
                         </material:Card>
                     </StackPanel>
                 </Grid>
