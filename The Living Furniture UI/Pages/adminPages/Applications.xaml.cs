@@ -33,6 +33,7 @@ namespace The_Living_Furniture_UI.Pages.adminPages
             prdCount.Text = null;
             usrCounts.Text = Db.User.GetAllUserList().Count.ToString();
             prdCount.Text = Db.Product.GetAllProductList().Count.ToString();
+            ordCount.Text = Db.Order.GetAllOrderList().Count.ToString();
             //ordCount.Text = Db.User
         }
         int value = 0;

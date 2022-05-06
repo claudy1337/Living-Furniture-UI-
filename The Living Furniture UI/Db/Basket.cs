@@ -22,7 +22,17 @@ namespace The_Living_Furniture_UI.Db
             });
             await collection.UpdateOneAsync(filterCheck, update);
         }
-        
+        public static void Edit(Object ischeck, string login)
+        {
+            var std = new MongoClient("mongodb://localhost");
+            var database = std.GetDatabase("FurnitureBD");
+            var collection = database.GetCollection<Db.User>("User");
+
+            var updateCheck = Builders<Db.User>.Update.Set(x => x.Basket.Product, ischeck);
+            collection.UpdateOne(x => x.Login == login, updateCheck);
+
+        }
+
     }
     public class ModifyProducts
     {

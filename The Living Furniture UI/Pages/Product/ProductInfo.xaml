@@ -175,7 +175,7 @@
                              material:HintAssist.Hint="Color"
                              ItemsSource="{Binding ShortStringList}"
                              material:TextFieldAssist.HasClearButton="True"
-                             Width="256">
+                             Width="256" SelectionChanged="CBcolor_SelectionChanged">
                             <TextBlock Text="Black"/>
                             <TextBlock Text="White"/>
                             <TextBlock Text="Brown"/>

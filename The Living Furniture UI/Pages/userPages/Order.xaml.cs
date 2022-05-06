@@ -24,15 +24,22 @@ namespace The_Living_Furniture_UI.Pages.userPages
     /// </summary>
     public partial class Order : Page
     {
-        public Order()
+        private static Db.User currentUser;
+        public Order(Db.User user)
         {
+            currentUser = user;
             InitializeComponent();
+            listOrder.ItemsSource = Db.Order.GetOrderList(currentUser.Login);
+             
             //listlogin.ItemsSource = Basket.GetLoginList();
             //TBNames.Text = Basket.GetUser(listlogin.SelectedItem.ToString()).Name;
             
             //TBPrice.Text = Basket.GetUser(listlogin.SelectedItem.ToString()).Size;
         }
 
-       
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

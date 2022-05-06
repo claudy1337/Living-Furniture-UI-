@@ -77,7 +77,7 @@ namespace The_Living_Furniture_UI.Pages.others
 
         private void rdOrder_Checked(object sender, RoutedEventArgs e)
         {
-            PagesNavigation.Navigate(new System.Uri("Pages/userPages/Order.xaml", UriKind.RelativeOrAbsolute));
+            PagesNavigation.Navigate(new userPages.Order(currentUser));
         }
 
         private void rdBasket_Checked(object sender, RoutedEventArgs e)

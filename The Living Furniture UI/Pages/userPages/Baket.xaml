@@ -21,7 +21,6 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <CheckBox x:Name="checkProd" Height="30" VerticalAlignment="Top" Margin="10,0,10,0"/>
                                     <Image Source="{Binding Photo}" Height="300" Width="250" VerticalAlignment="Top"/>
                                     <StackPanel Orientation="Vertical" Margin="20,0,0,0">
                                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">

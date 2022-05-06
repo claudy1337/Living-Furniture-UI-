@@ -27,7 +27,7 @@ namespace The_Living_Furniture_UI.Pages.adminPages
         {
             InitializeComponent();
             LoadData();
-
+            ord.ItemsSource = Db.Order.GetAllOrderList();
 
         }
         private async void LoadData()
@@ -55,5 +55,21 @@ namespace The_Living_Furniture_UI.Pages.adminPages
            // DGEmployee.ItemsSource = Db.Consultation.GetAllConsList();
 
         }
+
+        private void BSearchUsr_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void ord_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ord.SelectedIndex == -1)
+            {
+                return;
+            }
+            else
+            {
+                TBusrdAddress.Text = Db.Order.GetisBasket()
+            }
     }
 }

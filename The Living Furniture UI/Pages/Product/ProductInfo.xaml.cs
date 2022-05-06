@@ -31,13 +31,8 @@ namespace The_Living_Furniture_UI.Pages.Product
             InitializeComponent();
             currentProduct = product;
             currentUser = user;
-            
-            ProdName.Text = currentProduct.Name;
-            ProdPrice.Text = currentProduct.Price.ToString();
             ProdLogo.Source = new BitmapImage(new Uri(currentProduct.Photo, UriKind.RelativeOrAbsolute));
             imgProd.Source = new BitmapImage(new Uri(currentProduct.Logo, UriKind.RelativeOrAbsolute));
-           
-     
             CBmaterial.Text = currentProduct.Material;
             DataContext = this;
            
@@ -62,25 +57,19 @@ namespace The_Living_Furniture_UI.Pages.Product
         private async void BtnBuy_Click(object sender, RoutedEventArgs e)
         {
             
-            if (CBmaterial.Text == null && CBcolor.Text == null && CBwidth == null && CBheight == null )
-            {
-                Db.Basket.AddProductToBasket(currentUser.Login, currentProduct._id, currentProduct.Category, currentProduct.Name, currentProduct.Price, currentProduct.Width, currentProduct.Height, currentProduct.Color, currentProduct.Structure, currentProduct.Material, currentProduct.Photo);
-            }
-            else
-            {
-                string color = CBcolor.SelectedIndex.ToString();
-                int width = Convert.ToInt32(CBwidth.SelectedIndex);
-                int height = Convert.ToInt32(CBheight.SelectedIndex);
-                string material = CBmaterial.SelectedIndex.ToString();
-                Db.Basket.AddProductToBasket(currentUser.Login, currentProduct._id, currentProduct.Category, currentProduct.Name, currentProduct.Price, width, height, color, currentProduct.Structure, material, currentProduct.Photo);
-                
-            }
+
+            Db.Basket.AddProductToBasket(currentUser.Login, currentProduct._id, currentProduct.Category, currentProduct.Name, currentProduct.Price, currentProduct.Width, currentProduct.Height, currentProduct.Color, currentProduct.Structure, currentProduct.Material, currentProduct.Photo);
             prg.Visibility = Visibility.Visible;
             for (int i = 0; i < 100; i++)
                 prg.Value = i;
             MessageBox.Show("добавлен в корзину");
             prg.Visibility = Visibility.Hidden;
             prg.Value = 0;
+
+        }
+
+        private void CBcolor_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
         }
     }

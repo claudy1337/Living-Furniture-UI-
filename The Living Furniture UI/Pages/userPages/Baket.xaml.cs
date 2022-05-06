@@ -35,9 +35,8 @@ namespace The_Living_Furniture_UI.Pages.userPages
         {
             InitializeComponent();
             currentUser = user;
-            listBasket.ItemsSource = null;
             listBasket.ItemsSource = currentUser.Basket.Product;
-
+     
             int sum = 0;
             foreach (var item in user.Basket.Product)
             {
@@ -48,24 +47,25 @@ namespace The_Living_Furniture_UI.Pages.userPages
             
             
         }
+        
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             DateTime currentDate = DateTime.Now.Date;
             Db.Order order = new Db.Order(currentUser, currentUser.Basket.Product.Where(x => true).ToList(), currentDate);
             Db.Order.ProductAddToOrder(order);
-            //var aboba = Db.Order.ShowProductInOrder();
-            // List<User> users = new List<User>(aboba);
-            //MessageBox.Show(users.ToString());
-            // Db.Order.ShowProductInOrder();
-           
-            //Db.Order order = new Db.Order(currentUser, modifyProducts, currentDate);
-            //Db.Order.ProductAddToOrder(order);
+            Object chel = "";
+            Db.Basket.Edit(chel, currentUser.Login);
+            listBasket.ItemsSource = null;
         }
         
         private void BtnUpdate_Click(object sender, RoutedEventArgs e)
         {
+            NavigationService.Navigate(new Baket(currentUser));
+            listBasket.Items.Refresh();
+            MessageBox.Show("update");
             listBasket.ItemsSource = currentUser.Basket.Product;
+
         }
 
         private void listBasket_SelectionChanged(object sender, SelectionChangedEventArgs e)
