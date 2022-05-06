@@ -54,17 +54,14 @@ namespace The_Living_Furniture_UI.Pages.userPages
             DateTime currentDate = DateTime.Now.Date;
             Db.Order order = new Db.Order(currentUser, currentUser.Basket.Product.Where(x => true).ToList(), currentDate);
             Db.Order.ProductAddToOrder(order);
-            Object chel = "";
-            Db.Basket.Edit(chel, currentUser.Login);
-            listBasket.ItemsSource = null;
+            
         }
         
         private void BtnUpdate_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Baket(currentUser));
-            listBasket.Items.Refresh();
-            MessageBox.Show("update");
-            listBasket.ItemsSource = currentUser.Basket.Product;
+            Object[] chel = null;
+            Db.Basket.Edit(chel, currentUser.Login);
+            listBasket.ItemsSource = null;
 
         }
 
