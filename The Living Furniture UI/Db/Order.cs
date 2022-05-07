@@ -53,7 +53,7 @@ namespace The_Living_Furniture_UI.Db
             List<string> listToReturn = new List<string>();
             foreach (var item in listUsersFromDB)
             {
-                listToReturn.Add(item.User.ToString());
+                listToReturn.Add(item._id.ToString());
             }
             return listToReturn;
         }

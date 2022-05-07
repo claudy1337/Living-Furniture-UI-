@@ -54,16 +54,19 @@ namespace The_Living_Furniture_UI.Pages.userPages
             DateTime currentDate = DateTime.Now.Date;
             Db.Order order = new Db.Order(currentUser, currentUser.Basket.Product.Where(x => true).ToList(), currentDate);
             Db.Order.ProductAddToOrder(order);
-            MessageBox.Show($"куплено {currentUser.Basket.Product.ToString()}" ,$"{summ.ToString()}");
+            MessageBox.Show($"на сумму: {summ}");
             listBasket.ItemsSource = null;
+            countProd.Text = null;
+            priceProd.Text = null;
+
         }
-        
+
         private void BtnUpdate_Click(object sender, RoutedEventArgs e)
         {
             Object[] chel = null;
             Db.Basket.Edit(chel, currentUser.Login);
             listBasket.ItemsSource = null;
-
+            
         }
 
         private void listBasket_SelectionChanged(object sender, SelectionChangedEventArgs e)
