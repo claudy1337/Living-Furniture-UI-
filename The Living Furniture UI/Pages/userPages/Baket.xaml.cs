@@ -44,17 +44,18 @@ namespace The_Living_Furniture_UI.Pages.userPages
             }
             countProd.Text = user.Basket.Product.Count.ToString();
             priceProd.Text = sum.ToString();
-            
+            summ = sum;
             
         }
-        
 
+        int summ; 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             DateTime currentDate = DateTime.Now.Date;
             Db.Order order = new Db.Order(currentUser, currentUser.Basket.Product.Where(x => true).ToList(), currentDate);
             Db.Order.ProductAddToOrder(order);
-            
+            MessageBox.Show($"куплено {currentUser.Basket.Product.ToString()}" ,$"{summ.ToString()}");
+            listBasket.ItemsSource = null;
         }
         
         private void BtnUpdate_Click(object sender, RoutedEventArgs e)
@@ -67,7 +68,7 @@ namespace The_Living_Furniture_UI.Pages.userPages
 
         private void listBasket_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MessageBox.Show(listBasket.SelectedItem.ToString());
+            
         }
     }
 }
