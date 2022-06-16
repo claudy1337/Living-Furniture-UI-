@@ -44,30 +44,34 @@ namespace The_Living_Furniture_UI.Pages.userPages
             }
             countProd.Text = user.Basket.Product.Count.ToString();
             priceProd.Text = sum.ToString();
-            
+            summ = sum;
             
         }
-        
 
+        int summ; 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             DateTime currentDate = DateTime.Now.Date;
             Db.Order order = new Db.Order(currentUser, currentUser.Basket.Product.Where(x => true).ToList(), currentDate);
             Db.Order.ProductAddToOrder(order);
-            
+            MessageBox.Show($"на сумму: {summ}");
+            listBasket.ItemsSource = null;
+            countProd.Text = null;
+            priceProd.Text = null;
+
         }
-        
+
         private void BtnUpdate_Click(object sender, RoutedEventArgs e)
         {
             Object[] chel = null;
             Db.Basket.Edit(chel, currentUser.Login);
             listBasket.ItemsSource = null;
-
+            
         }
 
         private void listBasket_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MessageBox.Show(listBasket.SelectedItem.ToString());
+            
         }
     }
 }
