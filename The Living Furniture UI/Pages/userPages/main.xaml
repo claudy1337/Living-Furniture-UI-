@@ -61,7 +61,7 @@
                                             material:TextFieldAssist.CharacterCounterVisibility="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxTextCountComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"
                                             material:HintAssist.Hint="Name"
                                             FontFamily="Ubuntu Light"
-                                            FontSize="15"/>
+                                            FontSize="15" Cursor="Arrow"/>
 
                                         <TextBox
                                             x:Name="TBusrNumber"
